@@ -102,12 +102,7 @@ describe('validation', function() {
     ]);
 
 
-    testTemplate('additional-property', '../fixtures/single-template/additional-property.json', [
-      {
-        message: 'should NOT have additional properties',
-        params: { additionalProperty: 'foo' }
-      }
-    ]);
+    testTemplate('additional-property', '../fixtures/single-template/additional-property.json');
 
   });
 });
