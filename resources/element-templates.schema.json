@@ -5,7 +5,6 @@
   "title": "Element Template Schema",
   "description": "An element template definition",
   "required": ["name", "id", "appliesTo", "properties"],
-  "additionalProperties": false,
   "properties": {
     "name": {
       "$id": "#/name",
@@ -56,7 +55,6 @@
         "description": "A property defined for the element template",
         "default": {},
         "required": ["binding"],
-        "additionalProperties": false,
         "properties": {
           "value": {
             "$id": "#/properties/property/value",
@@ -97,7 +95,6 @@
             "items": {
               "$id": "#/properties/property/choices/item",
               "type": "object",
-              "additionalProperties": false,
               "properties": {
                 "name": {
                   "$id": "#/properties/property/choices/item/name",
@@ -120,7 +117,6 @@
             "title": "property binding",
             "description": "A binding to a BPMN 2.0 property",
             "required": ["type"],
-            "additionalProperties": false,
             "properties": {
               "type": {
                 "$id": "#/properties/property/binding/type",
@@ -184,7 +180,6 @@
             "type": "object",
             "title": "property constraints",
             "description": "The validation constraints",
-            "additionalProperties": false,
             "properties": {
               "notEmpty": {
                 "$id": "#/properties/property/constraints/notEmpty",
@@ -209,7 +204,6 @@
                 "type": "object",
                 "title": "property constraints pattern",
                 "description": "A regular expression pattern for the constraints",
-                "additionalProperties": false,
                 "properties": {
                   "value": {
                     "$id": "#/properties/property/constraints/pattern/value",
