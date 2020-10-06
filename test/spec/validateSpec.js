@@ -78,6 +78,14 @@ describe('validation', function() {
     ]);
 
 
+    testTemplate('missing-binding', '../fixtures/single-template/missing-binding.json', [
+      {
+        message: 'should have required property \'binding\'',
+        params: { missingProperty: 'binding' }
+      }
+    ]);
+
+
     testTemplate('applies-to-single', '../fixtures/single-template/applies-to-single.json', [
       {
         message: 'should be array',
