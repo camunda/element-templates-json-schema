@@ -1,0 +1,17 @@
+{
+  "name": "MissingChoices",
+  "id": "com.camunda.example.MissingChoices",
+  "appliesTo": [
+    "bpmn:Task"
+  ],
+  "properties": [
+    {
+      "label": "Are you awesome?",
+      "type": "Dropdown",
+      "value": true,
+      "binding": {
+        "type": "property"
+      }
+    }
+  ]
+}
