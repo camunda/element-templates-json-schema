@@ -1,0 +1,14 @@
+{
+  "name": "MissingBinding",
+  "id": "com.camunda.example.MissingBinding",
+  "appliesTo": [
+    "bpmn:Task"
+  ],
+  "properties": [
+    {
+      "label": "Are you awesome?",
+      "type": "String",
+      "value": true
+    }
+  ]
+}
