@@ -104,6 +104,24 @@ describe('validation', function() {
 
     testTemplate('additional-property', '../fixtures/single-template/additional-property.json');
 
+
+    testTemplate('invalid-binding-type', '../fixtures/single-template/invalid-binding-type.json', [
+      {
+        message: 'should be equal to one of the allowed values',
+        params: { allowedValues: [
+          'property',
+          'camunda:property',
+          'camunda:inputParameter',
+          'camunda:outputParameter',
+          'camunda:in',
+          'camunda:out',
+          'camunda:in:businessKey',
+          'camunda:executionListener',
+          'camunda:field'
+        ] }
+      }
+    ]);
+
   });
 });
 

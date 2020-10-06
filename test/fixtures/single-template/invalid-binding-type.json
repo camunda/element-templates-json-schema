@@ -1,0 +1,17 @@
+{
+  "name": "InvalidBindingType",
+  "id": "com.camunda.example.InvalidBindingType",
+  "appliesTo": [
+    "bpmn:Task"
+  ],
+  "properties": [
+    {
+      "label": "Are you awesome?",
+      "type": "String",
+      "value": true,
+      "binding": {
+        "type": "foo"
+      }
+    }
+  ]
+}

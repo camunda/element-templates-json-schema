@@ -122,6 +122,17 @@
                 "$id": "#/properties/property/binding/type",
                 "type": "string",
                 "title": "property binding type",
+                "enum": [
+                  "property",
+                  "camunda:property",
+                  "camunda:inputParameter",
+                  "camunda:outputParameter",
+                  "camunda:in",
+                  "camunda:out",
+                  "camunda:in:businessKey",
+                  "camunda:executionListener",
+                  "camunda:field"
+                ],
                 "description": "The type of the property binding"
               },
               "name": {
