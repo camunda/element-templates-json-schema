@@ -130,6 +130,22 @@ describe('validation', function() {
       }
     ]);
 
+
+    testTemplate('choices-missing-value', '../fixtures/single-template/choices-missing-value.json', [
+      {
+        message: 'should have required property \'value\'',
+        params: { missingProperty: 'value' }
+      }
+    ]);
+
+
+    testTemplate('choices-missing-name', '../fixtures/single-template/choices-missing-name.json', [
+      {
+        message: 'should have required property \'name\'',
+        params: { missingProperty: 'name' }
+      }
+    ]);
+
   });
 });
 

@@ -108,7 +108,8 @@
                   "title": "choice value",
                   "description": "The value of the choice"
                 }
-              }
+              },
+              "required": ["value", "name"]
             }
           },
           "binding": {
