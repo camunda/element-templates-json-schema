@@ -55,6 +55,17 @@
         "description": "A property defined for the element template",
         "default": {},
         "required": ["binding"],
+        "allOf": [
+          {
+            "if": {
+              "properties": { "type": { "const": "Dropdown" } },
+              "required": [ "type" ]
+            },
+            "then": {
+              "required": [ "choices" ]
+            }
+          }
+        ],
         "properties": {
           "value": {
             "$id": "#/properties/property/value",

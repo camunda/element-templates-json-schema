@@ -146,6 +146,14 @@ describe('validation', function() {
       }
     ]);
 
+
+    testTemplate('missing-choices', '../fixtures/single-template/missing-choices.json', [
+      {
+        message: 'should have required property \'.choices\'',
+        params: { missingProperty: '.choices' }
+      }
+    ]);
+
   });
 });
 
