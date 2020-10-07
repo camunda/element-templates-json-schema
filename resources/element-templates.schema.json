@@ -168,6 +168,25 @@
                     }
                   ]
                 }
+              },
+              {
+                "if": {
+                  "properties": { "type": { "const": "camunda:out"} },
+                  "required": [ "type" ]
+                },
+                "then": {
+                  "oneOf": [
+                    {
+                      "required": [ "variables" ]
+                    },
+                    {
+                      "required": [ "source" ]
+                    },
+                    {
+                      "required": [ "sourceExpression" ]
+                    }
+                  ]
+                }
               }
             ],
             "properties": {
