@@ -154,7 +154,32 @@ describe('validation', function() {
       }
     ]);
 
+
+    testTemplate('missing-binding-name', '../fixtures/single-template/missing-binding-name.json', [
+      {
+        message: 'should have required property \'.name\'',
+        params: { missingProperty: '.name' }
+      }
+    ]);
+
+
+    testTemplate('missing-binding-source', '../fixtures/single-template/missing-binding-source.json', [
+      {
+        message: 'should have required property \'.source\'',
+        params: { missingProperty: '.source' }
+      }
+    ]);
+
+
+    testTemplate('missing-binding-source', '../fixtures/single-template/missing-binding-source.json', [
+      {
+        message: 'should have required property \'.source\'',
+        params: { missingProperty: '.source' }
+      }
+    ]);
+
   });
+
 });
 
 

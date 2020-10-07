@@ -129,6 +129,31 @@
             "title": "property binding",
             "description": "A binding to a BPMN 2.0 property",
             "required": ["type"],
+            "allOf": [
+              {
+                "if": {
+                  "properties": { "type": { "enum": [
+                    "property",
+                    "camunda:property",
+                    "camunda:inputParameter",
+                    "camunda:field"
+                  ] } },
+                  "required": [ "type" ]
+                },
+                "then": {
+                  "required": [ "name" ]
+                }
+              },
+              {
+                "if": {
+                  "properties": { "type": { "const": "camunda:outputParameter"} },
+                  "required": [ "type" ]
+                },
+                "then": {
+                  "required": [ "source" ]
+                }
+              }
+            ],
             "properties": {
               "type": {
                 "$id": "#/properties/property/binding/type",
