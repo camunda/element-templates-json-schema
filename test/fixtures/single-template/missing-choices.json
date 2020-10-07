@@ -10,7 +10,8 @@
       "type": "Dropdown",
       "value": true,
       "binding": {
-        "type": "property"
+        "type": "property",
+        "name": "foo"
       }
     }
   ]
