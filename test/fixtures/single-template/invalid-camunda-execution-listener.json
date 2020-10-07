@@ -1,0 +1,16 @@
+{
+  "name": "InvalidExecutionListener",
+  "id": "com.camunda.example.InvalidExecutionListener",
+  "appliesTo": [
+    "bpmn:Task"
+  ],
+  "properties": [
+    {
+      "label": "foo",
+      "type": "String",
+      "binding": {
+        "type": "camunda:executionListener"
+      }
+    }
+  ]
+}

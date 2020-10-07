@@ -64,6 +64,21 @@
             "then": {
               "required": [ "choices" ]
             }
+          },
+          {
+            "if": {
+              "properties": { 
+                "binding": {
+                  "properties": {
+                    "type": { "const": "camunda:executionListener"} 
+                  },
+                  "required": [ "type" ]
+                }
+              }
+            },
+            "then": {
+              "properties": { "type": { "enum": [ null, "Hidden" ] } }
+            }
           }
         ],
         "properties": {
