@@ -7,6 +7,8 @@ import {
   validateTemplates
 } from '../../lib';
 
+const EMPTY_SCHEMA = null;
+
 describe('validation', function() {
 
   describe('#validateTemplates', function() {
@@ -177,6 +179,29 @@ describe('validation', function() {
         params: { missingProperty: '.source' }
       }
     ]);
+
+
+    testTemplate(
+      'missing-binding-variables-target',
+      '../fixtures/single-template/missing-binding-variables-target.json',
+      [
+        {
+          message: 'should have required property \'.variables\'',
+          params: { missingProperty: '.variables' }
+        },
+        {
+          message: 'should have required property \'.target\'',
+          params: { missingProperty: '.target' }
+        },
+        {
+          message: 'should match exactly one schema in oneOf',
+          params: { passingSchemas: EMPTY_SCHEMA }
+        }
+      ]
+    );
+
+
+    testTemplate('camunda-in-binding', '../fixtures/single-template/camunda-in-binding.json');
 
   });
 

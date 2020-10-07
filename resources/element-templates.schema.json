@@ -152,6 +152,22 @@
                 "then": {
                   "required": [ "source" ]
                 }
+              },
+              {
+                "if": {
+                  "properties": { "type": { "const": "camunda:in"} },
+                  "required": [ "type" ]
+                },
+                "then": {
+                  "oneOf": [
+                    {
+                      "required": [ "variables" ]
+                    },
+                    {
+                      "required": [ "target" ]
+                    }
+                  ]
+                }
               }
             ],
             "properties": {
