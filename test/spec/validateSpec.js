@@ -230,6 +230,21 @@ describe('validation', function() {
 
     testTemplate('camunda-out-binding', '../fixtures/single-template/camunda-out-binding.json');
 
+
+    testTemplate(
+      'invalid-camunda-execution-listener',
+      '../fixtures/single-template/invalid-camunda-execution-listener.json',
+      [
+        {
+          message: 'should be equal to one of the allowed values',
+          params: { allowedValues: [ EMPTY_SCHEMA, 'Hidden'] }
+        }
+      ]
+    );
+
+
+    testTemplate('camunda-execution-listener', '../fixtures/single-template/camunda-execution-listener.json');
+
   });
 
 });
