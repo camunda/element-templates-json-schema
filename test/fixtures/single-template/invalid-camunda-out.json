@@ -1,0 +1,16 @@
+{
+  "name": "InvalidCamundaOut",
+  "id": "com.camunda.example.InvalidCamundaOut",
+  "appliesTo": [
+    "bpmn:Task"
+  ],
+  "properties": [
+    {
+      "label": "foo",
+      "type": "String",
+      "binding": {
+        "type": "camunda:out"
+      }
+    }
+  ]
+}

@@ -203,6 +203,33 @@ describe('validation', function() {
 
     testTemplate('camunda-in-binding', '../fixtures/single-template/camunda-in-binding.json');
 
+
+    testTemplate(
+      'invalid-camunda-out',
+      '../fixtures/single-template/invalid-camunda-out.json',
+      [
+        {
+          message: 'should have required property \'.variables\'',
+          params: { missingProperty: '.variables' }
+        },
+        {
+          message: 'should have required property \'.source\'',
+          params: { missingProperty: '.source' }
+        },
+        {
+          message: 'should have required property \'.sourceExpression\'',
+          params: { missingProperty: '.sourceExpression' }
+        },
+        {
+          message: 'should match exactly one schema in oneOf',
+          params: { passingSchemas: EMPTY_SCHEMA }
+        }
+      ]
+    );
+
+
+    testTemplate('camunda-out-binding', '../fixtures/single-template/camunda-out-binding.json');
+
   });
 
 });
