@@ -1,5 +1,7 @@
 # element-templates-json-schema
 
+[![Build Status](https://travis-ci.com/bpmn-io/element-templates-json-schema.svg?branch=master)](https://travis-ci.com/bpmn-io/element-templates-json-schema)
+
 JSON Schema for [(Camunda) Element Templates](https://docs.camunda.org/manual/latest/modeler/element-templates/). The schema is built on top of and validated by [`json-schema@draft-07`](https://json-schema.org/draft-07/json-schema-release-notes.html).
 
 ## Installation 
