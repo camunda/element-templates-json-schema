@@ -4,7 +4,12 @@
   "type": "object",
   "title": "Element Template Schema",
   "description": "An element template definition",
-  "required": ["name", "id", "appliesTo", "properties"],
+  "required": [
+    "name",
+    "id",
+    "appliesTo",
+    "properties"
+  ],
   "properties": {
     "name": {
       "$id": "#/name",
@@ -54,37 +59,61 @@
         "title": "element template property",
         "description": "A property defined for the element template",
         "default": {},
-        "required": ["binding"],
+        "required": [
+          "binding"
+        ],
         "allOf": [
           {
             "if": {
-              "properties": { "type": { "const": "Dropdown" } },
-              "required": [ "type" ]
+              "properties": {
+                "type": {
+                  "const": "Dropdown"
+                }
+              },
+              "required": [
+                "type"
+              ]
             },
             "then": {
-              "required": [ "choices" ]
+              "required": [
+                "choices"
+              ]
             }
           },
           {
             "if": {
-              "properties": { 
+              "properties": {
                 "binding": {
                   "properties": {
-                    "type": { "const": "camunda:executionListener"} 
+                    "type": {
+                      "const": "camunda:executionListener"
+                    }
                   },
-                  "required": [ "type" ]
+                  "required": [
+                    "type"
+                  ]
                 }
               }
             },
             "then": {
-              "properties": { "type": { "enum": [ null, "Hidden" ] } }
+              "properties": {
+                "type": {
+                  "enum": [
+                    null,
+                    "Hidden"
+                  ]
+                }
+              }
             }
           }
         ],
         "properties": {
           "value": {
             "$id": "#/properties/property/value",
-            "type": ["string", "boolean"],
+            "type": [
+              "string",
+              "boolean"
+            ],
             "title": "property value",
             "description": "The value of the control field for the property"
           },
@@ -105,7 +134,13 @@
             "type": "string",
             "title": "property type",
             "description": "The type of the control field",
-            "enum": ["Hidden", "String", "Boolean", "Dropdown", "Text"]
+            "enum": [
+              "Hidden",
+              "String",
+              "Boolean",
+              "Dropdown",
+              "Text"
+            ]
           },
           "editable": {
             "$id": "#/properties/property/editable",
@@ -135,7 +170,10 @@
                   "description": "The value of the choice"
                 }
               },
-              "required": ["value", "name"]
+              "required": [
+                "value",
+                "name"
+              ]
             }
           },
           "binding": {
@@ -143,62 +181,102 @@
             "type": "object",
             "title": "property binding",
             "description": "A binding to a BPMN 2.0 property",
-            "required": ["type"],
+            "required": [
+              "type"
+            ],
             "allOf": [
               {
                 "if": {
-                  "properties": { "type": { "enum": [
-                    "property",
-                    "camunda:property",
-                    "camunda:inputParameter",
-                    "camunda:field"
-                  ] } },
-                  "required": [ "type" ]
+                  "properties": {
+                    "type": {
+                      "enum": [
+                        "property",
+                        "camunda:property",
+                        "camunda:inputParameter",
+                        "camunda:field"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
                 },
                 "then": {
-                  "required": [ "name" ]
+                  "required": [
+                    "name"
+                  ]
                 }
               },
               {
                 "if": {
-                  "properties": { "type": { "const": "camunda:outputParameter"} },
-                  "required": [ "type" ]
+                  "properties": {
+                    "type": {
+                      "const": "camunda:outputParameter"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
                 },
                 "then": {
-                  "required": [ "source" ]
+                  "required": [
+                    "source"
+                  ]
                 }
               },
               {
                 "if": {
-                  "properties": { "type": { "const": "camunda:in"} },
-                  "required": [ "type" ]
+                  "properties": {
+                    "type": {
+                      "const": "camunda:in"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
                 },
                 "then": {
                   "oneOf": [
                     {
-                      "required": [ "variables" ]
+                      "required": [
+                        "variables"
+                      ]
                     },
                     {
-                      "required": [ "target" ]
+                      "required": [
+                        "target"
+                      ]
                     }
                   ]
                 }
               },
               {
                 "if": {
-                  "properties": { "type": { "const": "camunda:out"} },
-                  "required": [ "type" ]
+                  "properties": {
+                    "type": {
+                      "const": "camunda:out"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
                 },
                 "then": {
                   "oneOf": [
                     {
-                      "required": [ "variables" ]
+                      "required": [
+                        "variables"
+                      ]
                     },
                     {
-                      "required": [ "source" ]
+                      "required": [
+                        "source"
+                      ]
                     },
                     {
-                      "required": [ "sourceExpression" ]
+                      "required": [
+                        "sourceExpression"
+                      ]
                     }
                   ]
                 }
@@ -262,7 +340,10 @@
                 "$id": "#/properties/property/binding/variables",
                 "type": "string",
                 "title": "property binding variables",
-                "enum": ["all", "local"],
+                "enum": [
+                  "all",
+                  "local"
+                ],
                 "description": "Either all or local indicating the variable mapping (camunda:in)"
               },
               "sourceExpression": {
