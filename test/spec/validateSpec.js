@@ -256,13 +256,28 @@ describe('validation', function() {
       }
     ]);
 
+
+    testTemplate('multiple-errorrs', '../fixtures/single-template/multiple-errors.json', [
+      {
+        'message': 'invalid property type "Foo"; must be any of { Hidden, String, Boolean, Dropdown, Text }'
+      },
+      {
+        'message': 'must provide choices=[] with "Dropdown" type'
+      },
+      {
+        'message': 'property.binding "property" requires source'
+      },
+      {
+        'message': 'property.binding "property" requires name'
+      }
+    ]);
+
   });
 
 });
 
 
 // helper //////////////
-
 
 function normalizeErrors(errors) {
   if (!errors) {
