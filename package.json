@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "ajv": "^6.12.5",
+    "ajv-errors": "^1.0.1",
     "min-dash": "^3.5.2"
   }
 }
