@@ -1,0 +1,42 @@
+{
+  "name": "Mail Task",
+  "id": "com.camunda.example.MailTask",
+  "appliesTo": ["bpmn:ServiceTask"],
+  "properties": [
+    {
+      "label": "Implementation Type",
+      "type": "Foo",
+      "value": "com.mycompany.MailTaskImpl",
+      "editable": false,
+      "binding": {
+        "type": "property",
+        "name": "camunda:class"
+      }
+    },
+    {
+      "label": "Receivers",
+      "type": "Dropdown",
+      "binding": {
+        "type": "camunda:inputParameter",
+        "name": "receivers"
+      }
+    },
+    {
+      "label": "Result Status",
+      "description": "The process variable to which to assign the send result to",
+      "type": "String",
+      "value": "mailSendResult",
+      "binding": {
+        "type": "camunda:outputParameter"
+      }
+    },
+    {
+      "label": "Send Async?",
+      "type": "Boolean",
+      "value": true,
+      "binding": {
+        "type": "property"
+      }
+    }
+  ]
+}
