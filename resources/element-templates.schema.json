@@ -29,6 +29,12 @@
       "title": "element template description",
       "description": "The description of the element template"
     },
+    "version": {
+      "$id": "#/version",
+      "type": "number",
+      "title": "element template version",
+      "description": "The version of the element template"
+    },
     "isDefault": {
       "$id": "#/isDefault",
       "type": "boolean",

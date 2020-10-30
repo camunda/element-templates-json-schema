@@ -245,6 +245,17 @@ describe('validation', function() {
 
     testTemplate('camunda-execution-listener', '../fixtures/single-template/camunda-execution-listener.json');
 
+
+    testTemplate('with-version', '../fixtures/single-template/with-version.json');
+
+
+    testTemplate('invalid-version', '../fixtures/single-template/invalid-version.json', [
+      {
+        message: 'should be number',
+        params: { type: 'number' }
+      }
+    ]);
+
   });
 
 });

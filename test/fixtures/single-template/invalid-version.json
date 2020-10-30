@@ -1,0 +1,9 @@
+{
+  "name": "InvalidVersion",
+  "id": "com.camunda.example.InvalidVersion",
+  "version": "foo",
+  "appliesTo": [
+    "bpmn:Task"
+  ],
+  "properties": []
+}
