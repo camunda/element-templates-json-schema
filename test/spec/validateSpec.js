@@ -51,9 +51,9 @@ describe('validation', function() {
 
   describe('#validateTemplate', function() {
 
-    function testTemplate(name, file, expectedErrors) {
+    function testTemplate(name, file, expectedErrors, only = false) {
 
-      it('should validate templates - ' + name, function() {
+      (only ? it.only : it)('should validate template - ' + name, function() {
 
         // given
         const template = require(file);
@@ -64,6 +64,11 @@ describe('validation', function() {
         // then
         expect(normalizeErrors(result.errors)).to.deep.equal(expectedErrors);
       });
+    }
+
+    // eslint-disable-next-line no-unused-vars
+    function testOnly(name, file, expectedErrors) {
+      return testTemplate(name, file, expectedErrors, true);
     }
 
     testTemplate('mail-task', '../fixtures/single-template/mail-task.json');
