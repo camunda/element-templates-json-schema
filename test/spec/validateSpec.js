@@ -1,13 +1,11 @@
 import { expect } from 'chai';
 
-import { map } from 'min-dash';
+import { map, keys } from 'min-dash';
 
 import {
   validateTemplate,
   validateTemplates
 } from '../../lib';
-
-const EMPTY_SCHEMA = null;
 
 describe('validation', function() {
 
@@ -103,8 +101,7 @@ describe('validation', function() {
 
     testTemplate('invalid-type', '../fixtures/single-template/invalid-type.json', [
       {
-        message: 'should be equal to one of the allowed values',
-        params: { allowedValues: [ 'Hidden', 'String', 'Boolean', 'Dropdown', 'Text' ] }
+        message: 'invalid property type "Foo"; must be any of { Hidden, String, Boolean, Dropdown, Text }'
       }
     ]);
 
@@ -122,66 +119,42 @@ describe('validation', function() {
 
     testTemplate('invalid-binding-type', '../fixtures/single-template/invalid-binding-type.json', [
       {
-        message: 'should be equal to one of the allowed values',
-        params: { allowedValues: [
-          'property',
-          'camunda:property',
-          'camunda:inputParameter',
-          'camunda:outputParameter',
-          'camunda:in',
-          'camunda:out',
-          'camunda:in:businessKey',
-          'camunda:executionListener',
-          'camunda:field'
-        ] }
+        message: 'invalid property.binding type "foo"; must be any of { property, camunda:property, camunda:inputParameter, camunda:outputParameter, camunda:in, camunda:out, camunda:in:businessKey, camunda:executionListener, camunda:field }'
       }
     ]);
 
 
     testTemplate('choices-missing-value', '../fixtures/single-template/choices-missing-value.json', [
       {
-        message: 'should have required property \'value\'',
-        params: { missingProperty: 'value' }
+        message: '{ name, value } must be specified for "Dropdown" choices'
       }
     ]);
 
 
     testTemplate('choices-missing-name', '../fixtures/single-template/choices-missing-name.json', [
       {
-        message: 'should have required property \'name\'',
-        params: { missingProperty: 'name' }
+        message: '{ name, value } must be specified for "Dropdown" choices'
       }
     ]);
 
 
     testTemplate('missing-choices', '../fixtures/single-template/missing-choices.json', [
       {
-        message: 'should have required property \'.choices\'',
-        params: { missingProperty: '.choices' }
+        message: 'must provide choices=[] with "Dropdown" type'
       }
     ]);
 
 
     testTemplate('missing-binding-name', '../fixtures/single-template/missing-binding-name.json', [
       {
-        message: 'should have required property \'.name\'',
-        params: { missingProperty: '.name' }
+        message: 'property.binding "property" requires name'
       }
     ]);
 
 
     testTemplate('missing-binding-source', '../fixtures/single-template/missing-binding-source.json', [
       {
-        message: 'should have required property \'.source\'',
-        params: { missingProperty: '.source' }
-      }
-    ]);
-
-
-    testTemplate('missing-binding-source', '../fixtures/single-template/missing-binding-source.json', [
-      {
-        message: 'should have required property \'.source\'',
-        params: { missingProperty: '.source' }
+        message: 'property.binding "camunda:outputParameter" requires source'
       }
     ]);
 
@@ -191,16 +164,7 @@ describe('validation', function() {
       '../fixtures/single-template/missing-binding-variables-target.json',
       [
         {
-          message: 'should have required property \'.variables\'',
-          params: { missingProperty: '.variables' }
-        },
-        {
-          message: 'should have required property \'.target\'',
-          params: { missingProperty: '.target' }
-        },
-        {
-          message: 'should match exactly one schema in oneOf',
-          params: { passingSchemas: EMPTY_SCHEMA }
+          message: 'property.binding "camunda:in" requires variables or target'
         }
       ]
     );
@@ -214,20 +178,7 @@ describe('validation', function() {
       '../fixtures/single-template/invalid-camunda-out.json',
       [
         {
-          message: 'should have required property \'.variables\'',
-          params: { missingProperty: '.variables' }
-        },
-        {
-          message: 'should have required property \'.source\'',
-          params: { missingProperty: '.source' }
-        },
-        {
-          message: 'should have required property \'.sourceExpression\'',
-          params: { missingProperty: '.sourceExpression' }
-        },
-        {
-          message: 'should match exactly one schema in oneOf',
-          params: { passingSchemas: EMPTY_SCHEMA }
+          message: 'property.binding "camunda:out" requires variables, sourceExpression or source'
         }
       ]
     );
@@ -241,8 +192,7 @@ describe('validation', function() {
       '../fixtures/single-template/invalid-camunda-execution-listener.json',
       [
         {
-          message: 'should be equal to one of the allowed values',
-          params: { allowedValues: [ EMPTY_SCHEMA, 'Hidden'] }
+          message: 'invalid property type "String" for "camunda:executionListener"; must be "Hidden"'
         }
       ]
     );
@@ -290,9 +240,25 @@ function normalizeErrors(errors) {
   }
 
   return map(errors, function(error) {
-    return {
-      message: error.message,
-      params: error.params
+
+    let normalizedError = {
+      message: error.message
     };
+
+    // ignore raw errors generated by ajv (in case of custom errorMessage)
+    const params = error.params;
+
+    if (params) {
+
+      if (params.rawErrors) {
+        delete params.rawErrors;
+      }
+
+      if (keys(params).length) {
+        normalizedError.params = params;
+      }
+    }
+
+    return normalizedError;
   });
 }

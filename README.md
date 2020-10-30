@@ -12,7 +12,7 @@ $ npm i --save @bpmn-io/element-templates-json-schema
 
 ## Usage
 
-Given [this example template](./test/fixtures/single-template/mail-task.json)
+Given [this example template](./test/fixtures/single-template/invalid-type.json)
 
 ```js
 
@@ -20,7 +20,7 @@ import {
   validateTemplate
 } from '@bpmn-io/element-templates-json-schema';
 
-import template from './test/fixtures/single-template/mail-task.json';
+import template from './test/fixtures/single-template/invalid-type.json';
 
 const {
   valid,
@@ -33,8 +33,40 @@ if (!valid) {
 
 ```
 
+This will print detailed information about errors inside the template
 
-It's also possible to multiple templates at once.
+```js
+[
+  {
+    "keyword": "errorMessage",
+    "dataPath": "[object Object]/properties/0/type",
+    "schemaPath": "#/properties/properties/items/properties/type/errorMessage",
+    "message": "invalid property type \"Foo\"; must be any of { Hidden, String, Boolean, Dropdown, Text }",
+    "params": {
+      "rawErrors": [
+        {
+          "keyword": "enum",
+          "dataPath": "[object Object]/properties/0/type",
+          "schemaPath": "#/properties/properties/items/properties/type/enum",
+          "params": {
+            "allowedValues": [
+              "Hidden",
+              "String",
+              "Boolean",
+              "Dropdown",
+              "Text"
+            ]
+          },
+          "message": "should be equal to one of the allowed values"
+        }
+      ]
+    }
+  }
+]
+```
+
+
+It's also possible to validate multiple templates at once
 
 ```js
 
