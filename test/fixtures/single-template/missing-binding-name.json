@@ -9,6 +9,14 @@
       "label": "foo",
       "type": "String",
       "binding": {
+        "name": "bar",
+        "type": "camunda:inputParameter"
+      }
+    },
+    {
+      "label": "bar",
+      "type": "String",
+      "binding": {
         "type": "property"
       }
     }

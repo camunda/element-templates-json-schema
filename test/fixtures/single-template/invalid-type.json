@@ -7,11 +7,20 @@
   "properties": [
     {
       "label": "Are you awesome?",
-      "type": "Foo",
+      "type": "Boolean",
       "value": true,
       "binding": {
         "type": "property",
         "name": "camunda:asyncBefore"
+      }
+    },
+    {
+      "label": "really?",
+      "type": "Foo",
+      "value": true,
+      "binding": {
+        "type": "property",
+        "name": "camunda:asyncAfter"
       }
     }
   ]

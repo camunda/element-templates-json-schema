@@ -9,6 +9,14 @@
       "label": "foo",
       "type": "String",
       "binding": {
+        "type": "camunda:in",
+        "target": "foo"
+      }
+    },
+    {
+      "label": "bar",
+      "type": "String",
+      "binding": {
         "type": "camunda:in"
       }
     }

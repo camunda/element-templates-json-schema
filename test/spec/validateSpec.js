@@ -220,7 +220,7 @@ describe('validation', function() {
         'message': 'must provide choices=[] with "Dropdown" type'
       },
       {
-        'message': 'property.binding "property" requires source'
+        'message': 'property.binding "camunda:outputParameter" requires source'
       },
       {
         'message': 'property.binding "property" requires name'

@@ -9,6 +9,14 @@
       "label": "foo",
       "type": "String",
       "binding": {
+        "type": "camunda:out",
+        "sourceExpression": "foo"
+      }
+    },
+    {
+      "label": "bar",
+      "type": "String",
+      "binding": {
         "type": "camunda:out"
       }
     }

@@ -9,6 +9,14 @@
       "label": "foo",
       "type": "String",
       "binding": {
+        "type": "camunda:outputParameter",
+        "source": "foo"
+      }
+    },
+    {
+      "label": "foo",
+      "type": "String",
+      "binding": {
         "type": "camunda:outputParameter"
       }
     }

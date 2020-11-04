@@ -8,6 +8,14 @@
     {
       "label": "Are you awesome?",
       "type": "String",
+      "binding": {
+        "type": "property",
+        "name": "foo"
+      }
+    },
+    {
+      "label": "Are you awesome?",
+      "type": "String",
       "value": true,
       "binding": {
         "type": "foo"
