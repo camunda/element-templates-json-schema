@@ -17,7 +17,7 @@ Import the schema and the validation library into your application.
 
 ```js
 import {
- Validator
+  Validator
 } from '@bpmn-io/json-schema-validator';
 
 import schema from 'camunda-element-templates-json-schema/resources/schema.json';
@@ -27,13 +27,13 @@ Wrap the schema into the validator and run the validation with an example templa
 
 ```js
 const validator = new Validator({
- schema: schema
+  schema: schema
 });
 
 const {
- valid,
- object,
- errors
+  valid,
+  object,
+  errors
 } = validator.validate(template);
 ```
 
