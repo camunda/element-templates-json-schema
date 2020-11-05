@@ -4,88 +4,22 @@
 
 JSON Schema for [(Camunda) Element Templates](https://docs.camunda.org/manual/latest/modeler/element-templates/). The schema is built on top of and validated by [`json-schema@draft-07`](https://json-schema.org/draft-07/json-schema-release-notes.html).
 
-## Installation 
-
-```sh
-$ npm i --save @bpmn-io/element-templates-json-schema
-```
 
 ## Usage
 
-Given [this example template](./test/fixtures/single-template/invalid-type.json)
+There exist different ways to consume the [JSON Schema definition](./resources/schema.json). Many tools, like IDEs, support schema validation out of the box. To activate those, simply specify the `$schema` attribute to an element template.
 
 ```js
-
-import {
-  validateTemplate
-} from '@bpmn-io/element-templates-json-schema';
-
-import template from './test/fixtures/single-template/invalid-type.json';
-
-const {
-  valid,
-  errors
-} = validateTemplate(template);
-
-if (!valid) {
-  console.error('Invalid element template detected:', errors);
+{
+ "$schema": "https://unpkg.com/camunda-element-templates-json-schema0.1.0/resources/schema.json",
+ "name": "Mail Task",
+ "id": "com.camunda.example.MailTask",
+ "appliesTo": [ "bpmn:ServiceTask" ],
+ "properties": []
 }
-
-```
-
-This will print detailed information about errors inside the template
-
-```js
-[
-  {
-    "keyword": "errorMessage",
-    "dataPath": "[object Object]/properties/0/type",
-    "schemaPath": "#/properties/properties/items/properties/type/errorMessage",
-    "message": "invalid property type \"Foo\"; must be any of { Hidden, String, Boolean, Dropdown, Text }",
-    "params": {
-      "rawErrors": [
-        {
-          "keyword": "enum",
-          "dataPath": "[object Object]/properties/0/type",
-          "schemaPath": "#/properties/properties/items/properties/type/enum",
-          "params": {
-            "allowedValues": [
-              "Hidden",
-              "String",
-              "Boolean",
-              "Dropdown",
-              "Text"
-            ]
-          },
-          "message": "should be equal to one of the allowed values"
-        }
-      ]
-    }
-  }
-]
 ```
 
 
-It's also possible to validate multiple templates at once
-
-```js
-
-import {
-  validateTemplates
-} from '@bpmn-io/element-templates-json-schema';
-
-import templates from './test/fixtures/multiple-templates/samples.json';
-
-const {
-  validTemplates,
-  erroredTemplates
-} = validateTemplates(templates);
-
-if (erroredTemplates.length) {
-  console.error('Invalid element templates detected:', erroredTemplates);
-}
-
-```
 
 ## License
 

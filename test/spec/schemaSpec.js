@@ -1,7 +1,7 @@
 import Ajv from 'ajv';
 import { expect } from 'chai';
 
-import schema from '../../resources/element-templates.schema.json';
+import schema from '../../resources/schema.json';
 
 describe('schema validation', function() {
 
