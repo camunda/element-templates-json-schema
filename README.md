@@ -19,7 +19,7 @@ There exist different ways to consume the [JSON Schema definition](./resources/s
 }
 ```
 
-
+Additionally, it's possible to use the schema on top of existing validation libraries. Follow the [example] for further instructions.
 
 ## License
 
