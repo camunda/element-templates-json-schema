@@ -1,9 +1,0 @@
-{
-  "name": "AdditionalProperty",
-  "id": "com.camunda.example.AdditionalProperty",
-  "appliesTo": [
-    "bpmn:Task"
-  ],
-  "properties": [],
-  "foo": "bar"
-}

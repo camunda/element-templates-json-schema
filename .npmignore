@@ -1,5 +1,4 @@
 test/
-lib/
 .eslintignore
 .eslintrc
 .travis.yml
