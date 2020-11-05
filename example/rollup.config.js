@@ -1,6 +1,4 @@
 import json from '@rollup/plugin-json';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
 
 import pkg from './package.json';
 
@@ -8,8 +6,6 @@ import pkg from './package.json';
 function pgl(plugins=[]) {
   return [
     json(),
-    nodeResolve(),
-    commonjs(),
     ...plugins
   ];
 }
@@ -20,11 +16,10 @@ export default [
   {
     input: srcEntry,
     output: [
-      { file: pkg.main, format: 'cjs' },
-      { file: pkg.module, format: 'es' }
+      { file: pkg.main, format: 'cjs' }
     ],
     external: [
-      'min-dash'
+      '@bpmn-io/json-schema-validator'
     ],
     plugins: pgl()
   }

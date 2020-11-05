@@ -5,3 +5,4 @@ test/
 rollup.config.js
 .nyc_output
 coverage
+example/
