@@ -45,27 +45,36 @@ export const errors = [
   {
     'keyword': 'errorMessage',
     'dataPath': '/properties/0/type',
-    'schemaPath': '#/properties/properties/items/properties/type/errorMessage',
+    'schemaPath': '#/properties/properties/items/allOf/1/then/properties/type/errorMessage',
     'params': {
       'errors': [
         {
           'keyword': 'enum',
           'dataPath': '/properties/0/type',
-          'schemaPath': '#/properties/properties/items/properties/type/enum',
+          'schemaPath': '#/properties/properties/items/allOf/1/then/properties/type/enum',
           'params': {
             'allowedValues': [
-              'Hidden',
               'String',
-              'Boolean',
+              'Text',
+              'Hidden',
               'Dropdown',
-              'Text'
+              'Boolean'
             ]
           },
           'message': 'should be equal to one of the allowed values'
         }
       ]
     },
-    'message': 'invalid property type "Foo"; must be any of { Hidden, String, Boolean, Dropdown, Text }'
+    'message': 'invalid property type "Foo" for binding type "property"; must be any of { String, Text, Hidden, Dropdown, Boolean }'
+  },
+  {
+    'dataPath': '/properties/0',
+    'keyword': 'if',
+    'message': 'should match "then" schema',
+    'params': {
+      'failingKeyword': 'then'
+    },
+    'schemaPath': '#/properties/properties/items/allOf/1/if'
   },
   {
     'keyword': 'errorMessage',

@@ -1,22 +1,24 @@
 export const template = {
-  'name': 'InvalidExecutionListener',
-  'id': 'com.camunda.example.InvalidExecutionListener',
+  'name': 'InvalidPropertyType',
+  'id': 'com.camunda.example.InvalidPropertyType',
   'appliesTo': [
     'bpmn:Task'
   ],
   'properties': [
     {
       'label': 'foo',
-      'type': 'Hidden',
+      'type': 'Text',
       'binding': {
-        'type': 'camunda:executionListener'
+        'type': 'property',
+        'name': 'foo'
       }
     },
     {
       'label': 'bar',
-      'type': 'String',
+      'type': 'Foo',
       'binding': {
-        'type': 'camunda:executionListener'
+        'type': 'property',
+        'name': 'bar'
       }
     }
   ]
@@ -35,15 +37,18 @@ export const errors = [
           'schemaPath': '#/properties/properties/items/allOf/1/then/properties/type/enum',
           'params': {
             'allowedValues': [
-              null,
-              'Hidden'
+              'String',
+              'Text',
+              'Hidden',
+              'Dropdown',
+              'Boolean'
             ]
           },
           'message': 'should be equal to one of the allowed values'
         }
       ]
     },
-    'message': 'invalid property type "String" for "camunda:executionListener"; must be "Hidden"'
+    'message': 'invalid property type "Foo" for binding type "property"; must be any of { String, Text, Hidden, Dropdown, Boolean }'
   },
   {
     'keyword': 'if',

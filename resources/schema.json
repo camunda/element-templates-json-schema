@@ -93,6 +93,39 @@
                 "binding": {
                   "properties": {
                     "type": {
+                      "const": "property"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            },
+            "then": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "String",
+                    "Text",
+                    "Hidden",
+                    "Dropdown",
+                    "Boolean"
+                  ],
+                  "errorMessage": "invalid property type ${0} for binding type \"property\"; must be any of { String, Text, Hidden, Dropdown, Boolean }"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
                       "const": "camunda:executionListener"
                     }
                   },
@@ -109,10 +142,81 @@
               "properties": {
                 "type": {
                   "enum": [
-                    null,
                     "Hidden"
                   ],
-                  "errorMessage": "invalid property type ${0} for \"camunda:executionListener\"; must be \"Hidden\""
+                  "errorMessage": "invalid property type ${0} for binding type \"camunda:executionListener\"; must be \"Hidden\""
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "enum": [
+                        "camunda:property",
+                        "camunda:outputParameter",
+                        "camunda:in",
+                        "camunda:in:businessKey",
+                        "camunda:out"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            },
+            "then": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "String",
+                    "Hidden",
+                    "Dropdown"
+                  ],
+                  "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Hidden, Dropdown }"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "enum": [
+                        "camunda:inputParameter",
+                        "camunda:field"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            },
+            "then": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "String",
+                    "Text",
+                    "Hidden",
+                    "Dropdown"
+                  ],
+                  "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Text, Hidden, Dropdown }"
                 }
               }
             }
@@ -144,15 +248,7 @@
             "$id": "#/properties/property/type",
             "type": "string",
             "title": "property type",
-            "description": "The type of the control field",
-            "enum": [
-              "Hidden",
-              "String",
-              "Boolean",
-              "Dropdown",
-              "Text"
-            ],
-            "errorMessage": "invalid property type ${0}; must be any of { Hidden, String, Boolean, Dropdown, Text }" 
+            "description": "The type of the control field"
           },
           "editable": {
             "$id": "#/properties/property/editable",
