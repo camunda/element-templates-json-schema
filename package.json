@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bpmn-io/element-templates-json-schema.git"
+    "url": "git+https://github.com/camunda/element-templates-json-schema.git"
   },
   "keywords": [
     "json-schema",
@@ -19,9 +19,9 @@
   "author": "Niklas Kiefer <niklas.kiefer@camunda.com (https://github.com/pinussilvestrus)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bpmn-io/element-templates-json-schema/issues"
+    "url": "https://github.com/camunda/element-templates-json-schema/issues"
   },
-  "homepage": "https://github.com/bpmn-io/element-templates-json-schema#readme",
+  "homepage": "https://github.com/camunda/element-templates-json-schema#readme",
   "devDependencies": {
     "ajv": "^6.12.5",
     "ajv-errors": "^1.0.1",
