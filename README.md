@@ -11,7 +11,7 @@ There exist different ways to consume the [JSON Schema definition](./resources/s
 
 ```js
 {
-  "$schema": "https://unpkg.com/camunda-element-templates-json-schema0.1.0/resources/schema.json",
+  "$schema": "https://unpkg.com/camunda-element-templates-json-schema/resources/schema.json",
   "name": "Mail Task",
   "id": "com.camunda.example.MailTask",
   "appliesTo": [ "bpmn:ServiceTask" ],
