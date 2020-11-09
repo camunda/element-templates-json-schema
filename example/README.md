@@ -7,7 +7,7 @@ Example of how to embed the [Camunda Element Templates JSON Schema](..) into a v
 Install the schema and a validation library, e.g. [@bpmn-io/json-schema-validator](https://github.com/bpmn-io/json-schema-validator).
 
 ```sh
-$ npm install --save camunda-element-templates-json-schema
+$ npm install --save @camunda/element-templates-json-schema
 $ npm install --save @bpmn-io/json-schema-validator
 ```
 
@@ -20,7 +20,7 @@ import {
   Validator
 } from '@bpmn-io/json-schema-validator';
 
-import schema from 'camunda-element-templates-json-schema/resources/schema.json';
+import schema from '@camunda/element-templates-json-schema/resources/schema.json';
 ```
 
 Wrap the schema into the validator and run the validation with an example template.

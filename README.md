@@ -11,7 +11,7 @@ There exist different ways to consume the [JSON Schema definition](./resources/s
 
 ```js
 {
-  "$schema": "https://unpkg.com/camunda-element-templates-json-schema/resources/schema.json",
+  "$schema": "https://unpkg.com/@camunda/element-templates-json-schema/resources/schema.json",
   "name": "Mail Task",
   "id": "com.camunda.example.MailTask",
   "appliesTo": [ "bpmn:ServiceTask" ],
@@ -22,7 +22,7 @@ There exist different ways to consume the [JSON Schema definition](./resources/s
 You can also use a specific version.
 
 ```js
-"$schema": "https://unpkg.com/camunda-element-templates-json-schema@0.1.0/resources/schema.json"
+"$schema": "https://unpkg.com/@camunda/element-templates-json-schema@0.1.0/resources/schema.json"
 ```
 
 Additionally, it's possible to use the schema on top of existing validation libraries and tools. Follow the [example](./example) for further instructions.
