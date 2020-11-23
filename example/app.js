@@ -12,7 +12,7 @@ const {
   errors
 } = validator.validate(template);
 
-if (errors.length) {
+if (errors && errors.length) {
   console.log('Element Template is invalid!\n');
   errors.forEach(e => console.log(' *', e.message));
 } else {
