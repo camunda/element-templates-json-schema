@@ -21,7 +21,7 @@ export const errors = [
   {
     'keyword': 'type',
     'dataPath': '/properties/0/value',
-    'schemaPath': '#/properties/properties/items/properties/value/type',
+    'schemaPath': '#/definitions/properties/items/properties/value/type',
     'params': {
       'type': 'string,boolean'
     },

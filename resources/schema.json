@@ -10,51 +10,8 @@
     "appliesTo",
     "properties"
   ],
-  "properties": {
-    "name": {
-      "$id": "#/name",
-      "type": "string",
-      "title": "element template name",
-      "description": "The name of the element template"
-    },
-    "id": {
-      "$id": "#/id",
-      "type": "string",
-      "title": "element template id",
-      "description": "The identifier of the element template"
-    },
-    "description": {
-      "$id": "#/description",
-      "type": "string",
-      "title": "element template description",
-      "description": "The description of the element template"
-    },
-    "version": {
-      "$id": "#/version",
-      "type": "number",
-      "title": "element template version",
-      "description": "The version of the element template"
-    },
-    "isDefault": {
-      "$id": "#/isDefault",
-      "type": "boolean",
-      "title": "element template is default",
-      "description": "Indicates whether the element template is a default template"
-    },
-    "appliesTo": {
-      "$id": "#/appliesTo",
-      "type": "array",
-      "title": "element template applies to",
-      "description": "The definition for which element types the element template can be applied",
-      "default": [],
-      "items": {
-        "$id": "#/appliesTo/items",
-        "type": "string",
-        "pattern": "^(bpmn:)"
-      }
-    },
-    "properties": {
-      "$id": "#/properties",
+  "definitions": {
+    "properties":  {
       "type": "array",
       "title": "element template properties",
       "description": "The properties of the element template",
@@ -516,6 +473,54 @@
           }
         }
       }
+    }
+  },
+  "properties": {
+    "name": {
+      "$id": "#/name",
+      "type": "string",
+      "title": "element template name",
+      "description": "The name of the element template"
+    },
+    "id": {
+      "$id": "#/id",
+      "type": "string",
+      "title": "element template id",
+      "description": "The identifier of the element template"
+    },
+    "description": {
+      "$id": "#/description",
+      "type": "string",
+      "title": "element template description",
+      "description": "The description of the element template"
+    },
+    "version": {
+      "$id": "#/version",
+      "type": "number",
+      "title": "element template version",
+      "description": "The version of the element template"
+    },
+    "isDefault": {
+      "$id": "#/isDefault",
+      "type": "boolean",
+      "title": "element template is default",
+      "description": "Indicates whether the element template is a default template"
+    },
+    "appliesTo": {
+      "$id": "#/appliesTo",
+      "type": "array",
+      "title": "element template applies to",
+      "description": "The definition for which element types the element template can be applied",
+      "default": [],
+      "items": {
+        "$id": "#/appliesTo/items",
+        "type": "string",
+        "pattern": "^(bpmn:)"
+      }
+    },
+    "properties": {
+      "$ref": "#/definitions/properties",
+      "$id": "#/properties"
     },
     "metadata": {
       "$id": "#/metadata",

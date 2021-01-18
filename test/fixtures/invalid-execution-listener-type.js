@@ -32,13 +32,13 @@ export const errors = [
   {
     'keyword': 'errorMessage',
     'dataPath': '/properties/2/type',
-    'schemaPath': '#/properties/properties/items/allOf/2/then/properties/type/errorMessage',
+    'schemaPath': '#/definitions/properties/items/allOf/2/then/properties/type/errorMessage',
     'params': {
       'errors': [
         {
           'keyword': 'enum',
           'dataPath': '/properties/2/type',
-          'schemaPath': '#/properties/properties/items/allOf/2/then/properties/type/enum',
+          'schemaPath': '#/definitions/properties/items/allOf/2/then/properties/type/enum',
           'params': {
             'allowedValues': [
               'Hidden'
@@ -53,7 +53,7 @@ export const errors = [
   {
     'keyword': 'if',
     'dataPath': '/properties/2',
-    'schemaPath': '#/properties/properties/items/allOf/2/if',
+    'schemaPath': '#/definitions/properties/items/allOf/2/if',
     'params': {
       'failingKeyword': 'then'
     },
