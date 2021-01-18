@@ -1,6 +1,7 @@
 # element-templates-json-schema
 
-[![Build Status](https://travis-ci.com/camunda/element-templates-json-schema.svg?branch=master)](https://travis-ci.com/camunda/element-templates-json-schema)
+[![Build Status](https://img.shields.io/github/workflow/status/camunda/element-templates-json-schema/CI)](https://github.com/camunda/element-templates-json-schema/actions?query=workflow%3ACI)
+
 
 JSON Schema for [(Camunda) Element Templates](https://docs.camunda.org/manual/latest/modeler/element-templates/). The schema is built on top of and validated by [`json-schema@draft-07`](https://json-schema.org/draft-07/json-schema-release-notes.html).
 
