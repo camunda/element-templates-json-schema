@@ -532,7 +532,23 @@
       "$id": "#/scopes",
       "type": "object",
       "title": "element template scope",
-      "description": "Special scoped bindings that allow you to configure nested elements"
+      "description": "Special scoped bindings that allow you to configure nested elements",
+      "additionalProperties": false,
+      "errorMessage": {
+        "additionalProperties": "scope must be defined as element type"
+      },
+      "patternProperties": {
+        "^(bpmn|camunda):": {
+          "type": "object",
+          "title": "element template scoped connector binding",
+          "description": "A scoped binding for a camunda connector inside the element",
+          "properties": {
+            "properties": {
+              "$ref": "#/definitions/properties"
+            }
+          }
+        }
+      }
     },
     "entriesVisible": {
       "$id": "#/entriesVisible",
