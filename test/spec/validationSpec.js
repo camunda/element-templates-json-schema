@@ -145,4 +145,17 @@ describe('validation', function() {
 
   });
 
+
+  describe('scoped binding', function() {
+
+    testTemplate('scope-connector', '../fixtures/scope-connector.js');
+
+
+    testTemplate('scope-connector-missing-binding', '../fixtures/scope-connector-missing-binding.js');
+
+
+    testTemplate('scope-invalid', '../fixtures/scope-invalid.js');
+
+  });
+
 });
