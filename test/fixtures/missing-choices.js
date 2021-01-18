@@ -21,13 +21,13 @@ export const errors = [
   {
     'keyword': 'errorMessage',
     'dataPath': '/properties/0',
-    'schemaPath': '#/properties/properties/items/allOf/0/then/errorMessage',
+    'schemaPath': '#/definitions/properties/items/allOf/0/then/errorMessage',
     'params': {
       'errors': [
         {
           'keyword': 'required',
           'dataPath': '/properties/0',
-          'schemaPath': '#/properties/properties/items/allOf/0/then/required',
+          'schemaPath': '#/definitions/properties/items/allOf/0/then/required',
           'params': {
             'missingProperty': 'choices'
           },
@@ -40,7 +40,7 @@ export const errors = [
   {
     'keyword': 'if',
     'dataPath': '/properties/0',
-    'schemaPath': '#/properties/properties/items/allOf/0/if',
+    'schemaPath': '#/definitions/properties/items/allOf/0/if',
     'params': {
       'failingKeyword': 'then'
     },

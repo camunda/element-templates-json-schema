@@ -27,13 +27,13 @@ export const errors = [
   {
     'keyword': 'errorMessage',
     'dataPath': '/properties/1/binding',
-    'schemaPath': '#/properties/properties/items/properties/binding/allOf/3/then/errorMessage',
+    'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/errorMessage',
     'params': {
       'errors': [
         {
           'keyword': 'required',
           'dataPath': '/properties/1/binding',
-          'schemaPath': '#/properties/properties/items/properties/binding/allOf/3/then/oneOf/0/required',
+          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/0/required',
           'params': {
             'missingProperty': 'variables'
           },
@@ -42,7 +42,7 @@ export const errors = [
         {
           'keyword': 'required',
           'dataPath': '/properties/1/binding',
-          'schemaPath': '#/properties/properties/items/properties/binding/allOf/3/then/oneOf/1/required',
+          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/1/required',
           'params': {
             'missingProperty': 'source'
           },
@@ -51,7 +51,7 @@ export const errors = [
         {
           'keyword': 'required',
           'dataPath': '/properties/1/binding',
-          'schemaPath': '#/properties/properties/items/properties/binding/allOf/3/then/oneOf/2/required',
+          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/2/required',
           'params': {
             'missingProperty': 'sourceExpression'
           },
@@ -60,7 +60,7 @@ export const errors = [
         {
           'keyword': 'oneOf',
           'dataPath': '/properties/1/binding',
-          'schemaPath': '#/properties/properties/items/properties/binding/allOf/3/then/oneOf',
+          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf',
           'params': {
             'passingSchemas': null
           },
@@ -73,7 +73,7 @@ export const errors = [
   {
     'keyword': 'if',
     'dataPath': '/properties/1/binding',
-    'schemaPath': '#/properties/properties/items/properties/binding/allOf/3/if',
+    'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/if',
     'params': {
       'failingKeyword': 'then'
     },

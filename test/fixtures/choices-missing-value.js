@@ -25,13 +25,13 @@ export const errors = [
   {
     'keyword': 'errorMessage',
     'dataPath': '/properties/0/choices/1',
-    'schemaPath': '#/properties/properties/items/properties/choices/items/errorMessage',
+    'schemaPath': '#/definitions/properties/items/properties/choices/items/errorMessage',
     'params': {
       'errors': [
         {
           'keyword': 'required',
           'dataPath': '/properties/0/choices/1',
-          'schemaPath': '#/properties/properties/items/properties/choices/items/required',
+          'schemaPath': '#/definitions/properties/items/properties/choices/items/required',
           'params': {
             'missingProperty': 'value'
           },

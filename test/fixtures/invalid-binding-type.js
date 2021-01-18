@@ -28,13 +28,13 @@ export const errors = [
   {
     'keyword': 'errorMessage',
     'dataPath': '/properties/1/binding/type',
-    'schemaPath': '#/properties/properties/items/properties/binding/properties/type/errorMessage',
+    'schemaPath': '#/definitions/properties/items/properties/binding/properties/type/errorMessage',
     'params': {
       'errors': [
         {
           'keyword': 'enum',
           'dataPath': '/properties/1/binding/type',
-          'schemaPath': '#/properties/properties/items/properties/binding/properties/type/enum',
+          'schemaPath': '#/definitions/properties/items/properties/binding/properties/type/enum',
           'params': {
             'allowedValues': [
               'property',

@@ -20,13 +20,13 @@ export const errors = [
   {
     'keyword': 'errorMessage',
     'dataPath': '/properties/0/type',
-    'schemaPath': '#/properties/properties/items/allOf/4/then/properties/type/errorMessage',
+    'schemaPath': '#/definitions/properties/items/allOf/4/then/properties/type/errorMessage',
     'params': {
       'errors': [
         {
           'keyword': 'enum',
           'dataPath': '/properties/0/type',
-          'schemaPath': '#/properties/properties/items/allOf/4/then/properties/type/enum',
+          'schemaPath': '#/definitions/properties/items/allOf/4/then/properties/type/enum',
           'params': {
             'allowedValues': [
               'String',
@@ -44,7 +44,7 @@ export const errors = [
   {
     'keyword': 'if',
     'dataPath': '/properties/0',
-    'schemaPath': '#/properties/properties/items/allOf/4/if',
+    'schemaPath': '#/definitions/properties/items/allOf/4/if',
     'params': {
       'failingKeyword': 'then'
     },

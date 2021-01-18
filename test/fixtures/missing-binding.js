@@ -17,7 +17,7 @@ export const errors = [
   {
     keyword: 'required',
     dataPath: '/properties/0',
-    schemaPath: '#/properties/properties/items/required',
+    schemaPath: '#/definitions/properties/items/required',
     params: { missingProperty: 'binding' },
     message: "should have required property 'binding'"
   }
