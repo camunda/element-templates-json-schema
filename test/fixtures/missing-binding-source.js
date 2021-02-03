@@ -25,31 +25,49 @@ export const template = {
 
 export const errors = [
   {
-    'keyword': 'errorMessage',
-    'dataPath': '/properties/1/binding',
-    'schemaPath': '#/definitions/properties/items/properties/binding/allOf/1/then/errorMessage',
-    'params': {
-      'errors': [
+    keyword: 'errorMessage',
+    dataPath: '/properties/1/binding',
+    schemaPath: '#/definitions/properties/items/properties/binding/allOf/1/then/errorMessage',
+    params: {
+      errors: [
         {
-          'keyword': 'required',
-          'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/1/then/required',
-          'params': {
-            'missingProperty': 'source'
+          keyword: 'required',
+          dataPath: '/properties/1/binding',
+          schemaPath: '#/definitions/properties/items/properties/binding/allOf/1/then/required',
+          params: {
+            missingProperty: 'source'
           },
-          'message': "should have required property 'source'"
+          message: "should have required property 'source'"
         }
       ]
     },
-    'message': 'property.binding "camunda:outputParameter" requires source'
+    message: 'property.binding "camunda:outputParameter" requires source'
   },
   {
-    'keyword': 'if',
-    'dataPath': '/properties/1/binding',
-    'schemaPath': '#/definitions/properties/items/properties/binding/allOf/1/if',
-    'params': {
+    keyword: 'if',
+    dataPath: '/properties/1/binding',
+    schemaPath: '#/definitions/properties/items/properties/binding/allOf/1/if',
+    params: {
       'failingKeyword': 'then'
     },
-    'message': 'should match "then" schema'
+    message: 'should match "then" schema'
+  },
+  {
+    dataPath: '',
+    keyword: 'type',
+    message: 'should be array',
+    params: {
+      type: 'array',
+    },
+    schemaPath: '#/oneOf/1/type',
+  },
+  {
+    dataPath: '',
+    keyword: 'oneOf',
+    message: 'should match exactly one schema in oneOf',
+    params: {
+      passingSchemas: null
+    },
+    schemaPath: '#/oneOf'
   }
 ];
