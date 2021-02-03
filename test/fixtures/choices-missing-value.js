@@ -23,22 +23,40 @@ export const template = {
 
 export const errors = [
   {
-    'keyword': 'errorMessage',
-    'dataPath': '/properties/0/choices/1',
-    'schemaPath': '#/definitions/properties/items/properties/choices/items/errorMessage',
-    'params': {
-      'errors': [
+    keyword: 'errorMessage',
+    dataPath: '/properties/0/choices/1',
+    schemaPath: '#/definitions/properties/items/properties/choices/items/errorMessage',
+    params: {
+      errors: [
         {
-          'keyword': 'required',
-          'dataPath': '/properties/0/choices/1',
-          'schemaPath': '#/definitions/properties/items/properties/choices/items/required',
-          'params': {
-            'missingProperty': 'value'
+          keyword: 'required',
+          dataPath: '/properties/0/choices/1',
+          schemaPath: '#/definitions/properties/items/properties/choices/items/required',
+          params: {
+            missingProperty: 'value'
           },
-          'message': "should have required property 'value'"
+          message: "should have required property 'value'"
         }
       ]
     },
-    'message': '{ name, value } must be specified for "Dropdown" choices'
+    message: '{ name, value } must be specified for "Dropdown" choices'
+  },
+  {
+    dataPath: '',
+    keyword: 'type',
+    message: 'should be array',
+    params: {
+      type: 'array',
+    },
+    schemaPath: '#/oneOf/1/type',
+  },
+  {
+    dataPath: '',
+    keyword: 'oneOf',
+    message: 'should match exactly one schema in oneOf',
+    params: {
+      passingSchemas: null
+    },
+    schemaPath: '#/oneOf'
   }
 ];

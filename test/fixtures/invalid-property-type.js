@@ -26,16 +26,16 @@ export const template = {
 
 export const errors = [
   {
-    'keyword': 'errorMessage',
-    'dataPath': '/properties/1/type',
-    'schemaPath': '#/definitions/properties/items/allOf/1/then/properties/type/errorMessage',
-    'params': {
-      'errors': [
+    keyword: 'errorMessage',
+    dataPath: '/properties/1/type',
+    schemaPath: '#/definitions/properties/items/allOf/1/then/properties/type/errorMessage',
+    params: {
+      errors: [
         {
-          'keyword': 'enum',
-          'dataPath': '/properties/1/type',
-          'schemaPath': '#/definitions/properties/items/allOf/1/then/properties/type/enum',
-          'params': {
+          keyword: 'enum',
+          dataPath: '/properties/1/type',
+          schemaPath: '#/definitions/properties/items/allOf/1/then/properties/type/enum',
+          params: {
             'allowedValues': [
               'String',
               'Text',
@@ -44,19 +44,37 @@ export const errors = [
               'Boolean'
             ]
           },
-          'message': 'should be equal to one of the allowed values'
+          message: 'should be equal to one of the allowed values'
         }
       ]
     },
-    'message': 'invalid property type "Foo" for binding type "property"; must be any of { String, Text, Hidden, Dropdown, Boolean }'
+    message: 'invalid property type "Foo" for binding type "property"; must be any of { String, Text, Hidden, Dropdown, Boolean }'
   },
   {
-    'keyword': 'if',
-    'dataPath': '/properties/1',
-    'schemaPath': '#/definitions/properties/items/allOf/1/if',
-    'params': {
+    keyword: 'if',
+    dataPath: '/properties/1',
+    schemaPath: '#/definitions/properties/items/allOf/1/if',
+    params: {
       'failingKeyword': 'then'
     },
-    'message': 'should match "then" schema'
+    message: 'should match "then" schema'
+  },
+  {
+    dataPath: '',
+    keyword: 'type',
+    message: 'should be array',
+    params: {
+      type: 'array',
+    },
+    schemaPath: '#/oneOf/1/type',
+  },
+  {
+    dataPath: '',
+    keyword: 'oneOf',
+    message: 'should match exactly one schema in oneOf',
+    params: {
+      passingSchemas: null
+    },
+    schemaPath: '#/oneOf'
   }
 ];

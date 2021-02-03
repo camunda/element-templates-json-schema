@@ -1,17 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "http://camunda.org/schema/element-templates/1.0",
-  "type": "object",
   "title": "Element Template Schema",
-  "description": "An element template definition",
-  "required": [
-    "name",
-    "id",
-    "appliesTo",
-    "properties"
-  ],
+  "description": "A single element template configuration or an array of element template configurations",
   "definitions": {
-    "properties":  {
+    "properties": {
       "type": "array",
       "title": "element template properties",
       "description": "The properties of the element template",
@@ -473,89 +466,109 @@
           }
         }
       }
-    }
-  },
-  "properties": {
-    "name": {
-      "$id": "#/name",
-      "type": "string",
-      "title": "element template name",
-      "description": "The name of the element template"
     },
-    "id": {
-      "$id": "#/id",
-      "type": "string",
-      "title": "element template id",
-      "description": "The identifier of the element template"
-    },
-    "description": {
-      "$id": "#/description",
-      "type": "string",
-      "title": "element template description",
-      "description": "The description of the element template"
-    },
-    "version": {
-      "$id": "#/version",
-      "type": "number",
-      "title": "element template version",
-      "description": "The version of the element template"
-    },
-    "isDefault": {
-      "$id": "#/isDefault",
-      "type": "boolean",
-      "title": "element template is default",
-      "description": "Indicates whether the element template is a default template"
-    },
-    "appliesTo": {
-      "$id": "#/appliesTo",
-      "type": "array",
-      "title": "element template applies to",
-      "description": "The definition for which element types the element template can be applied",
-      "default": [],
-      "items": {
-        "$id": "#/appliesTo/items",
-        "type": "string",
-        "pattern": "^(bpmn:)"
-      }
-    },
-    "properties": {
-      "$ref": "#/definitions/properties",
-      "$id": "#/properties"
-    },
-    "metadata": {
-      "$id": "#/metadata",
+    "template": {
       "type": "object",
-      "title": "element template metadata",
-      "description": "Some metadata for further configuration"
-    },
-    "scopes": {
-      "$id": "#/scopes",
-      "type": "object",
-      "title": "element template scope",
-      "description": "Special scoped bindings that allow you to configure nested elements",
-      "additionalProperties": false,
-      "errorMessage": {
-        "additionalProperties": "scope must be defined as element type"
-      },
-      "patternProperties": {
-        "^(bpmn|camunda):": {
+      "required": [
+        "name",
+        "id",
+        "appliesTo",
+        "properties"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/name",
+          "type": "string",
+          "title": "element template name",
+          "description": "The name of the element template"
+        },
+        "id": {
+          "$id": "#/id",
+          "type": "string",
+          "title": "element template id",
+          "description": "The identifier of the element template"
+        },
+        "description": {
+          "$id": "#/description",
+          "type": "string",
+          "title": "element template description",
+          "description": "The description of the element template"
+        },
+        "version": {
+          "$id": "#/version",
+          "type": "number",
+          "title": "element template version",
+          "description": "The version of the element template"
+        },
+        "isDefault": {
+          "$id": "#/isDefault",
+          "type": "boolean",
+          "title": "element template is default",
+          "description": "Indicates whether the element template is a default template"
+        },
+        "appliesTo": {
+          "$id": "#/appliesTo",
+          "type": "array",
+          "title": "element template applies to",
+          "description": "The definition for which element types the element template can be applied",
+          "default": [],
+          "items": {
+            "$id": "#/appliesTo/items",
+            "type": "string",
+            "pattern": "^(bpmn:)"
+          }
+        },
+        "properties": {
+          "$ref": "#/definitions/properties",
+          "$id": "#/properties"
+        },
+        "metadata": {
+          "$id": "#/metadata",
           "type": "object",
-          "title": "element template scoped connector binding",
-          "description": "A scoped binding for a camunda connector inside the element",
-          "properties": {
-            "properties": {
-              "$ref": "#/definitions/properties"
+          "title": "element template metadata",
+          "description": "Some metadata for further configuration"
+        },
+        "scopes": {
+          "$id": "#/scopes",
+          "type": "object",
+          "title": "element template scope",
+          "description": "Special scoped bindings that allow you to configure nested elements",
+          "additionalProperties": false,
+          "errorMessage": {
+            "additionalProperties": "scope must be defined as element type"
+          },
+          "patternProperties": {
+            "^(bpmn|camunda):": {
+              "type": "object",
+              "title": "element template scoped connector binding",
+              "description": "A scoped binding for a camunda connector inside the element",
+              "properties": {
+                "properties": {
+                  "$ref": "#/definitions/properties"
+                }
+              }
             }
           }
+        },
+        "entriesVisible": {
+          "$id": "#/entriesVisible",
+          "deprecated": true,
+          "type": "object",
+          "title": "element template entries visible",
+          "description": "@Deprecated - Select which entries are visible in the properties panel"
         }
       }
-    },
-    "entriesVisible": {
-      "$id": "#/entriesVisible",
-      "deprecated": true,
-      "type": "object",
-      "title": "element template entries visible",
-      "description": "@Deprecated - Select which entries are visible in the properties panel"
     }
-  }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/template"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/template"
+      }
+    }
+  ]
 }

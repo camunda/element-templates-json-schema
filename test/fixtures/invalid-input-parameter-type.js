@@ -18,16 +18,16 @@ export const template = {
 
 export const errors = [
   {
-    'keyword': 'errorMessage',
-    'dataPath': '/properties/0/type',
-    'schemaPath': '#/definitions/properties/items/allOf/4/then/properties/type/errorMessage',
-    'params': {
-      'errors': [
+    keyword: 'errorMessage',
+    dataPath: '/properties/0/type',
+    schemaPath: '#/definitions/properties/items/allOf/4/then/properties/type/errorMessage',
+    params: {
+      errors: [
         {
-          'keyword': 'enum',
-          'dataPath': '/properties/0/type',
-          'schemaPath': '#/definitions/properties/items/allOf/4/then/properties/type/enum',
-          'params': {
+          keyword: 'enum',
+          dataPath: '/properties/0/type',
+          schemaPath: '#/definitions/properties/items/allOf/4/then/properties/type/enum',
+          params: {
             'allowedValues': [
               'String',
               'Text',
@@ -35,19 +35,37 @@ export const errors = [
               'Dropdown'
             ]
           },
-          'message': 'should be equal to one of the allowed values'
+          message: 'should be equal to one of the allowed values'
         }
       ]
     },
-    'message': 'invalid property type "Boolean" for binding type "camunda:inputParameter"; must be any of { String, Text, Hidden, Dropdown }'
+    message: 'invalid property type "Boolean" for binding type "camunda:inputParameter"; must be any of { String, Text, Hidden, Dropdown }'
   },
   {
-    'keyword': 'if',
-    'dataPath': '/properties/0',
-    'schemaPath': '#/definitions/properties/items/allOf/4/if',
-    'params': {
+    keyword: 'if',
+    dataPath: '/properties/0',
+    schemaPath: '#/definitions/properties/items/allOf/4/if',
+    params: {
       'failingKeyword': 'then'
     },
-    'message': 'should match "then" schema'
+    message: 'should match "then" schema'
+  },
+  {
+    dataPath: '',
+    keyword: 'type',
+    message: 'should be array',
+    params: {
+      type: 'array',
+    },
+    schemaPath: '#/oneOf/1/type',
+  },
+  {
+    dataPath: '',
+    keyword: 'oneOf',
+    message: 'should match exactly one schema in oneOf',
+    params: {
+      passingSchemas: null
+    },
+    schemaPath: '#/oneOf'
   }
 ];

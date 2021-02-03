@@ -26,17 +26,17 @@ export const template = {
 
 export const errors = [
   {
-    'keyword': 'errorMessage',
-    'dataPath': '/properties/1/binding/type',
-    'schemaPath': '#/definitions/properties/items/properties/binding/properties/type/errorMessage',
-    'params': {
-      'errors': [
+    keyword: 'errorMessage',
+    dataPath: '/properties/1/binding/type',
+    schemaPath: '#/definitions/properties/items/properties/binding/properties/type/errorMessage',
+    params: {
+      errors: [
         {
-          'keyword': 'enum',
-          'dataPath': '/properties/1/binding/type',
-          'schemaPath': '#/definitions/properties/items/properties/binding/properties/type/enum',
-          'params': {
-            'allowedValues': [
+          keyword: 'enum',
+          dataPath: '/properties/1/binding/type',
+          schemaPath: '#/definitions/properties/items/properties/binding/properties/type/enum',
+          params: {
+            allowedValues: [
               'property',
               'camunda:property',
               'camunda:inputParameter',
@@ -48,10 +48,28 @@ export const errors = [
               'camunda:field'
             ]
           },
-          'message': 'should be equal to one of the allowed values'
+          message: 'should be equal to one of the allowed values'
         }
       ]
     },
-    'message': 'invalid property.binding type "foo"; must be any of { property, camunda:property, camunda:inputParameter, camunda:outputParameter, camunda:in, camunda:out, camunda:in:businessKey, camunda:executionListener, camunda:field }'
+    message: 'invalid property.binding type "foo"; must be any of { property, camunda:property, camunda:inputParameter, camunda:outputParameter, camunda:in, camunda:out, camunda:in:businessKey, camunda:executionListener, camunda:field }'
+  },
+  {
+    dataPath: '',
+    keyword: 'type',
+    message: 'should be array',
+    params: {
+      type: 'array',
+    },
+    schemaPath: '#/oneOf/1/type',
+  },
+  {
+    dataPath: '',
+    keyword: 'oneOf',
+    message: 'should match exactly one schema in oneOf',
+    params: {
+      passingSchemas: null
+    },
+    schemaPath: '#/oneOf'
   }
 ];

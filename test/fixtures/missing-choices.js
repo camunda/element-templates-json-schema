@@ -19,31 +19,49 @@ export const template = {
 
 export const errors = [
   {
-    'keyword': 'errorMessage',
-    'dataPath': '/properties/0',
-    'schemaPath': '#/definitions/properties/items/allOf/0/then/errorMessage',
-    'params': {
-      'errors': [
+    keyword: 'errorMessage',
+    dataPath: '/properties/0',
+    schemaPath: '#/definitions/properties/items/allOf/0/then/errorMessage',
+    params: {
+      errors: [
         {
-          'keyword': 'required',
-          'dataPath': '/properties/0',
-          'schemaPath': '#/definitions/properties/items/allOf/0/then/required',
-          'params': {
-            'missingProperty': 'choices'
+          keyword: 'required',
+          dataPath: '/properties/0',
+          schemaPath: '#/definitions/properties/items/allOf/0/then/required',
+          params: {
+            missingProperty: 'choices'
           },
-          'message': "should have required property 'choices'"
+          message: "should have required property 'choices'"
         }
       ]
     },
-    'message': 'must provide choices=[] with "Dropdown" type'
+    message: 'must provide choices=[] with "Dropdown" type'
   },
   {
-    'keyword': 'if',
-    'dataPath': '/properties/0',
-    'schemaPath': '#/definitions/properties/items/allOf/0/if',
-    'params': {
+    keyword: 'if',
+    dataPath: '/properties/0',
+    schemaPath: '#/definitions/properties/items/allOf/0/if',
+    params: {
       'failingKeyword': 'then'
     },
-    'message': 'should match "then" schema'
+    message: 'should match "then" schema'
+  },
+  {
+    dataPath: '',
+    keyword: 'type',
+    message: 'should be array',
+    params: {
+      type: 'array',
+    },
+    schemaPath: '#/oneOf/1/type',
+  },
+  {
+    dataPath: '',
+    keyword: 'oneOf',
+    message: 'should match exactly one schema in oneOf',
+    params: {
+      passingSchemas: null
+    },
+    schemaPath: '#/oneOf'
   }
 ];
