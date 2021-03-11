@@ -533,6 +533,28 @@
         "required": [
           "type",
           "properties"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "bpmn:Error"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "required": [
+                "id"
+              ],
+              "errorMessage": "scoped binding of type ${0/type} requires id"
+            }
+          }
         ]
       }
     },
