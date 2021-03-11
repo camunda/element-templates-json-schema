@@ -23,6 +23,10 @@ describe('validation', function() {
 
   function testTemplate(name, file, only = false) {
 
+    if (!file) {
+      file = `../fixtures/${name}.js`;
+    }
+
     (only ? it.only : it)('should validate template - ' + name, function() {
 
       // given
@@ -51,130 +55,130 @@ describe('validation', function() {
 
   describe('single template', function() {
 
-    testTemplate('mail-task', '../fixtures/mail-task.js');
+    testTemplate('mail-task');
 
 
-    testTemplate('async-awesome-task', '../fixtures/async-awesome-task.js');
+    testTemplate('async-awesome-task');
 
 
-    testTemplate('missing-type', '../fixtures/missing-type.js');
+    testTemplate('missing-type');
 
 
-    testTemplate('missing-applies-to', '../fixtures/missing-applies-to.js');
+    testTemplate('missing-applies-to');
 
 
-    testTemplate('missing-binding', '../fixtures/missing-binding.js');
+    testTemplate('missing-binding');
 
 
-    testTemplate('applies-to-single', '../fixtures/applies-to-single.js');
+    testTemplate('applies-to-single');
 
 
-    testTemplate('number-value', '../fixtures/number-value.js');
+    testTemplate('number-value');
 
 
-    testTemplate('additional-property', '../fixtures/additional-property.js');
+    testTemplate('additional-property');
 
 
-    testTemplate('invalid-binding-type', '../fixtures/invalid-binding-type.js');
+    testTemplate('invalid-binding-type');
 
 
-    testTemplate('choices-missing-value', '../fixtures/choices-missing-value.js');
+    testTemplate('choices-missing-value');
 
 
-    testTemplate('choices-missing-name', '../fixtures/choices-missing-name.js');
+    testTemplate('choices-missing-name');
 
 
-    testTemplate('missing-choices', '../fixtures/missing-choices.js');
+    testTemplate('missing-choices');
 
 
-    testTemplate('missing-binding-name', '../fixtures/missing-binding-name.js');
+    testTemplate('missing-binding-name');
 
 
-    testTemplate('missing-binding-source', '../fixtures/missing-binding-source.js');
+    testTemplate('missing-binding-source');
 
 
-    testTemplate('missing-binding-variables-target', '../fixtures/missing-binding-variables-target.js');
+    testTemplate('missing-binding-variables-target');
 
 
-    testTemplate('camunda-in-binding', '../fixtures/camunda-in-binding.js');
+    testTemplate('camunda-in-binding');
 
 
-    testTemplate('invalid-camunda-out', '../fixtures/invalid-camunda-out.js');
+    testTemplate('invalid-camunda-out');
 
 
-    testTemplate('camunda-out-binding', '../fixtures/camunda-out-binding.js');
+    testTemplate('camunda-out-binding');
 
 
-    testTemplate('camunda-execution-listener', '../fixtures/camunda-execution-listener.js');
+    testTemplate('camunda-execution-listener');
 
 
-    testTemplate('with-version', '../fixtures/with-version.js');
+    testTemplate('with-version');
 
 
-    testTemplate('invalid-version', '../fixtures/invalid-version.js');
+    testTemplate('invalid-version');
 
 
-    testTemplate('multiple-errors', '../fixtures/multiple-errors.js');
+    testTemplate('multiple-errors');
 
 
     describe('property type - binding type', function() {
 
-      testTemplate('invalid-property-type', '../fixtures/invalid-property-type.js');
+      testTemplate('invalid-property-type');
 
 
-      testTemplate('invalid-camunda-property-type', '../fixtures/invalid-camunda-property-type.js');
+      testTemplate('invalid-camunda-property-type');
 
 
-      testTemplate('invalid-input-parameter-type', '../fixtures/invalid-input-parameter-type.js');
+      testTemplate('invalid-input-parameter-type');
 
 
-      testTemplate('invalid-output-parameter-type', '../fixtures/invalid-output-parameter-type.js');
+      testTemplate('invalid-output-parameter-type');
 
 
-      testTemplate('invalid-camunda-in-type', '../fixtures/invalid-camunda-in-type.js');
+      testTemplate('invalid-camunda-in-type');
 
 
-      testTemplate('invalid-camunda-in-business-key-type', '../fixtures/invalid-camunda-in-business-key-type.js');
+      testTemplate('invalid-camunda-in-business-key-type');
 
 
-      testTemplate('invalid-camunda-out-type', '../fixtures/invalid-camunda-out-type.js');
+      testTemplate('invalid-camunda-out-type');
 
 
-      testTemplate('invalid-execution-listener-type', '../fixtures/invalid-execution-listener-type.js');
+      testTemplate('invalid-execution-listener-type');
 
 
-      testTemplate('invalid-field-type', '../fixtures/invalid-field-type.js');
+      testTemplate('invalid-field-type');
 
     });
 
 
     describe('scoped binding', function() {
 
-      testTemplate('scope-connector-legacy', '../fixtures/scope-connector-legacy.js');
+      testTemplate('scope-connector-legacy');
 
 
-      testTemplate('scope-invalid-legacy', '../fixtures/scope-invalid-legacy.js');
+      testTemplate('scope-invalid-legacy');
 
 
-      testTemplate('scope-connector-missing-binding-legacy', '../fixtures/scope-connector-missing-binding-legacy.js');
+      testTemplate('scope-connector-missing-binding-legacy');
 
 
-      testTemplate('scope-connector', '../fixtures/scope-connector.js');
+      testTemplate('scope-connector');
 
 
-      testTemplate('scope-missing-binding', '../fixtures/scope-missing-binding.js');
+      testTemplate('scope-missing-binding');
 
 
-      testTemplate('scopes-multiple', '../fixtures/scopes-multiple.js');
+      testTemplate('scopes-multiple');
 
 
-      testTemplate('scope-missing-type', '../fixtures/scope-missing-type.js');
+      testTemplate('scope-missing-type');
 
 
-      testTemplate('scope-invalid-type', '../fixtures/scope-invalid-type.js');
+      testTemplate('scope-invalid-type');
 
 
-      testTemplate('scope-missing-properties', '../fixtures/scope-missing-properties.js');
+      testTemplate('scope-missing-properties');
 
     });
 
@@ -183,13 +187,13 @@ describe('validation', function() {
 
   describe('multiple templates', function() {
 
-    testTemplate('multiple-mail-task', '../fixtures/multiple-mail-tasks.js');
+    testTemplate('multiple-mail-tasks');
 
 
-    testTemplate('single-template-in-array', '../fixtures/single-template-in-array.js');
+    testTemplate('single-template-in-array');
 
 
-    testTemplate('invalid-multiple-mail-task', '../fixtures/invalid-multiple-mail-tasks.js');
+    testTemplate('invalid-multiple-mail-tasks');
 
   });
 
