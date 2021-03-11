@@ -467,6 +467,52 @@
         }
       }
     },
+    "scopes_old":  {
+      "$id": "#/definitions/scopes_old",
+      "type": "object",
+      "title": "element template scope",
+      "deprecated": true,
+      "description": "@Deprecated - Special scoped bindings that allow you to configure nested elements",
+      "additionalProperties": false,
+      "errorMessage": {
+        "additionalProperties": "invalid scope, object descriptor is only supported for camunda:Connector"
+      },
+      "properties": {
+        "camunda:Connector": {
+          "type": "object",
+          "title": "element template scoped connector binding",
+          "description": "A scoped binding for a camunda connector inside the element",
+          "properties": {
+            "properties": {
+              "$ref": "#/definitions/properties"
+            }
+          }
+        }
+      }
+    },
+    "scopes": {
+      "$id": "#/definitions/scopes",
+      "type": "array",
+      "description": "Special scoped bindings that allow you to configure nested elements",
+      "items": {
+        "$id": "#/scopes/item",
+        "type": "object",
+        "properties": {
+          "type": {
+            "$id": "#scopes/item/type",
+            "type": "string",
+            "pattern": "^(camunda|bpmn):"
+          },
+          "properties": {
+            "$ref": "#/definitions/properties"
+          }
+        },
+        "required": [
+          "type",
+          "properties"
+        ]
+      }
+    },
     "template": {
       "type": "object",
       "required": [
@@ -529,26 +575,14 @@
           "description": "Some metadata for further configuration"
         },
         "scopes": {
-          "$id": "#/scopes",
-          "type": "object",
-          "title": "element template scope",
-          "description": "Special scoped bindings that allow you to configure nested elements",
-          "additionalProperties": false,
-          "errorMessage": {
-            "additionalProperties": "scope must be defined as element type"
-          },
-          "patternProperties": {
-            "^(bpmn|camunda):": {
-              "type": "object",
-              "title": "element template scoped connector binding",
-              "description": "A scoped binding for a camunda connector inside the element",
-              "properties": {
-                "properties": {
-                  "$ref": "#/definitions/properties"
-                }
-              }
+          "oneOf": [
+            {
+              "$ref": "#/definitions/scopes_old"
+            },
+            {
+              "$ref": "#/definitions/scopes"
             }
-          }
+          ]
         },
         "entriesVisible": {
           "$id": "#/entriesVisible",
