@@ -45,7 +45,8 @@ export const errors = [
               'camunda:out',
               'camunda:in:businessKey',
               'camunda:executionListener',
-              'camunda:field'
+              'camunda:field',
+              'camunda:errorEventDefinition'
             ]
           },
           message: 'should be equal to one of the allowed values'
