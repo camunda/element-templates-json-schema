@@ -16,13 +16,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/scopes',
-    schemaPath: '#/properties/scopes/errorMessage',
+    schemaPath: '#/errorMessage',
     params: {
       errors: [
         {
           keyword: 'additionalProperties',
           dataPath: '/scopes',
-          schemaPath: '#/properties/scopes/additionalProperties',
+          schemaPath: '#/additionalProperties',
           params: {
             'additionalProperty': 'foo'
           },
@@ -30,7 +30,25 @@ export const errors = [
         }
       ]
     },
-    message: 'scope must be defined as element type'
+    message: 'invalid scope, object descriptor is only supported for camunda:Connector'
+  },
+  {
+    keyword: 'type',
+    dataPath: '/scopes',
+    message: 'should be array',
+    params: {
+      type: 'array'
+    },
+    schemaPath: '#/type'
+  },
+  {
+    keyword: 'oneOf',
+    dataPath: '/scopes',
+    message: 'should match exactly one schema in oneOf',
+    params: {
+      passingSchemas: null
+    },
+    schemaPath: '#/properties/scopes/oneOf'
   },
   {
     dataPath: '',

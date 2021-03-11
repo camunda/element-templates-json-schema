@@ -27,6 +27,24 @@ export const errors = [
     message: "should have required property 'binding'"
   },
   {
+    keyword: 'type',
+    dataPath: '/scopes',
+    message: 'should be array',
+    params: {
+      type: 'array'
+    },
+    schemaPath: '#/type'
+  },
+  {
+    keyword: 'oneOf',
+    dataPath: '/scopes',
+    message: 'should match exactly one schema in oneOf',
+    params: {
+      passingSchemas: null
+    },
+    schemaPath: '#/properties/scopes/oneOf'
+  },
+  {
     dataPath: '',
     keyword: 'type',
     message: 'should be array',

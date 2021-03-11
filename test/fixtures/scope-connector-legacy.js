@@ -5,9 +5,8 @@ export const template = {
     'bpmn:Task'
   ],
   properties: [],
-  scopes: [
-    {
-      type: 'camunda:Connector',
+  scopes: {
+    'camunda:Connector': {
       properties: [
         {
           label: 'ConnectorId',
@@ -48,7 +47,7 @@ export const template = {
         }
       ]
     }
-  ]
+  }
 };
 
 export const errors = null;

@@ -150,13 +150,31 @@ describe('validation', function() {
 
     describe('scoped binding', function() {
 
+      testTemplate('scope-connector-legacy', '../fixtures/scope-connector-legacy.js');
+
+
+      testTemplate('scope-invalid-legacy', '../fixtures/scope-invalid-legacy.js');
+
+
+      testTemplate('scope-connector-missing-binding-legacy', '../fixtures/scope-connector-missing-binding-legacy.js');
+
+
       testTemplate('scope-connector', '../fixtures/scope-connector.js');
 
 
-      testTemplate('scope-connector-missing-binding', '../fixtures/scope-connector-missing-binding.js');
+      testTemplate('scope-missing-binding', '../fixtures/scope-missing-binding.js');
 
 
-      testTemplate('scope-invalid', '../fixtures/scope-invalid.js');
+      testTemplate('scopes-multiple', '../fixtures/scopes-multiple.js');
+
+
+      testTemplate('scope-missing-type', '../fixtures/scope-missing-type.js');
+
+
+      testTemplate('scope-invalid-type', '../fixtures/scope-invalid-type.js');
+
+
+      testTemplate('scope-missing-properties', '../fixtures/scope-missing-properties.js');
 
     });
 
