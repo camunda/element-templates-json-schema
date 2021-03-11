@@ -191,6 +191,9 @@ describe('validation', function() {
 
       testTemplate('scope-missing-properties');
 
+
+      testTemplate('scope-missing-error-id');
+
     });
 
   });
