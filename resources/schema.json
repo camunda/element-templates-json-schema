@@ -343,6 +343,28 @@
                   ],
                   "errorMessage": "property.binding ${0/type} requires variables, sourceExpression or source"
                 }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "type": {
+                      "const": "camunda:errorEventDefinition"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                },
+                "then": {
+                  "oneOf": [
+                    {
+                      "required": [
+                        "errorRef"
+                      ]
+                    }
+                  ],
+                  "errorMessage": "property.binding ${0/type} requires errorRef"
+                }
               }
             ],
             "properties": {
@@ -359,7 +381,8 @@
                   "camunda:out",
                   "camunda:in:businessKey",
                   "camunda:executionListener",
-                  "camunda:field"
+                  "camunda:field",
+                  "camunda:errorEventDefinition"
                 ],
                 "errorMessage": "invalid property.binding type ${0}; must be any of { property, camunda:property, camunda:inputParameter, camunda:outputParameter, camunda:in, camunda:out, camunda:in:businessKey, camunda:executionListener, camunda:field }",
                 "description": "The type of the property binding"

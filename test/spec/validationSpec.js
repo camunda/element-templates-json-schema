@@ -1,5 +1,7 @@
 import { expect } from 'chai';
 
+import util from 'util';
+
 import schema from '../../resources/schema.json';
 
 import {
@@ -121,6 +123,15 @@ describe('validation', function() {
     testTemplate('multiple-errors');
 
 
+    testTemplate('error-task');
+
+
+    testTemplate('error-task-multiple');
+
+
+    testTemplate('missing-binding-errorRef');
+
+
     describe('property type - binding type', function() {
 
       testTemplate('invalid-property-type');
@@ -198,3 +209,15 @@ describe('validation', function() {
   });
 
 });
+
+
+// helpers /////////////////
+
+// eslint-disable-next-line no-unused-vars
+function printNested(object) {
+  console.log(util.inspect(object, {
+    showHidden: false,
+    depth: null,
+    colors: true
+  }));
+}
