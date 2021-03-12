@@ -160,6 +160,9 @@ describe('validation', function() {
 
       testTemplate('invalid-field-type');
 
+
+      testTemplate('invalid-camunda-error-event-definition-type');
+
     });
 
 
