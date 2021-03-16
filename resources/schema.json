@@ -517,15 +517,22 @@
     "scopes": {
       "$id": "#/definitions/scopes",
       "type": "array",
+      "title": "element template scope",
       "description": "Special scoped bindings that allow you to configure nested elements",
       "items": {
         "$id": "#/scopes/item",
         "type": "object",
+        "title": "element template scope item",
+        "description": "Scoped binding to configure nested elements",
         "properties": {
           "type": {
             "$id": "#scopes/item/type",
             "type": "string",
-            "pattern": "^(camunda|bpmn):"
+            "enum": [
+              "camunda:Connector",
+              "bpmn:Error"
+            ],
+            "errorMessage": "invalid scope type ${0}; must be any of { camunda:Connector, bpmn:Error }"
           },
           "properties": {
             "$ref": "#/definitions/properties"

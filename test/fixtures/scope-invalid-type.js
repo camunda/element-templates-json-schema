@@ -22,11 +22,21 @@ export const errors = [
     message: 'should be object'
   },
   {
-    keyword: 'pattern',
+    keyword: 'errorMessage',
     dataPath: '/scopes/0/type',
-    schemaPath: '#/items/properties/type/pattern',
-    params: { pattern: '^(camunda|bpmn):' },
-    message: 'should match pattern "^(camunda|bpmn):"'
+    schemaPath: '#/items/properties/type/errorMessage',
+    params: {
+      errors: [
+        {
+          keyword: 'enum',
+          dataPath: '/scopes/0/type',
+          schemaPath: '#/items/properties/type/enum',
+          params: { allowedValues: [ 'camunda:Connector', 'bpmn:Error' ] },
+          message: 'should be equal to one of the allowed values'
+        }
+      ]
+    },
+    message: 'invalid scope type "foo"; must be any of { camunda:Connector, bpmn:Error }'
   },
   {
     keyword: 'oneOf',
