@@ -6,6 +6,14 @@ All notable changes to [element-templates-json-schema](https://github.com/camund
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.3.0
+
+* `FEAT`: support multiple templates as a single entity ([#15](https://github.com/camunda/element-templates-json-schema/issues/15))
+* `FEAT`: add new scopes schema to handle as arrays ([`fb32aca9`](https://github.com/camunda/element-templates-json-schema/commit/fb32aca9c43e901ffdc67a2cfecc37afaad685fe))
+* `FEAT`: support `camunda:errorEventDefinition` property bindings ([`91eb144b`](https://github.com/camunda/element-templates-json-schema/commit/91eb144b832de5ba8b6de276e0214ec518d32196))
+* `FEAT`: support scoped `bpmn:Error` bindings ([`75e0c24f`](https://github.com/camunda/element-templates-json-schema/commit/75e0c24f3712376bda51cd73b749341ca9629b56))
+* `FEAT`: restrict allowed scope types ([`7fce5a14`](https://github.com/camunda/element-templates-json-schema/commit/7fce5a143a442f2ef9c116e2500e39717781a217))
+
 ## 0.2.0
 
 * `FEAT`: add schema for scopes ([#14](https://github.com/camunda/element-templates-json-schema/issues/14))
