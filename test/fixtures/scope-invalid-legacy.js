@@ -21,6 +21,7 @@ export const errors = [
       errors: [
         {
           keyword: 'additionalProperties',
+          emUsed: true,
           dataPath: '/scopes',
           schemaPath: '#/additionalProperties',
           params: {

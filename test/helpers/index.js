@@ -4,7 +4,7 @@ export function createValidator(schema) {
 
   const ajv = new Ajv({
     allErrors: true,
-    jsonPointers: true
+    strict: false
   });
 
   require('ajv-errors')(ajv);

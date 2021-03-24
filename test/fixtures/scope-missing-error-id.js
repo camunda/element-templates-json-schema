@@ -62,6 +62,7 @@ export const errors = [
           dataPath: '/scopes/0',
           schemaPath: '#/items/allOf/0/then/required',
           params: { missingProperty: 'id' },
+          emUsed: true,
           message: "should have required property 'id'"
         }
       ]

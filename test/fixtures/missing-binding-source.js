@@ -32,6 +32,7 @@ export const errors = [
       errors: [
         {
           keyword: 'required',
+          emUsed: true,
           dataPath: '/properties/1/binding',
           schemaPath: '#/definitions/properties/items/properties/binding/allOf/1/then/required',
           params: {

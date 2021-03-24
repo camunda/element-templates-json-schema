@@ -52,6 +52,7 @@ export const errors = [
       errors: [
         {
           keyword: 'required',
+          emUsed: true,
           dataPath: '/properties/0/binding',
           schemaPath: '#/definitions/properties/items/properties/binding/allOf/4/then/oneOf/0/required',
           params: { missingProperty: 'errorRef' },
@@ -59,6 +60,7 @@ export const errors = [
         },
         {
           keyword: 'oneOf',
+          emUsed: true,
           dataPath: '/properties/0/binding',
           schemaPath: '#/definitions/properties/items/properties/binding/allOf/4/then/oneOf',
           params: { passingSchemas: null },

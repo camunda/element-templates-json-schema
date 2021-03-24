@@ -26,6 +26,7 @@ export const errors = [
       errors: [
         {
           keyword: 'required',
+          emUsed: true,
           dataPath: '/properties/0',
           schemaPath: '#/definitions/properties/items/allOf/0/then/required',
           params: {

@@ -33,6 +33,7 @@ export const errors = [
       errors: [
         {
           keyword: 'enum',
+          emUsed: true,
           dataPath: '/properties/1/type',
           schemaPath: '#/definitions/properties/items/allOf/1/then/properties/type/enum',
           params: {

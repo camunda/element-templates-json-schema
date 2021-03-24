@@ -32,6 +32,7 @@ export const errors = [
       errors: [
         {
           keyword: 'required',
+          emUsed: true,
           dataPath: '/properties/1/binding',
           schemaPath: '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/0/required',
           params: {
@@ -41,6 +42,7 @@ export const errors = [
         },
         {
           keyword: 'required',
+          emUsed: true,
           dataPath: '/properties/1/binding',
           schemaPath: '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/1/required',
           params: {
@@ -50,6 +52,7 @@ export const errors = [
         },
         {
           keyword: 'required',
+          emUsed: true,
           dataPath: '/properties/1/binding',
           schemaPath: '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/2/required',
           params: {
@@ -59,6 +62,7 @@ export const errors = [
         },
         {
           keyword: 'oneOf',
+          emUsed: true,
           dataPath: '/properties/1/binding',
           schemaPath: '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf',
           params: {
