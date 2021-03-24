@@ -21,11 +21,22 @@ export const errors = [
     message: 'should be object'
   },
   {
-    keyword: 'required',
+    keyword: 'errorMessage',
     dataPath: '/scopes/0',
-    schemaPath: '#/items/required',
-    params: { missingProperty: 'properties' },
-    message: "should have required property 'properties'"
+    schemaPath: '#/items/errorMessage',
+    params: {
+      errors: [
+        {
+          keyword: 'required',
+          dataPath: '/scopes/0',
+          schemaPath: '#/items/required',
+          params: { missingProperty: 'properties' },
+          message: "should have required property 'properties'",
+          emUsed: true
+        }
+      ]
+    },
+    message: 'invalid scope "camunda:Connector", missing properties=[]'
   },
   {
     keyword: 'oneOf',

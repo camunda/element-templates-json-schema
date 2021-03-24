@@ -69,6 +69,15 @@ describe('validation', function() {
     testTemplate('missing-applies-to');
 
 
+    testTemplate('missing-template-name');
+
+
+    testTemplate('missing-template-id');
+
+
+    testTemplate('missing-properties');
+
+
     testTemplate('missing-binding');
 
 
