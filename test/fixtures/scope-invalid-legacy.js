@@ -15,58 +15,48 @@ export const template = {
 export const errors = [
   {
     keyword: 'errorMessage',
-    dataPath: '/scopes',
-    schemaPath: '#/errorMessage',
+    dataPath: '/scopes/foo',
+    schemaPath: '#/additionalProperties/errorMessage',
     params: {
       errors: [
         {
-          keyword: 'additionalProperties',
-          emUsed: true,
-          dataPath: '/scopes',
-          schemaPath: '#/additionalProperties',
-          params: {
-            'additionalProperty': 'foo'
-          },
-          message: 'should NOT have additional properties'
+          keyword: 'not',
+          dataPath: '/scopes/foo',
+          schemaPath: '#/additionalProperties/not',
+          params: {},
+          message: 'should NOT be valid',
+          emUsed: true
         }
       ]
     },
-    message: 'invalid scope, object descriptor is only supported for camunda:Connector'
+    message: 'invalid scope "foo", object descriptor is only supported for "camunda:Connector"'
   },
   {
     keyword: 'type',
     dataPath: '/scopes',
-    message: 'should be array',
-    params: {
-      type: 'array'
-    },
-    schemaPath: '#/type'
+    schemaPath: '#/type',
+    params: { type: 'array' },
+    message: 'should be array'
   },
   {
     keyword: 'oneOf',
     dataPath: '/scopes',
-    message: 'should match exactly one schema in oneOf',
-    params: {
-      passingSchemas: null
-    },
-    schemaPath: '#/properties/scopes/oneOf'
+    schemaPath: '#/properties/scopes/oneOf',
+    params: { passingSchemas: null },
+    message: 'should match exactly one schema in oneOf'
   },
   {
-    dataPath: '',
     keyword: 'type',
-    message: 'should be array',
-    params: {
-      type: 'array',
-    },
+    dataPath: '',
     schemaPath: '#/oneOf/1/type',
+    params: { type: 'array' },
+    message: 'should be array'
   },
   {
-    dataPath: '',
     keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
-    params: {
-      passingSchemas: null
-    },
-    schemaPath: '#/oneOf'
+    dataPath: '',
+    schemaPath: '#/oneOf',
+    params: { passingSchemas: null },
+    message: 'should match exactly one schema in oneOf'
   }
 ];
