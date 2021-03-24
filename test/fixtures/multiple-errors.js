@@ -50,6 +50,7 @@ export const errors = [
       errors: [
         {
           keyword: 'enum',
+          emUsed: true,
           dataPath: '/properties/0/type',
           schemaPath: '#/definitions/properties/items/allOf/1/then/properties/type/enum',
           params: {
@@ -84,6 +85,7 @@ export const errors = [
       errors: [
         {
           keyword: 'required',
+          emUsed: true,
           dataPath: '/properties/1',
           schemaPath: '#/definitions/properties/items/allOf/0/then/required',
           params: {
@@ -112,6 +114,7 @@ export const errors = [
       errors: [
         {
           keyword: 'required',
+          emUsed: true,
           dataPath: '/properties/2/binding',
           schemaPath: '#/definitions/properties/items/properties/binding/allOf/1/then/required',
           params: {
@@ -140,6 +143,7 @@ export const errors = [
       errors: [
         {
           keyword: 'required',
+          emUsed: true,
           dataPath: '/properties/3/binding',
           schemaPath: '#/definitions/properties/items/properties/binding/allOf/0/then/required',
           params: {

@@ -23,7 +23,10 @@ export const errors = [
     dataPath: '/properties/0/value',
     schemaPath: '#/definitions/properties/items/properties/value/type',
     params: {
-      type: 'string,boolean'
+      type: [
+        'string',
+        'boolean'
+      ]
     },
     message: 'should be string,boolean'
   },

@@ -14,6 +14,13 @@ export const template = {
       }
     },
     {
+      'label': 'empty',
+      'binding': {
+        'type': 'camunda:property',
+        'name': 'empty'
+      },
+    },
+    {
       'label': 'bar',
       'type': 'String',
       'binding': {
@@ -33,6 +40,7 @@ export const errors = [
       errors: [
         {
           keyword: 'enum',
+          emUsed: true,
           dataPath: '/properties/0/type',
           schemaPath: '#/definitions/properties/items/allOf/3/then/properties/type/enum',
           params: {

@@ -30,6 +30,7 @@ export const errors = [
       errors: [
         {
           keyword: 'required',
+          emUsed: true,
           dataPath: '/properties/0/choices/1',
           schemaPath: '#/definitions/properties/items/properties/choices/items/required',
           params: {
