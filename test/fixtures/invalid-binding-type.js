@@ -54,7 +54,7 @@ export const errors = [
         }
       ]
     },
-    message: 'invalid property.binding type "foo"; must be any of { property, camunda:property, camunda:inputParameter, camunda:outputParameter, camunda:in, camunda:out, camunda:in:businessKey, camunda:executionListener, camunda:field }'
+    message: 'invalid property.binding type "foo"; must be any of { property, camunda:property, camunda:inputParameter, camunda:outputParameter, camunda:in, camunda:out, camunda:in:businessKey, camunda:executionListener, camunda:field, camunda:errorEventDefinition }'
   },
   {
     dataPath: '',
