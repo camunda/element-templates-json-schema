@@ -456,13 +456,13 @@
               },
               "minLength": {
                 "$id": "#/properties/property/constraints/minLength",
-                "type": "string",
+                "type": "number",
                 "title": "property constraints min length",
                 "description": "The minimal length for the control field value"
               },
               "maxLength": {
                 "$id": "#/properties/property/constraints/maxLength",
-                "type": "string",
+                "type": "number",
                 "title": "property constraints max length",
                 "description": "The maximal length for the control field value"
               },

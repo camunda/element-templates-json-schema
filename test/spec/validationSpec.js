@@ -132,6 +132,12 @@ describe('validation', function() {
     testTemplate('missing-binding-errorRef');
 
 
+    testTemplate('constraints');
+
+
+    testTemplate('invalid-constraints');
+
+
     describe('property type - binding type', function() {
 
       testTemplate('invalid-property-type');
