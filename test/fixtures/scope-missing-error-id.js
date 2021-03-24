@@ -67,7 +67,7 @@ export const errors = [
         }
       ]
     },
-    message: 'scoped binding of type "bpmn:Error" requires id'
+    message: 'invalid scope "bpmn:Error", missing id'
   },
   {
     keyword: 'if',

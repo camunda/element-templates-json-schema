@@ -18,6 +18,11 @@
         "required": [
           "binding"
         ],
+        "errorMessage": {
+          "required": {
+            "binding": "missing binding for property \"${0#}\""
+          }
+        },
         "allOf": [
           {
             "if": {
@@ -542,6 +547,12 @@
           "type",
           "properties"
         ],
+        "errorMessage": {
+          "required": {
+            "type": "invalid scope, missing type",
+            "properties": "invalid scope ${0/type}, missing properties=[]"
+          }
+        },
         "allOf": [
           {
             "if": {
@@ -560,7 +571,7 @@
               "required": [
                 "id"
               ],
-              "errorMessage": "scoped binding of type ${0/type} requires id"
+              "errorMessage": "invalid scope ${0/type}, missing id"
             }
           }
         ]
@@ -643,6 +654,14 @@
           "type": "object",
           "title": "element template entries visible",
           "description": "@Deprecated - Select which entries are visible in the properties panel"
+        }
+      },
+      "errorMessage": {
+        "required": {
+          "name": "missing template name",
+          "id": "missing template id",
+          "appliesTo": "missing appliesTo=[]",
+          "properties": "missing properties=[]"
         }
       }
     }

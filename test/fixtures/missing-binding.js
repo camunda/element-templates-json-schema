@@ -15,28 +15,35 @@ export const template = {
 
 export const errors = [
   {
-    keyword: 'required',
+    keyword: 'errorMessage',
     dataPath: '/properties/0',
-    schemaPath: '#/definitions/properties/items/required',
-    params: { missingProperty: 'binding' },
-    message: "should have required property 'binding'"
+    schemaPath: '#/definitions/properties/items/errorMessage',
+    params: {
+      errors: [
+        {
+          keyword: 'required',
+          dataPath: '/properties/0',
+          schemaPath: '#/definitions/properties/items/required',
+          params: { missingProperty: 'binding' },
+          message: "should have required property 'binding'",
+          emUsed: true
+        }
+      ]
+    },
+    message: 'missing binding for property "0"'
   },
   {
-    dataPath: '',
     keyword: 'type',
-    message: 'should be array',
-    params: {
-      type: 'array',
-    },
+    dataPath: '',
     schemaPath: '#/oneOf/1/type',
+    params: { type: 'array' },
+    message: 'should be array'
   },
   {
-    dataPath: '',
     keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
-    params: {
-      passingSchemas: null
-    },
-    schemaPath: '#/oneOf'
+    dataPath: '',
+    schemaPath: '#/oneOf',
+    params: { passingSchemas: null },
+    message: 'should match exactly one schema in oneOf'
   }
 ];

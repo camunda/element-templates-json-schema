@@ -153,18 +153,40 @@ export const errors = [
     message: 'should be object'
   },
   {
-    keyword: 'required',
+    keyword: 'errorMessage',
     dataPath: '/0',
-    schemaPath: '#/required',
-    params: { missingProperty: 'appliesTo' },
-    message: "should have required property 'appliesTo'"
+    schemaPath: '#/errorMessage',
+    params: {
+      errors: [
+        {
+          keyword: 'required',
+          dataPath: '/0',
+          schemaPath: '#/required',
+          params: { missingProperty: 'appliesTo' },
+          message: "should have required property 'appliesTo'",
+          emUsed: true
+        }
+      ]
+    },
+    message: 'missing appliesTo=[]'
   },
   {
-    keyword: 'required',
+    keyword: 'errorMessage',
     dataPath: '/1',
-    schemaPath: '#/required',
-    params: { missingProperty: 'appliesTo' },
-    message: "should have required property 'appliesTo'"
+    schemaPath: '#/errorMessage',
+    params: {
+      errors: [
+        {
+          keyword: 'required',
+          dataPath: '/1',
+          schemaPath: '#/required',
+          params: { missingProperty: 'appliesTo' },
+          message: "should have required property 'appliesTo'",
+          emUsed: true
+        }
+      ]
+    },
+    message: 'missing appliesTo=[]'
   },
   {
     keyword: 'oneOf',

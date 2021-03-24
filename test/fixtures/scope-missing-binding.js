@@ -28,11 +28,22 @@ export const errors = [
     message: 'should be object'
   },
   {
-    keyword: 'required',
+    keyword: 'errorMessage',
     dataPath: '/scopes/0/properties/0',
-    schemaPath: '#/definitions/properties/items/required',
-    params: { missingProperty: 'binding' },
-    message: "should have required property 'binding'"
+    schemaPath: '#/definitions/properties/items/errorMessage',
+    params: {
+      errors: [
+        {
+          keyword: 'required',
+          dataPath: '/scopes/0/properties/0',
+          schemaPath: '#/definitions/properties/items/required',
+          params: { missingProperty: 'binding' },
+          message: "should have required property 'binding'",
+          emUsed: true
+        }
+      ]
+    },
+    message: 'missing binding for property "0"'
   },
   {
     keyword: 'oneOf',

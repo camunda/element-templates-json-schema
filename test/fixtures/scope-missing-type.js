@@ -21,11 +21,22 @@ export const errors = [
     message: 'should be object'
   },
   {
-    keyword: 'required',
+    keyword: 'errorMessage',
     dataPath: '/scopes/0',
-    schemaPath: '#/items/required',
-    params: { missingProperty: 'type' },
-    message: "should have required property 'type'"
+    schemaPath: '#/items/errorMessage',
+    params: {
+      errors: [
+        {
+          keyword: 'required',
+          dataPath: '/scopes/0',
+          schemaPath: '#/items/required',
+          params: { missingProperty: 'type' },
+          message: "should have required property 'type'",
+          emUsed: true
+        }
+      ]
+    },
+    message: 'invalid scope, missing type'
   },
   {
     keyword: 'oneOf',

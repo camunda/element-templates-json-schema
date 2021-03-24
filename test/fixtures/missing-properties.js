@@ -1,7 +1,7 @@
 export const template = {
   'name': 'Invalid',
   'id': 'foo',
-  'properties': []
+  'appliesTo': []
 };
 
 export const errors = [
@@ -15,13 +15,13 @@ export const errors = [
           keyword: 'required',
           dataPath: '',
           schemaPath: '#/required',
-          params: { missingProperty: 'appliesTo' },
-          message: "should have required property 'appliesTo'",
+          params: { missingProperty: 'properties' },
+          message: "should have required property 'properties'",
           emUsed: true
         }
       ]
     },
-    message: 'missing appliesTo=[]'
+    message: 'missing properties=[]'
   },
   {
     keyword: 'type',
