@@ -155,6 +155,7 @@ describe('validation', function() {
 
     testTemplate('pattern-string');
 
+
     describe('property type - binding type', function() {
 
       testTemplate('invalid-property-type');
@@ -234,6 +235,12 @@ describe('validation', function() {
 
 
     testTemplate('invalid-multiple-mail-tasks');
+
+
+    testTemplate('complex');
+
+
+    testTemplate('rpa-templates');
 
   });
 
