@@ -147,6 +147,8 @@ describe('validation', function() {
     testTemplate('invalid-constraints');
 
 
+    testTemplate('invalid-applies-to');
+
     describe('property type - binding type', function() {
 
       testTemplate('invalid-property-type');
