@@ -654,7 +654,7 @@
         "entriesVisible": {
           "$id": "#/entriesVisible",
           "deprecated": true,
-          "type": "object",
+          "type": [ "object", "boolean" ],
           "title": "element template entries visible",
           "description": "@Deprecated - Select which entries are visible in the properties panel"
         }

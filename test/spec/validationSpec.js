@@ -149,6 +149,9 @@ describe('validation', function() {
 
     testTemplate('invalid-applies-to');
 
+
+    testTemplate('entries-visible-boolean');
+
     describe('property type - binding type', function() {
 
       testTemplate('invalid-property-type');
