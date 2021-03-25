@@ -152,6 +152,9 @@ describe('validation', function() {
 
     testTemplate('entries-visible-boolean');
 
+
+    testTemplate('pattern-string');
+
     describe('property type - binding type', function() {
 
       testTemplate('invalid-property-type');

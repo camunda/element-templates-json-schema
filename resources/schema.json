@@ -473,23 +473,31 @@
               },
               "pattern": {
                 "$id": "#/properties/property/constraints/pattern",
-                "type": "object",
+                
                 "title": "property constraints pattern",
                 "description": "A regular expression pattern for the constraints",
-                "properties": {
-                  "value": {
-                    "$id": "#/properties/property/constraints/pattern/value",
-                    "type": "string",
-                    "title": "property constraints pattern value",
-                    "description": "The regular expression of the pattern constraint"
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "$id": "#/properties/property/constraints/pattern/value",
+                        "type": "string",
+                        "title": "property constraints pattern value",
+                        "description": "The regular expression of the pattern constraint"
+                      },
+                      "message": {
+                        "$id": "#/properties/property/constraints/pattern/message",
+                        "type": "string",
+                        "title": "property constraints pattern message",
+                        "description": "The validation message of the pattern constraint"
+                      }
+                    }
                   },
-                  "message": {
-                    "$id": "#/properties/property/constraints/pattern/message",
-                    "type": "string",
-                    "title": "property constraints pattern message",
-                    "description": "The validation message of the pattern constraint"
+                  {
+                    "type": "string"
                   }
-                }
+                ]
               }
             }
           }
