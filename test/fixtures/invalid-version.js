@@ -1,4 +1,4 @@
-export const templates = {
+export const template = {
   'name': 'InvalidVersion',
   'id': 'com.camunda.example.InvalidVersion',
   'version': 'foo',
@@ -11,29 +11,23 @@ export const templates = {
 export const errors = [
   {
     keyword: 'type',
-    dataPath: '',
-    schemaPath: '#/type',
-    params: {
-      'type': 'object'
-    },
-    message: 'should be object'
+    dataPath: '/version',
+    schemaPath: '#/properties/version/type',
+    params: { type: 'number' },
+    message: 'should be number'
   },
   {
-    dataPath: '',
     keyword: 'type',
-    message: 'should be array',
-    params: {
-      type: 'array',
-    },
+    dataPath: '',
     schemaPath: '#/oneOf/1/type',
+    params: { type: 'array' },
+    message: 'should be array'
   },
   {
-    dataPath: '',
     keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
-    params: {
-      passingSchemas: null
-    },
-    schemaPath: '#/oneOf'
+    dataPath: '',
+    schemaPath: '#/oneOf',
+    params: { passingSchemas: null },
+    message: 'should match exactly one schema in oneOf'
   }
 ];
