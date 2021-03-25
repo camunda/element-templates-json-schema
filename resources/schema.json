@@ -625,7 +625,10 @@
           "items": {
             "$id": "#/appliesTo/items",
             "type": "string",
-            "pattern": "^(bpmn:)"
+            "pattern": "^(.*?:)",
+            "errorMessage": {
+              "pattern": "invalid item for \"appliesTo\", should contain namespaced property, example: \"bpmn:Task\""
+            }
           }
         },
         "properties": {
