@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "Niklas Kiefer <niklas.kiefer@camunda.com (https://github.com/pinussilvestrus)",
   "dependencies": {
-    "@bpmn-io/json-schema-validator": "^0.2.0"
+    "@bpmn-io/json-schema-validator": "^0.2.1"
   },
   "devDependencies": {
     "@rollup/plugin-json": "^4.1.0",
