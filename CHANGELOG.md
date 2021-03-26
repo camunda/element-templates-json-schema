@@ -6,6 +6,14 @@ All notable changes to [element-templates-json-schema](https://github.com/camund
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.3.1
+
+* `FIX`: set `minLength` and `maxLength` properties as numbers ([#24](https://github.com/camunda/element-templates-json-schema/issues/24))
+* `FIX`: adjust various error messages to be more explicit ([#27](https://github.com/camunda/element-templates-json-schema/pull/27))
+* `FIX`: allow `entriesVisible` property to be boolean ([`81043941`](https://github.com/camunda/element-templates-json-schema/commit/81043941441b7e682b09ca99aabedadfba8f622f))
+* `FIX`: allow `pattern` property to be string ([`65370578`](https://github.com/camunda/element-templates-json-schema/commit/653705786c4b7499a1aa15c3e6463815f8744fa2))
+* `CHORE`: make schema compatible with `ajv@7` ([`5630ef53`](https://github.com/camunda/element-templates-json-schema/commit/5630ef5362857667adbdd43ab3fa15cd5d648406))
+
 ## 0.3.0
 
 * `FEAT`: support multiple templates as a single entity ([#15](https://github.com/camunda/element-templates-json-schema/issues/15))
