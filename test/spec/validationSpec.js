@@ -8,10 +8,12 @@ import {
   createValidator
 } from '../helpers';
 
+const validator = createValidator(schema);
+
+
 describe('validation', function() {
 
   function validateTemplate(template) {
-    const validator = createValidator(schema);
 
     const valid = validator(template);
 
