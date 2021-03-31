@@ -2,13 +2,7 @@ import { expect } from 'chai';
 
 import util from 'util';
 
-import schema from '../../resources/schema.json';
-
-import {
-  createValidator
-} from '../helpers';
-
-const validator = createValidator(schema);
+import validator from '../..';
 
 
 describe('validation', function() {
