@@ -116,10 +116,25 @@ describe('validation', function() {
     testTemplate('camunda-in-binding');
 
 
+    testTemplate('camunda-in-binding-local');
+
+
+    testTemplate('camunda-in-binding-local-expression');
+
+
     testTemplate('invalid-camunda-out');
 
 
+    testTemplate('invalid-camunda-out-overloaded');
+
+
     testTemplate('camunda-out-binding');
+
+
+    testTemplate('camunda-out-binding-local');
+
+
+    testTemplate('camunda-out-binding-local-expression');
 
 
     testTemplate('camunda-execution-listener');
