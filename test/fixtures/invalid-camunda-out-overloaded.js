@@ -1,8 +1,8 @@
 export const template = {
   'name': 'InvalidCamundaOut',
-  'id': 'com.camunda.example.InvalidCamundaOut',
+  'id': 'com.camunda.example.InvalidCamundaOutOverloaded',
   'appliesTo': [
-    'bpmn:Task'
+    'bpmn:CallActivity'
   ],
   'properties': [
     {
@@ -10,14 +10,8 @@ export const template = {
       'type': 'String',
       'binding': {
         'type': 'camunda:out',
-        'sourceExpression': 'foo'
-      }
-    },
-    {
-      'label': 'bar',
-      'type': 'String',
-      'binding': {
-        'type': 'camunda:out'
+        'sourceExpression': 'foo',
+        'source': 'bar'
       }
     }
   ]
@@ -26,13 +20,21 @@ export const template = {
 export const errors = [
   {
     'keyword': 'errorMessage',
-    'dataPath': '/properties/1/binding',
+    'dataPath': '/properties/0/binding',
     'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/errorMessage',
     'params': {
       'errors': [
         {
+          'keyword': 'not',
+          'dataPath': '/properties/0/binding',
+          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/0/not',
+          'params': {},
+          'message': 'should NOT be valid',
+          'emUsed': true
+        },
+        {
           'keyword': 'required',
-          'dataPath': '/properties/1/binding',
+          'dataPath': '/properties/0/binding',
           'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/0/required',
           'params': {
             'missingProperty': 'variables'
@@ -41,28 +43,32 @@ export const errors = [
           'emUsed': true
         },
         {
-          'keyword': 'required',
-          'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/1/required',
-          'params': {
-            'missingProperty': 'source'
-          },
-          'message': "should have required property 'source'",
+          'keyword': 'not',
+          'dataPath': '/properties/0/binding',
+          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/1/not',
+          'params': {},
+          'message': 'should NOT be valid',
+          'emUsed': true
+        },
+        {
+          'keyword': 'not',
+          'dataPath': '/properties/0/binding',
+          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/2/not',
+          'params': {},
+          'message': 'should NOT be valid',
+          'emUsed': true
+        },
+        {
+          'keyword': 'not',
+          'dataPath': '/properties/0/binding',
+          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/3/not',
+          'params': {},
+          'message': 'should NOT be valid',
           'emUsed': true
         },
         {
           'keyword': 'required',
-          'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/2/required',
-          'params': {
-            'missingProperty': 'sourceExpression'
-          },
-          'message': "should have required property 'sourceExpression'",
-          'emUsed': true
-        },
-        {
-          'keyword': 'required',
-          'dataPath': '/properties/1/binding',
+          'dataPath': '/properties/0/binding',
           'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/3/required',
           'params': {
             'missingProperty': 'variables'
@@ -71,38 +77,26 @@ export const errors = [
           'emUsed': true
         },
         {
-          'keyword': 'required',
-          'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/3/required',
-          'params': {
-            'missingProperty': 'sourceExpression'
-          },
-          'message': "should have required property 'sourceExpression'",
+          'keyword': 'not',
+          'dataPath': '/properties/0/binding',
+          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/4/not',
+          'params': {},
+          'message': 'should NOT be valid',
           'emUsed': true
         },
         {
           'keyword': 'required',
-          'dataPath': '/properties/1/binding',
+          'dataPath': '/properties/0/binding',
           'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/4/required',
           'params': {
             'missingProperty': 'variables'
           },
           'message': "should have required property 'variables'",
-          'emUsed': true
-        },
-        {
-          'keyword': 'required',
-          'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf/4/required',
-          'params': {
-            'missingProperty': 'source'
-          },
-          'message': "should have required property 'source'",
           'emUsed': true
         },
         {
           'keyword': 'oneOf',
-          'dataPath': '/properties/1/binding',
+          'dataPath': '/properties/0/binding',
           'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/then/oneOf',
           'params': {
             'passingSchemas': null
@@ -116,7 +110,7 @@ export const errors = [
   },
   {
     'keyword': 'if',
-    'dataPath': '/properties/1/binding',
+    'dataPath': '/properties/0/binding',
     'schemaPath': '#/definitions/properties/items/properties/binding/allOf/3/if',
     'params': {
       'failingKeyword': 'then'
@@ -141,5 +135,4 @@ export const errors = [
     },
     'message': 'should match exactly one schema in oneOf'
   }
-]
-;
+];

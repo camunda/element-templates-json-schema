@@ -25,70 +25,69 @@ export const template = {
 
 export const errors = [
   {
-    keyword: 'errorMessage',
-    dataPath: '/properties/1/binding',
-    schemaPath: '#/definitions/properties/items/properties/binding/allOf/2/then/errorMessage',
-    params: {
-      errors: [
+    'keyword': 'errorMessage',
+    'dataPath': '/properties/1/binding',
+    'schemaPath': '#/definitions/properties/items/properties/binding/allOf/2/then/errorMessage',
+    'params': {
+      'errors': [
         {
-          keyword: 'required',
-          emUsed: true,
-          dataPath: '/properties/1/binding',
-          schemaPath: '#/definitions/properties/items/properties/binding/allOf/2/then/oneOf/0/required',
-          params: {
-            missingProperty: 'variables'
+          'keyword': 'required',
+          'dataPath': '/properties/1/binding',
+          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/2/then/anyOf/0/required',
+          'params': {
+            'missingProperty': 'variables'
           },
-          message: "should have required property 'variables'"
+          'message': "should have required property 'variables'",
+          'emUsed': true
         },
         {
-          keyword: 'required',
-          emUsed: true,
-          dataPath: '/properties/1/binding',
-          schemaPath: '#/definitions/properties/items/properties/binding/allOf/2/then/oneOf/1/required',
-          params: {
-            missingProperty: 'target'
+          'keyword': 'required',
+          'dataPath': '/properties/1/binding',
+          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/2/then/anyOf/1/required',
+          'params': {
+            'missingProperty': 'target'
           },
-          message: "should have required property 'target'"
+          'message': "should have required property 'target'",
+          'emUsed': true
         },
         {
-          keyword: 'oneOf',
-          emUsed: true,
-          dataPath: '/properties/1/binding',
-          schemaPath: '#/definitions/properties/items/properties/binding/allOf/2/then/oneOf',
-          params: {
-            'passingSchemas': null
-          },
-          message: 'should match exactly one schema in oneOf'
+          'keyword': 'anyOf',
+          'dataPath': '/properties/1/binding',
+          'schemaPath': '#/definitions/properties/items/properties/binding/allOf/2/then/anyOf',
+          'params': {},
+          'message': 'should match some schema in anyOf',
+          'emUsed': true
         }
       ]
     },
-    message: 'property.binding "camunda:in" requires variables or target'
+    'message': 'property.binding "camunda:in" requires variables, target, or both'
   },
   {
-    keyword: 'if',
-    dataPath: '/properties/1/binding',
-    schemaPath: '#/definitions/properties/items/properties/binding/allOf/2/if',
-    params: {
+    'keyword': 'if',
+    'dataPath': '/properties/1/binding',
+    'schemaPath': '#/definitions/properties/items/properties/binding/allOf/2/if',
+    'params': {
       'failingKeyword': 'then'
     },
-    message: 'should match "then" schema'
+    'message': 'should match "then" schema'
   },
   {
-    dataPath: '',
-    keyword: 'type',
-    message: 'should be array',
-    params: {
-      type: 'array',
+    'keyword': 'type',
+    'dataPath': '',
+    'schemaPath': '#/oneOf/1/type',
+    'params': {
+      'type': 'array'
     },
-    schemaPath: '#/oneOf/1/type',
+    'message': 'should be array'
   },
   {
-    dataPath: '',
-    keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
-    params: {
-      passingSchemas: null
+    'keyword': 'oneOf',
+    'dataPath': '',
+    'schemaPath': '#/oneOf',
+    'params': {
+      'passingSchemas': null
     },
-    schemaPath: '#/oneOf'
+    'message': 'should match exactly one schema in oneOf'
   }
-];
+]
+;

@@ -303,7 +303,7 @@
                   ]
                 },
                 "then": {
-                  "oneOf": [
+                  "anyOf": [
                     {
                       "required": [
                         "variables"
@@ -315,7 +315,7 @@
                       ]
                     }
                   ],
-                  "errorMessage": "property.binding ${0/type} requires variables or target"
+                  "errorMessage": "property.binding ${0/type} requires variables, target, or both"
                 }
               },
               {
@@ -334,20 +334,84 @@
                     {
                       "required": [
                         "variables"
-                      ]
+                      ],
+                      "not": {
+                        "anyOf": [
+                          {
+                            "required": [
+                              "source"
+                            ]
+                          },
+                          {
+                            "required": [
+                              "sourceExpression"
+                            ]
+                          }
+                        ]
+                      }
                     },
                     {
                       "required": [
                         "source"
-                      ]
+                      ],
+                      "not": {
+                        "anyOf": [
+                          {
+                            "required": [
+                              "variables"
+                            ]
+                          },
+                          {
+                            "required": [
+                              "sourceExpression"
+                            ]
+                          }
+                        ]
+                      }
                     },
                     {
                       "required": [
                         "sourceExpression"
-                      ]
+                      ],
+                      "not": {
+                        "anyOf": [
+                          {
+                            "required": [
+                              "variables"
+                            ]
+                          },
+                          {
+                            "required": [
+                              "source"
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "required": [
+                        "variables",
+                        "sourceExpression"
+                      ],
+                      "not": {
+                        "required": [
+                          "source"
+                        ]
+                      }
+                    },
+                    {
+                      "required": [
+                        "variables",
+                        "source"
+                      ],
+                      "not": {
+                        "required": [
+                          "sourceExpression"
+                        ]
+                      }
                     }
                   ],
-                  "errorMessage": "property.binding ${0/type} requires variables, sourceExpression or source"
+                  "errorMessage": "property.binding ${0/type} requires one of the following: variables, sourceExpression, source, (sourceExpression and variables), or (source and variables)"
                 }
               },
               {
@@ -473,7 +537,6 @@
               },
               "pattern": {
                 "$id": "#/properties/property/constraints/pattern",
-                
                 "title": "property constraints pattern",
                 "description": "A regular expression pattern for the constraints",
                 "oneOf": [
