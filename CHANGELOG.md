@@ -6,6 +6,10 @@ All notable changes to [element-templates-json-schema](https://github.com/camund
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.4.0
+
+* `FEAT`: support `camunda:in` and `camunda:out` bindings for specific `target`, `source` or `sourceExpression` given `local` scope ([d0e9d2b](https://github.com/camunda/element-templates-json-schema/commit/d0e9d2b5d75a9f36366125b08065db26ec409fa9))
+
 ## 0.3.1
 
 * `FIX`: set `minLength` and `maxLength` properties as numbers ([#24](https://github.com/camunda/element-templates-json-schema/issues/24))
