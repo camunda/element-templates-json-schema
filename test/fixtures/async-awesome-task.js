@@ -15,10 +15,7 @@ export const template = {
       }
     }
   ],
-  'entriesVisible': {
-    '_all': true,
-    'asyncBefore': false
-  }
+  'entriesVisible': true
 };
 
 export const errors = null;

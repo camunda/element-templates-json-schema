@@ -170,6 +170,9 @@ describe('validation', function() {
     testTemplate('entries-visible-boolean');
 
 
+    testTemplate('entries-visible-deprecated');
+
+
     testTemplate('pattern-string');
 
 

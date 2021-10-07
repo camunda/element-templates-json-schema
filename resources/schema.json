@@ -695,10 +695,9 @@
         },
         "entriesVisible": {
           "$id": "#/entriesVisible",
-          "deprecated": true,
-          "type": [ "object", "boolean" ],
+          "type": "boolean",
           "title": "element template entries visible",
-          "description": "@Deprecated - Select which entries are visible in the properties panel"
+          "description": "Select whether non-template entries are visible in the properties panel"
         }
       },
       "errorMessage": {

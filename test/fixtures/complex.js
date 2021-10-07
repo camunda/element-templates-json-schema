@@ -283,15 +283,7 @@ export const template = [
         }
       }
     ],
-    'entriesVisible': {
-      '_all': false,
-      'id': true,
-      'name': true,
-      'asyncBefore': true,
-      'asyncAfter': true,
-      'executionListeners': true,
-      'documentation': true
-    }
+    'entriesVisible': false
   },
   {
     'name': 'Custom ServiceTask',
