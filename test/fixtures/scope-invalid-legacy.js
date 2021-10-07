@@ -14,36 +14,11 @@ export const template = {
 
 export const errors = [
   {
-    keyword: 'errorMessage',
-    dataPath: '/scopes/foo',
-    schemaPath: '#/additionalProperties/errorMessage',
-    params: {
-      errors: [
-        {
-          keyword: 'not',
-          dataPath: '/scopes/foo',
-          schemaPath: '#/additionalProperties/not',
-          params: {},
-          message: 'should NOT be valid',
-          emUsed: true
-        }
-      ]
-    },
-    message: 'invalid scope "foo", object descriptor is only supported for "camunda:Connector"'
-  },
-  {
     keyword: 'type',
     dataPath: '/scopes',
     schemaPath: '#/type',
     params: { type: 'array' },
     message: 'should be array'
-  },
-  {
-    keyword: 'oneOf',
-    dataPath: '/scopes',
-    schemaPath: '#/properties/scopes/oneOf',
-    params: { passingSchemas: null },
-    message: 'should match exactly one schema in oneOf'
   },
   {
     keyword: 'type',
