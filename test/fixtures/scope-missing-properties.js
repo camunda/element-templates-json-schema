@@ -14,13 +14,6 @@ export const template = {
 
 export const errors = [
   {
-    keyword: 'type',
-    dataPath: '/scopes',
-    schemaPath: '#/type',
-    params: { type: 'object' },
-    message: 'should be object'
-  },
-  {
     keyword: 'errorMessage',
     dataPath: '/scopes/0',
     schemaPath: '#/items/errorMessage',
@@ -37,13 +30,6 @@ export const errors = [
       ]
     },
     message: 'invalid scope "camunda:Connector", missing properties=[]'
-  },
-  {
-    keyword: 'oneOf',
-    dataPath: '/scopes',
-    schemaPath: '#/properties/scopes/oneOf',
-    params: { passingSchemas: null },
-    message: 'should match exactly one schema in oneOf'
   },
   {
     keyword: 'type',

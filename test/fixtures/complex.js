@@ -116,8 +116,9 @@ export const template = [
       'bpmn:ServiceTask'
     ],
     'properties': [],
-    'scopes': {
-      'camunda:Connector': {
+    'scopes': [
+      {
+        'type': 'camunda:Connector',
         'properties': [
           {
             'label': 'ConnectorId',
@@ -216,7 +217,7 @@ export const template = [
           }
         ]
       }
-    }
+    ]
   },
   {
     'name': 'MailTask',
