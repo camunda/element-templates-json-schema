@@ -6,6 +6,16 @@ All notable changes to [element-templates-json-schema](https://github.com/camund
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.5.0
+
+* `FEAT`: remove deprecated `scopes_old`
+* `FEAT`: remove type `Object` from `template#entriesVisible`
+
+### BREAKING CHANGES
+
+* `template#scopes` takes an Array as the only valid type. Wrap your `scopes` object in an Array and add `type` to migrate.
+* `template#entriesVisible` can now be only of type `Boolean`. Make sure to adjust your templates.
+
 ## 0.4.0
 
 * `FEAT`: support `camunda:in` and `camunda:out` bindings for specific `target`, `source` or `sourceExpression` given `local` scope ([d0e9d2b](https://github.com/camunda/element-templates-json-schema/commit/d0e9d2b5d75a9f36366125b08065db26ec409fa9))
