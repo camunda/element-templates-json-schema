@@ -243,6 +243,19 @@ describe('validation', function() {
 
     });
 
+
+    describe('grouping', function() {
+
+      testTemplate('groups');
+
+
+      testTemplate('groups-missing-id');
+
+
+      testTemplate('groups-missing-label');
+
+    });
+
   });
 
 
