@@ -563,6 +563,12 @@
                 ]
               }
             }
+          },
+          "group": {
+            "$id": "#/properties/property/group",
+            "type": "string",
+            "title": "property group",
+            "description": "The custom group of the control field for the property"
           }
         }
       }
@@ -698,6 +704,44 @@
           "type": "boolean",
           "title": "element template entries visible",
           "description": "Select whether non-template entries are visible in the properties panel"
+        },
+        "groups": {
+          "$id": "#/groups",
+          "type": "array",
+          "title": "element template properties groups",
+          "description": "The custom defined groups of the element template",
+          "default": [],
+          "items": {
+            "$id": "#/groups/group",
+            "type": "object",
+            "title": "element template group",
+            "description": "A custom defined group for the element template",
+            "default": {},
+            "required": [
+              "id",
+              "label"
+            ],
+            "errorMessage": {
+              "required": {
+                "id": "missing id for group \"${0#}\"",
+                "label": "missing label for group \"${0#}\""
+              }
+            },
+            "properties": {
+              "id": {
+                "$id": "#/groups/group/id",
+                "type": "string",
+                "title": "group id",
+                "description": "The id of the custom group"
+              },
+              "label": {
+                "$id": "#/groups/group/label",
+                "type": "string",
+                "title": "group label",
+                "description": "The label of the custom group"
+              }
+            }
+          }
         }
       },
       "errorMessage": {
