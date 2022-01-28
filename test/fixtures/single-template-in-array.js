@@ -6,6 +6,6 @@ export const template = [
       'bpmn:ServiceTask'
     ],
     'properties': []
-  }];
+  } ];
 
 export const errors = null;

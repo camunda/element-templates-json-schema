@@ -1,7 +1,7 @@
 export const template = {
   'name': 'Mail Task',
   'id': 'com.camunda.example.MailTask',
-  'appliesTo': ['bpmn:ServiceTask'],
+  'appliesTo': [ 'bpmn:ServiceTask' ],
   'properties': [
     {
       'label': 'Implementation Type',
