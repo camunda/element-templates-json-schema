@@ -176,6 +176,31 @@
                 }
               }
             }
+          },
+          {
+            "if": {
+              "properties": {
+                "group": {
+                  "pattern": "^(?!\/s*$).+/"
+                }
+              },
+              "required": [
+                "group"
+              ]
+            },
+            "then": {
+              "#/groups": {
+                "contains": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "const": "${0/group}"
+                    }
+                  }
+                }
+              },
+              "errorMessage": "invalid group id ${0/group}, not defined in groups"
+            }
           }
         ],
         "properties": {
