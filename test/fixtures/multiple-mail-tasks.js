@@ -144,6 +144,6 @@ export const template = [
         }
       }
     ]
-  }];
+  } ];
 
 export const errors = null;
