@@ -6,6 +6,10 @@ All notable changes to [element-templates-json-schema](https://github.com/camund
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.6.0
+
+* `FEAT`: add `groups` schema ([#39](https://github.com/camunda/element-templates-json-schema/pull/39))
+
 ## 0.5.0
 
 * `FEAT`: remove deprecated `scopes_old`
