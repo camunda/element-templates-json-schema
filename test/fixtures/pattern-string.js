@@ -10,7 +10,7 @@ export const template = {
       'description': 'Must match /A+B/',
       'type': 'String',
       'binding': {
-        'type': 'camunda:property',
+        'type': 'property',
         'name': 'prop'
       },
       'constraints': {

@@ -1,0 +1,66 @@
+{
+  "$id": "#/scopes",
+  "type": "array",
+  "title": "element template scope",
+  "description": "Special scoped bindings that allow you to configure nested elements",
+  "items": {
+    "$id": "#/scopes/item",
+    "type": "object",
+    "title": "element template scope item",
+    "description": "Scoped binding to configure nested elements",
+    "properties": {
+      "type": {
+        "$id": "#scopes/item/type",
+        "type": "string",
+        "enum": [
+          "camunda:Connector",
+          "bpmn:Error"
+        ],
+        "errorMessage": "invalid scope type ${0}; must be any of { camunda:Connector, bpmn:Error }"
+      },
+      "properties": {
+        "$id": "#/scopes/properties",
+        "allOf": [
+          {
+            "$ref": "base-properties.json"
+          },
+          {
+            "$ref": "platform-properties.json"
+          }
+        ]
+      }
+    },
+    "required": [
+      "type",
+      "properties"
+    ],
+    "errorMessage": {
+      "required": {
+        "type": "invalid scope, missing type",
+        "properties": "invalid scope ${0/type}, missing properties=[]"
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "type": {
+              "enum": [
+                "bpmn:Error"
+              ]
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        "then": {
+          "required": [
+            "id"
+          ],
+          "errorMessage": "invalid scope ${0/type}, missing id"
+        }
+      }
+    ]
+  }
+}

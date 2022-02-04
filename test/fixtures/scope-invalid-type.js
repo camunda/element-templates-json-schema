@@ -17,13 +17,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/scopes/0/type',
-    schemaPath: '#/items/properties/type/errorMessage',
+    schemaPath: '#/properties/scopes/items/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
           dataPath: '/scopes/0/type',
-          schemaPath: '#/items/properties/type/enum',
+          schemaPath: '#/properties/scopes/items/properties/type/enum',
           emUsed: true,
           params: { allowedValues: [ 'camunda:Connector', 'bpmn:Error' ] },
           message: 'should be equal to one of the allowed values'

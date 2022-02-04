@@ -10,7 +10,7 @@ export const template = {
       'type': 'String',
       'value': '45',
       'binding': {
-        'type': 'camunda:inputParameter',
+        'type': 'property',
         'name': 'shoeSize'
       },
       'constraints': {

@@ -25,14 +25,14 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/0/choices/1',
-    schemaPath: '#/definitions/properties/items/properties/choices/items/errorMessage',
+    schemaPath: '#/definitions/properties/allOf/0/items/properties/choices/items/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           emUsed: true,
           dataPath: '/properties/0/choices/1',
-          schemaPath: '#/definitions/properties/items/properties/choices/items/required',
+          schemaPath: '#/definitions/properties/allOf/0/items/properties/choices/items/required',
           params: {
             missingProperty: 'value'
           },
