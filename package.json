@@ -6,7 +6,8 @@
     "lint": "eslint .",
     "test": "mocha -r esm --reporter=spec --recursive test/spec",
     "dev": "npm run test -- --watch",
-    "all": "run-s lint test"
+    "all": "run-s build:schema lint test",
+    "build:schema": "node tasks/generate-schemas.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/camunda/element-templates-json-schema#readme",
   "devDependencies": {
+    "@apidevtools/json-schema-ref-parser": "^9.0.9",
     "ajv": "^7.2.3",
     "ajv-errors": "^2.0.1",
     "chai": "^4.3.4",
