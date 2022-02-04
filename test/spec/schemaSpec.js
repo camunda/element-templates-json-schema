@@ -1,17 +1,18 @@
 import Ajv from 'ajv';
 import { expect } from 'chai';
 
-import schema from '../../resources/schema.json';
+import platformSchema from '../../resources/schema.json';
+
 
 describe('schema validation', function() {
 
-  it('should be valid', function() {
+  it('should be valid (platform)', function() {
 
     // given
     const ajv = new Ajv();
 
     // when
-    const valid = ajv.validateSchema(schema);
+    const valid = ajv.validateSchema(platformSchema);
 
     // then
     expect(valid).to.be.true;

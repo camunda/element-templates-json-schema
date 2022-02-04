@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://camunda.org/schema/element-templates/1.0",
+  "title": "Element Template Schema",
+  "description": "A single element template configuration or an array of element template configurations",
+  "definitions": {
+    "properties": {
+      "allOf": [
+        {
+          "$ref": "src/defs/base-properties.json"
+        },
+        {
+          "$ref": "src/defs/platform-properties.json"
+        }
+      ]
+    },
+    "template": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "src/defs/base.json"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/properties",
+          "$id": "#/properties"
+        },
+        "scopes": {
+          "$ref": "src/defs/scopes.json",
+          "$id": "#/scopes"
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/template"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/template"
+      }
+    }
+  ]
+}

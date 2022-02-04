@@ -16,7 +16,7 @@ export const errors = [
   {
     keyword: 'type',
     dataPath: '/scopes',
-    schemaPath: '#/type',
+    schemaPath: '#/properties/scopes/type',
     params: { type: 'array' },
     message: 'should be array'
   },

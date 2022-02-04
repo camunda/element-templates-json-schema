@@ -16,13 +16,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/scopes/0',
-    schemaPath: '#/items/errorMessage',
+    schemaPath: '#/properties/scopes/items/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           dataPath: '/scopes/0',
-          schemaPath: '#/items/required',
+          schemaPath: '#/properties/scopes/items/required',
           params: { missingProperty: 'properties' },
           message: "should have required property 'properties'",
           emUsed: true

@@ -9,13 +9,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/appliesTo/0',
-    schemaPath: '#/properties/appliesTo/items/errorMessage',
+    schemaPath: '#/allOf/0/properties/appliesTo/items/errorMessage',
     params: {
       errors: [
         {
           keyword: 'pattern',
           dataPath: '/appliesTo/0',
-          schemaPath: '#/properties/appliesTo/items/pattern',
+          schemaPath: '#/allOf/0/properties/appliesTo/items/pattern',
           params: { pattern: '^(.*?:)' },
           message: 'should match pattern "^(.*?:)"',
           emUsed: true

@@ -21,14 +21,14 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/0',
-    schemaPath: '#/definitions/properties/items/allOf/0/then/errorMessage',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/0/then/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           emUsed: true,
           dataPath: '/properties/0',
-          schemaPath: '#/definitions/properties/items/allOf/0/then/required',
+          schemaPath: '#/definitions/properties/allOf/0/items/allOf/0/then/required',
           params: {
             missingProperty: 'choices'
           },
@@ -41,7 +41,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/0',
-    schemaPath: '#/definitions/properties/items/allOf/0/if',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/0/if',
     params: {
       'failingKeyword': 'then'
     },

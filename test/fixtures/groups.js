@@ -9,7 +9,7 @@ export const template = {
       'label': 'input 1',
       'type': 'String',
       'binding': {
-        'type': 'camunda:inputParameter',
+        'type': 'property',
         'name': 'input1'
       }
     },
@@ -18,7 +18,7 @@ export const template = {
       'group': 'one',
       'type': 'String',
       'binding': {
-        'type': 'camunda:inputParameter',
+        'type': 'property',
         'name': 'input2'
       }
     },
@@ -27,7 +27,7 @@ export const template = {
       'group': 'one',
       'type': 'String',
       'binding': {
-        'type': 'camunda:inputParameter',
+        'type': 'property',
         'name': 'input3'
       }
     },
@@ -36,7 +36,7 @@ export const template = {
       'group': 'two',
       'type': 'String',
       'binding': {
-        'type': 'camunda:inputParameter',
+        'type': 'property',
         'name': 'input4'
       }
     },
@@ -45,7 +45,7 @@ export const template = {
       'group': 'three',
       'type': 'String',
       'binding': {
-        'type': 'camunda:inputParameter',
+        'type': 'property',
         'name': 'input5'
       }
     }

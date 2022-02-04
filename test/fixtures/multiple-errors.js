@@ -44,54 +44,17 @@ export const template = {
 export const errors = [
   {
     keyword: 'errorMessage',
-    dataPath: '/properties/0/type',
-    schemaPath: '#/definitions/properties/items/allOf/1/then/properties/type/errorMessage',
-    params: {
-      errors: [
-        {
-          keyword: 'enum',
-          emUsed: true,
-          dataPath: '/properties/0/type',
-          schemaPath: '#/definitions/properties/items/allOf/1/then/properties/type/enum',
-          params: {
-            'allowedValues': [
-              'String',
-              'Text',
-              'Hidden',
-              'Dropdown',
-              'Boolean'
-            ]
-          },
-          message: 'should be equal to one of the allowed values'
-        }
-      ]
-    },
-    message: 'invalid property type "Foo" for binding type "property"; must be any of { String, Text, Hidden, Dropdown, Boolean }'
-  },
-  {
-    dataPath: '/properties/0',
-    keyword: 'if',
-    message: 'should match "then" schema',
-    params: {
-      'failingKeyword': 'then'
-    },
-    schemaPath: '#/definitions/properties/items/allOf/1/if'
-  },
-  {
-    keyword: 'errorMessage',
     dataPath: '/properties/1',
-    schemaPath: '#/definitions/properties/items/allOf/0/then/errorMessage',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/0/then/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
-          emUsed: true,
           dataPath: '/properties/1',
-          schemaPath: '#/definitions/properties/items/allOf/0/then/required',
-          params: {
-            missingProperty: 'choices'
-          },
-          message: "should have required property 'choices'"
+          schemaPath: '#/definitions/properties/allOf/0/items/allOf/0/then/required',
+          params: { missingProperty: 'choices' },
+          message: "should have required property 'choices'",
+          emUsed: true
         }
       ]
     },
@@ -100,27 +63,50 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/1',
-    schemaPath: '#/definitions/properties/items/allOf/0/if',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/0/if',
+    params: { failingKeyword: 'then' },
+    message: 'should match "then" schema'
+  },
+  {
+    keyword: 'errorMessage',
+    dataPath: '/properties/0/type',
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/0/then/properties/type/errorMessage',
     params: {
-      'failingKeyword': 'then'
+      errors: [
+        {
+          keyword: 'enum',
+          dataPath: '/properties/0/type',
+          schemaPath: '#/definitions/properties/allOf/1/items/allOf/0/then/properties/type/enum',
+          params: {
+            allowedValues: [ 'String', 'Text', 'Hidden', 'Dropdown', 'Boolean' ]
+          },
+          message: 'should be equal to one of the allowed values',
+          emUsed: true
+        }
+      ]
     },
+    message: 'invalid property type "Foo" for binding type "property"; must be any of { String, Text, Hidden, Dropdown, Boolean }'
+  },
+  {
+    keyword: 'if',
+    dataPath: '/properties/0',
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/0/if',
+    params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },
   {
     keyword: 'errorMessage',
     dataPath: '/properties/2/binding',
-    schemaPath: '#/definitions/properties/items/properties/binding/allOf/1/then/errorMessage',
+    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/1/then/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
-          emUsed: true,
           dataPath: '/properties/2/binding',
-          schemaPath: '#/definitions/properties/items/properties/binding/allOf/1/then/required',
-          params: {
-            missingProperty: 'source'
-          },
-          message: "should have required property 'source'"
+          schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/1/then/required',
+          params: { missingProperty: 'source' },
+          message: "should have required property 'source'",
+          emUsed: true
         }
       ]
     },
@@ -129,27 +115,23 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/2/binding',
-    schemaPath: '#/definitions/properties/items/properties/binding/allOf/1/if',
-    params: {
-      'failingKeyword': 'then'
-    },
+    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/1/if',
+    params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },
   {
     keyword: 'errorMessage',
     dataPath: '/properties/3/binding',
-    schemaPath: '#/definitions/properties/items/properties/binding/allOf/0/then/errorMessage',
+    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/0/then/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
-          emUsed: true,
           dataPath: '/properties/3/binding',
-          schemaPath: '#/definitions/properties/items/properties/binding/allOf/0/then/required',
-          params: {
-            missingProperty: 'name'
-          },
-          message: "should have required property 'name'"
+          schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/0/then/required',
+          params: { missingProperty: 'name' },
+          message: "should have required property 'name'",
+          emUsed: true
         }
       ]
     },
@@ -158,28 +140,22 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/3/binding',
-    schemaPath: '#/definitions/properties/items/properties/binding/allOf/0/if',
-    params: {
-      'failingKeyword': 'then'
-    },
+    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/0/if',
+    params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },
   {
-    dataPath: '',
     keyword: 'type',
-    message: 'should be array',
-    params: {
-      type: 'array',
-    },
+    dataPath: '',
     schemaPath: '#/oneOf/1/type',
+    params: { type: 'array' },
+    message: 'should be array'
   },
   {
-    dataPath: '',
     keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
-    params: {
-      passingSchemas: null
-    },
-    schemaPath: '#/oneOf'
+    dataPath: '',
+    schemaPath: '#/oneOf',
+    params: { passingSchemas: null },
+    message: 'should match exactly one schema in oneOf'
   }
 ];

@@ -47,13 +47,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/scopes/0',
-    schemaPath: '#/items/allOf/0/then/errorMessage',
+    schemaPath: '#/properties/scopes/items/allOf/0/then/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           dataPath: '/scopes/0',
-          schemaPath: '#/items/allOf/0/then/required',
+          schemaPath: '#/properties/scopes/items/allOf/0/then/required',
           params: { missingProperty: 'id' },
           emUsed: true,
           message: "should have required property 'id'"
@@ -65,7 +65,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/scopes/0',
-    schemaPath: '#/items/allOf/0/if',
+    schemaPath: '#/properties/scopes/items/allOf/0/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },

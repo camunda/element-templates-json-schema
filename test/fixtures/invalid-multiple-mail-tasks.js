@@ -155,13 +155,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/0',
-    schemaPath: '#/errorMessage',
+    schemaPath: '#/allOf/0/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           dataPath: '/0',
-          schemaPath: '#/required',
+          schemaPath: '#/allOf/0/required',
           params: { missingProperty: 'appliesTo' },
           message: "should have required property 'appliesTo'",
           emUsed: true
@@ -173,13 +173,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/1',
-    schemaPath: '#/errorMessage',
+    schemaPath: '#/allOf/0/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           dataPath: '/1',
-          schemaPath: '#/required',
+          schemaPath: '#/allOf/0/required',
           params: { missingProperty: 'appliesTo' },
           message: "should have required property 'appliesTo'",
           emUsed: true

@@ -9,7 +9,7 @@ export const errors = [
   {
     keyword: 'type',
     dataPath: '/appliesTo',
-    schemaPath: '#/properties/appliesTo/type',
+    schemaPath: '#/allOf/0/properties/appliesTo/type',
     params: { type: 'array' },
     message: 'should be array'
   },
