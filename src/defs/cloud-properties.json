@@ -1,0 +1,233 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "array",
+  "title": "element template properties",
+  "description": "The properties of the element template",
+  "default": [],
+  "items": {
+    "type": "object",
+    "title": "element template property",
+    "description": "A property defined for the element template",
+    "default": {},
+    "required": [
+      "binding"
+    ],
+    "errorMessage": {
+      "required": {
+        "binding": "missing binding for property \"${0#}\""
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "property"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "properties": {
+            "type": {
+              "enum": [
+                "String",
+                "Text",
+                "Hidden",
+                "Dropdown",
+                "Boolean"
+              ],
+              "errorMessage": "invalid property type ${0} for binding type \"property\"; must be any of { String, Text, Hidden, Dropdown, Boolean }"
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "zeebe:input",
+                    "zeebe:output",
+                    "zeebe:taskHeader",
+                    "zeebe:taskDefinition:type"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "properties": {
+            "type": {
+              "enum": [
+                "String",
+                "Text",
+                "Hidden",
+                "Dropdown"
+              ],
+              "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Text, Hidden, Dropdown }"
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "optional": {
+              "const": true
+            }
+          },
+          "required": [
+            "optional"
+          ]
+        },
+        "then": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "zeebe:input",
+                    "zeebe:output"
+                  ],
+                  "errorMessage": "optional is not supported for binding type ${0}; must be any of { zeebe:input, zeebe:output }"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "properties": {
+      "binding": {
+        "$id": "#/properties/property/binding",
+        "type": "object",
+        "title": "property binding",
+        "description": "A binding to a BPMN 2.0 property",
+        "required": [
+          "type"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "property",
+                    "zeebe:input"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "required": [
+                "name"
+              ],
+              "errorMessage": "property.binding ${0/type} requires name"
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:output"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "required": [
+                "source"
+              ],
+              "errorMessage": "property.binding ${0/type} requires source"
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:taskHeader"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "required": [
+                "key"
+              ],
+              "errorMessage": "property.binding ${0/type} requires key"
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "$id": "#/properties/property/binding/type",
+            "type": "string",
+            "title": "property binding type",
+            "enum": [
+              "property",
+              "zeebe:taskDefinition:type",
+              "zeebe:input",
+              "zeebe:output",
+              "zeebe:taskHeader"
+            ],
+            "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:taskHeader }",
+            "description": "The type of the property binding"
+          },
+          "name": {
+            "$id": "#/properties/property/binding/name",
+            "type": "string",
+            "title": "property binding name",
+            "description": "The name of binding xml property"
+          },
+          "source": {
+            "$id": "#/properties/property/binding/source",
+            "type": "string",
+            "title": "property binding source",
+            "description": "The source value of a property binding (zeebe:output)"
+          },
+          "key": {
+            "$id": "#/properties/property/binding/key",
+            "type": "string",
+            "title": "property binding key",
+            "description": "The key value of a property binding (zeebe:taskHeader)"
+          }
+        }
+      },
+      "optional": {
+        "$id": "#/optional",
+        "type": "boolean",
+        "title": "element template optional",
+        "description": "Indicates whether a property is optional"
+      }
+    }
+  }
+}
