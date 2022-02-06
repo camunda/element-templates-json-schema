@@ -28,6 +28,34 @@ You can also use a specific version.
 
 Additionally, it's possible to use the schema on top of existing validation libraries and tools. Follow the [example](./example) for further instructions.
 
+
+## Build and Run
+
+Prepare the project by installing all dependencies:
+
+```sh
+npm install
+```
+
+Then, depending on your use case, bundle [the source schema files](./src) together
+
+```sh
+# bundle all schema files
+npm run build
+
+# bundle platform schema
+npm run build:platform
+
+# bundle cloud schema
+npm run build:cloud
+```
+
+Furthermore, execute the following command to run the generated schema against our tests
+
+```sh
+npm run test
+```
+
 ## License
 
 MIT

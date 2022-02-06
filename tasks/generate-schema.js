@@ -1,14 +1,16 @@
 const util = require('util');
 const refParser = require('@apidevtools/json-schema-ref-parser');
 
-const writeFile = require('fs').writeFileSync,
+const readFile = require('fs').readFileSync,
+      writeFile = require('fs').writeFileSync,
       mkdir = require('fs').mkdirSync;
 
 const pathJoin = require('path').join,
       dirname = require('path').dirname;
 
-const platformSchema = require('../src/platform.json');
-const cloudSchema = require('../src/cloud.json');
+const mri = require('mri');
+
+const argv = process.argv.slice(2);
 
 
 async function bundleSchema(schema, path) {
@@ -23,7 +25,7 @@ async function bundleSchema(schema, path) {
 
 
 function writeSchema(schema, path) {
-  const filePath = pathJoin('resources', path);
+  const filePath = pathJoin(path);
 
   try {
     mkdir(dirname(filePath));
@@ -38,11 +40,23 @@ function writeSchema(schema, path) {
 }
 
 
-// (1) generate Camunda Platform JSON Schema (C7)
-bundleSchema(platformSchema, 'schema.json');
+const {
+  input,
+  output
+} = mri(argv, {
+  alias: {
+    i: 'input',
+    o: 'output'
+  }
+});
 
-// (2) generate Camunda Cloud JSON Schema (C8)
-bundleSchema(cloudSchema, 'cloud.json');
+if (!input || !output) {
+  console.error('Arguments missing.');
+  console.error('Example: node tasks/generate-schema.js --input=./src/platform.json --output=./resources/schema.json');
+  process.exit(1);
+}
+
+bundleSchema(JSON.parse(readFile(input)), output);
 
 
 // helper /////////////
