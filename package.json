@@ -2,6 +2,9 @@
   "name": "@camunda/element-templates-json-schema",
   "version": "0.6.0",
   "description": "JSON Schema for (Camunda) Element Templates",
+  "files": [
+    "resources"
+  ],
   "scripts": {
     "lint": "eslint .",
     "test": "mocha -r esm --reporter=spec --recursive test/spec",
@@ -9,7 +12,9 @@
     "all": "run-s build lint test",
     "build": "run-s build:platform build:cloud",
     "build:platform": "node tasks/generate-schema.js --input=./src/platform.json --output=./resources/schema.json",
-    "build:cloud": "node tasks/generate-schema.js --input=./src/cloud.json --output=./resources/cloud.json"
+    "build:cloud": "node tasks/generate-schema.js --input=./src/cloud.json --output=./resources/cloud.json",
+    "prepare": "run-s build",
+    "prepublishOnly": "run-s build test"
   },
   "repository": {
     "type": "git",
