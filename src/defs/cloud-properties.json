@@ -117,6 +117,33 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "optional": {
+              "const": true
+            }
+          },
+          "required": [
+            "optional"
+          ]
+        },
+        "then": {
+          "properties": {
+            "constraints": {
+              "properties": {
+                "notEmpty": {
+                  "const": false,
+                  "errorMessage": "optional is not allowed for truthy \"notEmpty\" constraint"
+                }
+              },
+              "required": [
+                "notEmpty"
+              ]
+            }
+          }
+        }
       }
     ],
     "properties": {
