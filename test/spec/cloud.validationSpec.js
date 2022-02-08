@@ -137,6 +137,9 @@ describe('validation - cloud', function() {
     testTemplate('cloud-optional-invalid-type');
 
 
+    testTemplate('cloud-optional-invalid-not-empty');
+
+
     describe('property type - binding type', function() {
 
       testTemplate('invalid-property-type');
