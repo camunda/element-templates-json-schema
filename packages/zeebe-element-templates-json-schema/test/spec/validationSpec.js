@@ -2,7 +2,7 @@ import { expect } from 'chai';
 
 import util from 'util';
 
-import schema from '../../resources/cloud.json';
+import schema from '../../resources/schema.json';
 
 import {
   createValidator
@@ -11,7 +11,7 @@ import {
 const validator = createValidator(schema);
 
 
-describe('validation - cloud', function() {
+describe('validation', function() {
 
   function validateTemplate(template) {
 
@@ -89,7 +89,7 @@ describe('validation - cloud', function() {
     testTemplate('additional-property');
 
 
-    testTemplate('invalid-binding-type-cloud');
+    testTemplate('invalid-binding-type');
 
 
     testTemplate('choices-missing-value');
@@ -131,13 +131,13 @@ describe('validation - cloud', function() {
     testTemplate('pattern-string');
 
 
-    testTemplate('cloud-optional-inputs-outputs');
+    testTemplate('optional-inputs-outputs');
 
 
-    testTemplate('cloud-optional-invalid-type');
+    testTemplate('optional-invalid-type');
 
 
-    testTemplate('cloud-optional-invalid-not-empty');
+    testTemplate('optional-invalid-not-empty');
 
 
     describe('property type - binding type', function() {

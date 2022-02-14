@@ -1,10 +1,14 @@
 # Changelog
 
-All notable changes to [element-templates-json-schema](https://github.com/camunda/element-templates-json-schema) are documented here. We use [semantic versioning](http://semver.org/) for releases.
+All notable changes to [@camunda/element-templates-json-schema](https://github.com/camunda/element-templates-json-schema/packages/element-templates-json-schema) are documented here. We use [semantic versioning](http://semver.org/) for releases.
 
 ## Unreleased
 
 ___Note:__ Yet to be released changes appear here._
+
+## 0.7.0
+
+* `FEAT`: re-structure schema ([#42](https://github.com/camunda/element-templates-json-schema/pull/41))
 
 ## 0.6.0
 

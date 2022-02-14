@@ -22,10 +22,10 @@
         "$id": "#/scopes/properties",
         "allOf": [
           {
-            "$ref": "base-properties.json"
+            "$ref": "../../../../src/defs/base-properties.json"
           },
           {
-            "$ref": "platform-properties.json"
+            "$ref": "properties.json"
           }
         ]
       }

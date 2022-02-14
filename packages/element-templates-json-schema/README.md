@@ -1,4 +1,4 @@
-# element-templates-json-schema
+# @camunda/element-templates-json-schema
 
 [![Build Status](https://img.shields.io/github/workflow/status/camunda/element-templates-json-schema/CI)](https://github.com/camunda/element-templates-json-schema/actions?query=workflow%3ACI)
 
@@ -8,9 +8,7 @@ JSON Schema for [(Camunda) Element Templates](https://docs.camunda.org/manual/la
 
 ## Usage
 
-This library exports [several Element Templates JSON Schema definitions](./packages).
-
-There exist different ways to consume the definition. Many tools, like IDEs, support schema validation out of the box. To activate those, simply specify the `$schema` attribute to an element template.
+Set the `$schema` attribute to reference the [JSON Schema definition](./resources/schema.json).
 
 ```js
 {
@@ -28,9 +26,6 @@ You can also use a specific version.
 "$schema": "https://unpkg.com/@camunda/element-templates-json-schema@0.1.0/resources/schema.json"
 ```
 
-Additionally, it's possible to use the schema on top of existing validation libraries and tools. Follow the [example](./example) for further instructions.
-
-
 ## Build and Run
 
 Prepare the project by installing all dependencies:
@@ -39,29 +34,16 @@ Prepare the project by installing all dependencies:
 npm install
 ```
 
-Then, depending on your use case, bundle [the source schema files](./packages) together
+Bundle [the source schema files](./src) together
 
 ```sh
-# bundle all schema files
 npm run build
-
-# bundle C7 schema
-npm run build:camunda
-
-# bundle C8 schema
-npm run build:zeebe
 ```
 
-Furthermore, execute the following command to run the generated schema against our tests
+Execute the following command to run the generated schema against the tests
 
 ```sh
 npm run test
-```
-
-Run tests in individual [packages](./packages):
-
-```
-npm run dev -- @camunda/zeebe-element-templates-json-schema
 ```
 
 ## License
