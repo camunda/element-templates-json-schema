@@ -2,7 +2,7 @@ import {
   Validator
 } from '@bpmn-io/json-schema-validator';
 
-import schema from '../resources/schema.json';
+import schema from '../packages/element-templates-json-schema/resources/schema.json';
 
 import template from './example.json';
 
