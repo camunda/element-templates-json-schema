@@ -1,0 +1,26 @@
+{
+  "name": "@camunda/zeebe-element-templates-json-schema",
+  "version": "0.0.0",
+  "description": "JSON Schema for (Zeebe) Element Templates",
+  "files": [
+    "resources"
+  ],
+  "scripts": {
+    "test": "mocha -r esm --reporter=spec --recursive test/spec",
+    "dev": "npm run test -- --watch",
+    "all": "run-s build test",
+    "build": "node ../../tasks/generate-schema.js --input=./src/schema.json --output=./resources/schema.json",
+    "prepare": "run-s build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camunda/element-templates-json-schema.git",
+    "directory": "packages/zeebe-element-templates-json-schema"
+  },
+  "keywords": [
+    "json-schema",
+    "element-templates",
+    "camunda"
+  ],
+  "license": "MIT"
+}

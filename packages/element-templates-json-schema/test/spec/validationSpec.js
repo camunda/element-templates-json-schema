@@ -11,7 +11,7 @@ import {
 const validator = createValidator(schema);
 
 
-describe('validation - platform', function() {
+describe('validation', function() {
 
   function validateTemplate(template) {
 
