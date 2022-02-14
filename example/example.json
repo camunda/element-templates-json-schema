@@ -1,7 +1,7 @@
 {
   "name": "Mail Task",
   "id": "com.camunda.example.MailTask",
-  "$schema": "../resources/schema.json",
+  "$schema": "../packages/element-templates-json-schema/resources/schema.json",
   "appliesTo": ["bpmn:ServiceTask"],
   "properties": [
     {
