@@ -11,6 +11,10 @@
     "build:camunda": "lerna run build --scope @camunda/element-templates-json-schema",
     "build:zeebe": "lerna run build --scope @camunda/zeebe-element-templates-json-schema",
     "all": "run-s build lint test",
+    "lerna-publish": "lerna publish",
+    "lerna-publish:dry": "lerna version --no-git-tag-version --no-push",
+    "release": "run-s build test lerna-publish",
+    "release:dry": "run-s build test lerna-publish:dry",
     "postinstall": "lerna bootstrap --hoist"
   },
   "repository": {
