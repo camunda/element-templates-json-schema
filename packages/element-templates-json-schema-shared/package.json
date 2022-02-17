@@ -1,0 +1,19 @@
+{
+  "name": "@camunda/element-templates-json-schema-shared",
+  "version": "0.0.0",
+  "description": "Shared schema definitions used within element-templates-json-schema",
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camunda/element-templates-json-schema.git",
+    "directory": "packages/element-templates-json-schema-shared"
+  },
+  "keywords": [
+    "json-schema",
+    "element-templates",
+    "camunda"
+  ],
+  "license": "MIT"
+}

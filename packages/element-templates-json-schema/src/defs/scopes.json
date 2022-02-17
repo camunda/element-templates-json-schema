@@ -22,7 +22,7 @@
         "$id": "#/scopes/properties",
         "allOf": [
           {
-            "$ref": "../../../../src/defs/base-properties.json"
+            "$ref": "../../../../packages/element-templates-json-schema-shared/src/defs/base-properties.json"
           },
           {
             "$ref": "properties.json"

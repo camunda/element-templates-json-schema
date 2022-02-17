@@ -7,7 +7,7 @@
     "properties": {
       "allOf": [
         {
-          "$ref": "../../src/defs/base-properties.json"
+          "$ref": "../../packages/element-templates-json-schema-shared/src/defs/base-properties.json"
         },
         {
           "$ref": "src/defs/properties.json"
@@ -18,7 +18,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "../../src/defs/base.json"
+          "$ref": "../../packages/element-templates-json-schema-shared/src/defs/base.json"
         }
       ],
       "properties": {
