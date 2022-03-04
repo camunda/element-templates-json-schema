@@ -2,7 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "http://camunda.org/schema/zeebe-element-templates/1.0",
   "title": "Element Template Schema",
-  "description": "A single element template configuration or an array of element template configurations",
   "definitions": {
     "properties": {
       "allOf": [
@@ -31,10 +30,12 @@
   },
   "oneOf": [
     {
+      "description": "An element template configuration.",
       "$ref": "#/definitions/template"
     },
     {
       "type": "array",
+      "description": "A list of element template configurations.",
       "items": {
         "$ref": "#/definitions/template"
       }
