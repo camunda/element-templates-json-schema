@@ -2,19 +2,30 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "http://camunda.org/schema/zeebe-element-templates/1.0",
   "title": "Element Template Schema",
-  "description": "A single element template configuration or an array of element template configurations",
   "definitions": {
     "properties": {
       "allOf": [
         {
           "type": "array",
-          "title": "element template properties",
-          "description": "The properties of the element template",
-          "default": [],
+          "description": "List of properties of the element template.",
+          "allOf": [
+            {
+              "examples": [
+                [
+                  {
+                    "label": "Name",
+                    "type": "String",
+                    "binding": {
+                      "type": "property",
+                      "name": "name"
+                    }
+                  }
+                ]
+              ]
+            }
+          ],
           "items": {
             "type": "object",
-            "title": "element template property",
-            "description": "A property defined for the element template",
             "default": {},
             "allOf": [
               {
@@ -43,53 +54,47 @@
                   "string",
                   "boolean"
                 ],
-                "title": "property value",
-                "description": "The value of the control field for the property"
+                "description": "The value of a control field."
               },
               "description": {
                 "$id": "#/properties/property/description",
                 "type": "string",
-                "title": "property description",
-                "description": "The description of the control field"
+                "description": "The description of a control field."
               },
               "label": {
                 "$id": "#/properties/property/label",
                 "type": "string",
-                "title": "property label",
-                "description": "The label of the control field for the property"
+                "description": "The label of a control field."
               },
               "type": {
                 "$id": "#/properties/property/type",
                 "type": "string",
-                "title": "property type",
-                "description": "The type of the control field"
+                "description": "The type of a control field."
               },
               "editable": {
                 "$id": "#/properties/property/editable",
                 "type": "boolean",
-                "title": "property editable",
-                "description": "Indicates whether the property is editable or not"
+                "description": "Indicates whether a control field is editable or not."
               },
               "choices": {
                 "$id": "#/properties/property/choices",
                 "type": "array",
-                "title": "property choices",
-                "description": "The choices for dropdown properties",
+                "description": "The choices for dropdown fields.",
+                "default": [],
                 "items": {
                   "$id": "#/properties/property/choices/item",
                   "type": "object",
+                  "default": {},
                   "properties": {
                     "name": {
                       "$id": "#/properties/property/choices/item/name",
                       "type": "string",
-                      "title": "choice name",
-                      "description": "The name of the choice"
+                      "description": "The name of a choice."
                     },
                     "value": {
                       "$id": "#/properties/property/choices/item/value",
                       "type": "string",
-                      "title": "choice value",
-                      "description": "The value of the choice"
+                      "description": "The value of a choice."
                     }
                   },
                   "required": [
@@ -102,46 +107,49 @@
               "constraints": {
                 "$id": "#/properties/property/constraints",
                 "type": "object",
-                "title": "property constraints",
-                "description": "The validation constraints",
+                "description": "The validation constraints of a control field.",
+                "allOf": [
+                  {
+                    "examples": [
+                      {
+                        "notEmpty": true
+                      }
+                    ]
+                  }
+                ],
                 "properties": {
                   "notEmpty": {
                     "$id": "#/properties/property/constraints/notEmpty",
                     "type": "boolean",
-                    "title": "property constraints not empty",
-                    "description": "The control field must not be empty"
+                    "description": "The control field must not be empty."
                   },
                   "minLength": {
                     "$id": "#/properties/property/constraints/minLength",
                     "type": "number",
-                    "title": "property constraints min length",
-                    "description": "The minimal length for the control field value"
+                    "description": "The minimal length of a control field value."
                   },
                   "maxLength": {
                     "$id": "#/properties/property/constraints/maxLength",
                     "type": "number",
-                    "title": "property constraints max length",
-                    "description": "The maximal length for the control field value"
+                    "description": "The maximal length for a control field value."
                   },
                   "pattern": {
                     "$id": "#/properties/property/constraints/pattern",
-                    "title": "property constraints pattern",
-                    "description": "A regular expression pattern for the constraints",
+                    "description": "A regular expression pattern for a constraint.",
                     "oneOf": [
                       {
                         "type": "object",
+                        "default": {},
                         "properties": {
                           "value": {
                             "$id": "#/properties/property/constraints/pattern/value",
                             "type": "string",
-                            "title": "property constraints pattern value",
-                            "description": "The regular expression of the pattern constraint"
+                            "description": "The regular expression of a pattern."
                           },
                           "message": {
                             "$id": "#/properties/property/constraints/pattern/message",
                             "type": "string",
-                            "title": "property constraints pattern message",
-                            "description": "The validation message of the pattern constraint"
+                            "description": "The validation message of a pattern."
                           }
                         }
                       },
@@ -155,8 +163,7 @@
               "group": {
                 "$id": "#/properties/property/group",
                 "type": "string",
-                "title": "property group",
-                "description": "The custom group of the control field for the property"
+                "description": "The custom group of a control field."
               }
             }
           }
@@ -164,13 +171,9 @@
         {
           "$schema": "http://json-schema.org/draft-07/schema",
           "type": "array",
-          "title": "element template properties",
-          "description": "The properties of the element template",
-          "default": [],
+          "description": "List of properties of the element template.",
           "items": {
             "type": "object",
-            "title": "element template property",
-            "description": "A property defined for the element template",
             "default": {},
             "required": [
               "binding"
@@ -313,8 +316,7 @@
               "binding": {
                 "$id": "#/properties/property/binding",
                 "type": "object",
-                "title": "property binding",
-                "description": "A binding to a BPMN 2.0 property",
+                "description": "Specifying how the property is mapped to BPMN or Zeebe extension elements and attributes.",
                 "required": [
                   "type"
                 ],
@@ -375,13 +377,36 @@
                       ],
                       "errorMessage": "property.binding ${0/type} requires key"
                     }
+                  },
+                  {
+                    "examples": [
+                      {
+                        "type": "property",
+                        "name": "name"
+                      },
+                      {
+                        "type": "zeebe:input",
+                        "name": "input"
+                      },
+                      {
+                        "type": "zeebe:output",
+                        "source": "output"
+                      },
+                      {
+                        "type": "zeebe:taskDefinition:type"
+                      },
+                      {
+                        "type": "zeebe:taskHeader",
+                        "key": "key"
+                      }
+                    ]
                   }
                 ],
                 "properties": {
                   "type": {
                     "$id": "#/properties/property/binding/type",
                     "type": "string",
-                    "title": "property binding type",
+                    "description": "The type of a property binding.",
                     "enum": [
                       "property",
                       "zeebe:taskDefinition:type",
@@ -389,34 +414,29 @@
                       "zeebe:output",
                       "zeebe:taskHeader"
                     ],
-                    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:taskHeader }",
-                    "description": "The type of the property binding"
+                    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:taskHeader }"
                   },
                   "name": {
                     "$id": "#/properties/property/binding/name",
                     "type": "string",
-                    "title": "property binding name",
-                    "description": "The name of binding xml property"
+                    "description": "The name of a property binding."
                   },
                   "source": {
                     "$id": "#/properties/property/binding/source",
                     "type": "string",
-                    "title": "property binding source",
-                    "description": "The source value of a property binding (zeebe:output)"
+                    "description": "The source value of a property binding (zeebe:output)."
                   },
                   "key": {
                     "$id": "#/properties/property/binding/key",
                     "type": "string",
-                    "title": "property binding key",
-                    "description": "The key value of a property binding (zeebe:taskHeader)"
+                    "description": "The key value of a property binding (zeebe:taskHeader)."
                   }
                 }
               },
               "optional": {
                 "$id": "#/optional",
                 "type": "boolean",
-                "title": "element template optional",
-                "description": "Indicates whether a property is optional"
+                "description": "Indicates whether a property is optional. Optional bindings do not persist empty values in the underlying BPMN 2.0 XML."
               }
             }
           }
@@ -437,38 +457,32 @@
             "name": {
               "$id": "#/name",
               "type": "string",
-              "title": "element template name",
-              "description": "The name of the element template"
+              "description": "The name of the element template."
             },
             "id": {
               "$id": "#/id",
               "type": "string",
-              "title": "element template id",
-              "description": "The identifier of the element template"
+              "description": "The identifier of the element template."
             },
             "description": {
               "$id": "#/description",
               "type": "string",
-              "title": "element template description",
-              "description": "The description of the element template"
+              "description": "The description of the element template."
             },
             "version": {
               "$id": "#/version",
               "type": "number",
-              "title": "element template version",
-              "description": "The version of the element template"
+              "description": "Optional version of the template. If you add a version to a template it will be considered unique based on its ID and version. Two templates can have the same ID if their version is different."
             },
             "isDefault": {
               "$id": "#/isDefault",
               "type": "boolean",
-              "title": "element template is default",
-              "description": "Indicates whether the element template is a default template"
+              "description": "Indicates whether the element template is a default template."
             },
             "appliesTo": {
               "$id": "#/appliesTo",
               "type": "array",
-              "title": "element template applies to",
-              "description": "The definition for which element types the element template can be applied",
+              "description": "List of BPMN types the template can be applied to.",
               "default": [],
               "items": {
                 "$id": "#/appliesTo/items",
@@ -476,32 +490,51 @@
                 "pattern": "^(.*?:)",
                 "errorMessage": {
                   "pattern": "invalid item for \"appliesTo\", should contain namespaced property, example: \"bpmn:Task\""
-                }
+                },
+                "allOf": [
+                  {
+                    "examples": [
+                      "bpmn:Task",
+                      "bpmn:ServiceTask",
+                      "bpmn:SequenceFlow",
+                      "bpmn:Process",
+                      "bpmn:StartEvent",
+                      "bpmn:Gateway"
+                    ]
+                  }
+                ]
               }
             },
             "metadata": {
               "$id": "#/metadata",
               "type": "object",
-              "title": "element template metadata",
-              "description": "Some metadata for further configuration"
+              "description": "Some custom properties for further configuration.",
+              "default": {}
             },
             "entriesVisible": {
               "$id": "#/entriesVisible",
               "type": "boolean",
-              "title": "element template entries visible",
-              "description": "Select whether non-template entries are visible in the properties panel"
+              "description": "Select whether non-template entries are visible in the properties panel."
             },
             "groups": {
               "$id": "#/groups",
               "type": "array",
-              "title": "element template properties groups",
-              "description": "The custom defined groups of the element template",
-              "default": [],
+              "description": "Custom fields can be ordered together via groups.",
+              "allOf": [
+                {
+                  "examples": [
+                    [
+                      {
+                        "id": "group-1",
+                        "label": "My Group"
+                      }
+                    ]
+                  ]
+                }
+              ],
               "items": {
                 "$id": "#/groups/group",
                 "type": "object",
-                "title": "element template group",
-                "description": "A custom defined group for the element template",
                 "default": {},
                 "required": [
                   "id",
@@ -517,13 +550,11 @@
                   "id": {
                     "$id": "#/groups/group/id",
                     "type": "string",
-                    "title": "group id",
                     "description": "The id of the custom group"
                   },
                   "label": {
                     "$id": "#/groups/group/label",
                     "type": "string",
-                    "title": "group label",
                     "description": "The label of the custom group"
                   }
                 }
@@ -550,10 +581,12 @@
   },
   "oneOf": [
     {
+      "description": "An element template configuration.",
       "$ref": "#/definitions/template"
     },
     {
       "type": "array",
+      "description": "A list of element template configurations.",
       "items": {
         "$ref": "#/definitions/template"
       }
