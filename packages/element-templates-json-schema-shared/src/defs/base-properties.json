@@ -1,12 +1,11 @@
 {
   "type": "array",
-  "title": "element template properties",
-  "description": "The properties of the element template",
-  "default": [],
+  "description": "List of properties of the element template.",
+  "allOf": [
+    { "$ref": "examples.json#/properties" }
+  ],  
   "items": {
     "type": "object",
-    "title": "element template property",
-    "description": "A property defined for the element template",
     "default": {},
     "allOf": [
       {
@@ -35,53 +34,47 @@
           "string",
           "boolean"
         ],
-        "title": "property value",
-        "description": "The value of the control field for the property"
+        "description": "The value of a control field."
       },
       "description": {
         "$id": "#/properties/property/description",
         "type": "string",
-        "title": "property description",
-        "description": "The description of the control field"
+        "description": "The description of a control field."
       },
       "label": {
         "$id": "#/properties/property/label",
         "type": "string",
-        "title": "property label",
-        "description": "The label of the control field for the property"
+        "description": "The label of a control field."
       },
       "type": {
         "$id": "#/properties/property/type",
         "type": "string",
-        "title": "property type",
-        "description": "The type of the control field"
+        "description": "The type of a control field."
       },
       "editable": {
         "$id": "#/properties/property/editable",
         "type": "boolean",
-        "title": "property editable",
-        "description": "Indicates whether the property is editable or not"
+        "description": "Indicates whether a control field is editable or not."
       },
       "choices": {
         "$id": "#/properties/property/choices",
         "type": "array",
-        "title": "property choices",
-        "description": "The choices for dropdown properties",
+        "description": "The choices for dropdown fields.",
+        "default": [],
         "items": {
           "$id": "#/properties/property/choices/item",
           "type": "object",
+          "default": {},
           "properties": {
             "name": {
               "$id": "#/properties/property/choices/item/name",
               "type": "string",
-              "title": "choice name",
-              "description": "The name of the choice"
+              "description": "The name of a choice."
             },
             "value": {
               "$id": "#/properties/property/choices/item/value",
               "type": "string",
-              "title": "choice value",
-              "description": "The value of the choice"
+              "description": "The value of a choice."
             }
           },
           "required": [
@@ -94,46 +87,43 @@
       "constraints": {
         "$id": "#/properties/property/constraints",
         "type": "object",
-        "title": "property constraints",
-        "description": "The validation constraints",
+        "description": "The validation constraints of a control field.",
+        "allOf": [
+          { "$ref": "examples.json#/constraints" }
+        ],
         "properties": {
           "notEmpty": {
             "$id": "#/properties/property/constraints/notEmpty",
             "type": "boolean",
-            "title": "property constraints not empty",
-            "description": "The control field must not be empty"
+            "description": "The control field must not be empty."
           },
           "minLength": {
             "$id": "#/properties/property/constraints/minLength",
             "type": "number",
-            "title": "property constraints min length",
-            "description": "The minimal length for the control field value"
+            "description": "The minimal length of a control field value."
           },
           "maxLength": {
             "$id": "#/properties/property/constraints/maxLength",
             "type": "number",
-            "title": "property constraints max length",
-            "description": "The maximal length for the control field value"
+            "description": "The maximal length for a control field value."
           },
           "pattern": {
             "$id": "#/properties/property/constraints/pattern",
-            "title": "property constraints pattern",
-            "description": "A regular expression pattern for the constraints",
+            "description": "A regular expression pattern for a constraint.",
             "oneOf": [
               {
                 "type": "object",
+                "default": {},
                 "properties": {
                   "value": {
                     "$id": "#/properties/property/constraints/pattern/value",
                     "type": "string",
-                    "title": "property constraints pattern value",
-                    "description": "The regular expression of the pattern constraint"
+                    "description": "The regular expression of a pattern."
                   },
                   "message": {
                     "$id": "#/properties/property/constraints/pattern/message",
                     "type": "string",
-                    "title": "property constraints pattern message",
-                    "description": "The validation message of the pattern constraint"
+                    "description": "The validation message of a pattern."
                   }
                 }
               },
@@ -147,8 +137,7 @@
       "group": {
         "$id": "#/properties/property/group",
         "type": "string",
-        "title": "property group",
-        "description": "The custom group of the control field for the property"
+        "description": "The custom group of a control field."
       }
     }
   }
