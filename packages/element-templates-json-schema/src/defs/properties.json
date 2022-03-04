@@ -1,13 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "array",
-  "title": "element template properties",
-  "description": "The properties of the element template",
-  "default": [],
+  "description": "List of properties of the element template.",
   "items": {
     "type": "object",
-    "title": "element template property",
-    "description": "A property defined for the element template",
     "default": {},
     "required": [
       "binding"
@@ -158,8 +154,7 @@
       "binding": {
         "$id": "#/properties/property/binding",
         "type": "object",
-        "title": "property binding",
-        "description": "A binding to a BPMN 2.0 property",
+        "description": "Specifying how the property is mapped to BPMN or Camunda extension elements and attributes.",
         "required": [
           "type"
         ],
@@ -349,13 +344,15 @@
               ],
               "errorMessage": "property.binding ${0/type} requires errorRef"
             }
+          },
+          {
+            "$ref": "examples.json#/binding"
           }
         ],
         "properties": {
           "type": {
             "$id": "#/properties/property/binding/type",
             "type": "string",
-            "title": "property binding type",
             "enum": [
               "property",
               "camunda:property",
@@ -369,59 +366,51 @@
               "camunda:errorEventDefinition"
             ],
             "errorMessage": "invalid property.binding type ${0}; must be any of { property, camunda:property, camunda:inputParameter, camunda:outputParameter, camunda:in, camunda:out, camunda:in:businessKey, camunda:executionListener, camunda:field, camunda:errorEventDefinition }",
-            "description": "The type of the property binding"
+            "description": "The type of a property binding."
           },
           "name": {
             "$id": "#/properties/property/binding/name",
             "type": "string",
-            "title": "property binding name",
-            "description": "The name of binding xml property"
+            "description": "The name of a property binding."
           },
           "event": {
             "$id": "#/properties/property/binding/event",
             "type": "string",
-            "title": "property binding event",
-            "description": "The event type of an execution listener binding"
+            "description": "The event type of a property binding (camunda:executionListener)."
           },
           "scriptFormat": {
             "$id": "#/properties/property/binding/scriptFormat",
             "type": "string",
-            "title": "property binding script format",
-            "description": "The format of a script property binding (camunda:outputParameter, camunda:inputParameter)"
+            "description": "The script format of a property binding (camunda:outputParameter, camunda:inputParameter)."
           },
           "source": {
             "$id": "#/properties/property/binding/source",
             "type": "string",
-            "title": "property binding source",
-            "description": "The source value of a property binding (camunda:outputParameter, camunda:out)"
+            "description": "The source value of a property binding (camunda:outputParameter, camunda:out)."
           },
           "target": {
             "$id": "#/properties/property/binding/target",
             "type": "string",
-            "title": "property binding target",
-            "description": "The target value to be mapped to (camunda:in)"
+            "description": "The target value of a property binding (camunda:in)."
           },
           "expression": {
             "$id": "#/properties/property/binding/expression",
             "type": "boolean",
-            "title": "property binding expression",
-            "description": "True indicates that the control field value is an expression (camunda:in, camunda:field)"
+            "description": "Indicates whether the control field value is an expression (camunda:in, camunda:field)."
           },
           "variables": {
             "$id": "#/properties/property/binding/variables",
             "type": "string",
-            "title": "property binding variables",
             "enum": [
               "all",
               "local"
             ],
-            "description": "Either all or local indicating the variable mapping (camunda:in)"
+            "description": "The variable mapping of a property binding (camunda:in)."
           },
           "sourceExpression": {
             "$id": "#/properties/property/binding/sourceExpression",
             "type": "string",
-            "title": "property binding source expression",
-            "description": "The string containing the expression for the source attribute (camunda:out)"
+            "description": "The string containing the expression for the source attribute (camunda:out)."
           }
         }
       }
