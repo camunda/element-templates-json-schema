@@ -1,17 +1,19 @@
 {
   "$id": "#/scopes",
   "type": "array",
-  "title": "element template scope",
-  "description": "Special scoped bindings that allow you to configure nested elements",
+  "description": "Special scoped bindings that allow you to configure nested elements.",
+  "allOf": [
+    { "$ref": "examples.json#/scopes" }
+  ],
   "items": {
     "$id": "#/scopes/item",
     "type": "object",
-    "title": "element template scope item",
-    "description": "Scoped binding to configure nested elements",
+    "default": {},
     "properties": {
       "type": {
         "$id": "#scopes/item/type",
         "type": "string",
+        "description": "The type of a scope.",
         "enum": [
           "camunda:Connector",
           "bpmn:Error"
@@ -20,6 +22,8 @@
       },
       "properties": {
         "$id": "#/scopes/properties",
+        "description": "List of properties of a scope.",
+        "default": [],
         "allOf": [
           {
             "$ref": "../../../../packages/element-templates-json-schema-shared/src/defs/base-properties.json"
