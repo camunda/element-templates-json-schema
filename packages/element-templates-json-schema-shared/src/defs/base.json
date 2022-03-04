@@ -9,38 +9,32 @@
     "name": {
       "$id": "#/name",
       "type": "string",
-      "title": "element template name",
-      "description": "The name of the element template"
+      "description": "The name of the element template."
     },
     "id": {
       "$id": "#/id",
       "type": "string",
-      "title": "element template id",
-      "description": "The identifier of the element template"
+      "description": "The identifier of the element template."
     },
     "description": {
       "$id": "#/description",
       "type": "string",
-      "title": "element template description",
-      "description": "The description of the element template"
+      "description": "The description of the element template."
     },
     "version": {
       "$id": "#/version",
       "type": "number",
-      "title": "element template version",
-      "description": "The version of the element template"
+      "description": "Optional version of the template. If you add a version to a template it will be considered unique based on its ID and version. Two templates can have the same ID if their version is different."
     },
     "isDefault": {
       "$id": "#/isDefault",
       "type": "boolean",
-      "title": "element template is default",
-      "description": "Indicates whether the element template is a default template"
+      "description": "Indicates whether the element template is a default template."
     },
     "appliesTo": {
       "$id": "#/appliesTo",
       "type": "array",
-      "title": "element template applies to",
-      "description": "The definition for which element types the element template can be applied",
+      "description": "List of BPMN types the template can be applied to.",
       "default": [],
       "items": {
         "$id": "#/appliesTo/items",
@@ -48,20 +42,24 @@
         "pattern": "^(.*?:)",
         "errorMessage": {
           "pattern": "invalid item for \"appliesTo\", should contain namespaced property, example: \"bpmn:Task\""
-        }
+        },
+        "allOf": [
+          {
+            "$ref": "examples.json#/appliesTo"
+          }
+        ]
       }
     },
     "metadata": {
       "$id": "#/metadata",
       "type": "object",
-      "title": "element template metadata",
-      "description": "Some metadata for further configuration"
+      "description": "Some custom properties for further configuration.",
+      "default": {}
     },
     "entriesVisible": {
       "$id": "#/entriesVisible",
       "type": "boolean",
-      "title": "element template entries visible",
-      "description": "Select whether non-template entries are visible in the properties panel"
+      "description": "Select whether non-template entries are visible in the properties panel."
     },
     "groups": {
       "$ref": "groups.json"
