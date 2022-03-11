@@ -25,6 +25,31 @@
           ],
           "errorMessage": "must provide choices=[] with \"Dropdown\" type"
         }
+      },
+      {
+        "if": {
+          "not": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "String",
+                  "Text"
+                ]
+              }
+            },
+            "required": [
+              "type"
+            ]
+          }
+        },
+        "then": {
+          "not": {
+            "required": [
+              "feel"
+            ]
+          },
+          "errorMessage": "feel is only valid for \"String\" and \"Text\" type"
+        }
       }
     ],
     "properties": {
@@ -133,6 +158,18 @@
             ]
           }
         }
+      },
+      "feel": {
+        "$id": "#/properties/property/feel",
+        "type": "string",
+        "default": null,
+        "title": "property feel",
+        "description": "Indicates whether the property can be a feel expression",
+        "enum": [
+          null,
+          "optional",
+          "required"
+        ]
       },
       "group": {
         "$id": "#/properties/property/group",
