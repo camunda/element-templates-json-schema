@@ -128,6 +128,12 @@ describe('validation', function() {
     testTemplate('entries-visible-boolean');
 
 
+    testTemplate('feel');
+
+
+    testTemplate('feel-type-mismatch');
+
+
     testTemplate('pattern-string');
 
 
