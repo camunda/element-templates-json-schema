@@ -20,41 +20,52 @@ export const template = {
 export const errors = [
   {
     keyword: 'errorMessage',
-    dataPath: '/properties/0',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/then/errorMessage',
+    dataPath: '/properties/0/type',
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/4/then/properties/type/errorMessage',
     params: {
       errors: [
         {
-          dataPath: '/properties/0',
-          emUsed: true,
-          keyword: 'not',
-          message: 'should NOT be valid',
-          params: {},
-          schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/then/not'
+          keyword: 'enum',
+          dataPath: '/properties/0/type',
+          schemaPath: '#/definitions/properties/allOf/1/items/allOf/4/then/properties/type/enum',
+          params: {
+            allowedValues: [
+              'String',
+              'Text'
+            ]
+          },
+          message: 'should be equal to one of the allowed values',
+          emUsed: true
         }
       ]
     },
-    message: 'feel is only valid for "String" and "Text" type'
+    message: 'feel is only supported for "String" and "Text" type'
   },
   {
     keyword: 'if',
     dataPath: '/properties/0',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/if',
-    params: { failingKeyword: 'then' },
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/4/if',
+    params: {
+      failingKeyword: 'then'
+    },
     message: 'should match "then" schema'
   },
   {
     keyword: 'type',
     dataPath: '',
     schemaPath: '#/oneOf/1/type',
-    params: { type: 'array' },
+    params: {
+      type: 'array'
+    },
     message: 'should be array'
   },
   {
     keyword: 'oneOf',
     dataPath: '',
     schemaPath: '#/oneOf',
-    params: { passingSchemas: null },
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   }
 ];

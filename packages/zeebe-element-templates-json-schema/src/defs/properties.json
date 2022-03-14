@@ -140,6 +140,34 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "feel": {
+              "not": {
+                "const": null
+              }
+            }
+          },
+          "required": [
+            "feel"
+          ]
+        },
+        "then": {
+          "properties": {
+            "type": {
+              "enum": [
+                "String",
+                "Text"
+              ],
+              "errorMessage": "feel is only supported for \"String\" and \"Text\" type"
+            }
+          },
+          "required": [
+            "type"
+          ]
+        }
       }
     ],
     "properties": {
@@ -247,6 +275,17 @@
         "$id": "#/optional",
         "type": "boolean",
         "description": "Indicates whether a property is optional. Optional bindings do not persist empty values in the underlying BPMN 2.0 XML."
+      },
+      "feel": {
+        "$id": "#/properties/property/feel",
+        "type": "string",
+        "default": null,
+        "description": "Indicates whether the property can be a feel expression",
+        "enum": [
+          null,
+          "optional",
+          "required"
+        ]
       }
     }
   }
