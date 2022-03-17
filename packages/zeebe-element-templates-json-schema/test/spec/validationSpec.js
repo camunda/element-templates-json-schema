@@ -189,6 +189,28 @@ describe('validation', function() {
 
     });
 
+
+    describe('icons', function() {
+
+      testTemplate('icon');
+
+
+      testTemplate('icon-https');
+
+
+      testTemplate('icon-encoded-url');
+
+
+      testTemplate('invalid-icon-raw-svg');
+
+
+      testTemplate('invalid-icon-malformed-data-uri');
+
+
+      testTemplate('invalid-icon-missing-contents');
+
+    });
+
   });
 
 });
