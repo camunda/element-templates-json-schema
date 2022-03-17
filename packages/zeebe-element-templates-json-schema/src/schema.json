@@ -24,6 +24,9 @@
         "properties": {
           "$ref": "#/definitions/properties",
           "$id": "#/properties"
+        },
+        "icon": {
+          "$ref": "src/defs/icon.json"
         }
       }
     }

@@ -649,6 +649,31 @@
         "properties": {
           "$ref": "#/definitions/properties",
           "$id": "#/properties"
+        },
+        "icon": {
+          "$id": "#/icon",
+          "type": "object",
+          "description": "Custom icon to be shown on the element",
+          "default": {},
+          "properties": {
+            "contents": {
+              "$id": "#/icon/contents",
+              "type": "string",
+              "description": "The URL of an icon.",
+              "pattern": "^(https?|data):.*",
+              "errorMessage": {
+                "pattern": "Malformed icon source, must be a valid HTTP(s) or data URL"
+              }
+            }
+          },
+          "required": [
+            "contents"
+          ],
+          "errorMessage": {
+            "required": {
+              "contents": "missing icon contents"
+            }
+          }
         }
       }
     }
