@@ -176,6 +176,12 @@ describe('validation', function() {
     testTemplate('pattern-string');
 
 
+    testTemplate('documentation-ref');
+
+
+    testTemplate('invalid-documentation-ref');
+
+
     describe('property type - binding type', function() {
 
       testTemplate('invalid-property-type');
