@@ -598,6 +598,14 @@
                   }
                 }
               }
+            },
+            "documentationRef": {
+              "$id": "#/documentaionRef",
+              "type": "string",
+              "pattern": "^(https|http)://.*",
+              "errorMessage": {
+                "pattern": "Malformed documentation URL, must match \"^(https|http)://.*\""
+              }
             }
           },
           "errorMessage": {
