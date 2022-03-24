@@ -38,12 +38,11 @@
   },
   "elementType": {
     "examples": [
-      "bpmn:Task",
       "bpmn:ServiceTask",
-      "bpmn:SequenceFlow",
-      "bpmn:Process",
+      "bpmn:UserTask",
       "bpmn:StartEvent",
-      "bpmn:Gateway"
+      "bpmn:ExclusiveGateway",
+      "bpmn:ParallelGateway"
     ]
   }
 }
