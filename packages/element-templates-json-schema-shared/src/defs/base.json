@@ -50,6 +50,27 @@
         ]
       }
     },
+    "elementType": {
+      "$id": "#/elementType",
+      "type": "object",
+      "description": "The BPMN type the element will be transformed into.",
+      "default": {},
+      "properties": {
+        "value": {
+          "$id": "#/elementType/value",
+          "type": "string",
+          "pattern": "^(.*?:)",
+          "errorMessage": {
+            "pattern": "invalid item for \"elementType\", should contain namespaced property, example: \"bpmn:Task\""
+          },
+          "allOf": [
+            {
+              "$ref": "examples.json#/elementType"
+            }
+          ]
+        }
+      }
+    },
     "metadata": {
       "$id": "#/metadata",
       "type": "object",

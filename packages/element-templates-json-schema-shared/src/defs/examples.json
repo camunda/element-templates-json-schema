@@ -35,5 +35,15 @@
         "notEmpty": true
       }
     ]
+  },
+  "elementType": {
+    "examples": [
+      "bpmn:Task",
+      "bpmn:ServiceTask",
+      "bpmn:SequenceFlow",
+      "bpmn:Process",
+      "bpmn:StartEvent",
+      "bpmn:Gateway"
+    ]
   }
 }
