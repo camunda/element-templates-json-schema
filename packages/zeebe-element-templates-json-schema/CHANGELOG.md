@@ -6,10 +6,15 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.3.0
+
+* `FEAT`: add `elementType` property ([#48](https://github.com/camunda/element-templates-json-schema/pull/48))
+* `FEAT`: add `documentationRef` property ([#47](https://github.com/camunda/element-templates-json-schema/pull/47))
+
 ## 0.2.0
 
 * `FEAT`: add `feel` property ([#46](https://github.com/camunda/element-templates-json-schema/pull/46))
-* `FEAT`: provide better editor annotations ([#45](https://github.com/camunda/element-templates-json-schema/pull/45)) 
+* `FEAT`: provide better editor annotations ([#45](https://github.com/camunda/element-templates-json-schema/pull/45))
 
 ## 0.1.0
 
