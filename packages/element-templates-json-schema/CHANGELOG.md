@@ -6,9 +6,14 @@ All notable changes to [@camunda/element-templates-json-schema](https://github.c
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.9.0
+
+* `FEAT`: add `elementType` property ([#48](https://github.com/camunda/element-templates-json-schema/pull/48))
+* `FEAT`: add `documentationRef` property ([#47](https://github.com/camunda/element-templates-json-schema/pull/47))
+
 ## 0.8.0
 
-* `FEAT`: provide better editor annotations ([#45](https://github.com/camunda/element-templates-json-schema/pull/45)) 
+* `FEAT`: provide better editor annotations ([#45](https://github.com/camunda/element-templates-json-schema/pull/45))
 
 ## 0.7.0
 
