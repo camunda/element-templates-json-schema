@@ -16,8 +16,8 @@ export const errors = [
           keyword: 'pattern',
           dataPath: '/appliesTo/0',
           schemaPath: '#/allOf/0/properties/appliesTo/items/pattern',
-          params: { pattern: '^(.*?:)' },
-          message: 'should match pattern "^(.*?:)"',
+          params: { pattern: '^[\\w\\d]+:[\\w\\d]+$' },
+          message: 'should match pattern "^[\\w\\d]+:[\\w\\d]+$"',
           emUsed: true
         }
       ]

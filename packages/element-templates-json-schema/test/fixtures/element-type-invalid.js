@@ -22,9 +22,9 @@ export const errors = [
           dataPath: '/elementType/value',
           schemaPath: '#/allOf/0/properties/elementType/properties/value/pattern',
           params: {
-            pattern: '^(.*?:)'
+            pattern: '^[\\w\\d]+:[\\w\\d]+$'
           },
-          message: 'should match pattern "^(.*?:)"',
+          message: 'should match pattern "^[\\w\\d]+:[\\w\\d]+$"',
           emUsed: true
         }
       ]

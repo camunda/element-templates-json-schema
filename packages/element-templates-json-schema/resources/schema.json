@@ -677,7 +677,7 @@
               "items": {
                 "$id": "#/appliesTo/items",
                 "type": "string",
-                "pattern": "^(.*?:)",
+                "pattern": "^[\\w\\d]+:[\\w\\d]+$",
                 "errorMessage": {
                   "pattern": "invalid item for \"appliesTo\", should contain namespaced property, example: \"bpmn:Task\""
                 },
@@ -704,7 +704,7 @@
                 "value": {
                   "$id": "#/elementType/value",
                   "type": "string",
-                  "pattern": "^(.*?:)",
+                  "pattern": "^[\\w\\d]+:[\\w\\d]+$",
                   "errorMessage": {
                     "pattern": "invalid item for \"elementType\", should contain namespaced property, example: \"bpmn:Task\""
                   },
