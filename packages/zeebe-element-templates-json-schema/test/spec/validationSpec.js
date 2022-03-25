@@ -152,6 +152,12 @@ describe('validation', function() {
     testTemplate('invalid-documentation-ref');
 
 
+    testTemplate('element-type');
+
+
+    testTemplate('element-type-invalid');
+
+
     describe('property type - binding type', function() {
 
       testTemplate('invalid-property-type');

@@ -35,5 +35,14 @@
         "notEmpty": true
       }
     ]
+  },
+  "elementType": {
+    "examples": [
+      "bpmn:ServiceTask",
+      "bpmn:UserTask",
+      "bpmn:StartEvent",
+      "bpmn:ExclusiveGateway",
+      "bpmn:ParallelGateway"
+    ]
   }
 }
