@@ -185,6 +185,9 @@ describe('validation', function() {
     testTemplate('element-type');
 
 
+    testTemplate('element-type-no-value');
+
+
     testTemplate('element-type-invalid');
 
 
