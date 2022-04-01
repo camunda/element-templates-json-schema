@@ -700,6 +700,14 @@
               "type": "object",
               "description": "The BPMN type the element will be transformed into.",
               "default": {},
+              "required": [
+                "value"
+              ],
+              "errorMessage": {
+                "required": {
+                  "value": "missing elementType value"
+                }
+              },
               "properties": {
                 "value": {
                   "$id": "#/elementType/value",
