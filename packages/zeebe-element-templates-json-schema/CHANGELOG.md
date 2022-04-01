@@ -6,6 +6,13 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.4.1
+
+* `FIX`: require `value` for element type property ([#53](https://github.com/camunda/element-templates-json-schema/pull/53))
+
+## 0.4.0
+
+* `FEAT`: add `icon` property ([#50](https://github.com/camunda/element-templates-json-schema/issues/50))
 ## 0.3.0
 
 * `FEAT`: add `elementType` property ([#48](https://github.com/camunda/element-templates-json-schema/pull/48))
