@@ -44,5 +44,19 @@
       "bpmn:ExclusiveGateway",
       "bpmn:ParallelGateway"
     ]
+  },
+  "condition": {
+    "examples": [
+      {
+        "type": "simple",
+        "property": "httpMethod",
+        "equals": "GET"
+      },
+      {
+        "type": "simple",
+        "property": "httpMethod",
+        "oneOf": [ "POST", "PUT", "DELETE" ]
+      }
+    ]
   }
 }

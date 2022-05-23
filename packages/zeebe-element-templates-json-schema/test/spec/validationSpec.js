@@ -214,6 +214,27 @@ describe('validation', function() {
 
     });
 
+
+    describe('condition', function() {
+
+      testTemplate('condition');
+
+
+      testTemplate('condition-missing-property');
+
+
+      testTemplate('condition-missing-condition-keyword');
+
+
+      testTemplate('condition-wrong-types');
+
+
+      testTemplate('condition-default-type');
+
+
+      testTemplate('condition-wrong-type');
+    });
+
   });
 
 });

@@ -48,6 +48,10 @@
               }
             ],
             "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier of the property."
+              },
               "value": {
                 "$id": "#/properties/property/value",
                 "type": [
@@ -164,6 +168,84 @@
                 "$id": "#/properties/property/group",
                 "type": "string",
                 "description": "The custom group of a control field."
+              },
+              "condition": {
+                "$id": "#/condition",
+                "type": "object",
+                "description": "Condition to activate the binding.",
+                "allOf": [
+                  {
+                    "examples": [
+                      {
+                        "type": "simple",
+                        "property": "httpMethod",
+                        "equals": "GET"
+                      },
+                      {
+                        "type": "simple",
+                        "property": "httpMethod",
+                        "oneOf": [
+                          "POST",
+                          "PUT",
+                          "DELETE"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "required": [
+                  "property"
+                ],
+                "errorMessage": {
+                  "required": {
+                    "property": "missing property name for condition"
+                  }
+                },
+                "properties": {
+                  "type": {
+                    "$id": "#/condition/type",
+                    "const": "simple",
+                    "description": "The type of the condition.",
+                    "default": "simple"
+                  },
+                  "property": {
+                    "$id": "#/condition/property",
+                    "type": "string",
+                    "description": "The id of the property to check."
+                  }
+                },
+                "oneOf": [
+                  {
+                    "properties": {
+                      "equals": {
+                        "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "equals"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "oneOf": {
+                        "type": "array",
+                        "items": {
+                          "type": [
+                            "string",
+                            "number"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "oneOf"
+                    ]
+                  }
+                ]
               }
             }
           }
