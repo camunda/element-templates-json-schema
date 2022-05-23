@@ -3,7 +3,7 @@
   "description": "List of properties of the element template.",
   "allOf": [
     { "$ref": "examples.json#/properties" }
-  ],  
+  ],
   "items": {
     "type": "object",
     "default": {},
@@ -28,6 +28,10 @@
       }
     ],
     "properties": {
+      "id": {
+        "type": "string",
+        "description": "Unique identifier of the property."
+      },
       "value": {
         "$id": "#/properties/property/value",
         "type": [
@@ -138,6 +142,9 @@
         "$id": "#/properties/property/group",
         "type": "string",
         "description": "The custom group of a control field."
+      },
+      "condition": {
+        "$ref": "condition.json"
       }
     }
   }
