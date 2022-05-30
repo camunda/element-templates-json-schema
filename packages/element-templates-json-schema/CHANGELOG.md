@@ -5,6 +5,9 @@ All notable changes to [@camunda/element-templates-json-schema](https://github.c
 ## Unreleased
 
 ___Note:__ Yet to be released changes appear here._
+## 0.10.0-alpha.0
+
+* `FEAT`: allow to set condition for property ([#54](https://github.com/camunda/element-templates-json-schema/issues/54))
 
 ## 0.9.1
 
