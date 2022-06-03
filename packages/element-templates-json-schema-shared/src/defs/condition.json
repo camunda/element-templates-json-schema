@@ -10,11 +10,6 @@
   "required": [
     "property"
   ],
-  "errorMessage": {
-    "required": {
-      "property": "missing property name for condition"
-    }
-  },
   "properties": {
     "type": {
       "$id": "#/condition/type",

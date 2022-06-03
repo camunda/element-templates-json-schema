@@ -22,8 +22,7 @@
         "then": {
           "required": [
             "choices"
-          ],
-          "errorMessage": "must provide choices=[] with \"Dropdown\" type"
+          ]
         }
       }
     ],
@@ -84,8 +83,7 @@
           "required": [
             "value",
             "name"
-          ],
-          "errorMessage": "{ name, value } must be specified for \"Dropdown\" choices"
+          ]
         }
       },
       "constraints": {
