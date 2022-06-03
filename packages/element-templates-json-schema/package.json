@@ -9,7 +9,9 @@
     "test": "mocha -r esm --reporter=spec --recursive test/spec",
     "dev": "npm run test -- --watch",
     "all": "run-s build test",
-    "build": "node ../../tasks/generate-schema.js --input=./src/schema.json --output=./resources/schema.json",
+    "build": "run-s build:error-messages build:schema",
+    "build:error-messages": "node ../../tasks/generate-error-messages.js --input=./src/error-messages.json --output=./resources/error-messages.json",
+    "build:schema": "node ../../tasks/generate-schema.js --input=./src/schema.json --output=./resources/schema.json",   
     "prepare": "run-s build"
   },
   "repository": {
