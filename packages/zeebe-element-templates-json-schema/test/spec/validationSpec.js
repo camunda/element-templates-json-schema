@@ -4,11 +4,13 @@ import util from 'util';
 
 import schema from '../../resources/schema.json';
 
+import errorMessages from '../../resources/error-messages.json';
+
 import {
   createValidator
-} from '../helpers';
+} from '../../../element-templates-json-schema-shared/test/helpers';
 
-const validator = createValidator(schema);
+const validator = createValidator(schema, errorMessages);
 
 
 describe('validation', function() {
