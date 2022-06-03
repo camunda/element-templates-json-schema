@@ -1,0 +1,151 @@
+[
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      0,
+      "items",
+      "allOf",
+      0,
+      "then"
+    ],
+    "errorMessage": "must provide choices=[] with \"Dropdown\" type"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      0,
+      "items",
+      "properties",
+      "choices",
+      "items"
+    ],
+    "errorMessage": {
+      "required": "{ name, value } must be specified for \"Dropdown\" choices"
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "properties",
+      "binding",
+      "allOf",
+      0,
+      "then"
+    ],
+    "errorMessage": "property.binding ${0/type} requires name"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      0,
+      "properties",
+      "appliesTo",
+      "items"
+    ],
+    "errorMessage": {
+      "pattern": "invalid item for \"appliesTo\", should contain namespaced property, example: \"bpmn:Task\""
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      0,
+      "properties",
+      "elementType"
+    ],
+    "errorMessage": {
+      "required": {
+        "value": "missing elementType value"
+      }
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      0,
+      "properties",
+      "elementType",
+      "properties",
+      "value"
+    ],
+    "errorMessage": {
+      "pattern": "invalid item for \"elementType\", should contain namespaced property, example: \"bpmn:Task\""
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      "0",
+      "properties",
+      "groups",
+      "items"
+    ],
+    "errorMessage": {
+      "required": {
+        "id": "missing id for group \"${0#}\"",
+        "label": "missing label for group \"${0#}\""
+      }
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      0,
+      "properties",
+      "documentationRef"
+    ],
+    "errorMessage": {
+      "pattern": "Malformed documentation URL, must match \"^(https|http)://.*\""
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      0
+    ],
+    "errorMessage": {
+      "required": {
+        "name": "missing template name",
+        "id": "missing template id",
+        "appliesTo": "missing appliesTo=[]",
+        "properties": "missing properties=[]"
+      }
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      0,
+      "items",
+      "properties",
+      "condition"
+    ],
+    "errorMessage": {
+      "required": {
+        "property": "missing property name for condition"
+      }
+    }
+  }
+]

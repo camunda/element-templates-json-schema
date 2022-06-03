@@ -1,0 +1,352 @@
+[
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      0,
+      "items",
+      "allOf",
+      0,
+      "then"
+    ],
+    "errorMessage": "must provide choices=[] with \"Dropdown\" type"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      0,
+      "items",
+      "properties",
+      "choices",
+      "items"
+    ],
+    "errorMessage": {
+      "required": "{ name, value } must be specified for \"Dropdown\" choices"
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "properties",
+      "binding",
+      "allOf",
+      0,
+      "then"
+    ],
+    "errorMessage": "property.binding ${0/type} requires name"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      0,
+      "properties",
+      "appliesTo",
+      "items"
+    ],
+    "errorMessage": {
+      "pattern": "invalid item for \"appliesTo\", should contain namespaced property, example: \"bpmn:Task\""
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      0,
+      "properties",
+      "elementType"
+    ],
+    "errorMessage": {
+      "required": {
+        "value": "missing elementType value"
+      }
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      0,
+      "properties",
+      "elementType",
+      "properties",
+      "value"
+    ],
+    "errorMessage": {
+      "pattern": "invalid item for \"elementType\", should contain namespaced property, example: \"bpmn:Task\""
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      "0",
+      "properties",
+      "groups",
+      "items"
+    ],
+    "errorMessage": {
+      "required": {
+        "id": "missing id for group \"${0#}\"",
+        "label": "missing label for group \"${0#}\""
+      }
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      0,
+      "properties",
+      "documentationRef"
+    ],
+    "errorMessage": {
+      "pattern": "Malformed documentation URL, must match \"^(https|http)://.*\""
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      0
+    ],
+    "errorMessage": {
+      "required": {
+        "name": "missing template name",
+        "id": "missing template id",
+        "appliesTo": "missing appliesTo=[]",
+        "properties": "missing properties=[]"
+      }
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      0,
+      "items",
+      "properties",
+      "condition"
+    ],
+    "errorMessage": {
+      "required": {
+        "property": "missing property name for condition"
+      }
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items"
+    ],
+    "errorMessage": {
+      "required": "missing binding for property \"${0#}\""
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      0,
+      "then",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "invalid property type ${0} for binding type \"property\"; must be any of { String, Text, Hidden, Dropdown, Boolean }"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      1,
+      "then",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "invalid property type ${1/type} for binding type \"camunda:executionListener\"; must be \"Hidden\""
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      2,
+      "then",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Hidden, Dropdown }"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      3,
+      "then",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Text, Hidden, Dropdown }"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "properties",
+      "binding",
+      "allOf",
+      0,
+      "then"
+    ],
+    "errorMessage": "property.binding ${0/type} requires name"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "properties",
+      "binding",
+      "allOf",
+      1,
+      "then"
+    ],
+    "errorMessage": "property.binding ${0/type} requires source"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "properties",
+      "binding",
+      "allOf",
+      2,
+      "then"
+    ],
+    "errorMessage": "property.binding ${0/type} requires variables, target, or both"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "properties",
+      "binding",
+      "allOf",
+      3,
+      "then"
+    ],
+    "errorMessage": "property.binding ${0/type} requires one of the following: variables, sourceExpression, source, (sourceExpression and variables), or (source and variables)"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "properties",
+      "binding",
+      "allOf",
+      4,
+      "then"
+    ],
+    "errorMessage": "property.binding ${0/type} requires errorRef"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "properties",
+      "binding",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "invalid property.binding type ${0}; must be any of { property, camunda:property, camunda:inputParameter, camunda:outputParameter, camunda:in, camunda:out, camunda:in:businessKey, camunda:executionListener, camunda:field, camunda:errorEventDefinition }"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "properties",
+      "scopes",
+      "items",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "invalid scope type ${0}; must be any of { camunda:Connector, bpmn:Error }"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "properties",
+      "scopes",
+      "items"
+    ],
+    "errorMessage": {
+      "required": {
+        "type": "invalid scope, missing type",
+        "properties": "invalid scope ${0/type}, missing properties=[]"
+      }
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "properties",
+      "scopes",
+      "items",
+      "allOf",
+      0,
+      "then"
+    ],
+    "errorMessage": "invalid scope ${0/type}, missing id"
+  }
+]

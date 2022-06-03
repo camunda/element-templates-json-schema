@@ -1,5 +1,4 @@
 const util = require('util');
-const refParser = require('@apidevtools/json-schema-ref-parser');
 
 const readFile = require('fs').readFileSync,
       writeFile = require('fs').writeFileSync,
@@ -12,19 +11,16 @@ const mri = require('mri');
 
 const argv = process.argv.slice(2);
 
+const baseErrorMessages = require('../packages/element-templates-json-schema-shared/src/base-error-messages.json');
 
-async function bundleSchema(schema, path) {
-  try {
-    const plainSchema = await refParser.bundle(schema);
-    return writeSchema(plainSchema, path);
-  } catch (e) {
-    console.error(e);
-    process.exit(1);
-  }
+
+async function bundleErrors(errorMessages, path) {
+  const combined = baseErrorMessages.concat(errorMessages);
+  return writeErrors(combined, path);
 }
 
 
-function writeSchema(schema, path) {
+function writeErrors(errorMessages, path) {
   const filePath = pathJoin(path);
 
   try {
@@ -34,7 +30,7 @@ function writeSchema(schema, path) {
     // directory may already exist
   }
 
-  writeFile(filePath, JSON.stringify(schema, 0, 2));
+  writeFile(filePath, JSON.stringify(errorMessages, 0, 2));
 
   return filePath;
 }
@@ -52,11 +48,11 @@ const {
 
 if (!input || !output) {
   console.error('Arguments missing.');
-  console.error('Example: node tasks/generate-schema.js --input=./src/schema.json --output=./resources/schema.json');
+  console.error('Example: node tasks/generate-error-messages.js --input=./src/error-messages.json --output=./resources/error-messages.json');
   process.exit(1);
 }
 
-bundleSchema(JSON.parse(readFile(input)), output);
+bundleErrors(JSON.parse(readFile(input)), output);
 
 
 // helper /////////////

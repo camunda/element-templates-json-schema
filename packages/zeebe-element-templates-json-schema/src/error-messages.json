@@ -1,0 +1,165 @@
+[
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items"
+    ],
+    "errorMessage": {
+      "required": {
+        "binding": "missing binding for property \"${0#}\""
+      }
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      0,
+      "then",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "invalid property type ${0} for binding type \"property\"; must be any of { String, Text, Hidden, Dropdown, Boolean }"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      1,
+      "then",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Text, Hidden, Dropdown }"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      2,
+      "then",
+      "properties",
+      "binding",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "optional is not supported for binding type ${0}; must be any of { zeebe:input, zeebe:output }"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      3,
+      "then",
+      "properties",
+      "constraints",
+      "properties",
+      "notEmpty"
+    ],
+    "errorMessage": "optional is not allowed for truthy \"notEmpty\" constraint"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      4,
+      "then",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "feel is only supported for \"String\" and \"Text\" type"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "properties",
+      "binding",
+      "allOf",
+      1,
+      "then"
+    ],
+    "errorMessage": "property.binding ${0/type} requires source"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "properties",
+      "binding",
+      "allOf",
+      2,
+      "then"
+    ],
+    "errorMessage": "property.binding ${0/type} requires key"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "properties",
+      "binding",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:taskHeader }"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "properties",
+      "icon",
+      "properties",
+      "contents"
+    ],
+    "errorMessage": {
+      "pattern": "Malformed icon source, must be a valid HTTP(s) or data URL"
+    }
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "properties",
+      "icon"
+    ],
+    "errorMessage": {
+      "required": {
+        "contents": "missing icon contents"
+      }
+    }
+  }
+]
