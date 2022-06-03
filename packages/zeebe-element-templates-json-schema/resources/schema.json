@@ -42,8 +42,7 @@
                 "then": {
                   "required": [
                     "choices"
-                  ],
-                  "errorMessage": "must provide choices=[] with \"Dropdown\" type"
+                  ]
                 }
               }
             ],
@@ -104,8 +103,7 @@
                   "required": [
                     "value",
                     "name"
-                  ],
-                  "errorMessage": "{ name, value } must be specified for \"Dropdown\" choices"
+                  ]
                 }
               },
               "constraints": {
@@ -196,11 +194,6 @@
                 "required": [
                   "property"
                 ],
-                "errorMessage": {
-                  "required": {
-                    "property": "missing property name for condition"
-                  }
-                },
                 "properties": {
                   "type": {
                     "$id": "#/condition/type",
@@ -260,11 +253,6 @@
             "required": [
               "binding"
             ],
-            "errorMessage": {
-              "required": {
-                "binding": "missing binding for property \"${0#}\""
-              }
-            },
             "allOf": [
               {
                 "if": {
@@ -293,8 +281,7 @@
                         "Hidden",
                         "Dropdown",
                         "Boolean"
-                      ],
-                      "errorMessage": "invalid property type ${0} for binding type \"property\"; must be any of { String, Text, Hidden, Dropdown, Boolean }"
+                      ]
                     }
                   }
                 }
@@ -330,8 +317,7 @@
                         "Text",
                         "Hidden",
                         "Dropdown"
-                      ],
-                      "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Text, Hidden, Dropdown }"
+                      ]
                     }
                   }
                 }
@@ -355,8 +341,7 @@
                           "enum": [
                             "zeebe:input",
                             "zeebe:output"
-                          ],
-                          "errorMessage": "optional is not supported for binding type ${0}; must be any of { zeebe:input, zeebe:output }"
+                          ]
                         }
                       },
                       "required": [
@@ -382,8 +367,7 @@
                     "constraints": {
                       "properties": {
                         "notEmpty": {
-                          "const": false,
-                          "errorMessage": "optional is not allowed for truthy \"notEmpty\" constraint"
+                          "const": false
                         }
                       },
                       "required": [
@@ -412,8 +396,7 @@
                       "enum": [
                         "String",
                         "Text"
-                      ],
-                      "errorMessage": "feel is only supported for \"String\" and \"Text\" type"
+                      ]
                     }
                   },
                   "required": [
@@ -448,8 +431,7 @@
                     "then": {
                       "required": [
                         "name"
-                      ],
-                      "errorMessage": "property.binding ${0/type} requires name"
+                      ]
                     }
                   },
                   {
@@ -466,8 +448,7 @@
                     "then": {
                       "required": [
                         "source"
-                      ],
-                      "errorMessage": "property.binding ${0/type} requires source"
+                      ]
                     }
                   },
                   {
@@ -484,8 +465,7 @@
                     "then": {
                       "required": [
                         "key"
-                      ],
-                      "errorMessage": "property.binding ${0/type} requires key"
+                      ]
                     }
                   },
                   {
@@ -523,8 +503,7 @@
                       "zeebe:input",
                       "zeebe:output",
                       "zeebe:taskHeader"
-                    ],
-                    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:taskHeader }"
+                    ]
                   },
                   "name": {
                     "$id": "#/properties/property/binding/name",
@@ -609,9 +588,6 @@
                 "$id": "#/appliesTo/items",
                 "type": "string",
                 "pattern": "^[\\w\\d]+:[\\w\\d]+$",
-                "errorMessage": {
-                  "pattern": "invalid item for \"appliesTo\", should contain namespaced property, example: \"bpmn:Task\""
-                },
                 "allOf": [
                   {
                     "examples": [
@@ -634,19 +610,11 @@
               "required": [
                 "value"
               ],
-              "errorMessage": {
-                "required": {
-                  "value": "missing elementType value"
-                }
-              },
               "properties": {
                 "value": {
                   "$id": "#/elementType/value",
                   "type": "string",
                   "pattern": "^[\\w\\d]+:[\\w\\d]+$",
-                  "errorMessage": {
-                    "pattern": "invalid item for \"elementType\", should contain namespaced property, example: \"bpmn:Task\""
-                  },
                   "allOf": [
                     {
                       "examples": [
@@ -696,12 +664,6 @@
                   "id",
                   "label"
                 ],
-                "errorMessage": {
-                  "required": {
-                    "id": "missing id for group \"${0#}\"",
-                    "label": "missing label for group \"${0#}\""
-                  }
-                },
                 "properties": {
                   "id": {
                     "$id": "#/groups/group/id",
@@ -717,20 +679,9 @@
               }
             },
             "documentationRef": {
-              "$id": "#/documentaionRef",
+              "$id": "#/documentationRef",
               "type": "string",
-              "pattern": "^(https|http)://.*",
-              "errorMessage": {
-                "pattern": "Malformed documentation URL, must match \"^(https|http)://.*\""
-              }
-            }
-          },
-          "errorMessage": {
-            "required": {
-              "name": "missing template name",
-              "id": "missing template id",
-              "appliesTo": "missing appliesTo=[]",
-              "properties": "missing properties=[]"
+              "pattern": "^(https|http)://.*"
             }
           }
         }
@@ -750,20 +701,12 @@
               "$id": "#/icon/contents",
               "type": "string",
               "description": "The URL of an icon.",
-              "pattern": "^(https?|data):.*",
-              "errorMessage": {
-                "pattern": "Malformed icon source, must be a valid HTTP(s) or data URL"
-              }
+              "pattern": "^(https?|data):.*"
             }
           },
           "required": [
             "contents"
-          ],
-          "errorMessage": {
-            "required": {
-              "contents": "missing icon contents"
-            }
-          }
+          ]
         }
       }
     }
