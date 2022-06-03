@@ -42,8 +42,7 @@
                 "then": {
                   "required": [
                     "choices"
-                  ],
-                  "errorMessage": "must provide choices=[] with \"Dropdown\" type"
+                  ]
                 }
               }
             ],
@@ -104,8 +103,7 @@
                   "required": [
                     "value",
                     "name"
-                  ],
-                  "errorMessage": "{ name, value } must be specified for \"Dropdown\" choices"
+                  ]
                 }
               },
               "constraints": {
@@ -196,11 +194,6 @@
                 "required": [
                   "property"
                 ],
-                "errorMessage": {
-                  "required": {
-                    "property": "missing property name for condition"
-                  }
-                },
                 "properties": {
                   "type": {
                     "$id": "#/condition/type",
@@ -260,11 +253,6 @@
             "required": [
               "binding"
             ],
-            "errorMessage": {
-              "required": {
-                "binding": "missing binding for property \"${0#}\""
-              }
-            },
             "allOf": [
               {
                 "if": {
@@ -293,8 +281,7 @@
                         "Hidden",
                         "Dropdown",
                         "Boolean"
-                      ],
-                      "errorMessage": "invalid property type ${0} for binding type \"property\"; must be any of { String, Text, Hidden, Dropdown, Boolean }"
+                      ]
                     }
                   }
                 }
@@ -322,8 +309,7 @@
                     "type": {
                       "enum": [
                         "Hidden"
-                      ],
-                      "errorMessage": "invalid property type ${1/type} for binding type \"camunda:executionListener\"; must be \"Hidden\""
+                      ]
                     }
                   }
                 }
@@ -360,8 +346,7 @@
                         "String",
                         "Hidden",
                         "Dropdown"
-                      ],
-                      "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Hidden, Dropdown }"
+                      ]
                     }
                   }
                 }
@@ -395,8 +380,7 @@
                         "Text",
                         "Hidden",
                         "Dropdown"
-                      ],
-                      "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Text, Hidden, Dropdown }"
+                      ]
                     }
                   }
                 }
@@ -430,8 +414,7 @@
                     "then": {
                       "required": [
                         "name"
-                      ],
-                      "errorMessage": "property.binding ${0/type} requires name"
+                      ]
                     }
                   },
                   {
@@ -448,8 +431,7 @@
                     "then": {
                       "required": [
                         "source"
-                      ],
-                      "errorMessage": "property.binding ${0/type} requires source"
+                      ]
                     }
                   },
                   {
@@ -475,8 +457,7 @@
                             "target"
                           ]
                         }
-                      ],
-                      "errorMessage": "property.binding ${0/type} requires variables, target, or both"
+                      ]
                     }
                   },
                   {
@@ -571,8 +552,7 @@
                             ]
                           }
                         }
-                      ],
-                      "errorMessage": "property.binding ${0/type} requires one of the following: variables, sourceExpression, source, (sourceExpression and variables), or (source and variables)"
+                      ]
                     }
                   },
                   {
@@ -593,8 +573,7 @@
                             "errorRef"
                           ]
                         }
-                      ],
-                      "errorMessage": "property.binding ${0/type} requires errorRef"
+                      ]
                     }
                   },
                   {
@@ -661,7 +640,6 @@
                       "camunda:field",
                       "camunda:errorEventDefinition"
                     ],
-                    "errorMessage": "invalid property.binding type ${0}; must be any of { property, camunda:property, camunda:inputParameter, camunda:outputParameter, camunda:in, camunda:out, camunda:in:businessKey, camunda:executionListener, camunda:field, camunda:errorEventDefinition }",
                     "description": "The type of a property binding."
                   },
                   "name": {
@@ -760,9 +738,6 @@
                 "$id": "#/appliesTo/items",
                 "type": "string",
                 "pattern": "^[\\w\\d]+:[\\w\\d]+$",
-                "errorMessage": {
-                  "pattern": "invalid item for \"appliesTo\", should contain namespaced property, example: \"bpmn:Task\""
-                },
                 "allOf": [
                   {
                     "examples": [
@@ -785,19 +760,11 @@
               "required": [
                 "value"
               ],
-              "errorMessage": {
-                "required": {
-                  "value": "missing elementType value"
-                }
-              },
               "properties": {
                 "value": {
                   "$id": "#/elementType/value",
                   "type": "string",
                   "pattern": "^[\\w\\d]+:[\\w\\d]+$",
-                  "errorMessage": {
-                    "pattern": "invalid item for \"elementType\", should contain namespaced property, example: \"bpmn:Task\""
-                  },
                   "allOf": [
                     {
                       "examples": [
@@ -847,12 +814,6 @@
                   "id",
                   "label"
                 ],
-                "errorMessage": {
-                  "required": {
-                    "id": "missing id for group \"${0#}\"",
-                    "label": "missing label for group \"${0#}\""
-                  }
-                },
                 "properties": {
                   "id": {
                     "$id": "#/groups/group/id",
@@ -868,20 +829,9 @@
               }
             },
             "documentationRef": {
-              "$id": "#/documentaionRef",
+              "$id": "#/documentationRef",
               "type": "string",
-              "pattern": "^(https|http)://.*",
-              "errorMessage": {
-                "pattern": "Malformed documentation URL, must match \"^(https|http)://.*\""
-              }
-            }
-          },
-          "errorMessage": {
-            "required": {
-              "name": "missing template name",
-              "id": "missing template id",
-              "appliesTo": "missing appliesTo=[]",
-              "properties": "missing properties=[]"
+              "pattern": "^(https|http)://.*"
             }
           }
         }
@@ -942,8 +892,7 @@
                 "enum": [
                   "camunda:Connector",
                   "bpmn:Error"
-                ],
-                "errorMessage": "invalid scope type ${0}; must be any of { camunda:Connector, bpmn:Error }"
+                ]
               },
               "properties": {
                 "$id": "#/scopes/properties",
@@ -963,12 +912,6 @@
               "type",
               "properties"
             ],
-            "errorMessage": {
-              "required": {
-                "type": "invalid scope, missing type",
-                "properties": "invalid scope ${0/type}, missing properties=[]"
-              }
-            },
             "allOf": [
               {
                 "if": {
@@ -986,8 +929,7 @@
                 "then": {
                   "required": [
                     "id"
-                  ],
-                  "errorMessage": "invalid scope ${0/type}, missing id"
+                  ]
                 }
               }
             ]

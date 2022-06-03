@@ -17,8 +17,7 @@
         "enum": [
           "camunda:Connector",
           "bpmn:Error"
-        ],
-        "errorMessage": "invalid scope type ${0}; must be any of { camunda:Connector, bpmn:Error }"
+        ]
       },
       "properties": {
         "$id": "#/scopes/properties",
@@ -38,12 +37,6 @@
       "type",
       "properties"
     ],
-    "errorMessage": {
-      "required": {
-        "type": "invalid scope, missing type",
-        "properties": "invalid scope ${0/type}, missing properties=[]"
-      }
-    },
     "allOf": [
       {
         "if": {
@@ -61,8 +54,7 @@
         "then": {
           "required": [
             "id"
-          ],
-          "errorMessage": "invalid scope ${0/type}, missing id"
+          ]
         }
       }
     ]

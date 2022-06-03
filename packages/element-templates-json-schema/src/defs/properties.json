@@ -8,11 +8,6 @@
     "required": [
       "binding"
     ],
-    "errorMessage": {
-      "required": {
-        "binding": "missing binding for property \"${0#}\""
-      }
-    },
     "allOf": [
       {
         "if": {
@@ -41,8 +36,7 @@
                 "Hidden",
                 "Dropdown",
                 "Boolean"
-              ],
-              "errorMessage": "invalid property type ${0} for binding type \"property\"; must be any of { String, Text, Hidden, Dropdown, Boolean }"
+              ]
             }
           }
         }
@@ -70,8 +64,7 @@
             "type": {
               "enum": [
                 "Hidden"
-              ],
-              "errorMessage": "invalid property type ${1/type} for binding type \"camunda:executionListener\"; must be \"Hidden\""
+              ]
             }
           }
         }
@@ -108,8 +101,7 @@
                 "String",
                 "Hidden",
                 "Dropdown"
-              ],
-              "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Hidden, Dropdown }"
+              ]
             }
           }
         }
@@ -143,8 +135,7 @@
                 "Text",
                 "Hidden",
                 "Dropdown"
-              ],
-              "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Text, Hidden, Dropdown }"
+              ]
             }
           }
         }
@@ -178,8 +169,7 @@
             "then": {
               "required": [
                 "name"
-              ],
-              "errorMessage": "property.binding ${0/type} requires name"
+              ]
             }
           },
           {
@@ -196,8 +186,7 @@
             "then": {
               "required": [
                 "source"
-              ],
-              "errorMessage": "property.binding ${0/type} requires source"
+              ]
             }
           },
           {
@@ -223,8 +212,7 @@
                     "target"
                   ]
                 }
-              ],
-              "errorMessage": "property.binding ${0/type} requires variables, target, or both"
+              ]
             }
           },
           {
@@ -319,8 +307,7 @@
                     ]
                   }
                 }
-              ],
-              "errorMessage": "property.binding ${0/type} requires one of the following: variables, sourceExpression, source, (sourceExpression and variables), or (source and variables)"
+              ]
             }
           },
           {
@@ -341,8 +328,7 @@
                     "errorRef"
                   ]
                 }
-              ],
-              "errorMessage": "property.binding ${0/type} requires errorRef"
+              ]
             }
           },
           {
@@ -365,7 +351,6 @@
               "camunda:field",
               "camunda:errorEventDefinition"
             ],
-            "errorMessage": "invalid property.binding type ${0}; must be any of { property, camunda:property, camunda:inputParameter, camunda:outputParameter, camunda:in, camunda:out, camunda:in:businessKey, camunda:executionListener, camunda:field, camunda:errorEventDefinition }",
             "description": "The type of a property binding."
           },
           "name": {
