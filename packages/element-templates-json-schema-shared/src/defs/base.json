@@ -40,9 +40,6 @@
         "$id": "#/appliesTo/items",
         "type": "string",
         "pattern": "^[\\w\\d]+:[\\w\\d]+$",
-        "errorMessage": {
-          "pattern": "invalid item for \"appliesTo\", should contain namespaced property, example: \"bpmn:Task\""
-        },
         "allOf": [
           {
             "$ref": "examples.json#/appliesTo"
@@ -58,19 +55,11 @@
       "required": [
         "value"
       ],
-      "errorMessage": {
-        "required": {
-          "value": "missing elementType value"
-        }
-      },
       "properties": {
         "value": {
           "$id": "#/elementType/value",
           "type": "string",
           "pattern": "^[\\w\\d]+:[\\w\\d]+$",
-          "errorMessage": {
-            "pattern": "invalid item for \"elementType\", should contain namespaced property, example: \"bpmn:Task\""
-          },
           "allOf": [
             {
               "$ref": "examples.json#/elementType"
@@ -94,20 +83,9 @@
       "$ref": "groups.json"
     },
     "documentationRef": {
-      "$id": "#/documentaionRef",
+      "$id": "#/documentationRef",
       "type": "string",
-      "pattern": "^(https|http)://.*",
-      "errorMessage": {
-        "pattern": "Malformed documentation URL, must match \"^(https|http)://.*\""
-      }
-    }
-  },
-  "errorMessage": {
-    "required": {
-      "name": "missing template name",
-      "id": "missing template id",
-      "appliesTo": "missing appliesTo=[]",
-      "properties": "missing properties=[]"
+      "pattern": "^(https|http)://.*"
     }
   }
 }

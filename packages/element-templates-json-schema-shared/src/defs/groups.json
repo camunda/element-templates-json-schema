@@ -15,12 +15,6 @@
       "id",
       "label"
     ],
-    "errorMessage": {
-      "required": {
-        "id": "missing id for group \"${0#}\"",
-        "label": "missing label for group \"${0#}\""
-      }
-    },
     "properties": {
       "id": {
         "$id": "#/groups/group/id",
