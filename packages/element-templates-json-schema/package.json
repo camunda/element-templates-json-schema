@@ -1,6 +1,6 @@
 {
   "name": "@camunda/element-templates-json-schema",
-  "version": "0.10.0-alpha.0",
+  "version": "0.10.0-alpha.1",
   "description": "JSON Schema for (Camunda) Element Templates",
   "files": [
     "resources"
@@ -11,7 +11,7 @@
     "all": "run-s build test",
     "build": "run-s build:error-messages build:schema",
     "build:error-messages": "node ../../tasks/generate-error-messages.js --input=./src/error-messages.json --output=./resources/error-messages.json",
-    "build:schema": "node ../../tasks/generate-schema.js --input=./src/schema.json --output=./resources/schema.json",   
+    "build:schema": "node ../../tasks/generate-schema.js --input=./src/schema.json --output=./resources/schema.json",
     "prepare": "run-s build"
   },
   "repository": {
