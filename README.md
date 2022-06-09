@@ -64,6 +64,21 @@ Run tests in individual [packages](./packages):
 npm run dev -- @camunda/zeebe-element-templates-json-schema
 ```
 
+## Release
+
+We use [`lerna`](https://github.com/lerna/lerna) to publish releases. All [packages](./packages/) can be released independently (lerna will take care of this).
+
+```sh
+# release stable version
+npm run release
+
+# release alpha version
+npm run release:alpha
+
+# execute dry run
+npm run release:dry
+```
+
 ## License
 
 MIT
