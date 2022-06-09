@@ -6,6 +6,10 @@ All notable changes to [@camunda/element-templates-json-schema-shared](https://g
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.4.0-alpha.1
+
+* `FEAT`: separate custom error messages from schema ([#57](https://github.com/camunda/element-templates-json-schema/pull/57))
+
 ## 0.4.0-alpha.0
 
 * `FEAT`: allow to set condition for property ([#54](https://github.com/camunda/element-templates-json-schema/issues/54))
