@@ -13,8 +13,8 @@ export const errors = [
     keyword: 'type',
     dataPath: '/version',
     schemaPath: '#/allOf/0/properties/version/type',
-    params: { type: 'number' },
-    message: 'should be number'
+    params: { type: 'integer' },
+    message: 'should be integer'
   },
   {
     keyword: 'type',
