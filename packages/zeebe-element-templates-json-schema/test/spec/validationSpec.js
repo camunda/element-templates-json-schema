@@ -182,6 +182,15 @@ describe('validation', function() {
     });
 
 
+    describe('zeebe:property', function() {
+
+      testTemplate('zeebe-property-type');
+
+      testTemplate('invalid-zeebe-property-type');
+
+    });
+
+
     describe('grouping', function() {
 
       testTemplate('groups');

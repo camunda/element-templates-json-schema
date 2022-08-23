@@ -295,6 +295,7 @@
                           "enum": [
                             "zeebe:input",
                             "zeebe:output",
+                            "zeebe:property",
                             "zeebe:taskHeader",
                             "zeebe:taskDefinition:type"
                           ]
@@ -340,7 +341,8 @@
                         "type": {
                           "enum": [
                             "zeebe:input",
-                            "zeebe:output"
+                            "zeebe:output",
+                            "zeebe:property"
                           ]
                         }
                       },
@@ -420,6 +422,7 @@
                         "type": {
                           "enum": [
                             "property",
+                            "zeebe:property",
                             "zeebe:input"
                           ]
                         }
@@ -483,6 +486,10 @@
                         "source": "output"
                       },
                       {
+                        "type": "zeebe:property",
+                        "name": "property"
+                      },
+                      {
                         "type": "zeebe:taskDefinition:type"
                       },
                       {
@@ -502,6 +509,7 @@
                       "zeebe:taskDefinition:type",
                       "zeebe:input",
                       "zeebe:output",
+                      "zeebe:property",
                       "zeebe:taskHeader"
                     ]
                   },
