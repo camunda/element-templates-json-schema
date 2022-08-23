@@ -28,6 +28,9 @@
     "element-templates",
     "camunda"
   ],
+  "workspaces": [
+    "packages/*"
+  ],
   "author": "Niklas Kiefer <niklas.kiefer@camunda.com (https://github.com/pinussilvestrus)",
   "contributors": [
     {
@@ -48,7 +51,7 @@
     "eslint": "^7.22.0",
     "eslint-plugin-bpmn-io": "^0.13.0",
     "esm": "^3.2.25",
-    "lerna": "^4.0.0",
+    "lerna": "^5.4.3",
     "min-dash": "^3.8.1",
     "mocha": "^8.3.2",
     "mri": "^1.2.0",
