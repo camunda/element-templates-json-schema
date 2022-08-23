@@ -42,6 +42,7 @@ export const errors = [
               'zeebe:taskDefinition:type',
               'zeebe:input',
               'zeebe:output',
+              'zeebe:property',
               'zeebe:taskHeader'
             ]
           },
@@ -49,7 +50,7 @@ export const errors = [
         }
       ]
     },
-    message: 'invalid property.binding type "foo"; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:taskHeader }'
+    message: 'invalid property.binding type "foo"; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader }'
   },
   {
     dataPath: '',

@@ -38,13 +38,19 @@ export const errors = [
           keyword: 'enum',
           dataPath: '/properties/1/binding/type',
           schemaPath: '#/definitions/properties/allOf/1/items/allOf/2/then/properties/binding/properties/type/enum',
-          params: { allowedValues: [ 'zeebe:input', 'zeebe:output' ] },
+          params: {
+            allowedValues: [
+              'zeebe:input',
+              'zeebe:output',
+              'zeebe:property'
+            ]
+          },
           message: 'should be equal to one of the allowed values',
           emUsed: true
         }
       ]
     },
-    message: 'optional is not supported for binding type "zeebe:taskHeader"; must be any of { zeebe:input, zeebe:output }'
+    message: 'optional is not supported for binding type "zeebe:taskHeader"; must be any of { zeebe:input, zeebe:output, zeebe:property }'
   },
   {
     keyword: 'if',
