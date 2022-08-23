@@ -6,6 +6,11 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.6.0
+
+* `FEAT`: support `zeebe:property` binding ([#65](https://github.com/camunda/element-templates-json-schema/issues/65))
+* `FIX`: correct `version` definition ([#58](https://github.com/camunda/element-templates-json-schema/issues/58))
+
 ## 0.5.0-alpha.1
 
 * `FEAT`: separate custom error messages from schema ([#57](https://github.com/camunda/element-templates-json-schema/pull/57))
