@@ -297,7 +297,8 @@
                             "zeebe:output",
                             "zeebe:property",
                             "zeebe:taskHeader",
-                            "zeebe:taskDefinition:type"
+                            "zeebe:taskDefinition:type",
+                            "zeebe:calledElement:processId"
                           ]
                         }
                       },
@@ -510,7 +511,8 @@
                       "zeebe:input",
                       "zeebe:output",
                       "zeebe:property",
-                      "zeebe:taskHeader"
+                      "zeebe:taskHeader",
+                      "zeebe:calledElement:processId"
                     ]
                   },
                   "name": {
