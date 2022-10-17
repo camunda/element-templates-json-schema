@@ -4,6 +4,7 @@ import {
 } from 'min-dash';
 
 import Ajv from 'ajv';
+import AjvErrors from 'ajv-errors';
 
 export function createValidator(schema, errors) {
 
@@ -12,7 +13,7 @@ export function createValidator(schema, errors) {
     strict: false
   });
 
-  require('ajv-errors')(ajv);
+  AjvErrors(ajv);
 
   return ajv.compile(withErrorMessages(schema, errors));
 }
