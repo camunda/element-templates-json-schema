@@ -51,7 +51,7 @@
     "eslint": "^8.25.0",
     "eslint-plugin-bpmn-io": "^0.16.0",
     "esm": "^3.2.25",
-    "lerna": "^5.4.3",
+    "lerna": "^6.0.1",
     "min-dash": "^3.8.1",
     "mocha": "^8.4.0",
     "mri": "^1.2.0",
