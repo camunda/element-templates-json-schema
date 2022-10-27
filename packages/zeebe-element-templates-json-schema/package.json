@@ -6,7 +6,7 @@
     "resources"
   ],
   "scripts": {
-    "test": "mocha -r esm --reporter=spec --recursive test/spec",
+    "test": "mocha --reporter=spec --recursive test/spec",
     "dev": "npm run test -- --watch",
     "all": "run-s build test",
     "build": "run-s build:error-messages build:schema",

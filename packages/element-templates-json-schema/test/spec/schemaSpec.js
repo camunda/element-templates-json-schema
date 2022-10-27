@@ -1,7 +1,7 @@
-import Ajv from 'ajv';
-import { expect } from 'chai';
+const { default: Ajv } = require('ajv');
+const { expect } = require('chai');
 
-import schema from '../../resources/schema.json';
+const schema = require('../../resources/schema.json');
 
 const ERROR_MESSAGE_KEYWORD = '"errorMessage":';
 

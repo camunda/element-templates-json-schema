@@ -1,12 +1,17 @@
-import {
+const {
   forEach,
   set
-} from 'min-dash';
+} = require('min-dash');
 
-import Ajv from 'ajv';
-import AjvErrors from 'ajv-errors';
+const { default: Ajv } = require('ajv');
+const AjvErrors = require('ajv-errors');
 
-export function createValidator(schema, errors) {
+module.exports = {
+  createValidator,
+  withErrorMessages
+};
+
+function createValidator(schema, errors) {
 
   const ajv = new Ajv({
     allErrors: true,
@@ -18,7 +23,7 @@ export function createValidator(schema, errors) {
   return ajv.compile(withErrorMessages(schema, errors));
 }
 
-export function withErrorMessages(schema, errors) {
+function withErrorMessages(schema, errors) {
 
   if (!errors || !errors.length) {
     return schema;
