@@ -1,14 +1,14 @@
-import { expect } from 'chai';
+const { expect } = require('chai');
 
-import util from 'util';
+const util = require('util');
 
-import schema from '../../resources/schema.json';
+const schema = require('../../resources/schema.json');
 
-import errorMessages from '../../resources/error-messages.json';
+const errorMessages = require('../../resources/error-messages.json');
 
-import {
+const {
   createValidator
-} from '../../../element-templates-json-schema-shared/test/helpers';
+} = require('../../../element-templates-json-schema-shared/test/helpers');
 
 const validator = createValidator(schema, errorMessages);
 
@@ -33,10 +33,10 @@ describe('validation', function() {
       file = `../fixtures/${name}.js`;
     }
 
-    (only ? it.only : it)('should validate template - ' + name, function() {
+    (only ? it.only : it)('should validate template - ' + name, async function() {
 
       // given
-      const testDefinition = require(file);
+      const testDefinition = await import(file);
 
       const {
         errors: expectedErrors,
