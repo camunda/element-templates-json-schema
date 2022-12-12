@@ -46,7 +46,7 @@
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.9",
     "ajv": "^7.2.3",
-    "ajv-errors": "^2.0.1",
+    "ajv-errors": "^3.0.0",
     "chai": "^4.3.6",
     "eslint": "^8.25.0",
     "eslint-plugin-bpmn-io": "^0.16.0",
