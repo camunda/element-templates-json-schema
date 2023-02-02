@@ -20,8 +20,8 @@ export const template = {
       'type': 'String',
       'optional': true,
       'binding': {
-        'type': 'zeebe:taskHeader',
-        'key': 'key'
+        'type': 'property',
+        'name': 'name'
       }
     }
   ]
@@ -42,7 +42,8 @@ export const errors = [
             allowedValues: [
               'zeebe:input',
               'zeebe:output',
-              'zeebe:property'
+              'zeebe:property',
+              'zeebe:taskHeader'
             ]
           },
           message: 'should be equal to one of the allowed values',
@@ -50,7 +51,7 @@ export const errors = [
         }
       ]
     },
-    message: 'optional is not supported for binding type "zeebe:taskHeader"; must be any of { zeebe:input, zeebe:output, zeebe:property }'
+    message: 'optional is not supported for binding type "property"; must be any of { zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader }'
   },
   {
     keyword: 'if',
