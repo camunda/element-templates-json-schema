@@ -97,7 +97,8 @@
                   "enum": [
                     "zeebe:input",
                     "zeebe:output",
-                    "zeebe:property"
+                    "zeebe:property",
+                    "zeebe:taskHeader"
                   ]
                 }
               },

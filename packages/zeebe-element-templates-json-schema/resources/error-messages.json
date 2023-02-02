@@ -207,7 +207,7 @@
       "properties",
       "type"
     ],
-    "errorMessage": "optional is not supported for binding type ${0}; must be any of { zeebe:input, zeebe:output, zeebe:property }"
+    "errorMessage": "optional is not supported for binding type ${0}; must be any of { zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader }"
   },
   {
     "path": [
