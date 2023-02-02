@@ -23,6 +23,24 @@ export const template = {
         'type': 'zeebe:output',
         'source': '= body'
       }
+    },
+    {
+      'label': 'Zeebe Property',
+      'type': 'String',
+      'optional': true,
+      'binding': {
+        'type': 'zeebe:property',
+        'name': 'name'
+      }
+    },
+    {
+      'label': 'Task Header',
+      'type': 'String',
+      'optional': true,
+      'binding': {
+        'type': 'zeebe:taskHeader',
+        'key': 'key'
+      }
     }
   ]
 };

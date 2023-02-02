@@ -139,7 +139,7 @@ describe('validation', function() {
     testTemplate('pattern-string');
 
 
-    testTemplate('optional-inputs-outputs');
+    testTemplate('optional-valid');
 
 
     testTemplate('optional-invalid-type');
