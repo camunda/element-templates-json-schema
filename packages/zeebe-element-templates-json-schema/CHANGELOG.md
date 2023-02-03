@@ -6,6 +6,11 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.7.0
+
+* `FEAT`: support `optional` for `zeebe:taskHeader` binding ([#87](https://github.com/camunda/element-templates-json-schema/pull/87))
+* `CHORE`: drop esm ([#73](https://github.com/camunda/element-templates-json-schema/pull/73))
+
 ## 0.6.0
 
 * `FEAT`: support `zeebe:property` binding ([#65](https://github.com/camunda/element-templates-json-schema/issues/65))

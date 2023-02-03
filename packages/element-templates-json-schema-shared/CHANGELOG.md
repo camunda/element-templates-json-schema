@@ -6,6 +6,10 @@ All notable changes to [@camunda/element-templates-json-schema-shared](https://g
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.5.0
+
+* `CHORE`: drop esm ([#73](https://github.com/camunda/element-templates-json-schema/pull/73))
+
 ## 0.4.1
 
 * `FIX`: correct `version` definition ([#58](https://github.com/camunda/element-templates-json-schema/issues/58))
