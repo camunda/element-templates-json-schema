@@ -99,6 +99,21 @@
       "allOf",
       1,
       "items",
+      "allOf",
+      5,
+      "then",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "language is only supported for \"Text\" type"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
       "properties",
       "binding",
       "allOf",
