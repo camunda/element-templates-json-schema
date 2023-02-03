@@ -406,6 +406,29 @@
                     "type"
                   ]
                 }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "language": {
+                      "not": {
+                        "const": null
+                      }
+                    }
+                  },
+                  "required": [
+                    "language"
+                  ]
+                },
+                "then": {
+                  "properties": {
+                    "type": {
+                      "enum": [
+                        "Text"
+                      ]
+                    }
+                  }
+                }
               }
             ],
             "properties": {
@@ -546,6 +569,11 @@
                   "optional",
                   "required"
                 ]
+              },
+              "language": {
+                "$id": "#/properties/property/language",
+                "type": "string",
+                "description": "Indicates that the field is a custom language editor"
               }
             }
           }
