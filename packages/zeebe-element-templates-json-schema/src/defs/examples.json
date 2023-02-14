@@ -18,6 +18,9 @@
         "name": "property"
       },
       {
+        "type": "zeebe:taskDefinition:retries"
+      },
+      {
         "type": "zeebe:taskDefinition:type"
       },
       {

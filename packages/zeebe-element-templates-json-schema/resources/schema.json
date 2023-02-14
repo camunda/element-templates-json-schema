@@ -297,6 +297,7 @@
                             "zeebe:output",
                             "zeebe:property",
                             "zeebe:taskHeader",
+                            "zeebe:taskDefinition:retries",
                             "zeebe:taskDefinition:type"
                           ]
                         }
@@ -514,6 +515,9 @@
                         "name": "property"
                       },
                       {
+                        "type": "zeebe:taskDefinition:retries"
+                      },
+                      {
                         "type": "zeebe:taskDefinition:type"
                       },
                       {
@@ -531,6 +535,7 @@
                     "enum": [
                       "property",
                       "zeebe:taskDefinition:type",
+                      "zeebe:taskDefinition:retries",
                       "zeebe:input",
                       "zeebe:output",
                       "zeebe:property",
