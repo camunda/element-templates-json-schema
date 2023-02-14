@@ -180,6 +180,9 @@ describe('validation', function() {
       testTemplate('invalid-zeebe-task-header-type');
 
 
+      testTemplate('invalid-zeebe-task-definition-retries-type');
+
+
       testTemplate('invalid-zeebe-task-definition-type-type');
 
     });
