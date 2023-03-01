@@ -1,57 +1,82 @@
 {
   "$id": "#/condition",
   "type": "object",
-  "description": "Condition to activate the binding.",
+  "description": "Condition(s) to activate the binding.",
   "allOf": [
     {
       "$ref": "examples.json#/condition"
     }
   ],
-  "required": [
-    "property"
-  ],
-  "properties": {
-    "type": {
-      "$id": "#/condition/type",
-      "const": "simple",
-      "description": "The type of the condition.",
-      "default": "simple"
-    },
-    "property": {
-      "$id": "#/condition/property",
-      "type": "string",
-      "description": "The id of the property to check."
+  "definitions": {
+    "condition": {
+      "type": "object",
+      "required": [
+        "property"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/condition/type",
+          "const": "simple",
+          "description": "The type of the condition.",
+          "default": "simple"
+        },
+        "property": {
+          "$id": "#/condition/property",
+          "type": "string",
+          "description": "The id of the property to check."
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "equals": {
+              "type": [
+                "string",
+                "number",
+                "boolean"
+              ]
+            }
+          },
+          "required": [
+            "equals"
+          ]
+        },
+        {
+          "properties": {
+            "oneOf": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string",
+                  "number"
+                ]
+              }
+            }
+          },
+          "required": [
+            "oneOf"
+          ]
+        }
+      ]
     }
   },
   "oneOf": [
     {
-      "properties": {
-        "equals": {
-          "type": [
-            "string",
-            "number",
-            "boolean"
-          ]
-        }
-      },
-      "required": [
-        "equals"
-      ]
+      "$ref": "#/definitions/condition"
     },
     {
       "properties": {
-        "oneOf": {
+        "allMatch": {
+          "$id": "#/allMatch",
           "type": "array",
           "items": {
-            "type": [
-              "string",
-              "number"
-            ]
-          }
+            "$ref": "#/definitions/condition"
+          },
+          "minItems": 1
         }
       },
       "required": [
-        "oneOf"
+        "allMatch"
       ]
     }
   ]
