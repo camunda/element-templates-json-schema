@@ -38,7 +38,25 @@ export const errors = [
     'params': {
       'allowedValue': 'simple'
     },
-    'schemaPath': '#/definitions/properties/allOf/0/items/properties/condition/properties/type/const'
+    'schemaPath': '#/definitions/properties/allOf/0/items/properties/condition/definitions/condition/properties/type/const'
+  },
+  {
+    'dataPath': '/properties/1/condition',
+    'keyword': 'required',
+    'message': "should have required property 'allMatch'",
+    'params': {
+      'missingProperty': 'allMatch'
+    },
+    'schemaPath': '#/allOf/0/items/properties/condition/oneOf/1/required'
+  },
+  {
+    'dataPath': '/properties/1/condition',
+    'keyword': 'oneOf',
+    'message': 'should match exactly one schema in oneOf',
+    'params': {
+      'passingSchemas': null
+    },
+    'schemaPath': '#/allOf/0/items/properties/condition/oneOf'
   },
   {
     'dataPath': '',
