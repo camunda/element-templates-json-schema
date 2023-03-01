@@ -45,13 +45,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/1',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/0/then/errorMessage',
+    schemaPath: '#/allOf/0/items/allOf/0/then/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           dataPath: '/properties/1',
-          schemaPath: '#/definitions/properties/allOf/0/items/allOf/0/then/required',
+          schemaPath: '#/allOf/0/items/allOf/0/then/required',
           params: { missingProperty: 'choices' },
           message: "should have required property 'choices'",
           emUsed: true
@@ -63,20 +63,20 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/1',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/0/if',
+    schemaPath: '#/allOf/0/items/allOf/0/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },
   {
     keyword: 'errorMessage',
     dataPath: '/properties/0/type',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/0/then/properties/type/errorMessage',
+    schemaPath: '#/allOf/1/items/allOf/0/then/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
           dataPath: '/properties/0/type',
-          schemaPath: '#/definitions/properties/allOf/1/items/allOf/0/then/properties/type/enum',
+          schemaPath: '#/allOf/1/items/allOf/0/then/properties/type/enum',
           params: {
             allowedValues: [ 'String', 'Text', 'Hidden', 'Dropdown', 'Boolean' ]
           },
@@ -90,20 +90,20 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/0',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/0/if',
+    schemaPath: '#/allOf/1/items/allOf/0/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },
   {
     keyword: 'errorMessage',
     dataPath: '/properties/2/binding',
-    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/1/then/errorMessage',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/1/then/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           dataPath: '/properties/2/binding',
-          schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/1/then/required',
+          schemaPath: '#/allOf/1/items/properties/binding/allOf/1/then/required',
           params: { missingProperty: 'source' },
           message: "should have required property 'source'",
           emUsed: true
@@ -115,20 +115,20 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/2/binding',
-    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/1/if',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/1/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },
   {
     keyword: 'errorMessage',
     dataPath: '/properties/3/binding',
-    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/0/then/errorMessage',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/0/then/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           dataPath: '/properties/3/binding',
-          schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/0/then/required',
+          schemaPath: '#/allOf/1/items/properties/binding/allOf/0/then/required',
           params: { missingProperty: 'name' },
           message: "should have required property 'name'",
           emUsed: true
@@ -140,7 +140,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/3/binding',
-    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/0/if',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/0/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },

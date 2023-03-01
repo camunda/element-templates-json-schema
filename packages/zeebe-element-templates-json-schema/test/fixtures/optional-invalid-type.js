@@ -31,13 +31,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/1/binding/type',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/2/then/properties/binding/properties/type/errorMessage',
+    schemaPath: '#/allOf/1/items/allOf/2/then/properties/binding/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
           dataPath: '/properties/1/binding/type',
-          schemaPath: '#/definitions/properties/allOf/1/items/allOf/2/then/properties/binding/properties/type/enum',
+          schemaPath: '#/allOf/1/items/allOf/2/then/properties/binding/properties/type/enum',
           params: {
             allowedValues: [
               'zeebe:input',
@@ -56,7 +56,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/1',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/2/if',
+    schemaPath: '#/allOf/1/items/allOf/2/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },

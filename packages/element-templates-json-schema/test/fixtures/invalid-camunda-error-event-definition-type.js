@@ -49,14 +49,14 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/0/type',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/2/then/properties/type/errorMessage',
+    schemaPath: '#/allOf/1/items/allOf/2/then/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
           emUsed: true,
           dataPath: '/properties/0/type',
-          schemaPath: '#/definitions/properties/allOf/1/items/allOf/2/then/properties/type/enum',
+          schemaPath: '#/allOf/1/items/allOf/2/then/properties/type/enum',
           params: { allowedValues: [ 'String', 'Hidden', 'Dropdown' ] },
           message: 'should be equal to one of the allowed values'
         }
@@ -67,7 +67,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/0',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/2/if',
+    schemaPath: '#/allOf/1/items/allOf/2/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },

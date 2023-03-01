@@ -30,14 +30,14 @@ export const errors = [
   {
     keyword: 'type',
     dataPath: '/properties/0/constraints/minLength',
-    schemaPath: '#/definitions/properties/allOf/0/items/properties/constraints/properties/minLength/type',
+    schemaPath: '#/allOf/0/items/properties/constraints/properties/minLength/type',
     params: { type: 'number' },
     message: 'should be number'
   },
   {
     keyword: 'type',
     dataPath: '/properties/0/constraints/maxLength',
-    schemaPath: '#/definitions/properties/allOf/0/items/properties/constraints/properties/maxLength/type',
+    schemaPath: '#/allOf/0/items/properties/constraints/properties/maxLength/type',
     params: { type: 'number' },
     message: 'should be number'
   },

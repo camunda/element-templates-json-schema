@@ -29,13 +29,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/0/binding',
-    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/0/then/errorMessage',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/0/then/errorMessage',
     params: { errors: [
       {
         keyword: 'required',
         emUsed: true,
         dataPath: '/properties/0/binding',
-        schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/0/then/required',
+        schemaPath: '#/allOf/1/items/properties/binding/allOf/0/then/required',
         params: {
           missingProperty: 'name'
         },
@@ -47,20 +47,20 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/0/binding',
-    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/0/if',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/0/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },
   {
     keyword: 'errorMessage',
     dataPath: '/properties/1/type',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/1/then/properties/type/errorMessage',
+    schemaPath: '#/allOf/1/items/allOf/1/then/properties/type/errorMessage',
     params: { errors: [
       {
         keyword: 'enum',
         emUsed: true,
         dataPath: '/properties/1/type',
-        schemaPath: '#/definitions/properties/allOf/1/items/allOf/1/then/properties/type/enum',
+        schemaPath: '#/allOf/1/items/allOf/1/then/properties/type/enum',
         params: {
           'allowedValues': [
             'String',
@@ -77,7 +77,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/1',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/1/if',
+    schemaPath: '#/allOf/1/items/allOf/1/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },

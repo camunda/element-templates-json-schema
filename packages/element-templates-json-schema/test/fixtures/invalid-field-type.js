@@ -28,14 +28,14 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/1/type',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/3/then/properties/type/errorMessage',
+    schemaPath: '#/allOf/1/items/allOf/3/then/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
           emUsed: true,
           dataPath: '/properties/1/type',
-          schemaPath: '#/definitions/properties/allOf/1/items/allOf/3/then/properties/type/enum',
+          schemaPath: '#/allOf/1/items/allOf/3/then/properties/type/enum',
           params: {
             'allowedValues': [
               'String',
@@ -53,7 +53,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/1',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/3/if',
+    schemaPath: '#/allOf/1/items/allOf/3/if',
     params: {
       'failingKeyword': 'then'
     },

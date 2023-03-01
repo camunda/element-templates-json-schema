@@ -27,13 +27,13 @@ export const errors = [
   {
     'keyword': 'errorMessage',
     'dataPath': '/properties/1/binding',
-    'schemaPath': '#/definitions/properties/allOf/1/items/properties/binding/allOf/3/then/errorMessage',
+    'schemaPath': '#/allOf/1/items/properties/binding/allOf/3/then/errorMessage',
     'params': {
       'errors': [
         {
           'keyword': 'required',
           'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/allOf/1/items/properties/binding/allOf/3/then/oneOf/0/required',
+          'schemaPath': '#/allOf/1/items/properties/binding/allOf/3/then/oneOf/0/required',
           'params': {
             'missingProperty': 'variables'
           },
@@ -43,7 +43,7 @@ export const errors = [
         {
           'keyword': 'required',
           'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/allOf/1/items/properties/binding/allOf/3/then/oneOf/1/required',
+          'schemaPath': '#/allOf/1/items/properties/binding/allOf/3/then/oneOf/1/required',
           'params': {
             'missingProperty': 'source'
           },
@@ -53,7 +53,7 @@ export const errors = [
         {
           'keyword': 'required',
           'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/allOf/1/items/properties/binding/allOf/3/then/oneOf/2/required',
+          'schemaPath': '#/allOf/1/items/properties/binding/allOf/3/then/oneOf/2/required',
           'params': {
             'missingProperty': 'sourceExpression'
           },
@@ -63,7 +63,7 @@ export const errors = [
         {
           'keyword': 'required',
           'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/allOf/1/items/properties/binding/allOf/3/then/oneOf/3/required',
+          'schemaPath': '#/allOf/1/items/properties/binding/allOf/3/then/oneOf/3/required',
           'params': {
             'missingProperty': 'variables'
           },
@@ -73,7 +73,7 @@ export const errors = [
         {
           'keyword': 'required',
           'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/allOf/1/items/properties/binding/allOf/3/then/oneOf/3/required',
+          'schemaPath': '#/allOf/1/items/properties/binding/allOf/3/then/oneOf/3/required',
           'params': {
             'missingProperty': 'sourceExpression'
           },
@@ -83,7 +83,7 @@ export const errors = [
         {
           'keyword': 'required',
           'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/allOf/1/items/properties/binding/allOf/3/then/oneOf/4/required',
+          'schemaPath': '#/allOf/1/items/properties/binding/allOf/3/then/oneOf/4/required',
           'params': {
             'missingProperty': 'variables'
           },
@@ -93,7 +93,7 @@ export const errors = [
         {
           'keyword': 'required',
           'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/allOf/1/items/properties/binding/allOf/3/then/oneOf/4/required',
+          'schemaPath': '#/allOf/1/items/properties/binding/allOf/3/then/oneOf/4/required',
           'params': {
             'missingProperty': 'source'
           },
@@ -103,7 +103,7 @@ export const errors = [
         {
           'keyword': 'oneOf',
           'dataPath': '/properties/1/binding',
-          'schemaPath': '#/definitions/properties/allOf/1/items/properties/binding/allOf/3/then/oneOf',
+          'schemaPath': '#/allOf/1/items/properties/binding/allOf/3/then/oneOf',
           'params': {
             'passingSchemas': null
           },
@@ -117,7 +117,7 @@ export const errors = [
   {
     'keyword': 'if',
     'dataPath': '/properties/1/binding',
-    'schemaPath': '#/definitions/properties/allOf/1/items/properties/binding/allOf/3/if',
+    'schemaPath': '#/allOf/1/items/properties/binding/allOf/3/if',
     'params': {
       'failingKeyword': 'then'
     },

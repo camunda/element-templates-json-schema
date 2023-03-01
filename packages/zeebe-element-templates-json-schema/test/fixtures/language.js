@@ -40,13 +40,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/1/type',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/5/then/properties/type/errorMessage',
+    schemaPath: '#/allOf/1/items/allOf/5/then/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
           dataPath: '/properties/1/type',
-          schemaPath: '#/definitions/properties/allOf/1/items/allOf/5/then/properties/type/enum',
+          schemaPath: '#/allOf/1/items/allOf/5/then/properties/type/enum',
           params: {
             allowedValues: [
               'Text'
@@ -66,18 +66,18 @@ export const errors = [
     params: {
       failingKeyword: 'then'
     },
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/5/if',
+    schemaPath: '#/allOf/1/items/allOf/5/if',
   },
   {
     keyword: 'errorMessage',
     dataPath: '/properties/2/type',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/5/then/properties/type/errorMessage',
+    schemaPath: '#/allOf/1/items/allOf/5/then/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
           dataPath: '/properties/2/type',
-          schemaPath: '#/definitions/properties/allOf/1/items/allOf/5/then/properties/type/enum',
+          schemaPath: '#/allOf/1/items/allOf/5/then/properties/type/enum',
           params: {
             allowedValues: [
               'Text'
@@ -97,7 +97,7 @@ export const errors = [
     params: {
       failingKeyword: 'then'
     },
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/5/if'
+    schemaPath: '#/allOf/1/items/allOf/5/if'
   },
   {
     dataPath: '/properties/2/language',
@@ -106,7 +106,7 @@ export const errors = [
     params: {
       type: 'string'
     },
-    schemaPath: '#/definitions/properties/allOf/1/items/properties/language/type'
+    schemaPath: '#/allOf/1/items/properties/language/type'
   },
   {
     dataPath: '',
