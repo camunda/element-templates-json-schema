@@ -19,14 +19,14 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/0/binding',
-    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/2/then/errorMessage',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/2/then/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           emUsed: true,
           dataPath: '/properties/0/binding',
-          schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/2/then/required',
+          schemaPath: '#/allOf/1/items/properties/binding/allOf/2/then/required',
           params: {
             missingProperty: 'key'
           },
@@ -39,7 +39,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/0/binding',
-    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/2/if',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/2/if',
     params: {
       'failingKeyword': 'then'
     },

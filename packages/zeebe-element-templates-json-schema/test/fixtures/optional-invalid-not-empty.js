@@ -58,13 +58,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/1/constraints/notEmpty',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/3/then/properties/constraints/properties/notEmpty/errorMessage',
+    schemaPath: '#/allOf/1/items/allOf/3/then/properties/constraints/properties/notEmpty/errorMessage',
     params: {
       errors: [
         {
           keyword: 'const',
           dataPath: '/properties/1/constraints/notEmpty',
-          schemaPath: '#/definitions/properties/allOf/1/items/allOf/3/then/properties/constraints/properties/notEmpty/const',
+          schemaPath: '#/allOf/1/items/allOf/3/then/properties/constraints/properties/notEmpty/const',
           params: { allowedValue: false },
           message: 'should be equal to constant',
           emUsed: true
@@ -76,7 +76,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/1',
-    schemaPath: '#/definitions/properties/allOf/1/items/allOf/3/if',
+    schemaPath: '#/allOf/1/items/allOf/3/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },

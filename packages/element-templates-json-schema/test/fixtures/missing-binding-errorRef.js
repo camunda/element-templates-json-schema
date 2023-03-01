@@ -47,14 +47,14 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/0/binding',
-    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/4/then/errorMessage',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/4/then/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           emUsed: true,
           dataPath: '/properties/0/binding',
-          schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/4/then/oneOf/0/required',
+          schemaPath: '#/allOf/1/items/properties/binding/allOf/4/then/oneOf/0/required',
           params: { missingProperty: 'errorRef' },
           message: "should have required property 'errorRef'"
         },
@@ -62,7 +62,7 @@ export const errors = [
           keyword: 'oneOf',
           emUsed: true,
           dataPath: '/properties/0/binding',
-          schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/4/then/oneOf',
+          schemaPath: '#/allOf/1/items/properties/binding/allOf/4/then/oneOf',
           params: { passingSchemas: null },
           message: 'should match exactly one schema in oneOf'
         }
@@ -73,7 +73,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/0/binding',
-    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/4/if',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/4/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema'
   },

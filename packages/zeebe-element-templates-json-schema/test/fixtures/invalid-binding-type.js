@@ -28,14 +28,14 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/1/binding/type',
-    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/properties/type/errorMessage',
+    schemaPath: '#/allOf/1/items/properties/binding/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
           emUsed: true,
           dataPath: '/properties/1/binding/type',
-          schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/properties/type/enum',
+          schemaPath: '#/allOf/1/items/properties/binding/properties/type/enum',
           params: {
             allowedValues: [
               'property',
