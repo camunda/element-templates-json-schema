@@ -61,8 +61,8 @@
         "allMatch": [
           {
             "type": "simple",
-            "property": "httpMethod",
-            "equals": "GET"
+            "property": "authType",
+            "equals": "Basic"
           },
           {
             "type": "simple",
