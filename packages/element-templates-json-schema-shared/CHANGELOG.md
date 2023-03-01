@@ -6,6 +6,10 @@ All notable changes to [@camunda/element-templates-json-schema-shared](https://g
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.6.0
+
+* `FEAT`: support multiple conditions for property ([#91](https://github.com/camunda/element-templates-json-schema/issues/91))
+
 ## 0.5.0
 
 * `CHORE`: drop esm ([#73](https://github.com/camunda/element-templates-json-schema/pull/73))
