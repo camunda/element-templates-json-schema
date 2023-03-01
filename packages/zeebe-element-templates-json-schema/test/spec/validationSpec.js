@@ -250,6 +250,16 @@ describe('validation', function() {
 
 
       testTemplate('condition-wrong-type');
+
+
+      testTemplate('condition-multiple');
+
+
+      testTemplate('condition-empty-allMatch');
+
+
+      testTemplate('condition-allMatch-one-condition');
+
     });
 
   });
