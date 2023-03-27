@@ -166,6 +166,18 @@ describe('validation', function() {
     testTemplate('element-type-invalid');
 
 
+    describe('element type - event definition', function() {
+
+      testTemplate('element-type-event-definition');
+
+
+      testTemplate('element-type-event-definition-invalid');
+
+
+      testTemplate('element-type-event-definition-invalid-element');
+    });
+
+
     describe('property type - binding type', function() {
 
       testTemplate('invalid-property-type');
@@ -260,6 +272,30 @@ describe('validation', function() {
 
       testTemplate('condition-allMatch-one-condition');
 
+    });
+
+
+    describe('message property', function() {
+
+      testTemplate('message-property-valid');
+
+
+      testTemplate('message-property-invalid');
+
+
+      testTemplate('message-property-invalid-event-definition');
+    });
+
+
+    describe('message subscription property', function() {
+
+      testTemplate('message-subscription-property-valid');
+
+
+      testTemplate('message-subscription-property-invalid');
+
+
+      testTemplate('message-subscription-property-invalid-event-definition');
     });
 
   });
