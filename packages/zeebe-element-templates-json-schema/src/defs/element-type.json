@@ -1,0 +1,44 @@
+{
+  "allOf": [
+    {
+      "properties": {
+        "eventDefinition": {
+          "$id": "#/elementType/eventDefinition",
+          "enum": [
+            "bpmn:MessageEventDefinition"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "eventDefinition": {
+            "enum": [
+              "bpmn:MessageEventDefinition"
+            ]
+          }
+        },
+        "required": [
+          "eventDefinition"
+        ]
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "bpmn:StartEvent",
+              "bpmn:IntermediateCatchEvent",
+              "bpmn:IntermediateThrowEvent",
+              "bpmn:BoundaryEvent",
+              "bpmn:EndEvent"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+    }
+  ]
+}

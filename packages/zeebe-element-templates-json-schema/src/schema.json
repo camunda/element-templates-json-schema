@@ -18,6 +18,48 @@
       "allOf": [
         {
           "$ref": "../../packages/element-templates-json-schema-shared/src/defs/base.json"
+        },
+        {
+          "if": {
+            "properties": {
+              "properties": {
+                "contains": {
+                  "properties": {
+                    "binding": {
+                      "properties": {
+                        "type": {
+                          "enum": [
+                            "bpmn:Message#property",
+                            "bpmn:Message#zeebe:subscription#property"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "binding"
+                  ]
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "elementType": {
+                "properties": {
+                  "eventDefinition": {
+                    "const": "bpmn:MessageEventDefinition"
+                  }
+                },
+                "required": [
+                  "eventDefinition"
+                ]
+              }
+            }
+          }
         }
       ],
       "properties": {
@@ -27,6 +69,13 @@
         },
         "icon": {
           "$ref": "src/defs/icon.json"
+        },
+        "elementType": {
+          "allOf": [
+            {
+              "$ref": "src/defs/element-type.json"
+            }
+          ]
         }
       }
     }
