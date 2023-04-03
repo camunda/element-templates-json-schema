@@ -1,6 +1,7 @@
 # @camunda/zeebe-element-templates-json-schema
 
-[![Build Status](https://img.shields.io/github/workflow/status/camunda/element-templates-json-schema/CI)](https://github.com/camunda/element-templates-json-schema/actions?query=workflow%3ACI)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/camunda/element-templates-json-schema/CI.yml?branch=master)](https://github.com/camunda/element-templates-json-schema/actions?query=workflow%3ACI)
+
 
 
 JSON Schema for (Zeebe) Element Templates. The schema is built on top of and validated by [`json-schema@draft-07`](https://json-schema.org/draft-07/json-schema-release-notes.html).
