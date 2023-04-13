@@ -187,6 +187,42 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "required": [
+            "value"
+          ]
+        },
+        "then": {
+          "not": {
+            "required": [
+              "generatedValue"
+            ]
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "type": {
+              "enum": [
+                "Boolean",
+                "Dropdown"
+              ]
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        "then": {
+          "not": {
+            "required": [
+              "generatedValue"
+            ]
+          }
+        }
       }
     ],
     "properties": {
@@ -313,6 +349,19 @@
         "$id": "#/properties/property/language",
         "type": "string",
         "description": "Indicates that the field is a custom language editor"
+      },
+      "generatedValue": {
+        "$id": "#/properties/property/generatedValue",
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "const": "uuid"
+          }
+        },
+        "description": "Sets property to a generated value according to given scheme."
       }
     }
   }
