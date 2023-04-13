@@ -298,6 +298,18 @@ describe('validation', function() {
       testTemplate('message-subscription-property-invalid-event-definition');
     });
 
+
+    describe('generated value', function() {
+
+      testTemplate('generated-value-valid');
+
+
+      testTemplate('generated-value-invalid');
+
+
+      testTemplate('generated-value-clash');
+    });
+
   });
 
 });
