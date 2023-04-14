@@ -1,0 +1,43 @@
+{
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "enum": [
+                        "bpmn:Message#property",
+                        "bpmn:Message#zeebe:subscription#property"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "elementType": {
+            "properties": {
+              "eventDefinition": {
+                "const": "bpmn:MessageEventDefinition"
+              }
+            },
+            "required": [
+              "eventDefinition"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

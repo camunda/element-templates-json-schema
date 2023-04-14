@@ -20,46 +20,7 @@
           "$ref": "../../packages/element-templates-json-schema-shared/src/defs/base.json"
         },
         {
-          "if": {
-            "properties": {
-              "properties": {
-                "contains": {
-                  "properties": {
-                    "binding": {
-                      "properties": {
-                        "type": {
-                          "enum": [
-                            "bpmn:Message#property",
-                            "bpmn:Message#zeebe:subscription#property"
-                          ]
-                        }
-                      },
-                      "required": [
-                        "type"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "binding"
-                  ]
-                }
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "elementType": {
-                "properties": {
-                  "eventDefinition": {
-                    "const": "bpmn:MessageEventDefinition"
-                  }
-                },
-                "required": [
-                  "eventDefinition"
-                ]
-              }
-            }
-          }
+          "$ref": "src/defs/template.json"
         }
       ],
       "properties": {

@@ -23,7 +23,7 @@ export const errors = [
   {
     keyword: 'required',
     dataPath: '/elementType',
-    schemaPath: '#/allOf/1/then/properties/elementType/required',
+    schemaPath: '#/allOf/1/allOf/0/then/properties/elementType/required',
     params: {
       missingProperty: 'eventDefinition'
     },
@@ -32,7 +32,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '',
-    schemaPath: '#/allOf/1/if',
+    schemaPath: '#/allOf/1/allOf/0/if',
     params: {
       'failingKeyword': 'then'
     },
