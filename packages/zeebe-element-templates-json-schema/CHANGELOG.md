@@ -6,6 +6,11 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.9.0
+
+* `FEAT`: support `generatedValue` on `String` and `Text` elements ([#97](https://github.com/camunda/element-templates-json-schema/pull/97))
+* `FEAT`: support message bindings ([#96](https://github.com/camunda/element-templates-json-schema/issues/96))
+
 ## 0.8.0
 
 * `FIX`: support `language` on `Text` elements ([#89](https://github.com/camunda/element-templates-json-schema/issues/89))
