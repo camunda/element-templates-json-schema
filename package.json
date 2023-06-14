@@ -16,8 +16,7 @@
     "lerna-publish:dry": "lerna version --no-git-tag-version --no-push",
     "release": "run-s build test lerna-publish",
     "release:alpha": "run-s build test lerna-publish:alpha",
-    "release:dry": "run-s build test lerna-publish:dry",
-    "postinstall": "lerna bootstrap --hoist"
+    "release:dry": "run-s build test lerna-publish:dry"
   },
   "repository": {
     "type": "git",
@@ -50,7 +49,7 @@
     "chai": "^4.3.6",
     "eslint": "^8.25.0",
     "eslint-plugin-bpmn-io": "^1.0.0",
-    "lerna": "^6.0.1",
+    "lerna": "^7.0.0",
     "min-dash": "^4.0.0",
     "mocha": "^10.0.0",
     "mri": "^1.2.0",
