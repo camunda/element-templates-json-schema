@@ -310,6 +310,15 @@ describe('validation', function() {
       testTemplate('generated-value-clash');
     });
 
+
+    describe('tooltip', function() {
+
+      testTemplate('tooltip');
+
+      testTemplate('tooltip-invalid');
+
+    });
+
   });
 
 });
