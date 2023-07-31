@@ -362,6 +362,11 @@
           }
         },
         "description": "Sets property to a generated value according to given scheme."
+      },
+      "tooltip": {
+        "$id": "#/properties/property/tooltip",
+        "type": "string",
+        "description": "Hints for the control field."
       }
     }
   }
