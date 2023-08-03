@@ -37,6 +37,9 @@
               "$ref": "src/defs/element-type.json"
             }
           ]
+        },
+        "groups": {
+          "$ref": "src/defs/groups.json"  
         }
       }
     }

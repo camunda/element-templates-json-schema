@@ -4,6 +4,13 @@ export const template = {
   appliesTo: [
     'bpmn:ServiceTask'
   ],
+  groups: [
+    {
+      id: 'group',
+      label: 'Custom Group',
+      tooltip: []
+    },
+  ],
   properties: [
     {
       label: 'Input with tooltip',
@@ -13,7 +20,15 @@ export const template = {
         name: 'prop'
       },
       tooltip: []
-    }
+    },
+    {
+      label: 'Input in group',
+      type: 'String',
+      binding: {
+        type: 'property',
+        name: 'prop2'
+      }
+    },
   ]
 };
 
@@ -21,9 +36,16 @@ export const errors = [
   {
     keyword: 'type',
     dataPath: '/properties/0/tooltip',
-    schemaPath: '#/allOf/0/items/properties/tooltip/type',
+    schemaPath: '#/allOf/1/items/properties/tooltip/type',
     params: { type: 'string' },
     message: 'should be string'
+  },
+  {
+    keyword: 'type',
+    dataPath: '/groups/0/tooltip',
+    message: 'should be string',
+    params: { type: 'string' },
+    schemaPath: '#/properties/groups/items/properties/tooltip/type'
   },
   {
     keyword: 'type',
