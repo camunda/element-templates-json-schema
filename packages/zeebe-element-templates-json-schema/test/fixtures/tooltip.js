@@ -4,6 +4,13 @@ export const template = {
   appliesTo: [
     'bpmn:ServiceTask'
   ],
+  groups: [
+    {
+      id: 'group',
+      label: 'Custom Group',
+      tooltip: 'This is a custom group'
+    },
+  ],
   properties: [
     {
       label: 'Input with tooltip',
@@ -13,7 +20,15 @@ export const template = {
         name: 'prop'
       },
       tooltip: 'This field has a tooltip'
-    }
+    },
+    {
+      label: 'Input in group',
+      type: 'String',
+      binding: {
+        type: 'property',
+        name: 'prop2'
+      }
+    },
   ]
 };
 

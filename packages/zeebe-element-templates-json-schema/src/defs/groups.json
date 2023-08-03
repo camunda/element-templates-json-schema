@@ -1,0 +1,10 @@
+{
+  "items": {
+    "properties": {
+      "tooltip": {
+        "$id": "#/groups/group/tooltip",
+        "type": "string"
+      }
+    }
+  }
+}
