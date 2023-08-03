@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.10.0
+
+* `FEAT`: support tooltips in template groups and properties ([#104](https://github.com/camunda/element-templates-json-schema/pull/104))
+
 ## 0.9.0
 
 * `FEAT`: support `generatedValue` on `String` and `Text` elements ([#97](https://github.com/camunda/element-templates-json-schema/pull/97))
