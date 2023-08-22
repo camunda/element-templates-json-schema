@@ -31,6 +31,24 @@
       "type": "boolean",
       "description": "Indicates whether the element template is a default template."
     },
+    "deprecated": {
+      "$id": "#/deprecated",
+      "type": ["boolean", "object"],
+      "description": "Indicates whether the element template is deprecated.",
+      "properties": {
+        "message": {
+          "$id": "#/deprecated/message",
+          "type": "string",
+          "description": "Optional message to describe migration path."
+        },
+        "documentationRef": {
+          "$id": "#/deprecated/documentationRef",
+          "type": "string",
+          "pattern": "^(https|http)://.*",
+          "description": "Optional link to migration documentation."
+        }
+      }
+    },
     "appliesTo": {
       "$id": "#/appliesTo",
       "type": "array",

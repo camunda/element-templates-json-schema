@@ -163,6 +163,15 @@ describe('validation', function() {
     testTemplate('constraints');
 
 
+    testTemplate('deprecated-bool');
+
+
+    testTemplate('deprecated-invalid');
+
+
+    testTemplate('deprecated-object');
+
+
     testTemplate('invalid-constraints');
 
 
