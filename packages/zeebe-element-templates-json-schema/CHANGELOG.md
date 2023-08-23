@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.11.0
+
+* `FEAT`: add deprecation attribute ([#70](https://github.com/camunda/element-templates-json-schema/issues/70))
+
 ## 0.10.0
 
 * `FEAT`: support tooltips in template groups and properties ([#104](https://github.com/camunda/element-templates-json-schema/pull/104))
