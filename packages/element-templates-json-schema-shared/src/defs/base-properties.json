@@ -78,6 +78,9 @@
               "$id": "#/properties/property/choices/item/value",
               "type": "string",
               "description": "The value of a choice."
+            },
+            "condition": {
+              "$ref": "condition.json"
             }
           },
           "required": [

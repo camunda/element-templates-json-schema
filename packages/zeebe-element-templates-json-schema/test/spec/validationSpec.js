@@ -281,6 +281,11 @@ describe('validation', function() {
 
       testTemplate('condition-allMatch-one-condition');
 
+
+      testTemplate('condition-dropdown-choices');
+
+
+      testTemplate('condition-dropdown-choices-invalid');
     });
 
 
