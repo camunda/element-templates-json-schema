@@ -6,6 +6,10 @@ All notable changes to [@camunda/element-templates-json-schema-shared](https://g
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.8.0
+
+* `FEAT`: support conditions in dropdown choices ([#107](https://github.com/camunda/element-templates-json-schema/pull/107))
+
 ## 0.7.0
 
 * `FEAT`: add deprecation attribute ([#70](https://github.com/camunda/element-templates-json-schema/issues/70))
