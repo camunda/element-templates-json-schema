@@ -6,16 +6,39 @@ export const template = {
   ],
   'properties': [
     {
-      'label': 'foo',
+      'label': 'bar1',
       'type': 'Hidden',
       'binding': {
-        'type': 'camunda:executionListener'
+        'type': 'camunda:executionListener',
+        'name': 'class'
       }
     },
     {
-      'label': 'bar',
+      'label': 'bar2',
       'binding': {
-        'type': 'camunda:executionListener'
+        'type': 'camunda:executionListener',
+        'name': 'class'
+      }
+    },
+    {
+      'label': 'bar3',
+      'binding': {
+        'type': 'camunda:executionListener',
+        'name': 'delegateExpression'
+      }
+    },
+    {
+      'label': 'bar4',
+      'binding': {
+        'type': 'camunda:executionListener',
+        'name': 'expression'
+      }
+    },
+    {
+      'label': 'bar5',
+      'binding': {
+        'type': 'camunda:executionListener',
+        'scriptFormat': 'js'
       }
     }
   ]
