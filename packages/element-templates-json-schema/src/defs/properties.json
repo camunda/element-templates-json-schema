@@ -65,6 +65,18 @@
               "enum": [
                 "Hidden"
               ]
+            },
+            "binding": {
+              "properties": {
+                "implementationType": {
+                  "enum": [
+                    "class",
+                    "delegateExpression",
+                    "expression",
+                    "script"
+                  ]
+                }
+              }
             }
           }
         }
