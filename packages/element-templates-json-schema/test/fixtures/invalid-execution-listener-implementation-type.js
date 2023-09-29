@@ -17,17 +17,27 @@ export const template = {
       'binding': {
         'type': 'camunda:executionListener',
         'implementationType': 'class',
-        'scriptFormat': 'js',
+        'scriptFormat': 'js'
       }
     },
     {
       'label': 'implementation type of script requires scriptFormat',
       'binding': {
         'type': 'camunda:executionListener',
-        'implementationType': 'script',
+        'implementationType': 'script'
       }
-    },
+    }
   ]
 };
 
-export const errors = [];
+export const errors = [
+  {
+    dataPath: '/properties/0/implementationType',
+  },
+  {
+    dataPath: '/properties/1',
+  },
+  {
+    dataPath: '/properties/2',
+  }
+];

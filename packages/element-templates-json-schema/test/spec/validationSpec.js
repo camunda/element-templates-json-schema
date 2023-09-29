@@ -269,10 +269,8 @@ describe('validation', function() {
 
       testTemplate('invalid-execution-listener-type');
 
+
       testTemplate('invalid-execution-listener-implementation-type');
-
-
-      testTemplate('missing-execution-listener-implementation-type');
     })
 
 
