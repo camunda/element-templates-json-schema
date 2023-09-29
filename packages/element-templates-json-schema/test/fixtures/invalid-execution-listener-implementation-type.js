@@ -6,24 +6,28 @@ export const template = {
   ],
   'properties': [
     {
-      'label': 'foo',
+      'label': 'unknown implementation type',
       'binding': {
         'type': 'camunda:executionListener',
-        'name': 'unknown'
+        'implementationType': 'unknown'
       }
     },
     {
-      'label': 'bar',
+      'label': 'script format only allowed with scripts',
       'binding': {
         'type': 'camunda:executionListener',
-        'name': 'class',
+        'implementationType': 'class',
         'scriptFormat': 'js',
+      }
+    },
+    {
+      'label': 'implementation type of script requires scriptFormat',
+      'binding': {
+        'type': 'camunda:executionListener',
+        'implementationType': 'script',
       }
     },
   ]
 };
 
-export const errors = [
-  {
-  }
-];
+export const errors = [];
