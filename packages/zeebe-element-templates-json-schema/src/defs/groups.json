@@ -4,6 +4,12 @@
       "tooltip": {
         "$id": "#/groups/group/tooltip",
         "type": "string"
+      },
+      "openByDefault": {
+        "$id": "#/groups/group/openByDefault",
+        "type": "boolean",
+        "description": "Specifies whether the Group should be opened when first viewed. Defaults to true.",
+        "default": true
       }
     }
   }

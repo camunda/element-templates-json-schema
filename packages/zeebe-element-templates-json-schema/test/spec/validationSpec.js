@@ -228,6 +228,9 @@ describe('validation', function() {
 
       testTemplate('groups-missing-label');
 
+
+      testTemplate('groups-wrong-open-state');
+
     });
 
 

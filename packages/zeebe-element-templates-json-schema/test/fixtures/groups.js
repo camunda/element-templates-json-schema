@@ -53,11 +53,13 @@ export const template = {
   'groups': [
     {
       'id': 'one',
-      'label': 'Group one'
+      'label': 'Group one',
+      'openByDefault': true
     },
     {
       'id': 'two',
-      'label': 'Group two'
+      'label': 'Group two',
+      'openByDefault': false
     },
     {
       'id': 'three',
