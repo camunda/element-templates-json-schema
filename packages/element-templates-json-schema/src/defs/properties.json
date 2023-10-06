@@ -76,7 +76,21 @@
                     "script"
                   ]
                 }
-              }
+              },
+              "anyOf": [
+                {
+                  "not": {
+                    "properties": {
+                      "implementationType": {
+                        "const": "script"
+                      }
+                    }
+                  }
+                },
+                {
+                  "required": ["scriptFormat"]
+                }
+              ]
             }
           }
         }
