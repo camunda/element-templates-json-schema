@@ -32,12 +32,50 @@ export const template = {
 
 export const errors = [
   {
-    dataPath: '/properties/0/implementationType',
+    dataPath: "/properties/0/binding/implementationType",
+    keyword: "enum",
+    message: "should be equal to one of the allowed values",
+    params: {
+      allowedValues: [
+        "class",
+        "delegateExpression",
+        "expression",
+        "script"
+      ]
+    },
+    schemaPath: "#/allOf/1/items/allOf/1/then/properties/binding/properties/implementationType/enum"
+  },
+  {
+    dataPath: "/properties/0",
+    keyword: "if",
+    message: "should match \"then\" schema",
+    params: {
+      failingKeyword: "then"
+    },
+    schemaPath: "#/allOf/1/items/allOf/1/if"
+  },
+  {
+    dataPath: '/properties/1/binding',
+    message: "should match exactly one schema in oneOf",
   },
   {
     dataPath: '/properties/1',
+    message: "should match \"then\" schema",
   },
   {
+    dataPath: '/properties/2/binding',
+    message: "should NOT be valid",
+  },
+  {
+    dataPath: '/properties/2/binding',
+    message: "should have required property 'scriptFormat'",
+  },
+  {
+    dataPath: '/properties/2/binding',
+    message: "should match exactly one schema in oneOf",
+  },  
+  {
     dataPath: '/properties/2',
+    message: "should match \"then\" schema",
   }
 ];
