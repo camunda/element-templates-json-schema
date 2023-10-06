@@ -9,20 +9,23 @@ export const template = {
       'label': 'foo',
       'type': 'Hidden',
       'binding': {
-        'type': 'camunda:executionListener'
+        'type': 'camunda:executionListener',
+        'implementationType': 'expression'
       }
     },
     {
       'label': 'foo',
       'binding': {
-        'type': 'camunda:executionListener'
+        'type': 'camunda:executionListener',
+        'implementationType': 'expression'
       }
     },
     {
       'label': 'bar',
       'type': 'String',
       'binding': {
-        'type': 'camunda:executionListener'
+        'type': 'camunda:executionListener',
+        'implementationType': 'expression'
       }
     }
   ]
