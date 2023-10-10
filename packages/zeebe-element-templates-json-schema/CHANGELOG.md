@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.13.0
+
+* `FEAT`: support `groups/openByDefault` property ([#114](https://github.com/camunda/element-templates-json-schema/pull/114))
+
 ## 0.12.0
 
 * `FEAT`: support conditions in dropdown choices ([#107](https://github.com/camunda/element-templates-json-schema/pull/107))
