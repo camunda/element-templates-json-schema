@@ -139,9 +139,6 @@ describe('validation', function() {
     testTemplate('camunda-out-binding-local-expression');
 
 
-    testTemplate('camunda-execution-listener');
-
-
     testTemplate('with-version');
 
 
@@ -225,9 +222,6 @@ describe('validation', function() {
       testTemplate('invalid-camunda-out-type');
 
 
-      testTemplate('invalid-execution-listener-type');
-
-
       testTemplate('invalid-field-type');
 
 
@@ -267,6 +261,16 @@ describe('validation', function() {
 
       testTemplate('scope-missing-error-id');
 
+    });
+
+    describe('execution listeners', function() {
+      testTemplate('camunda-execution-listener');
+
+
+      testTemplate('invalid-execution-listener-type');
+
+
+      testTemplate('invalid-execution-listener-implementation-type');
     });
 
 

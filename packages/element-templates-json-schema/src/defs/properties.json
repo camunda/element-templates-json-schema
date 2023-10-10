@@ -65,6 +65,48 @@
               "enum": [
                 "Hidden"
               ]
+            },
+            "binding": {
+              "properties": {
+                "implementationType": {
+                  "enum": [
+                    "class",
+                    "delegateExpression",
+                    "expression",
+                    "script"
+                  ]
+                }
+              },
+              "oneOf": [
+                {
+                  "not": {
+                    "properties": {
+                      "implementationType": {
+                        "const": "script"
+                      }
+                    }
+                  }
+                },
+                {
+                  "required": [
+                    "scriptFormat"
+                  ]
+                },
+                {
+                  "allOf": [
+                    {
+                      "not": {
+                        "required": ["implementationType"]
+                      }
+                    },
+                    {
+                      "not": {
+                        "required": ["scriptFormat"]
+                      }
+                    }
+                  ]
+                }
+              ]
             }
           }
         }
