@@ -42,6 +42,7 @@ export const template = {
         'scriptFormat': 'js'
       }
     },
+
     // For backwards compatibility support missing attributes as well
     {
       'label': 'bar5',
@@ -49,6 +50,7 @@ export const template = {
         'type': 'camunda:executionListener'
       }
     },
+
     // For backwards compatibility support scriptFormat only
     {
       'label': 'bar5',

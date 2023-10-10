@@ -271,7 +271,7 @@ describe('validation', function() {
 
 
       testTemplate('invalid-execution-listener-implementation-type');
-    })
+    });
 
 
     describe('grouping', function() {
