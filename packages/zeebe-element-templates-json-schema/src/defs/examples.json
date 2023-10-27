@@ -26,6 +26,10 @@
       {
         "type": "zeebe:taskHeader",
         "key": "key"
+      },
+      {
+        "type": "zeebe:taskDefinition",
+        "property": "retries"
       }
     ]
   }

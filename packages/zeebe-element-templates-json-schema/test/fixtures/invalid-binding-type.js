@@ -46,7 +46,8 @@ export const errors = [
               'zeebe:property',
               'zeebe:taskHeader',
               'bpmn:Message#property',
-              'bpmn:Message#zeebe:subscription#property'
+              'bpmn:Message#zeebe:subscription#property',
+              'zeebe:taskDefinition'
             ]
           },
           message: 'should be equal to one of the allowed values'
