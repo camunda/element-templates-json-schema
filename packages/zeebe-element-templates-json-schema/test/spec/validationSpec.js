@@ -206,6 +206,9 @@ describe('validation', function() {
 
       testTemplate('invalid-zeebe-task-definition-type-type');
 
+
+      testTemplate('invalid-zeebe-task-definition');
+
     });
 
 
@@ -336,6 +339,16 @@ describe('validation', function() {
 
     });
 
+
+    describe('zeebe:taskDefinition', function() {
+
+
+      testTemplate('zeebe-task-definition');
+
+
+      testTemplate('invalid-zeebe-task-definition');
+
+    });
   });
 
 });
