@@ -14,13 +14,6 @@ export const template = {
       }
     },
     {
-      'type': 'Hidden',
-      'value': '5',
-      'binding': {
-        'type': 'zeebe:taskDefinition:retries'
-      }
-    },
-    {
       'label': 'REST Endpoint URL',
       'description': 'Specify the url of the REST API to talk to.',
       'type': 'String',
