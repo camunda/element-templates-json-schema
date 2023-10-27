@@ -40,7 +40,6 @@ export const errors = [
             allowedValues: [
               'property',
               'zeebe:taskDefinition:type',
-              'zeebe:taskDefinition:retries',
               'zeebe:input',
               'zeebe:output',
               'zeebe:property',
