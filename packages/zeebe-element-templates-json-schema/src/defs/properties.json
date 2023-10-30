@@ -303,9 +303,32 @@
               ]
             },
             "then": {
+              "properties": {
+                "property": {
+                  "enum": [
+                    "type",
+                    "retries"
+                  ]
+                }
+              },
               "required": [
                 "property"
               ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:taskDefinition:type"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "deprecated": true
             }
           },
           {

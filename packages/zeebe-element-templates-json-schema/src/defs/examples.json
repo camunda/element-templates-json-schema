@@ -18,15 +18,16 @@
         "name": "property"
       },
       {
-        "type": "zeebe:taskDefinition:type"
-      },
-      {
         "type": "zeebe:taskHeader",
         "key": "key"
       },
       {
         "type": "zeebe:taskDefinition",
         "property": "retries"
+      },
+      {
+        "type": "zeebe:taskDefinition",
+        "property": "type"
       }
     ]
   }
