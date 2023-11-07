@@ -19,21 +19,64 @@
                     "type"
                   ]
                 }
-              }
+              },
+              "required": [
+                "binding"
+              ]
             }
           }
-        }
+        },
+        "required": [
+          "properties"
+        ]
       },
       "then": {
+        "required": [
+          "elementType"
+        ],
         "properties": {
           "elementType": {
+            "required": [
+              "value"
+            ],
             "properties": {
-              "eventDefinition": {
-                "const": "bpmn:MessageEventDefinition"
+              "value": {
+                "enum": [
+                  "bpmn:ReceiveTask",
+                  "bpmn:SendTask",
+                  "bpmn:StartEvent",
+                  "bpmn:IntermediateCatchEvent",
+                  "bpmn:IntermediateThrowEvent",
+                  "bpmn:BoundaryEvent",
+                  "bpmn:EndEvent"
+                ]
               }
             },
-            "required": [
-              "eventDefinition"
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "value": {
+                      "enum": [
+                        "bpmn:StartEvent",
+                        "bpmn:IntermediateCatchEvent",
+                        "bpmn:IntermediateThrowEvent",
+                        "bpmn:BoundaryEvent",
+                        "bpmn:EndEvent"
+
+                      ]
+                    }
+                  }
+                },
+                "then": {
+                  "eventDefinition": {
+                    "const": "bpmn:MessageEventDefinition"
+                  },
+                  "required": [
+                    "eventDefinition"
+                  ]
+                }
+              }
             ]
           }
         }
