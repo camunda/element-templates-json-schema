@@ -1,6 +1,6 @@
 export const template = {
-  'name': 'MissingBindingName',
-  'id': 'com.camunda.example.MissingBindingName',
+  'name': 'MissingEventDefinition',
+  'id': 'com.camunda.example.MissingEventDefinition',
   'appliesTo': [
     'bpmn:IntermediateCatchEvent'
   ],
