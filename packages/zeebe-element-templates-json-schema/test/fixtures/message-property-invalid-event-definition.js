@@ -1,6 +1,6 @@
 export const template = {
-  'name': 'MissingBindingName',
-  'id': 'com.camunda.example.MissingBindingName',
+  'name': 'MissingEventDefinition',
+  'id': 'com.camunda.example.MissingEventDefinition',
   'appliesTo': [
     'bpmn:IntermediateCatchEvent'
   ],
@@ -23,11 +23,20 @@ export const errors = [
   {
     keyword: 'required',
     dataPath: '/elementType',
-    schemaPath: '#/allOf/1/allOf/0/then/properties/elementType/required',
+    schemaPath: '#/allOf/1/allOf/0/then/properties/elementType/allOf/0/then/required',
     params: {
       missingProperty: 'eventDefinition'
     },
     message: 'should have required property \'eventDefinition\''
+  },
+  {
+    'dataPath': '/elementType',
+    'keyword': 'if',
+    'message': 'should match "then" schema',
+    'params': {
+      'failingKeyword': 'then'
+    },
+    'schemaPath': '#/allOf/1/allOf/0/then/properties/elementType/allOf/0/if'
   },
   {
     keyword: 'if',
