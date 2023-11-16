@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.15.0
+
+* `FEAT`: support receive and send task templating ([#118](https://github.com/camunda/element-templates-json-schema/pull/118))
+
 ## 0.14.0
 
 * `FEAT`: add `zeebe:taskDefinition` binding ([#117](https://github.com/camunda/element-templates-json-schema/pull/117))
