@@ -59,6 +59,15 @@ export const errors = [
     message: "should have required property 'oneOf'"
   },
   {
+    dataPath: '/properties/1/condition',
+    keyword: 'required',
+    message: "should have required property 'isActive'",
+    params: {
+      missingProperty: 'isActive'
+    },
+    schemaPath: '#/definitions/properties/allOf/0/items/properties/condition/definitions/condition/oneOf/2/required'
+  },
+  {
     keyword: 'oneOf',
     dataPath: '/properties/1/condition',
     schemaPath: '#/definitions/properties/allOf/0/items/properties/condition/definitions/condition/oneOf',
@@ -99,6 +108,15 @@ export const errors = [
     schemaPath: '#/definitions/properties/allOf/0/items/properties/condition/definitions/condition/oneOf/1/properties/oneOf/items/type',
     params: { type: [ 'string', 'number' ] },
     message: 'should be string,number'
+  },
+  {
+    dataPath: '/properties/2/condition',
+    keyword: 'required',
+    message: "should have required property 'isActive'",
+    params: {
+      missingProperty: 'isActive'
+    },
+    schemaPath: '#/definitions/properties/allOf/0/items/properties/condition/definitions/condition/oneOf/2/required'
   },
   {
     keyword: 'oneOf',

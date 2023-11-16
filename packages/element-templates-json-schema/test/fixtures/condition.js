@@ -90,6 +90,18 @@ export const template = {
         'type': 'property',
         'name': 'input4'
       }
+    },
+    {
+      'label': 'isActive',
+      'type': 'String',
+      'condition': {
+        property: 'myId',
+        isActive: true
+      },
+      'binding': {
+        'type': 'property',
+        'name': 'input4'
+      }
     }
   ]
 };

@@ -56,6 +56,17 @@
           "required": [
             "oneOf"
           ]
+        },
+        {
+          "properties": {
+            "isActive": {
+              "type": "boolean",
+              "description": "For `true`, activates the property when given property is active"
+            }
+          },
+          "required": [
+            "isActive"
+          ]
         }
       ]
     }
