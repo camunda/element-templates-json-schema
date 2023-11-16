@@ -59,6 +59,15 @@ export const errors = [
   },
   {
     'dataPath': '/properties/2/condition',
+    'keyword': 'required',
+    'message': "should have required property 'isActive'",
+    'params': {
+      'missingProperty': 'isActive'
+    },
+    'schemaPath': '#/definitions/properties/allOf/0/items/properties/condition/definitions/condition/oneOf/2/required'
+  },
+  {
+    'dataPath': '/properties/2/condition',
     'keyword': 'oneOf',
     'message': 'should match exactly one schema in oneOf',
     'params': {
