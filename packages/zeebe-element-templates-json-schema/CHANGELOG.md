@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.16.0
+
+* `FEAT`: support `isActive` condition ([#120](https://github.com/camunda/element-templates-json-schema/pull/120))
+
 ## 0.15.0
 
 * `FEAT`: support receive and send task templating ([#118](https://github.com/camunda/element-templates-json-schema/pull/118))
