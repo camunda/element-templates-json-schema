@@ -313,6 +313,9 @@ describe('validation', function() {
 
 
       testTemplate('message-subscription-property-invalid-event-definition');
+
+
+      testTemplate('message-subscription-property-invalid-element-type');
     });
 
 
