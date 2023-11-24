@@ -1,11 +1,11 @@
 export const template = {
-  'name': 'MissingBindingName',
-  'id': 'com.camunda.example.MissingBindingName',
+  'name': 'InvalidElementType',
+  'id': 'com.camunda.example.InvalidElementType',
   'appliesTo': [
-    'bpmn:IntermediateCatchEvent'
+    'bpmn:Task'
   ],
   'elementType': {
-    value: 'bpmn:IntermediateCatchEvent'
+    value: 'bpmn:SendTask'
   },
   'properties': [
     {
@@ -21,22 +21,20 @@ export const template = {
 
 export const errors = [
   {
-    keyword: 'required',
-    dataPath: '/elementType',
-    schemaPath: '#/allOf/1/allOf/1/then/properties/elementType/allOf/0/then/required',
+    dataPath: '/elementType/value',
+    keyword: 'enum',
+    schemaPath: '#/allOf/1/allOf/1/then/properties/elementType/properties/value/enum',
     params: {
-      missingProperty: 'eventDefinition'
+      'allowedValues': [
+        'bpmn:ReceiveTask',
+        'bpmn:StartEvent',
+        'bpmn:IntermediateCatchEvent',
+        'bpmn:IntermediateThrowEvent',
+        'bpmn:BoundaryEvent',
+        'bpmn:EndEvent'
+      ]
     },
-    message: 'should have required property \'eventDefinition\''
-  },
-  {
-    'dataPath': '/elementType',
-    'keyword': 'if',
-    'message': 'should match "then" schema',
-    'params': {
-      'failingKeyword': 'then'
-    },
-    'schemaPath': '#/allOf/1/allOf/1/then/properties/elementType/allOf/0/if'
+    message: 'should be equal to one of the allowed values'
   },
   {
     keyword: 'if',
