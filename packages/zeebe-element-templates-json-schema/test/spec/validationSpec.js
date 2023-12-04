@@ -349,6 +349,24 @@ describe('validation', function() {
       testTemplate('invalid-zeebe-task-definition');
 
     });
+
+
+    describe('zeebe:calledElement', function() {
+
+      testTemplate('called-element');
+
+      testTemplate('called-element-applies-to-only');
+
+      testTemplate('called-element-invalid-applies-to-no-element-type');
+
+      testTemplate('called-element-invalid-element-type');
+
+      testTemplate('called-element-invalid-multiple-applies-to-no-element-type');
+
+      testTemplate('called-element-invalid-property');
+
+      testTemplate('called-element-missing-property');
+    });
   });
 
 });
