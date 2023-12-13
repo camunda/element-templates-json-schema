@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.17.0
+
+* `FEAT`: support `zeebe:calledElement` binding ([#123](https://github.com/camunda/element-templates-json-schema/pull/123))
+
 ## 0.16.1
 
 * `FIX`: disallow `bpmn:Message#zeebe:subscription#property` binding for `bpmn:SendTask`
