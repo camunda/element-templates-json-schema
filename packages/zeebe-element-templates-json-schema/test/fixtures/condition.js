@@ -80,6 +80,7 @@ export const template = {
       }
     },
     {
+      'id': 'someId',
       'label': 'default condition type',
       'type': 'String',
       'condition': {
