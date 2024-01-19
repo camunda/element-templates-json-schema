@@ -149,5 +149,35 @@
         "property": "missing property name for condition"
       }
     }
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      0,
+      "items",
+      "allOf",
+      1,
+      "allOf",
+      0,
+      "then"
+    ],
+    "errorMessage": "Invalid condition.property, must be different than property.id"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      0,
+      "items",
+      "allOf",
+      1,
+      "allOf",
+      1,
+      "then"
+    ],
+    "errorMessage": "Invalid condition.property, must be different than property.id"
   }
 ]
