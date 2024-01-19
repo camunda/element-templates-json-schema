@@ -32,48 +32,38 @@ export const template = {
 
 export const errors = [
   {
-    'dataPath': '/properties/1/condition/type',
-    'keyword': 'const',
-    'message': 'should be equal to constant',
-    'params': {
-      'allowedValue': 'simple'
-    },
-    'schemaPath': '#/definitions/properties/allOf/0/items/properties/condition/definitions/condition/properties/type/const'
+    keyword: 'const',
+    dataPath: '/properties/1/condition/type',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/properties/type/const',
+    params: { allowedValue: 'simple' },
+    message: 'should be equal to constant'
   },
   {
-    'keyword': 'required',
-    'dataPath': '/properties/1/condition',
-    'schemaPath': '#/allOf/0/items/properties/condition/oneOf/1/required',
-    'params': {
-      'missingProperty': 'allMatch'
-    },
-    'message': "should have required property 'allMatch'"
+    keyword: 'required',
+    dataPath: '/properties/1/condition',
+    schemaPath: '#/allOf/0/items/allOf/1/properties/condition/oneOf/1/required',
+    params: { missingProperty: 'allMatch' },
+    message: "should have required property 'allMatch'"
   },
   {
-    'keyword': 'oneOf',
-    'dataPath': '/properties/1/condition',
-    'schemaPath': '#/allOf/0/items/properties/condition/oneOf',
-    'params': {
-      'passingSchemas': null
-    },
-    'message': 'should match exactly one schema in oneOf'
+    keyword: 'oneOf',
+    dataPath: '/properties/1/condition',
+    schemaPath: '#/allOf/0/items/allOf/1/properties/condition/oneOf',
+    params: { passingSchemas: null },
+    message: 'should match exactly one schema in oneOf'
   },
   {
-    'dataPath': '',
-    'keyword': 'type',
-    'message': 'should be array',
-    'params': {
-      'type': 'array',
-    },
-    'schemaPath': '#/oneOf/1/type'
+    keyword: 'type',
+    dataPath: '',
+    schemaPath: '#/oneOf/1/type',
+    params: { type: 'array' },
+    message: 'should be array'
   },
   {
-    'dataPath': '',
-    'keyword': 'oneOf',
-    'message': 'should match exactly one schema in oneOf',
-    'params': {
-      'passingSchemas': null
-    },
-    'schemaPath': '#/oneOf'
+    keyword: 'oneOf',
+    dataPath: '',
+    schemaPath: '#/oneOf',
+    params: { passingSchemas: null },
+    message: 'should match exactly one schema in oneOf'
   }
 ];
