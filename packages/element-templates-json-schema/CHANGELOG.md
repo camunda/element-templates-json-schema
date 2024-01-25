@@ -6,6 +6,10 @@ All notable changes to [@camunda/element-templates-json-schema](https://github.c
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.17.0
+
+* `FEAT`: disallow condition depending on containing property ([#125](https://github.com/camunda/element-templates-json-schema/issues/125))
+
 ## 0.16.0
 
 * `FEAT`: support `isActive` condition ([#120](https://github.com/camunda/element-templates-json-schema/pull/120))
