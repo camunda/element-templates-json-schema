@@ -20,53 +20,71 @@ export const template = {
         'type': 'zeebe:input',
         'name': 'bar'
       }
+    },
+    {
+      'label': 'baz',
+      'type': 'Number',
+      'binding': {
+        'type': 'zeebe:input',
+        'name': 'baz'
+      }
+    },
+    {
+      'label': 'baz',
+      'type': 'Car',
+      'binding': {
+        'type': 'zeebe:input',
+        'name': 'baz'
+      }
     }
   ]
 };
 
 export const errors = [
   {
+    dataPath: '/properties/3/type',
     keyword: 'errorMessage',
-    dataPath: '/properties/1/type',
-    schemaPath: '#/allOf/1/items/allOf/1/then/properties/type/errorMessage',
+    message: 'invalid property type "Car" for binding type "zeebe:input"; must be any of { String, Text, Hidden, Dropdown, Boolean, Number }',
     params: {
       errors: [
         {
-          keyword: 'enum',
+          dataPath: '/properties/3/type',
           emUsed: true,
-          dataPath: '/properties/1/type',
-          schemaPath: '#/allOf/1/items/allOf/1/then/properties/type/enum',
+          keyword: 'enum',
+          message: 'should be equal to one of the allowed values',
           params: {
-            'allowedValues': [
+            allowedValues: [
               'String',
               'Text',
               'Hidden',
-              'Dropdown'
+              'Dropdown',
+              'Boolean',
+              'Number'
             ]
           },
-          message: 'should be equal to one of the allowed values'
+          schemaPath: '#/allOf/1/items/allOf/1/then/properties/type/enum'
         }
       ]
     },
-    message: 'invalid property type "Boolean" for binding type "zeebe:input"; must be any of { String, Text, Hidden, Dropdown }'
+    schemaPath: '#/allOf/1/items/allOf/1/then/properties/type/errorMessage'
   },
   {
+    dataPath: '/properties/3',
     keyword: 'if',
-    dataPath: '/properties/1',
-    schemaPath: '#/allOf/1/items/allOf/1/if',
+    message: 'should match "then" schema',
     params: {
-      'failingKeyword': 'then'
+      failingKeyword: 'then'
     },
-    message: 'should match "then" schema'
+    schemaPath: '#/allOf/1/items/allOf/1/if'
   },
   {
     dataPath: '',
     keyword: 'type',
     message: 'should be array',
     params: {
-      type: 'array',
+      type: 'array'
     },
-    schemaPath: '#/oneOf/1/type',
+    schemaPath: '#/oneOf/1/type'
   },
   {
     dataPath: '',

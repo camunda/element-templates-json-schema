@@ -26,7 +26,7 @@
       "properties",
       "type"
     ],
-    "errorMessage": "invalid property type ${0} for binding type \"property\"; must be any of { String, Text, Hidden, Dropdown, Boolean }"
+    "errorMessage": "invalid property type ${0} for binding type \"property\"; must be any of { String, Text, Hidden, Dropdown, Boolean, Number }"
   },
   {
     "path": [
@@ -41,7 +41,7 @@
       "properties",
       "type"
     ],
-    "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Text, Hidden, Dropdown }"
+    "errorMessage": "invalid property type ${0} for binding type ${1/binding/type}; must be any of { String, Text, Hidden, Dropdown, Boolean, Number }"
   },
   {
     "path": [
@@ -90,7 +90,7 @@
       "properties",
       "type"
     ],
-    "errorMessage": "feel is only supported for \"String\" and \"Text\" type"
+    "errorMessage": "feel is only supported for \"String\", \"Text\", \"Number\" and \"Boolean\" type"
   },
   {
     "path": [

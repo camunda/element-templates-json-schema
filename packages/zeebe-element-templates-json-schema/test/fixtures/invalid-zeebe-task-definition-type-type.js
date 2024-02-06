@@ -14,6 +14,13 @@ export const template = {
     },
     {
       'label': 'bar',
+      'type': 'Toggle',
+      'binding': {
+        'type': 'zeebe:taskDefinition:type'
+      }
+    },
+    {
+      'label': 'bar',
       'type': 'Boolean',
       'binding': {
         'type': 'zeebe:taskDefinition:type'
@@ -39,14 +46,16 @@ export const errors = [
               'String',
               'Text',
               'Hidden',
-              'Dropdown'
+              'Dropdown',
+              'Boolean',
+              'Number'
             ]
           },
           message: 'should be equal to one of the allowed values'
         }
       ]
     },
-    message: 'invalid property type "Boolean" for binding type "zeebe:taskDefinition:type"; must be any of { String, Text, Hidden, Dropdown }'
+    message: 'invalid property type "Toggle" for binding type "zeebe:taskDefinition:type"; must be any of { String, Text, Hidden, Dropdown, Boolean, Number }'
   },
   {
     keyword: 'if',

@@ -42,14 +42,15 @@ export const errors = [
               'Text',
               'Hidden',
               'Dropdown',
-              'Boolean'
+              'Boolean',
+              'Number'
             ]
           },
           message: 'should be equal to one of the allowed values'
         }
       ]
     },
-    message: 'invalid property type "Foo" for binding type "property"; must be any of { String, Text, Hidden, Dropdown, Boolean }'
+    message: 'invalid property type "Foo" for binding type "property"; must be any of { String, Text, Hidden, Dropdown, Boolean, Number }'
   },
   {
     keyword: 'if',

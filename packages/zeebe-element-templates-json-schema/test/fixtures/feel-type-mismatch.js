@@ -1,71 +1,61 @@
 export const template = {
-  'name': 'Pattern Template',
-  'id': 'com.example.PatternTemplate',
-  'appliesTo': [
+  name: 'Pattern Template',
+  id: 'com.example.PatternTemplate',
+  appliesTo: [
     'bpmn:Task'
   ],
-  'properties': [
+  properties: [
     {
-      'label': 'Feel (Boolean)',
-      'type': 'Boolean',
-      'binding': {
-        'type': 'property',
-        'name': 'prop'
+      label: 'Text (static)',
+      type: 'Text',
+      binding: {
+        type: 'property',
+        name: 'prop'
       },
-      'feel': 'required'
+      feel: 'static'
     }
   ]
 };
 
-export const errors = [
+export const errors =
+[
   {
-    keyword: 'errorMessage',
-    dataPath: '/properties/0/type',
-    schemaPath: '#/allOf/1/items/allOf/4/then/properties/type/errorMessage',
+    dataPath: '/properties/0/feel',
+    keyword: 'enum',
+    message: 'should be equal to one of the allowed values',
     params: {
-      errors: [
-        {
-          keyword: 'enum',
-          dataPath: '/properties/0/type',
-          schemaPath: '#/allOf/1/items/allOf/4/then/properties/type/enum',
-          params: {
-            allowedValues: [
-              'String',
-              'Text'
-            ]
-          },
-          message: 'should be equal to one of the allowed values',
-          emUsed: true
-        }
+      allowedValues: [
+        'optional',
+        'required'
       ]
     },
-    message: 'feel is only supported for "String" and "Text" type'
+    schemaPath: '#/allOf/1/items/allOf/8/then/properties/feel/enum'
   },
   {
-    keyword: 'if',
     dataPath: '/properties/0',
-    schemaPath: '#/allOf/1/items/allOf/4/if',
+    keyword: 'if',
+    message: 'should match "then" schema',
     params: {
-      failingKeyword: 'then'
+      failingKeyword: 'then',
     },
-    message: 'should match "then" schema'
+    schemaPath: '#/allOf/1/items/allOf/8/if'
   },
   {
-    keyword: 'type',
     dataPath: '',
-    schemaPath: '#/oneOf/1/type',
+    keyword: 'type',
+    message: 'should be array',
     params: {
       type: 'array'
     },
-    message: 'should be array'
+    schemaPath: '#/oneOf/1/type'
   },
   {
-    keyword: 'oneOf',
     dataPath: '',
-    schemaPath: '#/oneOf',
+    keyword: 'oneOf',
+    message: 'should match exactly one schema in oneOf',
     params: {
       passingSchemas: null
     },
-    message: 'should match exactly one schema in oneOf'
+    schemaPath: '#/oneOf'
   }
 ];

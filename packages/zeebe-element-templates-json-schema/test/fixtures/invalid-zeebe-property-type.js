@@ -15,11 +15,19 @@ export const template = {
     },
     {
       'label': 'truthy (boolean)',
-      'type': 'Boolean',
+      'type': 'Toggle',
       'value': true,
       'binding': {
         'type': 'zeebe:property',
         'name': 'bool'
+      }
+    },
+    {
+      'label': 'bar',
+      'type': 'Boolean',
+      'binding': {
+        'type': 'zeebe:property',
+        'name': 'bar'
       }
     }
   ]
@@ -66,13 +74,15 @@ export const errors = [
             'String',
             'Text',
             'Hidden',
-            'Dropdown'
+            'Dropdown',
+            'Boolean',
+            'Number'
           ]
         },
         message: 'should be equal to one of the allowed values'
       }
     ] },
-    message: 'invalid property type "Boolean" for binding type "zeebe:property"; must be any of { String, Text, Hidden, Dropdown }'
+    message: 'invalid property type "Toggle" for binding type "zeebe:property"; must be any of { String, Text, Hidden, Dropdown, Boolean, Number }'
   },
   {
     keyword: 'if',
