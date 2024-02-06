@@ -40,6 +40,42 @@ export const template = {
         'name': 'prop'
       },
       'feel': 'optional'
+    },
+    {
+      'label': 'Feel static (Number)',
+      'type': 'Number',
+      'binding': {
+        'type': 'property',
+        'name': 'prop'
+      },
+      'feel': 'static'
+    },
+    {
+      'label': 'Feel optional (Number)',
+      'type': 'Number',
+      'binding': {
+        'type': 'property',
+        'name': 'prop'
+      },
+      'feel': 'optional'
+    },
+    {
+      'label': 'Feel static (Boolean)',
+      'type': 'Boolean',
+      'binding': {
+        'type': 'property',
+        'name': 'prop'
+      },
+      'feel': 'static'
+    },
+    {
+      'label': 'Feel optional (Boolean)',
+      'type': 'Boolean',
+      'binding': {
+        'type': 'property',
+        'name': 'prop'
+      },
+      'feel': 'optional'
     }
   ]
 };

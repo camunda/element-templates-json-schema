@@ -35,7 +35,8 @@
                 "Text",
                 "Hidden",
                 "Dropdown",
-                "Boolean"
+                "Boolean",
+                "Number"
               ]
             }
           }
@@ -76,7 +77,9 @@
                 "String",
                 "Text",
                 "Hidden",
-                "Dropdown"
+                "Dropdown",
+                "Boolean",
+                "Number"
               ]
             }
           }
@@ -157,7 +160,9 @@
             "type": {
               "enum": [
                 "String",
-                "Text"
+                "Text",
+                "Number",
+                "Boolean"
               ]
             }
           },
@@ -222,6 +227,31 @@
             "required": [
               "generatedValue"
             ]
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "type": {
+                "enum": [
+                  "String",
+                  "Text"
+                ]
+            }
+          },
+          "required": [
+            "feel"
+          ]
+        },
+        "then": {
+          "properties": {
+            "feel": {
+              "enum": [
+                "optional",
+                "required"
+              ]
+            }
           }
         }
       }
@@ -406,12 +436,11 @@
       "feel": {
         "$id": "#/properties/property/feel",
         "type": "string",
-        "default": null,
         "description": "Indicates whether the property can be a feel expression",
         "enum": [
-          null,
           "optional",
-          "required"
+          "required",
+          "static"
         ]
       },
       "language": {
