@@ -24,6 +24,7 @@ export const template = {
       }
     },
     {
+      'id': 'foobar',
       'label': 'equals (string)',
       'type': 'String',
       'condition': {
@@ -39,7 +40,7 @@ export const template = {
         'type': 'property',
         'name': 'input2'
       }
-    },
+    }
   ]
 };
 
