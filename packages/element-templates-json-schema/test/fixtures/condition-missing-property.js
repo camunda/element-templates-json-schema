@@ -33,13 +33,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/1/condition',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/errorMessage',
+    schemaPath: '#/definitions/properties/allOf/0/items/properties/condition/definitions/condition/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           dataPath: '/properties/1/condition',
-          schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/required',
+          schemaPath: '#/definitions/properties/allOf/0/items/properties/condition/definitions/condition/required',
           params: { missingProperty: 'property' },
           message: "should have required property 'property'",
           emUsed: true
@@ -51,14 +51,14 @@ export const errors = [
   {
     keyword: 'required',
     dataPath: '/properties/1/condition',
-    schemaPath: '#/allOf/0/items/allOf/1/properties/condition/oneOf/1/required',
+    schemaPath: '#/allOf/0/items/properties/condition/oneOf/1/required',
     params: { missingProperty: 'allMatch' },
     message: "should have required property 'allMatch'"
   },
   {
     keyword: 'oneOf',
     dataPath: '/properties/1/condition',
-    schemaPath: '#/allOf/0/items/allOf/1/properties/condition/oneOf',
+    schemaPath: '#/allOf/0/items/properties/condition/oneOf',
     params: { passingSchemas: null },
     message: 'should match exactly one schema in oneOf'
   },

@@ -1,4 +1,12 @@
 {
+  "$id": "#/condition",
+  "type": "object",
+  "description": "Condition(s) to activate the binding.",
+  "allOf": [
+    {
+      "$ref": "examples.json#/condition"
+    }
+  ],
   "definitions": {
     "condition": {
       "type": "object",
@@ -63,39 +71,24 @@
       ]
     }
   },
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "Unique identifier of the property."
+  "oneOf": [
+    {
+      "$ref": "#/definitions/condition"
     },
-    "condition": {
-      "type": "object",
-      "description": "Condition(s) to activate the binding.",
-      "allOf": [
-        {
-          "$ref": "examples.json#/condition"
-        }
-      ],
-      "oneOf": [
-        {
-          "$ref": "#/definitions/condition"
-        },
-        {
-          "properties": {
-            "allMatch": {
-              "$id": "#/allMatch",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/condition"
-              },
-              "minItems": 1
-            }
+    {
+      "properties": {
+        "allMatch": {
+          "$id": "#/allMatch",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/condition"
           },
-          "required": [
-            "allMatch"
-          ]
+          "minItems": 1
         }
+      },
+      "required": [
+        "allMatch"
       ]
     }
-  }
+  ]
 }

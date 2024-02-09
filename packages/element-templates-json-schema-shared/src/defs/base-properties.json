@@ -24,12 +24,13 @@
             "choices"
           ]
         }
-      },
-      {
-        "$ref": "condition.json"
       }
     ],
     "properties": {
+      "id": {
+        "type": "string",
+        "description": "Unique identifier of the property."
+      },
       "value": {
         "$id": "#/properties/property/value",
         "type": [
@@ -79,7 +80,7 @@
               "description": "The value of a choice."
             },
             "condition": {
-              "$ref": "condition.json#/properties/condition"
+              "$ref": "condition.json"
             }
           },
           "required": [
@@ -142,6 +143,9 @@
         "$id": "#/properties/property/group",
         "type": "string",
         "description": "The custom group of a control field."
+      },
+      "condition": {
+        "$ref": "condition.json"
       }
     }
   }

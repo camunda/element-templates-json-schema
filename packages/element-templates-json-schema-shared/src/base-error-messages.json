@@ -139,8 +139,8 @@
       "allOf",
       0,
       "items",
-      "allOf",
-      1,
+      "properties",
+      "condition",
       "definitions",
       "condition"
     ],
