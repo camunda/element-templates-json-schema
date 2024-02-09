@@ -15,8 +15,7 @@ function createValidator(schema, errors) {
 
   const ajv = new Ajv({
     allErrors: true,
-    strict: false,
-    $data: true
+    strict: false
   });
 
   AjvErrors(ajv);

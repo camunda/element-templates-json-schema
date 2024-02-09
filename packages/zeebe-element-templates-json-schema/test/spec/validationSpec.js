@@ -289,15 +289,6 @@ describe('validation', function() {
 
 
       testTemplate('condition-dropdown-choices-invalid');
-
-
-      testTemplate('condition-on-itself');
-
-
-      testTemplate('condition-on-itself-allMatch');
-
-
-      testTemplate('condition-on-itself-dropdown-choices');
     });
 
 
