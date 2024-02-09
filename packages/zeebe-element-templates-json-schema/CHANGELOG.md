@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.19.1
+
+* `FIX`: revert broken condition rules ([#133](https://github.com/camunda/element-templates-json-schema/issues/133))
+
 ## 0.19.0
 
 * `FEAT`: support `Boolean` and `Number` on all bindings ([#132](https://github.com/camunda/element-templates-json-schema/pull/132))
