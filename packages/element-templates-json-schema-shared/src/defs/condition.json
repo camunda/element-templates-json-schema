@@ -80,14 +80,19 @@
           "required": [
             "allMatch"
           ],
-          "allMatch": {
-            "contains": {
-              "properties": {
-                "property": {
-                  "const": {
-                    "$data": "2/id"
+          "properties": {
+            "allMatch": {
+              "contains": {
+                "properties": {
+                  "property": {
+                    "const": {
+                      "$data": "4/id"
+                    }
                   }
-                }
+                },
+                "required": [ 
+                  "property"
+                ]
               }
             }
           }
