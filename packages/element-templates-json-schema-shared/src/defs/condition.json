@@ -63,36 +63,16 @@
       ]
     },
     "conditionDependingOnId": {
-      "anyOf": [
-        {
-          "required": [
-            "property"
-          ],
-          "properties": {
-            "property": {
-              "const": {
-                "$data": "2/id"
-              }
-            }
-          }
-        },
-        {
-          "required": [
-            "allMatch"
-          ],
-          "allMatch": {
-            "contains": {
-              "properties": {
-                "property": {
-                  "const": {
-                    "$data": "2/id"
-                  }
-                }
-              }
-            }
+      "required": [
+        "property"
+      ],
+      "properties": {
+        "property": {
+          "const": {
+            "$data": "2/id"
           }
         }
-      ]
+      }
     }
   },
   "allOf": [
@@ -112,31 +92,6 @@
       "then": {
         "not": {
           "required": [ "condition" ]
-        }
-      }
-    },
-    {
-      "$comment": "property#condition should not depend on property#id",
-      "if": {
-        "required": [
-          "id",
-          "choices"
-        ],
-        "properties": {
-          "choices": {
-            "contains": {
-              "properties": {
-                "condition": {
-                  "$ref": "#/definitions/conditionDependingOnId"
-                }
-              }
-            }
-          }
-        }
-      },
-      "then": {
-        "not": {
-          "required": [ "choices" ]
         }
       }
     }
