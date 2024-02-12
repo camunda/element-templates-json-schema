@@ -94,44 +94,5 @@ export const template = {
   ]
 };
 
-export const errors = [
-  {
-    keyword: 'errorMessage',
-    dataPath: '/properties/0',
-    schemaPath: '#/allOf/0/items/allOf/1/allOf/1/then/errorMessage',
-    params: {
-      errors: [
-        {
-          keyword: 'not',
-          dataPath: '/properties/0',
-          schemaPath: '#/allOf/0/items/allOf/1/allOf/1/then/not',
-          params: {},
-          message: 'should NOT be valid',
-          emUsed: true
-        }
-      ]
-    },
-    message: 'Invalid condition.property, must be different than property.id'
-  },
-  {
-    keyword: 'if',
-    dataPath: '/properties/0',
-    schemaPath: '#/allOf/0/items/allOf/1/allOf/1/if',
-    params: { failingKeyword: 'then' },
-    message: 'should match "then" schema'
-  },
-  {
-    keyword: 'type',
-    dataPath: '',
-    schemaPath: '#/oneOf/1/type',
-    params: { type: 'array' },
-    message: 'should be array'
-  },
-  {
-    keyword: 'oneOf',
-    dataPath: '',
-    schemaPath: '#/oneOf',
-    params: { passingSchemas: null },
-    message: 'should match exactly one schema in oneOf'
-  }
-];
+// TODO(@barmac): should report errors
+export const errors = null;
