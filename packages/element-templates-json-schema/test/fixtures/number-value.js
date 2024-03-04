@@ -21,7 +21,7 @@ export const errors = [
   {
     keyword: 'type',
     dataPath: '/properties/0/value',
-    schemaPath: '#/allOf/0/items/properties/value/type',
+    schemaPath: '#/allOf/0/items/allOf/2/then/properties/value/type',
     params: {
       type: [
         'string',
@@ -29,6 +29,15 @@ export const errors = [
       ]
     },
     message: 'should be string,boolean'
+  },
+  {
+    dataPath: '/properties/0',
+    keyword: 'if',
+    message: 'should match "then" schema',
+    params: {
+      failingKeyword: 'then'
+    },
+    schemaPath: '#/allOf/0/items/allOf/2/if'
   },
   {
     dataPath: '',
