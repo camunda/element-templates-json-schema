@@ -145,6 +145,9 @@ describe('validation', function() {
     testTemplate('feel-type-mismatch');
 
 
+    testTemplate('feel-value-mismatch');
+
+
     testTemplate('language');
 
 
