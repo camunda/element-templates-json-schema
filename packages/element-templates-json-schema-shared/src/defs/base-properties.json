@@ -27,6 +27,30 @@
       },
       {
         "$ref": "condition.json"
+      },
+      {
+        "if": {
+          "properties": {
+            "type": {
+              "not": {
+                "const": "Number"
+              }
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "boolean"
+              ]
+            }
+          }
+        }
       }
     ],
     "properties": {
@@ -34,6 +58,7 @@
         "$id": "#/properties/property/value",
         "type": [
           "string",
+          "number",
           "boolean"
         ],
         "description": "The value of a control field."
