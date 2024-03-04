@@ -254,6 +254,25 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "feel": {
+                "const": "required"
+            }
+          },
+          "required": [
+            "feel"
+          ]
+        },
+        "then": {
+          "properties": {
+            "value": {
+              "type": "string"
+            }
+          }
+        }
       }
     ],
     "properties": {
