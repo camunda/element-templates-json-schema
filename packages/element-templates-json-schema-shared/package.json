@@ -1,6 +1,6 @@
 {
   "name": "@camunda/element-templates-json-schema-shared",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Shared schema definitions used within element-templates-json-schema",
   "files": [
     "src"
