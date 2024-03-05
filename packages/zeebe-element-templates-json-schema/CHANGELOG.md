@@ -6,6 +6,11 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.19.2
+
+* `FIX`: allow number values for `Number` properties ([#138](https://github.com/camunda/element-templates-json-schema/issues/138))
+* `FIX`: enforce string value for `feel: required` properties ([#139](https://github.com/camunda/element-templates-json-schema/pull/139))
+
 ## 0.19.1
 
 * `FIX`: remove broken condition-on-itself subschemas for allOf and choices ([#133](https://github.com/camunda/element-templates-json-schema/issues/133))

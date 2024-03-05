@@ -6,6 +6,10 @@ All notable changes to [@camunda/element-templates-json-schema-shared](https://g
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.10.2
+
+* `FIX`: allow number values for `Number` properties ([#138](https://github.com/camunda/element-templates-json-schema/issues/138))
+
 ## 0.10.1
 
 * `FIX`: remove broken condition-on-itself subschemas for allOf and choices ([#133](https://github.com/camunda/element-templates-json-schema/issues/133))
