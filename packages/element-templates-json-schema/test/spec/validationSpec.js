@@ -328,6 +328,15 @@ describe('validation', function() {
 
   });
 
+
+  describe('placeholder', function() {
+
+    testTemplate('placeholder');
+
+    testTemplate('placeholder-invalid-property');
+
+    testTemplate('placeholder-invalid-type');
+  });
 });
 
 

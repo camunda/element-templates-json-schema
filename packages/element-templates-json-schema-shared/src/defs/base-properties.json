@@ -51,6 +51,46 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "oneOf": [
+            {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "String",
+                    "Text"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "not": {
+                "required": [
+                  "type"
+                ]
+              }
+            }
+          ]
+        },
+        "then": {
+          "properties": {
+            "placeholder": {
+              "type": "string"
+            }
+          }
+        },
+        "else": {
+          "not": {
+            "required": [
+              "placeholder"
+            ]
+          }
+        }
       }
     ],
     "properties": {
