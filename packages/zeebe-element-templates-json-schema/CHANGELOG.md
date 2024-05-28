@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.20.0
+
+* `FEAT`: support `placeholder` property
+
 ## 0.19.2
 
 * `FIX`: allow number values for `Number` properties ([#138](https://github.com/camunda/element-templates-json-schema/issues/138))

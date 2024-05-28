@@ -379,6 +379,16 @@ describe('validation', function() {
 
       testTemplate('called-element-missing-property');
     });
+
+
+    describe('placeholder', function() {
+
+      testTemplate('placeholder');
+
+      testTemplate('placeholder-invalid-property');
+
+      testTemplate('placeholder-invalid-type');
+    });
   });
 
 });
