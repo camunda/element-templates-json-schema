@@ -48,7 +48,7 @@
     "ajv-errors": "^2.0.1",
     "chai": "^4.3.6",
     "eslint": "^9.0.0",
-    "eslint-plugin-bpmn-io": "^2.0.0",
+    "eslint-plugin-bpmn-io": "^2.0.2",
     "lerna": "^8.0.0",
     "min-dash": "^4.0.0",
     "mocha": "^10.0.0",
