@@ -28,6 +28,9 @@
           "$ref": "#/definitions/properties",
           "$id": "#/properties"
         },
+        "engines": {
+          "$ref": "src/defs/engines.json"
+        },
         "icon": {
           "$ref": "src/defs/icon.json"
         },

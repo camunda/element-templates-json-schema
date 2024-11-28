@@ -1,0 +1,19 @@
+{
+  "$id": "#/engines",
+  "type": "object",
+  "description": "Defines the compatibility of this element template with different engines. Keys are engine names, values are semantic version ranges.",
+  "default": {},
+  "examples": [
+    {
+      "camunda": "^8.5"
+    }
+  ],
+  "properties": {
+    "camunda": {
+      "$id": "#/engines/camunda",
+      "type": "string",
+      "description": "A semantic version range that denotes compatible Camunda versions.",
+      "default": ""
+    }
+  }
+}
