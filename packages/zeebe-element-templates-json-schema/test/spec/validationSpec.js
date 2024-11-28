@@ -389,6 +389,19 @@ describe('validation', function() {
 
       testTemplate('placeholder-invalid-type');
     });
+
+
+    describe('engines', function() {
+
+      testTemplate('engines');
+
+      testTemplate('engines-no-camunda');
+
+      testTemplate('engines-invalid');
+
+      testTemplate('engines-invalid-version');
+    });
+
   });
 
 });
