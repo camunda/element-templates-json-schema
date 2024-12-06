@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.21.0
+
+* `FEAT`: support `engines` field ([#146](https://github.com/camunda/element-templates-json-schema/issues/146))
+
 ## 0.20.0
 
 * `FEAT`: support `placeholder` property
