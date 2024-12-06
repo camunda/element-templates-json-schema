@@ -12,299 +12,309 @@ const {
 
 const validator = createValidator(schema, errorMessages);
 
+// we save this for some other shinanigans
+const iit = it;
+
+function validateTemplate(template) {
+
+  const valid = validator(template);
+
+  const errors = validator.errors;
+
+  return {
+    valid,
+    errors
+  };
+}
+
+function createTest(name, file, it) {
+
+  if (!file) {
+    file = `../fixtures/${name}.js`;
+  }
+
+  it(name, async function() {
+
+    // given
+    const testDefinition = await import(file);
+
+    const {
+      errors: expectedErrors,
+      template
+    } = testDefinition;
+
+    // when
+    const {
+      errors
+    } = validateTemplate(template);
+
+    // then
+    expect(errors).to.eql(expectedErrors);
+  });
+}
+
 
 describe('validation', function() {
 
-  function validateTemplate(template) {
-
-    const valid = validator(template);
-
-    const errors = validator.errors;
-
-    return {
-      valid,
-      errors
-    };
+  function it(name, file) {
+    return createTest(name, file, iit);
   }
 
-  function testTemplate(name, file, only = false) {
+  it.only = function only(name, file) {
+    return createTest(name, file, iit.only);
+  };
 
-    if (!file) {
-      file = `../fixtures/${name}.js`;
-    }
-
-    (only ? it.only : it)('should validate template - ' + name, async function() {
-
-      // given
-      const testDefinition = await import(file);
-
-      const {
-        errors: expectedErrors,
-        template
-      } = testDefinition;
-
-      // when
-      const {
-        errors
-      } = validateTemplate(template);
-
-      // then
-      expect(errors).to.eql(expectedErrors);
-    });
-  }
-
-  // eslint-disable-next-line no-unused-vars
-  function testOnly(name, file) {
-    return testTemplate(name, file, true);
-  }
+  it.skip = function skip(name, file) {
+    return createTest(name, file, iit.skip);
+  };
 
 
   describe('single template', function() {
 
-    testTemplate('mail-task');
+    it('mail-task');
 
 
-    testTemplate('async-awesome-task');
+    it('async-awesome-task');
 
 
-    testTemplate('missing-type');
+    it('missing-type');
 
 
-    testTemplate('missing-applies-to');
+    it('missing-applies-to');
 
 
-    testTemplate('missing-template-name');
+    it('missing-template-name');
 
 
-    testTemplate('missing-template-id');
+    it('missing-template-id');
 
 
-    testTemplate('missing-properties');
+    it('missing-properties');
 
 
-    testTemplate('missing-binding');
+    it('missing-binding');
 
 
-    testTemplate('applies-to-single');
+    it('applies-to-single');
 
 
-    testTemplate('number-value');
+    it('number-value');
 
 
-    testTemplate('additional-property');
+    it('additional-property');
 
 
-    testTemplate('invalid-binding-type');
+    it('invalid-binding-type');
 
 
-    testTemplate('choices-missing-value');
+    it('choices-missing-value');
 
 
-    testTemplate('choices-missing-name');
+    it('choices-missing-name');
 
 
-    testTemplate('missing-choices');
+    it('missing-choices');
 
 
-    testTemplate('missing-binding-name');
+    it('missing-binding-name');
 
 
-    testTemplate('missing-binding-source');
+    it('missing-binding-source');
 
 
-    testTemplate('missing-binding-variables-target');
+    it('missing-binding-variables-target');
 
 
-    testTemplate('camunda-in-binding');
+    it('camunda-in-binding');
 
 
-    testTemplate('camunda-in-binding-local');
+    it('camunda-in-binding-local');
 
 
-    testTemplate('camunda-in-binding-local-expression');
+    it('camunda-in-binding-local-expression');
 
 
-    testTemplate('invalid-camunda-out');
+    it('invalid-camunda-out');
 
 
-    testTemplate('invalid-camunda-out-overloaded');
+    it('invalid-camunda-out-overloaded');
 
 
-    testTemplate('camunda-out-binding');
+    it('camunda-out-binding');
 
 
-    testTemplate('camunda-out-binding-local');
+    it('camunda-out-binding-local');
 
 
-    testTemplate('camunda-out-binding-local-expression');
+    it('camunda-out-binding-local-expression');
 
 
-    testTemplate('with-version');
+    it('with-version');
 
 
-    testTemplate('invalid-version');
+    it('invalid-version');
 
 
-    testTemplate('multiple-errors');
+    it('multiple-errors');
 
 
-    testTemplate('error-task');
+    it('error-task');
 
 
-    testTemplate('error-task-multiple');
+    it('error-task-multiple');
 
 
-    testTemplate('missing-binding-errorRef');
+    it('missing-binding-errorRef');
 
 
-    testTemplate('constraints');
+    it('constraints');
 
 
-    testTemplate('deprecated-bool');
+    it('deprecated-bool');
 
 
-    testTemplate('deprecated-invalid');
+    it('deprecated-invalid');
 
 
-    testTemplate('deprecated-object');
+    it('deprecated-object');
 
 
-    testTemplate('invalid-constraints');
+    it('invalid-constraints');
 
 
-    testTemplate('invalid-applies-to');
+    it('invalid-applies-to');
 
 
-    testTemplate('entries-visible-boolean');
+    it('entries-visible-boolean');
 
 
-    testTemplate('entries-visible-deprecated');
+    it('entries-visible-deprecated');
 
 
-    testTemplate('pattern-string');
+    it('pattern-string');
 
 
-    testTemplate('documentation-ref');
+    it('documentation-ref');
 
 
-    testTemplate('invalid-documentation-ref');
+    it('invalid-documentation-ref');
 
 
-    testTemplate('element-type');
+    it('element-type');
 
 
-    testTemplate('element-type-no-value');
+    it('element-type-no-value');
 
 
-    testTemplate('element-type-invalid');
+    it('element-type-invalid');
 
 
     describe('property type - binding type', function() {
 
-      testTemplate('invalid-property-type');
+      it('invalid-property-type');
 
 
-      testTemplate('invalid-camunda-property-type');
+      it('invalid-camunda-property-type');
 
 
-      testTemplate('invalid-input-parameter-type');
+      it('invalid-input-parameter-type');
 
 
-      testTemplate('invalid-output-parameter-type');
+      it('invalid-output-parameter-type');
 
 
-      testTemplate('invalid-camunda-in-type');
+      it('invalid-camunda-in-type');
 
 
-      testTemplate('invalid-camunda-in-business-key-type');
+      it('invalid-camunda-in-business-key-type');
 
 
-      testTemplate('invalid-camunda-out-type');
+      it('invalid-camunda-out-type');
 
 
-      testTemplate('invalid-field-type');
+      it('invalid-field-type');
 
 
-      testTemplate('invalid-camunda-error-event-definition-type');
+      it('invalid-camunda-error-event-definition-type');
 
     });
 
 
     describe('scoped binding', function() {
 
-      testTemplate('scope-connector-legacy');
+      it('scope-connector-legacy');
 
 
-      testTemplate('scope-invalid-legacy');
+      it('scope-invalid-legacy');
 
 
-      testTemplate('scope-connector-missing-binding-legacy');
+      it('scope-connector-missing-binding-legacy');
 
 
-      testTemplate('scope-connector');
+      it('scope-connector');
 
 
-      testTemplate('scope-missing-binding');
+      it('scope-missing-binding');
 
 
-      testTemplate('scopes-multiple');
+      it('scopes-multiple');
 
 
-      testTemplate('scope-missing-type');
+      it('scope-missing-type');
 
 
-      testTemplate('scope-invalid-type');
+      it('scope-invalid-type');
 
 
-      testTemplate('scope-missing-properties');
+      it('scope-missing-properties');
 
 
-      testTemplate('scope-missing-error-id');
+      it('scope-missing-error-id');
 
     });
 
     describe('execution listeners', function() {
-      testTemplate('camunda-execution-listener');
+      it('camunda-execution-listener');
 
 
-      testTemplate('invalid-execution-listener-type');
+      it('invalid-execution-listener-type');
 
 
-      testTemplate('invalid-execution-listener-implementation-type');
+      it('invalid-execution-listener-implementation-type');
     });
 
 
     describe('grouping', function() {
 
-      testTemplate('groups');
+      it('groups');
 
 
-      testTemplate('groups-missing-id');
+      it('groups-missing-id');
 
 
-      testTemplate('groups-missing-label');
+      it('groups-missing-label');
 
     });
 
 
     describe('condition', function() {
 
-      testTemplate('condition');
+      it('condition');
 
 
-      testTemplate('condition-missing-property');
+      it('condition-missing-property');
 
 
-      testTemplate('condition-missing-condition-keyword');
+      it('condition-missing-condition-keyword');
 
 
-      testTemplate('condition-wrong-types');
+      it('condition-wrong-types');
 
 
-      testTemplate('condition-default-type');
+      it('condition-default-type');
 
 
-      testTemplate('condition-wrong-type');
+      it('condition-wrong-type');
     });
 
   });
@@ -312,31 +322,32 @@ describe('validation', function() {
 
   describe('multiple templates', function() {
 
-    testTemplate('multiple-mail-tasks');
+    it('multiple-mail-tasks');
 
 
-    testTemplate('single-template-in-array');
+    it('single-template-in-array');
 
 
-    testTemplate('invalid-multiple-mail-tasks');
+    it('invalid-multiple-mail-tasks');
 
 
-    testTemplate('complex');
+    it('complex');
 
 
-    testTemplate('rpa-templates');
+    it('rpa-templates');
 
   });
 
 
   describe('placeholder', function() {
 
-    testTemplate('placeholder');
+    it('placeholder');
 
-    testTemplate('placeholder-invalid-property');
+    it('placeholder-invalid-property');
 
-    testTemplate('placeholder-invalid-type');
+    it('placeholder-invalid-type');
   });
+
 });
 
 
