@@ -6,6 +6,10 @@ All notable changes to [@camunda/element-templates-json-schema](https://github.c
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.18.1
+
+_No user facing changes._
+
 ## 0.18.0
 
 * `FEAT`: support `placeholder` property
