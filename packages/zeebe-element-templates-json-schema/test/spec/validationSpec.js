@@ -12,342 +12,352 @@ const {
 
 const validator = createValidator(schema, errorMessages);
 
+// we save this for some other shinanigans
+const iit = it;
+
+function validateTemplate(template) {
+
+  const valid = validator(template);
+
+  const errors = validator.errors;
+
+  return {
+    valid,
+    errors
+  };
+}
+
+function createTest(name, file, it) {
+
+  if (!file) {
+    file = `../fixtures/${name}.js`;
+  }
+
+  it(name, async function() {
+
+    // given
+    const testDefinition = await import(file);
+
+    const {
+      errors: expectedErrors,
+      template
+    } = testDefinition;
+
+    // when
+    const {
+      errors
+    } = validateTemplate(template);
+
+    // then
+    expect(errors).to.eql(expectedErrors);
+  });
+}
+
 
 describe('validation', function() {
 
-  function validateTemplate(template) {
-
-    const valid = validator(template);
-
-    const errors = validator.errors;
-
-    return {
-      valid,
-      errors
-    };
+  function it(name, file) {
+    return createTest(name, file, iit);
   }
 
-  function testTemplate(name, file, only = false) {
+  it.only = function only(name, file) {
+    return createTest(name, file, iit.only);
+  };
 
-    if (!file) {
-      file = `../fixtures/${name}.js`;
-    }
+  it.skip = function skip(name, file) {
+    return createTest(name, file, iit.skip);
+  };
 
-    (only ? it.only : it)('should validate template - ' + name, async function() {
 
-      // given
-      const testDefinition = await import(file);
+  describe('should validate single template', function() {
 
-      const {
-        errors: expectedErrors,
-        template
-      } = testDefinition;
+    it('cloud-rest-connector');
 
-      // when
-      const {
-        errors
-      } = validateTemplate(template);
 
-      // then
-      expect(errors).to.eql(expectedErrors);
-    });
-  }
+    it('missing-type');
 
-  // eslint-disable-next-line no-unused-vars
-  function testOnly(name, file) {
-    return testTemplate(name, file, true);
-  }
 
+    it('missing-applies-to');
 
-  describe('single template', function() {
 
-    testTemplate('cloud-rest-connector');
+    it('missing-template-name');
 
 
-    testTemplate('missing-type');
+    it('missing-template-id');
 
 
-    testTemplate('missing-applies-to');
+    it('missing-properties');
 
 
-    testTemplate('missing-template-name');
+    it('missing-binding');
 
 
-    testTemplate('missing-template-id');
+    it('applies-to-single');
 
 
-    testTemplate('missing-properties');
+    it('number-value');
 
 
-    testTemplate('missing-binding');
+    it('additional-property');
 
 
-    testTemplate('applies-to-single');
+    it('invalid-binding-type');
 
 
-    testTemplate('number-value');
+    it('choices-missing-value');
 
 
-    testTemplate('additional-property');
+    it('choices-missing-name');
 
 
-    testTemplate('invalid-binding-type');
+    it('missing-choices');
 
 
-    testTemplate('choices-missing-value');
+    it('missing-binding-zeebe-output-source');
 
 
-    testTemplate('choices-missing-name');
+    it('missing-binding-zeebe-input-name');
 
 
-    testTemplate('missing-choices');
+    it('missing-binding-zeebe-header-key');
 
 
-    testTemplate('missing-binding-zeebe-output-source');
+    it('with-version');
 
 
-    testTemplate('missing-binding-zeebe-input-name');
+    it('invalid-version');
 
 
-    testTemplate('missing-binding-zeebe-header-key');
+    it('constraints');
 
 
-    testTemplate('with-version');
+    it('deprecated-bool');
 
 
-    testTemplate('invalid-version');
+    it('deprecated-invalid');
 
 
-    testTemplate('constraints');
+    it('deprecated-object');
 
 
-    testTemplate('deprecated-bool');
+    it('invalid-constraints');
 
 
-    testTemplate('deprecated-invalid');
+    it('invalid-applies-to');
 
 
-    testTemplate('deprecated-object');
+    it('entries-visible-boolean');
 
 
-    testTemplate('invalid-constraints');
+    it('feel');
 
 
-    testTemplate('invalid-applies-to');
+    it('feel-type-mismatch');
 
 
-    testTemplate('entries-visible-boolean');
+    it('feel-value-mismatch');
 
 
-    testTemplate('feel');
+    it('language');
 
 
-    testTemplate('feel-type-mismatch');
+    it('pattern-string');
 
 
-    testTemplate('feel-value-mismatch');
+    it('optional-valid');
 
 
-    testTemplate('language');
+    it('optional-invalid-type');
 
 
-    testTemplate('pattern-string');
+    it('optional-invalid-not-empty');
 
 
-    testTemplate('optional-valid');
+    it('documentation-ref');
 
 
-    testTemplate('optional-invalid-type');
+    it('invalid-documentation-ref');
 
 
-    testTemplate('optional-invalid-not-empty');
+    it('element-type');
 
 
-    testTemplate('documentation-ref');
+    it('element-type-no-value');
 
 
-    testTemplate('invalid-documentation-ref');
-
-
-    testTemplate('element-type');
-
-
-    testTemplate('element-type-no-value');
-
-
-    testTemplate('element-type-invalid');
+    it('element-type-invalid');
 
 
     describe('element type - event definition', function() {
 
-      testTemplate('element-type-event-definition');
+      it('element-type-event-definition');
 
 
-      testTemplate('element-type-event-definition-invalid');
+      it('element-type-event-definition-invalid');
 
 
-      testTemplate('element-type-event-definition-invalid-element');
+      it('element-type-event-definition-invalid-element');
     });
 
 
     describe('property type - binding type', function() {
 
-      testTemplate('invalid-property-type');
+      it('invalid-property-type');
 
 
-      testTemplate('invalid-zeebe-input-type');
+      it('invalid-zeebe-input-type');
 
 
-      testTemplate('invalid-zeebe-output-type');
+      it('invalid-zeebe-output-type');
 
 
-      testTemplate('invalid-zeebe-task-header-type');
+      it('invalid-zeebe-task-header-type');
 
 
-      testTemplate('invalid-zeebe-task-definition-type-type');
+      it('invalid-zeebe-task-definition-type-type');
 
 
-      testTemplate('invalid-zeebe-task-definition');
+      it('invalid-zeebe-task-definition');
 
     });
 
 
     describe('zeebe:property', function() {
 
-      testTemplate('zeebe-property-type');
+      it('zeebe-property-type');
 
-      testTemplate('invalid-zeebe-property-type');
+      it('invalid-zeebe-property-type');
 
     });
 
 
     describe('grouping', function() {
 
-      testTemplate('groups');
+      it('groups');
 
 
-      testTemplate('groups-missing-id');
+      it('groups-missing-id');
 
 
-      testTemplate('groups-missing-label');
+      it('groups-missing-label');
 
 
-      testTemplate('groups-wrong-open-state');
+      it('groups-wrong-open-state');
 
     });
 
 
     describe('icons', function() {
 
-      testTemplate('icon');
+      it('icon');
 
 
-      testTemplate('icon-https');
+      it('icon-https');
 
 
-      testTemplate('icon-encoded-url');
+      it('icon-encoded-url');
 
 
-      testTemplate('invalid-icon-raw-svg');
+      it('invalid-icon-raw-svg');
 
 
-      testTemplate('invalid-icon-malformed-data-uri');
+      it('invalid-icon-malformed-data-uri');
 
 
-      testTemplate('invalid-icon-missing-contents');
+      it('invalid-icon-missing-contents');
 
     });
 
 
     describe('condition', function() {
 
-      testTemplate('condition');
+      it('condition');
 
 
-      testTemplate('condition-missing-property');
+      it('condition-missing-property');
 
 
-      testTemplate('condition-missing-condition-keyword');
+      it('condition-missing-condition-keyword');
 
 
-      testTemplate('condition-wrong-types');
+      it('condition-wrong-types');
 
 
-      testTemplate('condition-default-type');
+      it('condition-default-type');
 
 
-      testTemplate('condition-wrong-type');
+      it('condition-wrong-type');
 
 
-      testTemplate('condition-multiple');
+      it('condition-multiple');
 
 
-      testTemplate('condition-empty-allMatch');
+      it('condition-empty-allMatch');
 
 
-      testTemplate('condition-allMatch-one-condition');
+      it('condition-allMatch-one-condition');
 
 
-      testTemplate('condition-dropdown-choices');
+      it('condition-dropdown-choices');
 
 
-      testTemplate('condition-dropdown-choices-invalid');
+      it('condition-dropdown-choices-invalid');
 
 
-      testTemplate('condition-on-itself');
+      it('condition-on-itself');
 
 
-      testTemplate('condition-on-itself-allMatch');
+      it('condition-on-itself-allMatch');
 
 
-      testTemplate('condition-on-itself-dropdown-choices');
+      it('condition-on-itself-dropdown-choices');
     });
 
 
     describe('message property', function() {
 
-      testTemplate('message-property-valid');
+      it('message-property-valid');
 
 
-      testTemplate('message-property-invalid');
+      it('message-property-invalid');
 
 
-      testTemplate('message-property-invalid-event-definition');
+      it('message-property-invalid-event-definition');
     });
 
 
     describe('message subscription property', function() {
 
-      testTemplate('message-subscription-property-valid');
+      it('message-subscription-property-valid');
 
 
-      testTemplate('message-subscription-property-invalid');
+      it('message-subscription-property-invalid');
 
 
-      testTemplate('message-subscription-property-invalid-event-definition');
+      it('message-subscription-property-invalid-event-definition');
 
 
-      testTemplate('message-subscription-property-invalid-element-type');
+      it('message-subscription-property-invalid-element-type');
     });
 
 
     describe('generated value', function() {
 
-      testTemplate('generated-value-valid');
+      it('generated-value-valid');
 
 
-      testTemplate('generated-value-invalid');
+      it('generated-value-invalid');
 
 
-      testTemplate('generated-value-clash');
+      it('generated-value-clash');
     });
 
 
     describe('tooltip', function() {
 
-      testTemplate('tooltip');
+      it('tooltip');
 
-      testTemplate('tooltip-invalid');
+      it('tooltip-invalid');
 
     });
 
@@ -355,51 +365,51 @@ describe('validation', function() {
     describe('zeebe:taskDefinition', function() {
 
 
-      testTemplate('zeebe-task-definition');
+      it('zeebe-task-definition');
 
 
-      testTemplate('invalid-zeebe-task-definition');
+      it('invalid-zeebe-task-definition');
 
     });
 
 
     describe('zeebe:calledElement', function() {
 
-      testTemplate('called-element');
+      it('called-element');
 
-      testTemplate('called-element-applies-to-only');
+      it('called-element-applies-to-only');
 
-      testTemplate('called-element-invalid-applies-to-no-element-type');
+      it('called-element-invalid-applies-to-no-element-type');
 
-      testTemplate('called-element-invalid-element-type');
+      it('called-element-invalid-element-type');
 
-      testTemplate('called-element-invalid-multiple-applies-to-no-element-type');
+      it('called-element-invalid-multiple-applies-to-no-element-type');
 
-      testTemplate('called-element-invalid-property');
+      it('called-element-invalid-property');
 
-      testTemplate('called-element-missing-property');
+      it('called-element-missing-property');
     });
 
 
     describe('placeholder', function() {
 
-      testTemplate('placeholder');
+      it('placeholder');
 
-      testTemplate('placeholder-invalid-property');
+      it('placeholder-invalid-property');
 
-      testTemplate('placeholder-invalid-type');
+      it('placeholder-invalid-type');
     });
 
 
     describe('engines', function() {
 
-      testTemplate('engines');
+      it('engines');
 
-      testTemplate('engines-no-camunda');
+      it('engines-no-camunda');
 
-      testTemplate('engines-invalid');
+      it('engines-invalid');
 
-      testTemplate('engines-invalid-version');
+      it('engines-invalid-version');
     });
 
   });
