@@ -391,6 +391,17 @@ describe('validation', function() {
     });
 
 
+    describe('zeebe:linkedResource', function() {
+
+      it('linked-resource');
+
+      it('linked-resource-invalid-property');
+
+      it('linked-resource-missing-linkName');
+
+    });
+
+
     describe('placeholder', function() {
 
       it('placeholder');

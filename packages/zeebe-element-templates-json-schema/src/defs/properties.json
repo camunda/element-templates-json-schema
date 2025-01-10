@@ -57,7 +57,8 @@
                     "bpmn:Message#property",
                     "bpmn:Message#zeebe:subscription#property",
                     "zeebe:taskDefinition",
-                    "zeebe:calledElement"
+                    "zeebe:calledElement",
+                    "zeebe:linkedResource"
                   ]
                 }
               },
@@ -273,6 +274,48 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:linkedResource"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "linkName": {
+                  "type": "string"
+                },
+                "property": {
+                  "enum": [
+                    "resourceId",
+                    "resourceType",
+                    "bindingType",
+                    "versionTag"
+                  ]
+                }
+              },
+              "required": [
+                "linkName",
+                "property"
+              ]
+            }
+          }
+        }
       }
     ],
     "properties": {
@@ -422,7 +465,8 @@
               "bpmn:Message#property",
               "bpmn:Message#zeebe:subscription#property",
               "zeebe:taskDefinition",
-              "zeebe:calledElement"
+              "zeebe:calledElement",
+              "zeebe:linkedResource"
             ]
           },
           "name": {
@@ -444,6 +488,11 @@
             "$id": "#/properties/property/binding/property",
             "type": "string",
             "description": "The name of the property defined in the binding."
+          },
+          "linkName": {
+            "$id": "#/properties/property/binding/linkName",
+            "type": "string",
+            "description": "The `linkName` of the element (zeebe:linkedResource)."
           }
         }
       },
