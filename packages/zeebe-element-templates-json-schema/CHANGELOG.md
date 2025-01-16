@@ -6,7 +6,9 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
-* `FEAT`: support `zeebe:linkedResource` binding
+## 0.22.0
+
+* `FEAT`: support `zeebe:linkedResource` binding ([#153](https://github.com/camunda/element-templates-json-schema/pull/153))
 
 ## 0.21.0
 
