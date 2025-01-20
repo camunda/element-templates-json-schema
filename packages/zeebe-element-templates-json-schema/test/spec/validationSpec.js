@@ -122,6 +122,12 @@ describe('validation', function() {
     it('missing-binding-zeebe-header-key');
 
 
+    it('invalid-zeebe-input-feel');
+
+
+    it('invalid-zeebe-output-feel');
+
+
     it('with-version');
 
 
