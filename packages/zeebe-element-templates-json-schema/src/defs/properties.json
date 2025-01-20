@@ -316,7 +316,38 @@
             }
           }
         }
+      },
+      {
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "enum": ["zeebe:input", "zeebe:output"]
+                    }
+                  },
+                  "required": ["type"]
+                },
+                "type": {
+                  "enum": ["Boolean", "Number"]
+                }
+              },
+              "required": ["binding", "type"]
+            },
+            "then": {
+              "required": ["feel"],
+              "properties": {
+                "feel": {
+                  "const": "static"
+                }
+              }
+            }
+          }
+        ]
       }
+      
     ],
     "properties": {
       "binding": {
