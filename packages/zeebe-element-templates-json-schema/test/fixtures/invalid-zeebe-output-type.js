@@ -24,6 +24,7 @@ export const template = {
     {
       'label': 'bar',
       'type': 'Boolean',
+      'feel': 'static',
       'binding': {
         'type': 'zeebe:output',
         'source': 'bar'
