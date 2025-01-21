@@ -16,6 +16,7 @@ export const template = {
     {
       'label': 'bar',
       'type': 'Boolean',
+      'feel': 'static',
       'binding': {
         'type': 'zeebe:input',
         'name': 'bar'
@@ -24,6 +25,7 @@ export const template = {
     {
       'label': 'baz',
       'type': 'Number',
+      'feel': 'static',
       'binding': {
         'type': 'zeebe:input',
         'name': 'baz'
