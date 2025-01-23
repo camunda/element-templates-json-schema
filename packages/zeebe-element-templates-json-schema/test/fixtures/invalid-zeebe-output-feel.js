@@ -6,20 +6,38 @@ export const template = {
   ],
   'properties': [
     {
-      'label': 'booleanValid',
+      'label': 'booleanValidOptional',
       'type': 'Boolean',
       'binding': {
         'type': 'zeebe:output',
-        'source': 'booleanValid'
+        'source': 'booleanValidOptional'
+      },
+      'feel': 'optional'
+    },
+    {
+      'label': 'numberValidOptional',
+      'type': 'Number',
+      'binding': {
+        'type': 'zeebe:output',
+        'source': 'numberValidOptional'
+      },
+      'feel': 'optional'
+    },
+    {
+      'label': 'booleanValidStatic',
+      'type': 'Boolean',
+      'binding': {
+        'type': 'zeebe:output',
+        'source': 'booleanValidStatic'
       },
       'feel': 'static'
     },
     {
-      'label': 'numberValid',
+      'label': 'numberValidStatic',
       'type': 'Number',
       'binding': {
         'type': 'zeebe:output',
-        'source': 'numberValid'
+        'source': 'numberValidStatic'
       },
       'feel': 'static'
     },
@@ -62,49 +80,13 @@ export const template = {
 
 export const errors = [
   {
-    'dataPath': '/properties/2',
+    'dataPath': '/properties/4',
     'keyword': 'required',
     'message': 'should have required property \'feel\'',
     'params': {
       'missingProperty': 'feel'
     },
     'schemaPath': '#/allOf/1/items/allOf/11/allOf/0/then/required'
-  },
-  {
-    'dataPath': '/properties/2',
-    'keyword': 'if',
-    'message': 'should match "then" schema',
-    'params': {
-      'failingKeyword': 'then'
-    },
-    'schemaPath': '#/allOf/1/items/allOf/11/allOf/0/if'
-  },
-  {
-    'dataPath': '/properties/3',
-    'keyword': 'required',
-    'message': 'should have required property \'feel\'',
-    'params': {
-      'missingProperty': 'feel'
-    },
-    'schemaPath': '#/allOf/1/items/allOf/11/allOf/0/then/required'
-  },
-  {
-    'dataPath': '/properties/3',
-    'keyword': 'if',
-    'message': 'should match "then" schema',
-    'params': {
-      'failingKeyword': 'then'
-    },
-    'schemaPath': '#/allOf/1/items/allOf/11/allOf/0/if'
-  },
-  {
-    'dataPath': '/properties/4/feel',
-    'keyword': 'const',
-    'message': 'should be equal to constant',
-    'params': {
-      'allowedValue': 'static'
-    },
-    'schemaPath': '#/allOf/1/items/allOf/11/allOf/0/then/properties/feel/const'
   },
   {
     'dataPath': '/properties/4',
@@ -116,16 +98,58 @@ export const errors = [
     'schemaPath': '#/allOf/1/items/allOf/11/allOf/0/if'
   },
   {
-    'dataPath': '/properties/5/feel',
-    'keyword': 'const',
-    'message': 'should be equal to constant',
+    'dataPath': '/properties/5',
+    'keyword': 'required',
+    'message': 'should have required property \'feel\'',
     'params': {
-      'allowedValue': 'static'
+      'missingProperty': 'feel'
     },
-    'schemaPath': '#/allOf/1/items/allOf/11/allOf/0/then/properties/feel/const'
+    'schemaPath': '#/allOf/1/items/allOf/11/allOf/0/then/required'
   },
   {
     'dataPath': '/properties/5',
+    'keyword': 'if',
+    'message': 'should match "then" schema',
+    'params': {
+      'failingKeyword': 'then'
+    },
+    'schemaPath': '#/allOf/1/items/allOf/11/allOf/0/if'
+  },
+  {
+    'dataPath': '/properties/6/feel',
+    'keyword': 'enum',
+    'message': 'should be equal to one of the allowed values',
+    'params': {
+      'allowedValues': [
+        'optional',
+        'static'
+      ]
+    },
+    'schemaPath': '#/allOf/1/items/allOf/11/allOf/0/then/properties/feel/enum'
+  },
+  {
+    'dataPath': '/properties/6',
+    'keyword': 'if',
+    'message': 'should match "then" schema',
+    'params': {
+      'failingKeyword': 'then'
+    },
+    'schemaPath': '#/allOf/1/items/allOf/11/allOf/0/if'
+  },
+  {
+    'dataPath': '/properties/7/feel',
+    'keyword': 'enum',
+    'message': 'should be equal to one of the allowed values',
+    'params': {
+      'allowedValues': [
+        'optional',
+        'static'
+      ]
+    },
+    'schemaPath': '#/allOf/1/items/allOf/11/allOf/0/then/properties/feel/enum'
+  },
+  {
+    'dataPath': '/properties/7',
     'keyword': 'if',
     'message': 'should match "then" schema',
     'params': {
