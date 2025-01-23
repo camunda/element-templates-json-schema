@@ -340,7 +340,7 @@
               "required": ["feel"],
               "properties": {
                 "feel": {
-                  "const": "static"
+                  "enum": [ "optional", "static" ]
                 }
               }
             }
