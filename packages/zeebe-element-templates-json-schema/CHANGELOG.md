@@ -6,9 +6,13 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.22.2
+
+* `FIX`: require `feel` to be `optional` or `static` for `Boolean` and `Number` inputs and outputs ([#154](https://github.com/camunda/element-templates-json-schema/pull/154))
+
 ## 0.22.1
 
-* `FIX`: require `feel` for `Boolean` and `Number` inputs and outputs ([#154](https://github.com/camunda/element-templates-json-schema/pull/154))
+* `FIX`: require `feel` to be `static` for `Boolean` and `Number` inputs and outputs ([#154](https://github.com/camunda/element-templates-json-schema/pull/154))
 
 ## 0.22.0
 
