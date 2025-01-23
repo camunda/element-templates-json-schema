@@ -8,7 +8,7 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.22.2
 
-* `FIX`: require `feel` to be `optional` or `static` for `Boolean` and `Number` inputs and outputs ([#154](https://github.com/camunda/element-templates-json-schema/pull/154))
+* `FIX`: require `feel` to be `optional` or `static` for `Boolean` and `Number` inputs and outputs ([#156](https://github.com/camunda/element-templates-json-schema/pull/156))
 
 ## 0.22.1
 
