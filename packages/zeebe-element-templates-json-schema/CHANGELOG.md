@@ -8,7 +8,7 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.22.3
 
-* `FIX`: make `feel=static` the default but value for `zeebe:input` and `zeebe:output` properties
+* `FIX`: make `feel=static` the default value for `zeebe:input` and `zeebe:output` properties
 
 ### Notes
 
