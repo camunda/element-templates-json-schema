@@ -337,17 +337,16 @@
               "required": ["binding", "type"]
             },
             "then": {
-              "required": ["feel"],
               "properties": {
                 "feel": {
-                  "enum": [ "optional", "static" ]
+                  "default": "static"
                 }
               }
             }
           }
         ]
       }
-      
+
     ],
     "properties": {
       "binding": {

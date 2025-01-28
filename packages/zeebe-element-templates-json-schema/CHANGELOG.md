@@ -6,6 +6,14 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.22.3
+
+* `FIX`: make `feel=static` the default but value for `zeebe:input` and `zeebe:output` properties
+
+### Notes
+
+This release reverts the breaking changes introduced via [#154](https://github.com/camunda/element-templates-json-schema/pull/154) and [#156](https://github.com/camunda/element-templates-json-schema/pull/156). Any `feel` value out of the supported enum is allowed, but `static` is used if the property is missing.
+
 ## 0.22.2
 
 * `FIX`: require `feel` to be `optional` or `static` for `Boolean` and `Number` inputs and outputs ([#156](https://github.com/camunda/element-templates-json-schema/pull/156))
