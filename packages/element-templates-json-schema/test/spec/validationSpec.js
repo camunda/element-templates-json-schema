@@ -348,6 +348,13 @@ describe('validation', function() {
     it('placeholder-invalid-type');
   });
 
+  describe('keywords', function() {
+    it('keywords');
+
+    it('invalid-keywords');
+
+  });
+
 });
 
 

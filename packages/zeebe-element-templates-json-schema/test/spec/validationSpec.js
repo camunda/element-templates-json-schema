@@ -429,6 +429,15 @@ describe('validation', function() {
       it('engines-invalid-version');
     });
 
+
+    describe('keywords', function() {
+
+      it('keywords');
+
+      it('invalid-keywords');
+
+    });
+
   });
 
 });
