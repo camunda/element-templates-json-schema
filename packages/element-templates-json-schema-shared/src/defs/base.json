@@ -92,6 +92,13 @@
       "description": "Some custom properties for further configuration.",
       "default": {}
     },
+    "keywords": {
+      "$id": "#/keywords",
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of keywords to describe the element template.",
+      "default": []
+    },
     "entriesVisible": {
       "$id": "#/entriesVisible",
       "type": "boolean",
