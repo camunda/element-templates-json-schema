@@ -1,0 +1,8 @@
+{
+  "name": "Mail Task",
+  "id": "com.camunda.example.MailTask",
+  "$schema": "../packages/zeebe-element-templates-json-schema/resources/schema.json",
+  "appliesTo": ["bpmn:ServiceTask"],
+  "keywords": [ 1 ],
+  "properties": []
+}
