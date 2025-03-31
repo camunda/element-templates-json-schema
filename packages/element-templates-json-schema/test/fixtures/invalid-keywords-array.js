@@ -1,22 +1,23 @@
 export const template = {
   'name': 'Keywords',
-  'id': 'com.camunda.example.InvalidKeywords',
+  'id': 'com.camunda.example.InvalidKeywordsExample',
   'appliesTo': [
     'bpmn:Task'
   ],
   'properties': [],
-  'keywords': 123
+  'keywords': [ 123 ]
 };
 
 export const errors = [
   {
     'keyword': 'type',
-    'dataPath': '/keywords',
-    'schemaPath': '#/allOf/0/properties/keywords/type',
+    'dataPath': '/keywords/0',
+    'message': 'should be string',
     'params': {
-      'type': 'array'
+      'type': 'string'
     },
-    'message': 'should be array'
+    'schemaPath': '#/allOf/0/properties/keywords/items/type'
+
   },
   {
     'keyword': 'type',

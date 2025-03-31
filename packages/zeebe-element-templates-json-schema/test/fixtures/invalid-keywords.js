@@ -1,11 +1,11 @@
 export const template = {
   'name': 'Keywords',
-  'id': 'com.camunda.example.Keywords',
+  'id': 'com.camunda.example.InvalidKeywords',
   'appliesTo': [
     'bpmn:Task'
   ],
   'properties': [],
-  keywords: 123
+  'keywords': 123
 };
 
 export const errors = [

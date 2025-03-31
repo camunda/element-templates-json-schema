@@ -436,6 +436,8 @@ describe('validation', function() {
 
       it('invalid-keywords');
 
+      it('invalid-keywords-array');
+
     });
 
   });
