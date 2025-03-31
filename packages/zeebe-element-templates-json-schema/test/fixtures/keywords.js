@@ -7,7 +7,7 @@ export const template = {
 
   'properties': [],
 
-  keywords:[
+  'keywords':[
     'Create Issue',
     'Update Comment'
   ]

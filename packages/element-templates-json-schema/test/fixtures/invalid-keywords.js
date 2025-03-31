@@ -5,7 +5,7 @@ export const template = {
     'bpmn:Task'
   ],
   'properties': [],
-  keywords: 123
+  'keywords': 123
 };
 
 export const errors = [
