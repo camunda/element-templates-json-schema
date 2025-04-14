@@ -440,6 +440,13 @@ describe('validation', function() {
 
     });
 
+
+    describe('zeebe:userTask', function() {
+
+      it('zeebe-user-task');
+
+    });
+
   });
 
 });
