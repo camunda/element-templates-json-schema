@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-json": "^6.0.0",
-    "npm-run-all2": "^7.0.0",
+    "npm-run-all2": "^8.0.0",
     "rollup": "^3.29.5"
   }
 }
