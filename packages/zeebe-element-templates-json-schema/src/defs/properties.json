@@ -235,10 +235,10 @@
         "if": {
           "properties": {
             "type": {
-                "enum": [
-                  "String",
-                  "Text"
-                ]
+              "enum": [
+                "String",
+                "Text"
+              ]
             }
           },
           "required": [
@@ -260,7 +260,7 @@
         "if": {
           "properties": {
             "feel": {
-                "const": "required"
+              "const": "required"
             }
           },
           "required": [
@@ -345,6 +345,37 @@
             }
           }
         ]
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:userTask"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden"
+              ]
+            }
+          }
+        }
       }
 
     ],
@@ -496,7 +527,8 @@
               "bpmn:Message#zeebe:subscription#property",
               "zeebe:taskDefinition",
               "zeebe:calledElement",
-              "zeebe:linkedResource"
+              "zeebe:linkedResource",
+              "zeebe:userTask"
             ]
           },
           "name": {

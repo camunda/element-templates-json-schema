@@ -215,6 +215,51 @@
           }
         ]
       }
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:userTask"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then":{
+        "required": [
+          "elementType"
+        ],
+        "properties": {
+          "elementType": {
+            "required": [
+              "value"
+            ],
+            "properties": {
+              "value": {
+                "const": "bpmn:UserTask"
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }

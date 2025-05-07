@@ -149,7 +149,7 @@
       "properties",
       "type"
     ],
-    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource }"
+    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask }"
   },
   {
     "path": [
@@ -178,7 +178,7 @@
     }
   },
   {
-   "path": [
+    "path": [
       "definitions",
       "properties",
       "allOf",
