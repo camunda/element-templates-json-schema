@@ -8,7 +8,8 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.23.0
 
-* `FEAT`: support `zeebe:userTask` binding property
+* `FEAT`: support `zeebe:userTask` binding property ([#162](https://github.com/camunda/element-templates-json-schema/pull/162))
+* `FEAT`: support `keywords` property ([#159](https://github.com/camunda/element-templates-json-schema/pull/159))
 
 ## 0.22.3
 
