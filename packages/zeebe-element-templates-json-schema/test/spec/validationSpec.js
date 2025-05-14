@@ -477,6 +477,21 @@ describe('validation', function() {
 
       it('form-definition-invalid-type-boolean');
 
+    });
+
+    describe('zeebe:calledDecision', function() {
+
+      it('called-decision');
+
+      it('called-decision-incorrect-property');
+
+      it('called-decision-missing-decisionId');
+
+      it('called-decision-missing-resultVariable');
+
+      it('called-decision-missing-element-type');
+
+      it('called-decision-invalid-element-type');
 
     });
 
