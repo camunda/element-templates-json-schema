@@ -406,6 +406,23 @@ describe('validation', function() {
       it('called-element-missing-property');
     });
 
+    describe('zeebe:script', function() {
+
+      it('script-task');
+
+      it('script-task-applies-to-only');
+
+      it('script-task-invalid-applies-to-no-element-type');
+
+      it('script-task-invalid-element-type');
+
+      it('script-task-invalid-multiple-applies-to-no-element-type');
+
+      it('script-task-invalid-property');
+
+      it('script-task-missing-property');
+    });
+
 
     describe('zeebe:linkedResource', function() {
 

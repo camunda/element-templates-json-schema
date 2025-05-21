@@ -60,7 +60,8 @@
                     "zeebe:calledElement",
                     "zeebe:linkedResource",
                     "zeebe:formDefinition",
-                    "zeebe:calledDecision"
+                    "zeebe:calledDecision",
+                    "zeebe:script"
                   ]
                 }
               },
@@ -617,6 +618,31 @@
             "if": {
               "properties": {
                 "type": {
+                  "const": "zeebe:script"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "properties": {
+                "property": {
+                  "enum": [
+                    "expression",
+                    "resultVariable"
+                  ]
+                }
+              },
+              "required": [
+                "property"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
                   "const": "zeebe:formDefinition"
                 }
               },
@@ -686,7 +712,8 @@
               "zeebe:linkedResource",
               "zeebe:userTask",
               "zeebe:formDefinition",
-              "zeebe:calledDecision"
+              "zeebe:calledDecision",
+              "zeebe:script"
             ]
           },
           "name": {
