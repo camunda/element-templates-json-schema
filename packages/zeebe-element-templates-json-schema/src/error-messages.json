@@ -261,5 +261,20 @@
       "property"
     ],
     "errorMessage": "Binding type \"zeebe:calledDecision\" must contain property \"resultVariable\""
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      4,
+      "then",
+      "allOf",
+      2
+
+    ],
+    "errorMessage": "Binding type \"zeebe:taskDefinition\" cannot be set when binding type \"zeebe:calledDecision\" is set."
   }
 ]

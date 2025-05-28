@@ -493,6 +493,10 @@ describe('validation', function() {
 
       it('called-decision-invalid-element-type');
 
+      it('business-rule-task-task-definition');
+
+      it('business-rule-task-conflicting-properties');
+
     });
 
   });

@@ -424,6 +424,31 @@
                 }
               }
             }
+          },
+          {
+            "not": {
+              "properties": {
+                "properties": {
+                  "contains": {
+                    "properties": {
+                      "binding": {
+                        "properties": {
+                          "type": {
+                            "const": "zeebe:taskDefinition"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "binding"
+                    ]
+                  }
+                }
+              }
+            }
           }
         ],
         "required": [
