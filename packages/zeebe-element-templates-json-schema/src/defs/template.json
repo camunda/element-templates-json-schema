@@ -583,67 +583,6 @@
                 "binding": {
                   "properties": {
                     "type": {
-                      "const": "zeebe:taskDefinition"
-                    }
-                  },
-                  "required": [
-                    "type"
-                  ]
-                }
-              },
-              "required": [
-                "binding"
-              ]
-            }
-          }
-        },
-        "required": [
-          "properties"
-        ]
-      },
-      "then": {
-        "anyOf": [
-          {
-            "required": [
-              "elementType"
-            ],
-            "properties": {
-              "elementType": {
-                "required": [
-                  "value"
-                ],
-                "properties": {
-                  "value": {
-                    "const": "bpmn:ScriptTask"
-                  }
-                }
-              }
-            }
-          },
-          {
-            "required": [
-              "appliesTo"
-            ],
-            "properties": {
-              "appliesTo": {
-                "const": [
-                  "bpmn:ScriptTask"
-                ]
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "properties": {
-            "contains": {
-              "properties": {
-                "binding": {
-                  "properties": {
-                    "type": {
                       "const": "zeebe:script"
                     }
                   },
