@@ -420,6 +420,8 @@ describe('validation', function() {
       it('script-task-invalid-property');
 
       it('script-task-missing-property');
+
+      it('invalid-script-task-job-worker-and-script');
     });
 
 

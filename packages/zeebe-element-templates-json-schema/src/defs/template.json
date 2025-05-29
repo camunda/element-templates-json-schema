@@ -634,6 +634,65 @@
           }
         ]
       }
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:script"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "not": {
+          "properties": {
+            "properties": {
+              "contains": {
+                "properties": {
+                  "binding": {
+                    "properties": {
+                      "type": {
+                        "enum": [
+                          "zeebe:taskDefinition",
+                          "zeebe:taskDefinition:type"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  }
+                },
+                "required": [
+                  "binding"
+                ]
+              }
+            }
+          },
+          "required": [
+            "properties"
+          ]
+        }
+      }
     }
   ]
 }
