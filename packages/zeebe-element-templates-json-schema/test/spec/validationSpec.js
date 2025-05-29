@@ -380,12 +380,11 @@ describe('validation', function() {
 
     describe('zeebe:taskDefinition', function() {
 
-
       it('zeebe-task-definition');
-
 
       it('invalid-zeebe-task-definition');
 
+      it('script-task-job-worker');
     });
 
 
