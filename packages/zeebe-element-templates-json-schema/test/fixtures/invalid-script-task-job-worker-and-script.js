@@ -45,14 +45,14 @@ export const errors = [
   {
     'keyword': 'not',
     'dataPath': '',
-    'schemaPath': '#/allOf/1/allOf/6/then/not',
+    'schemaPath': '#/allOf/1/allOf/5/then/not',
     'params': {},
     'message': 'should NOT be valid'
   },
   {
     'keyword': 'if',
     'dataPath': '',
-    'schemaPath': '#/allOf/1/allOf/6/if',
+    'schemaPath': '#/allOf/1/allOf/5/if',
     'params': {
       'failingKeyword': 'then'
     },
