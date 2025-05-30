@@ -252,6 +252,16 @@ describe('validation', function() {
 
     });
 
+    describe('categories', function() {
+
+      it('category');
+
+      it('category-only-id');
+
+      it('category-only-name');
+
+      it('category-wrong-id-format');
+    });
 
     describe('icons', function() {
 

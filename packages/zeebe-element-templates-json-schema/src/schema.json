@@ -31,6 +31,9 @@
         "engines": {
           "$ref": "src/defs/engines.json"
         },
+        "category": {
+          "$ref": "src/defs/category.json"
+        },
         "icon": {
           "$ref": "src/defs/icon.json"
         },
@@ -42,7 +45,7 @@
           ]
         },
         "groups": {
-          "$ref": "src/defs/groups.json"  
+          "$ref": "src/defs/groups.json"
         }
       }
     }
