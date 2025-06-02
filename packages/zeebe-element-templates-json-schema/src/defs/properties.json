@@ -423,8 +423,26 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": { "const": "zeebe:calledDecision" },
+                "property": { "const": "resultVariable" }
+              },
+              "required": ["type", "property"]
+            }
+          },
+          "required": ["binding"]
+        },
+        "then": {
+          "not": {
+            "required": ["feel"]
+          }
+        }
       }
-
     ],
     "properties": {
       "binding": {
@@ -593,13 +611,16 @@
             "then": {
               "properties": {
                 "property": {
-                      "enum": ["decisionId", "resultVariable"]
-                    }
-                  },
-              "required": [
-                    "property"
+                  "enum": [
+                    "decisionId",
+                    "resultVariable"
                   ]
                 }
+              },
+              "required": [
+                "property"
+              ]
+            }
           },
           {
             "$ref": "examples.json#/binding"
