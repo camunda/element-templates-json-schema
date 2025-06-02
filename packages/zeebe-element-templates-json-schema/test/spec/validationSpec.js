@@ -462,6 +462,8 @@ describe('validation', function() {
       it('called-decision-missing-element-type');
 
       it('called-decision-invalid-element-type');
+
+      it('called-decision-invalid-feel-resultVariable');
     });
 
     describe('bpmn:businessRuleTask', function() {
