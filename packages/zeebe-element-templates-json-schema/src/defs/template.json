@@ -376,7 +376,10 @@
                       "binding": {
                         "properties": {
                           "type": {
-                            "const": "zeebe:taskDefinition"
+                            "enum": [
+                              "zeebe:taskDefinition",
+                              "zeebe:taskDefinition:type"
+                            ]
                           }
                         },
                         "required": [
@@ -389,7 +392,10 @@
                     ]
                   }
                 }
-              }
+              },
+              "required": [
+                "properties"
+              ]
             }
           }
         ],
