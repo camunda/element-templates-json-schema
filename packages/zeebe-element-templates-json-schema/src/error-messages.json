@@ -275,6 +275,6 @@
       2
 
     ],
-    "errorMessage": "Binding type \"zeebe:taskDefinition\" cannot be set when binding type \"zeebe:calledDecision\" is set."
+    "errorMessage": "Binding type \"zeebe:taskDefinition\" or \"zeebe:taskDefinition:type\" cannot be set when binding type \"zeebe:calledDecision\" is set."
   }
 ]

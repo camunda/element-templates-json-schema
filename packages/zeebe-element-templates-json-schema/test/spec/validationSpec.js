@@ -492,11 +492,14 @@ describe('validation', function() {
       it('called-decision-missing-element-type');
 
       it('called-decision-invalid-element-type');
+    });
 
+    describe('bpmn:businessRuleTask', function() {
       it('business-rule-task-task-definition');
 
-      it('business-rule-task-conflicting-properties');
+      it('business-rule-task-conflicting-bindings');
 
+      it('business-rule-task-conflicting-deprecated-bindings');
     });
 
   });

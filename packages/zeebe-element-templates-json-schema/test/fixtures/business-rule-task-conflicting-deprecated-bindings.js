@@ -34,8 +34,7 @@ export const template = {
     {
       'value': 'io.camunda:decisionTask',
       'binding': {
-        'property': 'type',
-        'type': 'zeebe:taskDefinition'
+        'type': 'zeebe:taskDefinition:type'
       },
       'type': 'Hidden'
     },
@@ -59,7 +58,7 @@ export const errors = [
         }
       ]
     },
-    'message': 'Binding type "zeebe:taskDefinition" cannot be set when binding type "zeebe:calledDecision" is set.'
+    'message': 'Binding type "zeebe:taskDefinition" or "zeebe:taskDefinition:type" cannot be set when binding type "zeebe:calledDecision" is set.'
   },
   {
     'keyword': 'if',
