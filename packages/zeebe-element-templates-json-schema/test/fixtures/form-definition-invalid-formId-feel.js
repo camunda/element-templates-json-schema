@@ -27,4 +27,51 @@ export const template = {
   ]
 };
 
-export const errors = [ {} ];
+export const errors = [
+  {
+    keyword: 'errorMessage',
+    dataPath: '/properties/1',
+    schemaPath: '#/allOf/1/items/allOf/13/then/errorMessage',
+    params: {
+      errors: [
+        {
+          keyword: 'not',
+          dataPath: '/properties/1',
+          schemaPath: '#/allOf/1/items/allOf/13/then/not',
+          params: {},
+          message: 'should NOT be valid',
+          emUsed: true
+        }
+      ]
+    },
+    message: 'Property "formId" cannot be a FEEL expression'
+  },
+  {
+    keyword: 'if',
+    dataPath: '/properties/1',
+    schemaPath: '#/allOf/1/items/allOf/13/if',
+    params: {
+      failingKeyword: 'then'
+    },
+    message: 'should match "then" schema'
+  },
+  {
+    keyword: 'type',
+    dataPath: '',
+    schemaPath: '#/oneOf/1/type',
+    params: {
+      type: 'array'
+    },
+    message: 'should be array'
+  },
+  {
+    keyword: 'oneOf',
+    dataPath: '',
+    schemaPath: '#/oneOf',
+    params: {
+      passingSchemas: null
+    },
+    message: 'should match exactly one schema in oneOf'
+  }
+]
+;
