@@ -49,7 +49,12 @@ function createTest(name, file, it) {
     } = validateTemplate(template);
 
     // then
-    expect(errors, `expected ${expectedErrors?.length ? JSON.stringify(expectedErrors, null, 1) : 'no errors'}\n but got actual\n ${JSON.stringify(errors, null, 1)}`).to.eql(expectedErrors);
+    expect(errors, `\n
+    expected:
+      ${expectedErrors?.length ? JSON.stringify(expectedErrors, null, 1).replace(/"([^"]+)":/g, '$1:') : 'no errors'} 
+    but got actual:
+      ${JSON.stringify(errors, null, 1).replace(/"([^"]+)":/g, '$1:')}\n`)
+      .to.eql(expectedErrors);
   });
 }
 
@@ -461,19 +466,20 @@ describe('validation', function() {
 
     describe('zeebe:formDefinition', function() {
 
-      it('form-definition-with-external-reference');
-
-      it('form-definition-with-external-reference-feel');
-
       it('form-definition-invalid-duplicated-binding');
 
       it('form-definition-invalid-element-type');
 
-      it('form-definition-invalid-missing-element-type');
+      it('form-definition-invalid-formId-feel');
 
-      it('form-definition-invalid-missing-binding');
+      it('form-definition-missing-zeebe-user-task');
 
-      it('form-definition-invalid-missing-property');
+      it('form-definition-with-external-reference');
+
+      it('form-definition-with-external-reference-feel');
+
+      it('form-definition-with-formId');
+
 
     });
 

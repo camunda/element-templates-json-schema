@@ -21,10 +21,10 @@ export const template = {
       'feel': 'optional',
       'binding': {
         'type': 'zeebe:formDefinition',
-        'property': 'externalReference'
+        'property': 'formId'
       }
     }
   ]
 };
 
-export const errors = null;
+export const errors = [ {} ];
