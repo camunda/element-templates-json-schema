@@ -78,5 +78,4 @@ export const errors = [
     },
     message: 'should match exactly one schema in oneOf'
   }
-]
-;
+];

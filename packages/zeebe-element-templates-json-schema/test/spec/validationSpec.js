@@ -466,8 +466,6 @@ describe('validation', function() {
 
     describe('zeebe:formDefinition', function() {
 
-      it('form-definition-invalid-duplicated-binding');
-
       it('form-definition-invalid-element-type');
 
       it('form-definition-invalid-formId-feel');
