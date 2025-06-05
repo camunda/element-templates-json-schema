@@ -60,7 +60,6 @@
                         "bpmn:IntermediateThrowEvent",
                         "bpmn:BoundaryEvent",
                         "bpmn:EndEvent"
-
                       ]
                     }
                   }
@@ -138,7 +137,6 @@
                         "bpmn:IntermediateThrowEvent",
                         "bpmn:BoundaryEvent",
                         "bpmn:EndEvent"
-
                       ]
                     }
                   }
@@ -184,7 +182,7 @@
           "properties"
         ]
       },
-      "then":{
+      "then": {
         "anyOf": [
           {
             "required": [
@@ -209,7 +207,9 @@
             ],
             "properties": {
               "appliesTo": {
-                "const": [ "bpmn:CallActivity" ]
+                "const": [
+                  "bpmn:CallActivity"
+                ]
               }
             }
           }
@@ -243,7 +243,7 @@
           "properties"
         ]
       },
-      "then":{
+      "then": {
         "required": [
           "elementType"
         ],
@@ -259,6 +259,64 @@
             }
           }
         }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:formDefinition"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "properties": {
+              "properties": {
+                "contains": {
+                  "properties": {
+                    "binding": {
+                      "properties": {
+                        "type": {
+                          "const": "zeebe:userTask"
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "binding"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "properties"
+            ]
+          }
+        ]
       }
     }
   ]
