@@ -206,5 +206,18 @@
       "then"
     ],
     "errorMessage": "Property \"formId\" cannot be a FEEL expression"
+  },{
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      4,
+      "then",
+      "allOf",
+      0
+    ],
+    "errorMessage": "When using \"zeebe:formDefinition\", \"zeebe:userTask\" must be set on the same element"
   }
 ]
