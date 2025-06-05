@@ -459,6 +459,27 @@ describe('validation', function() {
 
     });
 
+    describe('zeebe:formDefinition', function() {
+
+      it('form-definition-invalid-element-type');
+
+      it('form-definition-invalid-formId-feel');
+
+      it('form-definition-missing-zeebe-user-task');
+
+      it('form-definition-with-external-reference');
+
+      it('form-definition-with-external-reference-feel');
+
+      it('form-definition-with-formId');
+
+      it('form-definition-invalid-type-number');
+
+      it('form-definition-invalid-type-boolean');
+
+
+    });
+
   });
 
 });
