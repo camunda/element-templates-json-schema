@@ -49,7 +49,7 @@ function createTest(name, file, it) {
     } = validateTemplate(template);
 
     // then
-    expect(errors).to.eql(expectedErrors);
+    expect(errors, `expected ${expectedErrors?.length ? JSON.stringify(expectedErrors, null, 1) : 'no errors'}\n but got actual\n ${JSON.stringify(errors, null, 1)}`).to.eql(expectedErrors);
   });
 }
 
@@ -456,6 +456,24 @@ describe('validation', function() {
       it('zeebe-user-task');
 
       it('zeebe-user-task-invalid');
+
+    });
+
+    describe('zeebe:formDefinition', function() {
+
+      it('form-definition-with-external-reference');
+
+      it('form-definition-with-external-reference-feel');
+
+      it('form-definition-invalid-duplicated-binding');
+
+      it('form-definition-invalid-element-type');
+
+      it('form-definition-invalid-missing-element-type');
+
+      it('form-definition-invalid-missing-binding');
+
+      it('form-definition-invalid-missing-property');
 
     });
 
