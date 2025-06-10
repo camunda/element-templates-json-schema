@@ -328,16 +328,27 @@
                 "binding": {
                   "properties": {
                     "type": {
-                      "enum": ["zeebe:input", "zeebe:output"]
+                      "enum": [
+                        "zeebe:input",
+                        "zeebe:output"
+                      ]
                     }
                   },
-                  "required": ["type"]
+                  "required": [
+                    "type"
+                  ]
                 },
                 "type": {
-                  "enum": ["Boolean", "Number"]
+                  "enum": [
+                    "Boolean",
+                    "Number"
+                  ]
                 }
               },
-              "required": ["binding", "type"]
+              "required": [
+                "binding",
+                "type"
+              ]
             },
             "then": {
               "properties": {
@@ -486,22 +497,76 @@
         }
       },
       {
+        "description": "Result variable for script task must not support feel expressions.",
         "if": {
           "properties": {
             "binding": {
               "properties": {
-                "type": { "const": "zeebe:script" },
-                "property": { "const": "resultVariable" }
+                "type": {
+                  "const": "zeebe:script"
+                },
+                "property": {
+                  "const": "resultVariable"
+                }
               },
-              "required": ["type", "property"]
+              "required": [
+                "type",
+                "property"
+              ]
             }
           },
-          "required": ["binding"]
+          "required": [
+            "binding"
+          ]
         },
         "then": {
           "not": {
-            "required": ["feel"]
+            "required": [
+              "feel"
+            ]
           }
+        }
+      },
+      {
+        "description": "Expression for script task must require feel expressions.",
+        "if": {
+          "properties": {
+            "type": {
+              "enum": [
+                "String"
+              ]
+            },
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:script"
+                },
+                "property": {
+                  "const": "expression"
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "binding"
+          ]
+        },
+        "then": {
+          "properties": {
+            "feel": {
+              "enum": [
+                "required"
+              ]
+            }
+          },
+          "required": [
+            "feel"
+          ]
         }
       }
     ],
@@ -634,6 +699,7 @@
             }
           },
           {
+            "description": "Required property binding for Zeebe script task.",
             "if": {
               "properties": {
                 "type": {
