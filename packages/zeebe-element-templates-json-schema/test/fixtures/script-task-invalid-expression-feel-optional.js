@@ -16,7 +16,7 @@ export const template = {
   'properties': [
     {
       'type': 'String',
-      'feel': 'required',
+      'feel': 'optional',
       'value': '={"currentWeek": week of year(today()), "people": participants, "index": modulo(currentWeek, count(people)), "selectedPerson": people[index + 1]}.selectedPerson',
       'binding': {
         'type': 'zeebe:script',
@@ -24,8 +24,7 @@ export const template = {
       }
     },
     {
-      'type': 'String',
-      'feel': 'optional',
+      'type': 'Hidden',
       'value': 'aResultVariable',
       'binding': {
         'type': 'zeebe:script',
@@ -37,27 +36,20 @@ export const template = {
 
 export const errors = [
   {
-    'keyword': 'errorMessage',
-    'dataPath': '/properties/1',
-    'schemaPath': '#/allOf/1/items/allOf/13/then/errorMessage',
+    'keyword': 'enum',
+    'dataPath': '/properties/0/feel',
+    'schemaPath': '#/allOf/1/items/allOf/14/then/properties/feel/enum',
     'params': {
-      'errors': [
-        {
-          'keyword': 'not',
-          'dataPath': '/properties/1',
-          'schemaPath': '#/allOf/1/items/allOf/13/then/not',
-          'params': {},
-          'message': 'should NOT be valid',
-          'emUsed': true
-        }
+      'allowedValues': [
+        'required'
       ]
     },
-    'message': 'Property "resultVariable" cannot be a Feel expression'
+    'message': 'should be equal to one of the allowed values'
   },
   {
     'keyword': 'if',
-    'dataPath': '/properties/1',
-    'schemaPath': '#/allOf/1/items/allOf/13/if',
+    'dataPath': '/properties/0',
+    'schemaPath': '#/allOf/1/items/allOf/14/if',
     'params': {
       'failingKeyword': 'then'
     },
