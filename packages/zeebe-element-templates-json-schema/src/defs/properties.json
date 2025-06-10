@@ -484,6 +484,25 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": { "const": "zeebe:script" },
+                "property": { "const": "resultVariable" }
+              },
+              "required": ["type", "property"]
+            }
+          },
+          "required": ["binding"]
+        },
+        "then": {
+          "not": {
+            "required": ["feel"]
+          }
+        }
       }
     ],
     "properties": {

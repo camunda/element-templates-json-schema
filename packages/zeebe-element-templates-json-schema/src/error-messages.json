@@ -288,5 +288,18 @@
       "then"
     ],
     "errorMessage": "Property \"resultVariable\" cannot be a Feel expression"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      13,
+      "then"
+    ],
+    "errorMessage": "Property \"resultVariable\" cannot be a Feel expression"
   }
 ]

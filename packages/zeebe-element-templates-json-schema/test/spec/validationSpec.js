@@ -421,6 +421,8 @@ describe('validation', function() {
 
       it('script-task-missing-property');
 
+      it('script-task-invalid-feel-resultVariable');
+
       it('invalid-script-task-job-worker-and-script');
     });
 
