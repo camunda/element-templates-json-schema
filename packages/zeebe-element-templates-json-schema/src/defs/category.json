@@ -11,8 +11,7 @@
     "id": {
       "$id": "#/category/id",
       "type": "string",
-      "description": "The unique identifier of the category in kebab case.",
-      "pattern": "(\\w+)-(\\w)([\\w-]*)"
+      "description": "The unique identifier of the category."
     },
     "name": {
       "$id": "#/category/name",
