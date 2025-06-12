@@ -380,12 +380,11 @@ describe('validation', function() {
 
     describe('zeebe:taskDefinition', function() {
 
-
       it('zeebe-task-definition');
-
 
       it('invalid-zeebe-task-definition');
 
+      it('script-task-job-worker');
     });
 
 
@@ -404,6 +403,31 @@ describe('validation', function() {
       it('called-element-invalid-property');
 
       it('called-element-missing-property');
+    });
+
+    describe('zeebe:script', function() {
+
+      it('script-task');
+
+      it('script-task-applies-to-only');
+
+      it('script-task-invalid-applies-to-no-element-type');
+
+      it('script-task-invalid-element-type');
+
+      it('script-task-invalid-multiple-applies-to-no-element-type');
+
+      it('script-task-invalid-property');
+
+      it('script-task-missing-property');
+
+      it('script-task-invalid-feel-resultVariable');
+
+      it('invalid-script-task-job-worker-and-script');
+
+      it('script-task-invalid-expression-feel-optional');
+
+      it('script-task-expression-feel-required');
     });
 
 
