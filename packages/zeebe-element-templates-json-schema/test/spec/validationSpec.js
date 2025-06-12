@@ -261,6 +261,7 @@ describe('validation', function() {
       it('category-only-name');
     });
 
+
     describe('icons', function() {
 
       it('icon');
