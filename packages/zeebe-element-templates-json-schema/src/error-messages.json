@@ -149,7 +149,7 @@
       "properties",
       "type"
     ],
-    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask }"
+    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:calledDecision }"
   },
   {
     "path": [
@@ -193,5 +193,74 @@
       "property"
     ],
     "errorMessage": "invalid binding.property ${0}; must be any of { resourceId, resourceType, bindingType, versionTag }"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      4,
+      "then",
+      "allOf",
+      0,
+      "properties",
+      "properties",
+      "contains",
+      "properties",
+      "binding",
+      "properties",
+      "property"
+    ],
+    "errorMessage": "Binding type \"zeebe:calledDecision\" must contain property \"decisionId\""
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      4,
+      "then",
+      "allOf",
+      1,
+      "properties",
+      "properties",
+      "contains",
+      "properties",
+      "binding",
+      "properties",
+      "property"
+    ],
+    "errorMessage": "Binding type \"zeebe:calledDecision\" must contain property \"resultVariable\""
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      4,
+      "then",
+      "allOf",
+      2
+    ],
+    "errorMessage": "Binding type \"zeebe:taskDefinition\" or \"zeebe:taskDefinition:type\" cannot be set when binding type \"zeebe:calledDecision\" is set."
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      13,
+      "then"
+    ],
+    "errorMessage": "Property \"resultVariable\" cannot be a Feel expression"
   }
 ]

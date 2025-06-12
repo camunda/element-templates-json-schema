@@ -49,7 +49,7 @@ function createTest(name, file, it) {
     } = validateTemplate(template);
 
     // then
-    expect(errors).to.eql(expectedErrors);
+    expect(errors, `expected ${expectedErrors?.length ? JSON.stringify(expectedErrors, null, 1) : 'no errors'}\n but got actual\n ${JSON.stringify(errors, null, 1)}`).to.eql(expectedErrors);
   });
 }
 
@@ -457,6 +457,31 @@ describe('validation', function() {
 
       it('zeebe-user-task-invalid');
 
+    });
+
+    describe('zeebe:calledDecision', function() {
+
+      it('called-decision');
+
+      it('called-decision-incorrect-property');
+
+      it('called-decision-missing-decisionId');
+
+      it('called-decision-missing-resultVariable');
+
+      it('called-decision-missing-element-type');
+
+      it('called-decision-invalid-element-type');
+
+      it('called-decision-invalid-feel-resultVariable');
+    });
+
+    describe('bpmn:businessRuleTask', function() {
+      it('business-rule-task-task-definition');
+
+      it('business-rule-task-conflicting-bindings');
+
+      it('business-rule-task-conflicting-deprecated-bindings');
     });
 
   });

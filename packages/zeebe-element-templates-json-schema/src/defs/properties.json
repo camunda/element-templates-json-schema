@@ -58,7 +58,8 @@
                     "bpmn:Message#zeebe:subscription#property",
                     "zeebe:taskDefinition",
                     "zeebe:calledElement",
-                    "zeebe:linkedResource"
+                    "zeebe:linkedResource",
+                    "zeebe:calledDecision"
                   ]
                 }
               },
@@ -376,8 +377,26 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": { "const": "zeebe:calledDecision" },
+                "property": { "const": "resultVariable" }
+              },
+              "required": ["type", "property"]
+            }
+          },
+          "required": ["binding"]
+        },
+        "then": {
+          "not": {
+            "required": ["feel"]
+          }
+        }
       }
-
     ],
     "properties": {
       "binding": {
@@ -508,6 +527,31 @@
             }
           },
           {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:calledDecision"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "properties": {
+                "property": {
+                  "enum": [
+                    "decisionId",
+                    "resultVariable"
+                  ]
+                }
+              },
+              "required": [
+                "property"
+              ]
+            }
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -528,7 +572,8 @@
               "zeebe:taskDefinition",
               "zeebe:calledElement",
               "zeebe:linkedResource",
-              "zeebe:userTask"
+              "zeebe:userTask",
+              "zeebe:calledDecision"
             ]
           },
           "name": {
