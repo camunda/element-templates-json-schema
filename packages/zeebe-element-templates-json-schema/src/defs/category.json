@@ -1,0 +1,26 @@
+{
+  "$id": "#/category",
+  "type": "object",
+  "description": "A custom category to semantically group element templates",
+  "default": {},
+  "example": {
+    "id": "custom-category",
+    "name": "Custom Category"
+  },
+  "properties": {
+    "id": {
+      "$id": "#/category/id",
+      "type": "string",
+      "description": "The unique identifier of the category."
+    },
+    "name": {
+      "$id": "#/category/name",
+      "type": "string",
+      "description": "The name of the category."
+    }
+  },
+  "required": [
+    "id",
+    "name"
+  ]
+}

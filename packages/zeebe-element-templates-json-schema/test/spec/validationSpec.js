@@ -253,6 +253,16 @@ describe('validation', function() {
     });
 
 
+    describe('categories', function() {
+
+      it('category');
+
+      it('category-only-id');
+
+      it('category-only-name');
+    });
+
+
     describe('icons', function() {
 
       it('icon');
