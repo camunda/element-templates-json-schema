@@ -7,7 +7,7 @@ export const template = {
   properties: [],
   category: {
     id: 'my-task',
-    name:  'My task'
+    name: 'My task'
   }
 };
 
