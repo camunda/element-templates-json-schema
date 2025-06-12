@@ -16,8 +16,7 @@
     "name": {
       "$id": "#/category/name",
       "type": "string",
-      "description": "The name of the category.",
-      "default": ""
+      "description": "The name of the category."
     }
   },
   "required": [
