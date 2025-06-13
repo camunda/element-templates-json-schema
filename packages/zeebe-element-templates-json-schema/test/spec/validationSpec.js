@@ -49,7 +49,12 @@ function createTest(name, file, it) {
     } = validateTemplate(template);
 
     // then
-    expect(errors).to.eql(expectedErrors);
+    expect(errors, `\n
+    expected:
+      ${expectedErrors?.length ? JSON.stringify(expectedErrors, null, 1).replace(/"([^"]+)":/g, '$1:') : 'no errors'} 
+    but got actual:
+      ${JSON.stringify(errors, null, 1).replace(/"([^"]+)":/g, '$1:')}\n`)
+      .to.eql(expectedErrors);
   });
 }
 
@@ -456,6 +461,23 @@ describe('validation', function() {
       it('zeebe-user-task');
 
       it('zeebe-user-task-invalid');
+
+    });
+
+    describe('zeebe:formDefinition', function() {
+
+      it('form-definition-invalid-element-type');
+
+      it('form-definition-invalid-formId-feel');
+
+      it('form-definition-missing-zeebe-user-task');
+
+      it('form-definition-with-external-reference');
+
+      it('form-definition-with-external-reference-feel');
+
+      it('form-definition-with-formId');
+
 
     });
 

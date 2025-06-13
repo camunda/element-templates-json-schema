@@ -58,7 +58,8 @@
                     "bpmn:Message#zeebe:subscription#property",
                     "zeebe:taskDefinition",
                     "zeebe:calledElement",
-                    "zeebe:linkedResource"
+                    "zeebe:linkedResource",
+                    "zeebe:formDefinition"
                   ]
                 }
               },
@@ -376,6 +377,25 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": { "const": "zeebe:formDefinition" },
+                "property": { "const": "formId" }
+              },
+              "required": ["type", "property"]
+            }
+          },
+          "required": ["binding"]
+        },
+        "then": {
+          "not": {
+            "required": ["feel"]
+          }
+        }
       }
 
     ],
@@ -508,6 +528,31 @@
             }
           },
           {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:formDefinition"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "properties": {
+                "property": {
+                  "enum": [
+                    "formId",
+                    "externalReference"
+                  ]
+                }
+              },
+              "required": [
+                "property"
+              ]
+            }
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -528,7 +573,8 @@
               "zeebe:taskDefinition",
               "zeebe:calledElement",
               "zeebe:linkedResource",
-              "zeebe:userTask"
+              "zeebe:userTask",
+              "zeebe:formDefinition"
             ]
           },
           "name": {
