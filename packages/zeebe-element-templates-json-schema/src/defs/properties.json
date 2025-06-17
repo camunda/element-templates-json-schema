@@ -442,6 +442,47 @@
             "required": ["feel"]
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:calledDecision"
+                },
+                "property": {
+                  "enum": [
+                    "resultVariable",
+                    "decisionId"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden",
+                "String",
+                "Text",
+                "Dropdown"
+              ]
+            }
+          }
+        }
       }
     ],
     "properties": {
