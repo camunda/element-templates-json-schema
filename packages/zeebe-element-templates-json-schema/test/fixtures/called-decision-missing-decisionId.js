@@ -29,13 +29,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/0/binding/property',
-    schemaPath: '#/allOf/1/allOf/4/then/allOf/0/properties/properties/contains/properties/binding/properties/property/errorMessage',
+    schemaPath: '#/allOf/1/allOf/5/then/allOf/0/properties/properties/contains/properties/binding/properties/property/errorMessage',
     params: {
       errors: [
         {
           keyword: 'const',
           dataPath: '/properties/0/binding/property',
-          schemaPath: '#/allOf/1/allOf/4/then/allOf/0/properties/properties/contains/properties/binding/properties/property/const',
+          schemaPath: '#/allOf/1/allOf/5/then/allOf/0/properties/properties/contains/properties/binding/properties/property/const',
           params: { allowedValue: 'decisionId' },
           message: 'should be equal to constant',
           emUsed: true,
@@ -47,14 +47,14 @@ export const errors = [
   {
     keyword: 'contains',
     dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/4/then/allOf/0/properties/properties/contains',
+    schemaPath: '#/allOf/1/allOf/5/then/allOf/0/properties/properties/contains',
     params: { minContains: 1 },
     message: 'should contain at least 1 valid item(s)',
   },
   {
     keyword: 'if',
     dataPath: '',
-    schemaPath: '#/allOf/1/allOf/4/if',
+    schemaPath: '#/allOf/1/allOf/5/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema',
   },

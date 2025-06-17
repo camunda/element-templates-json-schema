@@ -227,7 +227,7 @@
       "allOf",
       1,
       "allOf",
-      4,
+      5,
       "then",
       "allOf",
       0,
@@ -248,7 +248,7 @@
       "allOf",
       1,
       "allOf",
-      4,
+      5,
       "then",
       "allOf",
       1,
@@ -269,7 +269,7 @@
       "allOf",
       1,
       "allOf",
-      4,
+      5,
       "then",
       "allOf",
       2
@@ -284,7 +284,7 @@
       1,
       "items",
       "allOf",
-      13,
+      15,
       "then"
     ],
     "errorMessage": "Property \"resultVariable\" cannot be a Feel expression"
