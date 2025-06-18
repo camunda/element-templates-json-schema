@@ -6,7 +6,8 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
-* `FEAT`: support `zeebe:formDefinition` binding ([#169](https://github.com/camunda/element-templates-json-schema/pull/169)
+* `FEAT`: support `zeebe:calledDecision` binding ([#165](https://github.com/camunda/element-templates-json-schema/pull/165))
+* `FEAT`: support `zeebe:formDefinition` binding ([#169](https://github.com/camunda/element-templates-json-schema/pull/169))
 
 ## 0.23.0
 

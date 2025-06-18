@@ -477,7 +477,31 @@ describe('validation', function() {
 
       it('form-definition-invalid-type-boolean');
 
+    });
 
+    describe('zeebe:calledDecision', function() {
+
+      it('called-decision');
+
+      it('called-decision-incorrect-property');
+
+      it('called-decision-missing-decisionId');
+
+      it('called-decision-missing-resultVariable');
+
+      it('called-decision-missing-element-type');
+
+      it('called-decision-invalid-element-type');
+
+      it('called-decision-invalid-feel-resultVariable');
+    });
+
+    describe('bpmn:businessRuleTask', function() {
+      it('business-rule-task-task-definition');
+
+      it('business-rule-task-conflicting-bindings');
+
+      it('business-rule-task-conflicting-deprecated-bindings');
     });
 
   });

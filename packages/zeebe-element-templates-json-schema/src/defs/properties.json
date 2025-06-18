@@ -59,7 +59,8 @@
                     "zeebe:taskDefinition",
                     "zeebe:calledElement",
                     "zeebe:linkedResource",
-                    "zeebe:formDefinition"
+                    "zeebe:formDefinition",
+                    "zeebe:calledDecision"
                   ]
                 }
               },
@@ -422,8 +423,67 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": { "const": "zeebe:calledDecision" },
+                "property": { "const": "resultVariable" }
+              },
+              "required": ["type", "property"]
+            }
+          },
+          "required": ["binding"]
+        },
+        "then": {
+          "not": {
+            "required": ["feel"]
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:calledDecision"
+                },
+                "property": {
+                  "enum": [
+                    "resultVariable",
+                    "decisionId"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden",
+                "String",
+                "Text",
+                "Dropdown"
+              ]
+            }
+          }
+        }
       }
-
     ],
     "properties": {
       "binding": {
@@ -579,6 +639,31 @@
             }
           },
           {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:calledDecision"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "properties": {
+                "property": {
+                  "enum": [
+                    "decisionId",
+                    "resultVariable"
+                  ]
+                }
+              },
+              "required": [
+                "property"
+              ]
+            }
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -600,7 +685,8 @@
               "zeebe:calledElement",
               "zeebe:linkedResource",
               "zeebe:userTask",
-              "zeebe:formDefinition"
+              "zeebe:formDefinition",
+              "zeebe:calledDecision"
             ]
           },
           "name": {
