@@ -3,6 +3,8 @@ const {
   set
 } = require('min-dash');
 
+const chai = require('chai');
+
 const { default: Ajv } = require('ajv');
 const AjvErrors = require('ajv-errors');
 
@@ -54,3 +56,19 @@ function setErrorMessage(schema, error) {
 
   return set(schema, errorMessagePath, errorMessage);
 }
+
+function eqlErrors(chai, utils) {
+
+  const Assertion = chai.Assertion;
+
+  Assertion.addMethod('eqlErrors', function(expectedErrors, filter) {
+
+    const actualErrors = this._obj;
+
+    // formats the validation errors, so that they can be used directly in the fixture files.
+    this.eql(expectedErrors,
+      `Errors from validation do not match expected.\n\tValidation returned this error (you can use it in the fixture):\n\t${JSON.stringify(actualErrors, null, 2).replace(/"([^"]+)":/g, '$1:')}\n`);
+  });
+}
+
+chai.use(eqlErrors);

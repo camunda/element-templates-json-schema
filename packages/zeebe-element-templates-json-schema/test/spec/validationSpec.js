@@ -49,7 +49,7 @@ function createTest(name, file, it) {
     } = validateTemplate(template);
 
     // then
-    expect(errors).to.eql(expectedErrors);
+    expect(errors).to.eqlErrors(expectedErrors);
   });
 }
 
