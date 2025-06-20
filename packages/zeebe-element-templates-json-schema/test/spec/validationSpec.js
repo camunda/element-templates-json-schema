@@ -428,6 +428,8 @@ describe('validation', function() {
       it('script-task-invalid-expression-feel-optional');
 
       it('script-task-expression-feel-required');
+
+      it('script-task-invalid-type');
     });
 
 

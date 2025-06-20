@@ -568,6 +568,47 @@
             "feel"
           ]
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:script"
+                },
+                "property": {
+                  "enum": [
+                    "resultVariable",
+                    "expression"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden",
+                "String",
+                "Text",
+                "Dropdown"
+              ]
+            }
+          }
+        }
       }
     ],
     "properties": {
