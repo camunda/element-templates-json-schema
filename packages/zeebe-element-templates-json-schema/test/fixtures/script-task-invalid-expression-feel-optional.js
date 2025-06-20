@@ -38,7 +38,7 @@ export const errors = [
   {
     'keyword': 'enum',
     'dataPath': '/properties/0/feel',
-    'schemaPath': '#/allOf/1/items/allOf/14/then/properties/feel/enum',
+    'schemaPath': '#/allOf/1/items/allOf/18/then/properties/feel/enum',
     'params': {
       'allowedValues': [
         'required'
@@ -49,7 +49,7 @@ export const errors = [
   {
     'keyword': 'if',
     'dataPath': '/properties/0',
-    'schemaPath': '#/allOf/1/items/allOf/14/if',
+    'schemaPath': '#/allOf/1/items/allOf/18/if',
     'params': {
       'failingKeyword': 'then'
     },
