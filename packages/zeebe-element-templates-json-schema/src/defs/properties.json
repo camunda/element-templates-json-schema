@@ -707,7 +707,11 @@
             "then": {
               "properties": {
                 "property": {
-                  "const": "processId"
+                  "enum": [
+                    "processId",
+                    "bindingType",
+                    "versionTag"
+                  ]
                 }
               },
               "required": [
