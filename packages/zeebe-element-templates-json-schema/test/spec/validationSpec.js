@@ -478,6 +478,10 @@ describe('validation', function() {
 
       it('linked-resource-missing-linkName');
 
+      it.skip('linked-resource-missing-versionTag');
+
+      it.skip('linked-resource-invalid-bindingType');
+
     });
 
 
