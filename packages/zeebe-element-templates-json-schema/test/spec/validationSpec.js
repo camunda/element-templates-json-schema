@@ -122,6 +122,7 @@ describe('validation', function() {
   describe('should support binding types', function() {
     [ { name: 'called-decision', bindingType: 'zeebe:calledDecision' },
       { name: 'form-definition-with-formId', bindingType: 'zeebe:formDefinition' },
+      { name: 'called-element', bindingType: 'zeebe:calledElement' }
     ].forEach(({ name, bindingType }) => {
       it.withProperties(name, 'binding-type-deployment', bindingType);
       it.withProperties(name, 'binding-type-invalid-value', bindingType);
