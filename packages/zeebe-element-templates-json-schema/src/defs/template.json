@@ -472,10 +472,18 @@
                   "properties": {
                     "property": {
                       "const": "bindingType"
+                    },
+                    "type": {
+                      "enum": [
+                        "zeebe:calledDecision",
+                        "zeebe:formDefinition",
+                        "zeebe:calledElement"
+                      ]
                     }
                   },
                   "required": [
-                    "property"
+                    "property",
+                    "type"
                   ]
                 },
                 "value": {
@@ -500,12 +508,20 @@
               "properties": {
                 "binding": {
                   "properties": {
+                    "type": {
+                      "enum": [
+                        "zeebe:calledDecision",
+                        "zeebe:formDefinition",
+                        "zeebe:calledElement"
+                      ]
+                    },
                     "property": {
                       "const": "versionTag"
                     }
                   },
                   "required": [
-                    "property"
+                    "property",
+                    "type"
                   ]
                 }
               },

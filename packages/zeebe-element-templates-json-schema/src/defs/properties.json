@@ -679,7 +679,9 @@
                 "property": {
                   "enum": [
                     "formId",
-                    "externalReference"
+                    "externalReference",
+                    "bindingType",
+                    "versionTag"
                   ]
                 }
               },

@@ -53,6 +53,50 @@ function createTest(name, file, it) {
   });
 }
 
+/**
+ * Run a test by merging a base template with properties from another file.
+ * @param {string} name - name of the base template
+ * @param {string} additionalPropertiesName - Name of the file containing additional properties
+ * @param {Mocha.TestFunction} it - Mocha's `it` function to run the test
+ */
+function createTestWithProperties(name, additionalPropertiesName, bindingType, it) {
+  it(`${name} with ${additionalPropertiesName}`, async function() {
+
+    // given
+    const base = await import(`../fixtures/${name}.js`);
+    const props = await import(`../fixtures/properties/${additionalPropertiesName}.js`);
+
+    // Fail if base file has errors
+    if (base.errors !== null) {
+      throw new Error(`Base file '${name}'.js must have errors === null, got: ${JSON.stringify(base.errors)}`);
+    }
+
+    // Merge: use base template, but replace properties with those from properties file and update type
+    const template = {
+      ...base.template,
+      properties: [ ...base.template.properties, ...props.properties.map((elementProperty) => {
+        elementProperty.binding = {
+          ...elementProperty.binding,
+          type: bindingType || elementProperty.binding.type
+        };
+        return elementProperty;
+      })
+      ]
+    };
+
+    // Use only errors from properties file.
+    // Some files lead to slightly different errors, due to ordering and the errors being aggressively set on the first element in the properties array.
+    const expectedErrors = props.errors instanceof Array || props.errors === null ? props.errors : props.errors[name] ;
+
+    // when
+    const { errors } = validateTemplate(template);
+    console.log(JSON.stringify(template));
+
+    // then
+    expect(errors).to.eqlErrors(expectedErrors);
+  });
+}
+
 
 describe('validation', function() {
 
@@ -67,6 +111,25 @@ describe('validation', function() {
   it.skip = function skip(name, file) {
     return createTest(name, file, iit.skip);
   };
+
+  it.withProperties = function withProperties(name, additionalPropertiesName, bindingType) {
+    return createTestWithProperties(name, additionalPropertiesName, bindingType, iit);
+  };
+
+  describe('should support binding types', function() {
+    [ { name: 'called-decision', bindingType: 'zeebe:calledDecision' },
+      { name: 'form-definition-with-formId', bindingType: 'zeebe:formDefinition' },
+    ].forEach(({ name, bindingType }) => {
+      it.withProperties(name, 'binding-type-deployment', bindingType);
+      it.withProperties(name, 'binding-type-invalid-value', bindingType);
+      it.withProperties(name, 'binding-type-latest', bindingType);
+      it.withProperties(name, 'binding-type-missing-property-binding-type', bindingType);
+      it.withProperties(name, 'binding-type-missing-property-versionTag', bindingType);
+      it.withProperties(name, 'binding-type-versionTag', bindingType);
+    });
+
+
+  });
 
 
   describe('should validate single template', function() {
@@ -536,3 +599,4 @@ function printNested(object) {
     colors: true
   }));
 }
+

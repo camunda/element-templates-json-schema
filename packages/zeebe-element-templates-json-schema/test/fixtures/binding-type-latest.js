@@ -39,30 +39,6 @@ export const template = {
         'property': 'bindingType'
       }
     },
-    {
-      'type': 'Hidden',
-      'value': 'versionTag',
-      'binding': {
-        'type': 'zeebe:calledDecision',
-        'property': 'bindingType'
-      }
-    },
-    {
-      'type': 'Hidden',
-      'value': 'vers-1',
-      'binding': {
-        'type': 'zeebe:calledDecision',
-        'property': 'versionTag',
-      }
-    },
-    {
-      'type': 'Hidden',
-      'value': 'latest',
-      'binding': {
-        'type': 'zeebe:calledDecision',
-        'property': 'bindingType'
-      }
-    },
   ]
 };
 
