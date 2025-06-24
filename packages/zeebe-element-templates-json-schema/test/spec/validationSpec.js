@@ -430,6 +430,10 @@ describe('validation', function() {
       it('script-task-expression-feel-required');
 
       it('script-task-invalid-type');
+
+      it('script-task-conflicting-bindings');
+
+      it('script-task-conflicting-deprecated-bindings');
     });
 
 
