@@ -533,7 +533,8 @@
           "properties": {
             "type": {
               "enum": [
-                "String"
+                "String",
+                "Text"
               ]
             },
             "binding": {
