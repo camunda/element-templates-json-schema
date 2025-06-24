@@ -603,8 +603,7 @@
                 }
               },
               "required": [
-                "binding",
-                "value"
+                "binding"
               ]
             }
           }
@@ -626,6 +625,64 @@
                     },
                     "property": {
                       "const": "formId"
+                    }
+                  },
+                  "required": [
+                    "property",
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:calledElement"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:calledElement"
+                    },
+                    "property": {
+                      "const": "processId"
                     }
                   },
                   "required": [
