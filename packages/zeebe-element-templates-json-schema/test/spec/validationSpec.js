@@ -534,6 +534,8 @@ describe('validation', function() {
 
       it('form-definition-with-external-reference-feel');
 
+      it('form-definition-with-external-reference-invalid-property-bindingType');
+
       it('form-definition-with-formId');
 
       it('form-definition-invalid-type-number');
@@ -567,7 +569,7 @@ describe('validation', function() {
       it('business-rule-task-conflicting-deprecated-bindings');
     });
 
-    describe('zeebe:bindingType', function() {
+    describe('bindingType property', function() {
 
 
       it('binding-type-missing-property-binding-type');
@@ -581,6 +583,10 @@ describe('validation', function() {
       it('binding-type-versionTag');
 
       it('binding-type-latest');
+
+      it('binding-type-versionTag-invalid-mixed-type');
+
+      it('binding-type-invalid-element-type');
 
     });
 
