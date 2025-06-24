@@ -90,7 +90,6 @@ function createTestWithProperties(name, additionalPropertiesName, bindingType, i
 
     // when
     const { errors } = validateTemplate(template);
-    console.log(JSON.stringify(template));
 
     // then
     expect(errors).to.eqlErrors(expectedErrors);
@@ -126,6 +125,7 @@ describe('validation', function() {
       it.withProperties(name, 'binding-type-missing-property-binding-type', bindingType);
       it.withProperties(name, 'binding-type-missing-property-versionTag', bindingType);
       it.withProperties(name, 'binding-type-versionTag', bindingType);
+      it.withProperties(name, 'binding-type-versionTag-invalid-feel', bindingType);
     });
 
 
