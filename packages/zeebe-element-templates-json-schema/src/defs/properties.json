@@ -483,6 +483,56 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "property": {
+                  "const": "bindingType"
+                },
+                "type": {
+                  "enum": [
+                    "zeebe:calledDecision",
+                    "zeebe:formDefinition",
+                    "zeebe:calledElement"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden",
+                "String",
+                "Text",
+                "Dropdown"
+              ]
+            },
+            "value": {
+              "enum": [
+                "latest",
+                "versionTag",
+                "deployment"
+              ]
+            }
+          }
+        }
       }
     ],
     "properties": {
@@ -654,7 +704,9 @@
                 "property": {
                   "enum": [
                     "decisionId",
-                    "resultVariable"
+                    "resultVariable",
+                    "versionTag",
+                    "bindingType"
                   ]
                 }
               },

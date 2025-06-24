@@ -461,6 +461,110 @@
           "properties"
         ]
       }
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "property": {
+                      "const": "bindingType"
+                    }
+                  },
+                  "required": [
+                    "property"
+                  ]
+                },
+                "value": {
+                  "const": "versionTag"
+                }
+              },
+              "required": [
+                "binding",
+                "value"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "property": {
+                      "const": "versionTag"
+                    }
+                  },
+                  "required": [
+                    "property"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "property": {
+                      "const": "versionTag"
+                    }
+                  },
+                  "required": ["property"]
+                }
+              },
+              "required": ["binding"]
+            }
+          }
+        },
+        "required": ["properties"]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "property": {
+                      "const": "bindingType"
+                    }
+                  },
+                  "required": ["property"]
+                },
+                "value": {
+                  "const": "versionTag"
+                }
+              },
+              "required": ["binding", "value"]
+            }
+          }
+        },
+        "required": ["properties"]
+      }
     }
+
   ]
 }

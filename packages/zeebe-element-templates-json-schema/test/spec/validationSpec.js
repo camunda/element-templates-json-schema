@@ -483,13 +483,13 @@ describe('validation', function() {
 
       it('called-decision');
 
-      it('called-decision-incorrect-property');
-
       it('called-decision-missing-decisionId');
 
       it('called-decision-missing-resultVariable');
 
       it('called-decision-missing-element-type');
+
+      it('called-decision-invalid-property');
 
       it('called-decision-invalid-element-type');
 
@@ -502,6 +502,23 @@ describe('validation', function() {
       it('business-rule-task-conflicting-bindings');
 
       it('business-rule-task-conflicting-deprecated-bindings');
+    });
+
+    describe('zeebe:bindingType', function() {
+
+
+      it('binding-type-missing-property-binding-type');
+
+      it('binding-type-missing-property-versionTag');
+
+      it('binding-type-invalid-value');
+
+      it('binding-type-deployment');
+
+      it('binding-type-versionTag');
+
+      it('binding-type-latest');
+
     });
 
   });
