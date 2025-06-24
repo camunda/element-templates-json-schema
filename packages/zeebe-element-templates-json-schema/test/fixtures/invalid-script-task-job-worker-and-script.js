@@ -43,16 +43,27 @@ export const template = {
 
 export const errors = [
   {
-    'keyword': 'not',
+    'keyword': 'errorMessage',
     'dataPath': '',
-    'schemaPath': '#/allOf/1/allOf/7/then/not',
-    'params': {},
-    'message': 'should NOT be valid'
+    'schemaPath': '#/allOf/1/allOf/6/then/allOf/2/errorMessage',
+    'params': {
+      'errors': [
+        {
+          'keyword': 'not',
+          'dataPath': '',
+          'schemaPath': '#/allOf/1/allOf/6/then/allOf/2/not',
+          'params': {},
+          'message': 'should NOT be valid',
+          'emUsed': true
+        }
+      ]
+    },
+    'message': 'Binding type "zeebe:taskDefinition" or "zeebe:taskDefinition:type" cannot be set when binding type "zeebe:script" is set.'
   },
   {
     'keyword': 'if',
     'dataPath': '',
-    'schemaPath': '#/allOf/1/allOf/7/if',
+    'schemaPath': '#/allOf/1/allOf/6/if',
     'params': {
       'failingKeyword': 'then'
     },

@@ -279,6 +279,20 @@
   {
     "path": [
       "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      6,
+      "then",
+      "allOf",
+      2
+    ],
+    "errorMessage": "Binding type \"zeebe:taskDefinition\" or \"zeebe:taskDefinition:type\" cannot be set when binding type \"zeebe:script\" is set."
+  },
+  {
+    "path": [
+      "definitions",
       "properties",
       "allOf",
       1,

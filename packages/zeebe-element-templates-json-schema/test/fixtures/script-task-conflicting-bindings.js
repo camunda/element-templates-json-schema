@@ -45,13 +45,13 @@ export const errors = [
   {
     'keyword': 'errorMessage',
     'dataPath': '',
-    'schemaPath': '#/allOf/1/allOf/7/then/allOf/2/errorMessage',
+    'schemaPath': '#/allOf/1/allOf/6/then/allOf/2/errorMessage',
     'params': {
       'errors': [
         {
           'keyword': 'not',
           'dataPath': '',
-          'schemaPath': '#/allOf/1/allOf/5/then/allOf/2/not',
+          'schemaPath': '#/allOf/1/allOf/6/then/allOf/2/not',
           'params': {},
           'message': 'should NOT be valid',
           'emUsed': true
@@ -63,7 +63,7 @@ export const errors = [
   {
     'keyword': 'if',
     'dataPath': '',
-    'schemaPath': '#/allOf/1/allOf/7/if',
+    'schemaPath': '#/allOf/1/allOf/6/if',
     'params': {
       'failingKeyword': 'then'
     },
