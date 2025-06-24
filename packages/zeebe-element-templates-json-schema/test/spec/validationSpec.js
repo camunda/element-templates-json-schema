@@ -86,7 +86,11 @@ function createTestWithProperties(name, additionalPropertiesName, bindingType, i
 
     // Use only errors from properties file.
     // Some files lead to slightly different errors, due to ordering and the errors being aggressively set on the first element in the properties array.
-    const expectedErrors = props.errors instanceof Array || props.errors === null ? props.errors : props.errors[name] ;
+    const expectedErrors = props.errors instanceof Array || props.errors === null ? props.errors : props.errors[name];
+
+    if (expectedErrors === undefined) {
+      throw new Error(`Expected errors for '${name}' but errors was undefined`);
+    }
 
     // when
     const { errors } = validateTemplate(template);
@@ -126,6 +130,7 @@ describe('validation', function() {
       it.withProperties(name, 'binding-type-missing-property-versionTag', bindingType);
       it.withProperties(name, 'binding-type-versionTag', bindingType);
       it.withProperties(name, 'binding-type-versionTag-invalid-feel', bindingType);
+      it.withProperties(name, 'binding-type-versionTag-invalid-input-type', bindingType);
     });
 
 
