@@ -580,7 +580,70 @@
         },
         "required": ["properties"]
       }
-    }
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "property": {
+                      "const": "bindingType"
+                    },
+                    "type": {
+                      "const": "zeebe:formDefinition"
+                    }
+                  },
+                  "required": [
+                    "property",
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding",
+                "value"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:formDefinition"
 
+                    },
+                    "property": {
+                      "const": "formId"
+                    }
+                  },
+                  "required": [
+                    "property",
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
+    }
   ]
 }
