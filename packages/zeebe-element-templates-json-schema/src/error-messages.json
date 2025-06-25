@@ -323,7 +323,7 @@
       "allOf",
       1,
       "allOf",
-      7,
+      8,
       "then",
       "properties",
       "properties"
@@ -338,7 +338,7 @@
       1,
       "items",
       "allOf",
-      17,
+      20,
       "then",
       "properties",
       "type"
@@ -353,7 +353,7 @@
       1,
       "items",
       "allOf",
-      18,
+      21,
       "then",
       "allOf",
       0,
@@ -370,7 +370,7 @@
       1,
       "items",
       "allOf",
-      18,
+      21,
       "then",
       "allOf",
       1
@@ -384,7 +384,7 @@
       "allOf",
       1,
       "allOf",
-      6,
+      7,
       "then",
       "properties",
       "properties"
@@ -398,7 +398,7 @@
       "allOf",
       1,
       "allOf",
-      8,
+      9,
       "then",
       "properties",
       "properties"
@@ -412,7 +412,7 @@
       "allOf",
       1,
       "allOf",
-      9,
+      10,
       "then",
       "properties",
       "properties"

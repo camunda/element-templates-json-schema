@@ -39,13 +39,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/2/type',
-    schemaPath: '#/allOf/1/items/allOf/17/then/properties/type/errorMessage',
+    schemaPath: '#/allOf/1/items/allOf/20/then/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
           dataPath: '/properties/2/type',
-          schemaPath: '#/allOf/1/items/allOf/17/then/properties/type/enum',
+          schemaPath: '#/allOf/1/items/allOf/20/then/properties/type/enum',
           params: {
             allowedValues: [
               'Hidden',
@@ -62,7 +62,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/2',
-    schemaPath: '#/allOf/1/items/allOf/17/if',
+    schemaPath: '#/allOf/1/items/allOf/20/if',
     params: {
       failingKeyword: 'then'
     },
@@ -71,13 +71,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/3/type',
-    schemaPath: '#/allOf/1/items/allOf/17/then/properties/type/errorMessage',
+    schemaPath: '#/allOf/1/items/allOf/20/then/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
           dataPath: '/properties/3/type',
-          schemaPath: '#/allOf/1/items/allOf/17/then/properties/type/enum',
+          schemaPath: '#/allOf/1/items/allOf/20/then/properties/type/enum',
           params: {
             allowedValues: [
               'Hidden',
@@ -94,7 +94,7 @@ export const errors = [
   {
     keyword: 'enum',
     dataPath: '/properties/3/value',
-    schemaPath: '#/allOf/1/items/allOf/17/then/properties/value/enum',
+    schemaPath: '#/allOf/1/items/allOf/20/then/properties/value/enum',
     params: {
       allowedValues: [
         'latest',
@@ -107,7 +107,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/3',
-    schemaPath: '#/allOf/1/items/allOf/17/if',
+    schemaPath: '#/allOf/1/items/allOf/20/if',
     params: {
       failingKeyword: 'then'
     },
@@ -116,13 +116,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/4/type',
-    schemaPath: '#/allOf/1/items/allOf/17/then/properties/type/errorMessage',
+    schemaPath: '#/allOf/1/items/allOf/20/then/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
           dataPath: '/properties/4/type',
-          schemaPath: '#/allOf/1/items/allOf/17/then/properties/type/enum',
+          schemaPath: '#/allOf/1/items/allOf/20/then/properties/type/enum',
           params: {
             allowedValues: [
               'Hidden',
@@ -139,7 +139,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/4',
-    schemaPath: '#/allOf/1/items/allOf/17/if',
+    schemaPath: '#/allOf/1/items/allOf/20/if',
     params: {
       failingKeyword: 'then'
     },
@@ -148,13 +148,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/5/type',
-    schemaPath: '#/allOf/1/items/allOf/17/then/properties/type/errorMessage',
+    schemaPath: '#/allOf/1/items/allOf/20/then/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
           dataPath: '/properties/5/type',
-          schemaPath: '#/allOf/1/items/allOf/17/then/properties/type/enum',
+          schemaPath: '#/allOf/1/items/allOf/20/then/properties/type/enum',
           params: {
             allowedValues: [
               'Hidden',
@@ -171,7 +171,7 @@ export const errors = [
   {
     keyword: 'enum',
     dataPath: '/properties/5/value',
-    schemaPath: '#/allOf/1/items/allOf/17/then/properties/value/enum',
+    schemaPath: '#/allOf/1/items/allOf/20/then/properties/value/enum',
     params: {
       allowedValues: [
         'latest',
@@ -184,7 +184,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/5',
-    schemaPath: '#/allOf/1/items/allOf/17/if',
+    schemaPath: '#/allOf/1/items/allOf/20/if',
     params: {
       failingKeyword: 'then'
     },

@@ -14,7 +14,7 @@ export const errors = [
   {
     keyword: 'enum',
     dataPath: '/properties/2/value',
-    schemaPath: '#/allOf/1/items/allOf/17/then/properties/value/enum',
+    schemaPath: '#/allOf/1/items/allOf/20/then/properties/value/enum',
     params: {
       allowedValues: [
         'latest',
@@ -27,7 +27,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/2',
-    schemaPath: '#/allOf/1/items/allOf/17/if',
+    schemaPath: '#/allOf/1/items/allOf/20/if',
     params: {
       failingKeyword: 'then'
     },
