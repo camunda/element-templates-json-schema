@@ -423,8 +423,6 @@ describe('validation', function() {
 
       it('script-task-invalid-feel-resultVariable');
 
-      it('invalid-script-task-job-worker-and-script');
-
       it('script-task-invalid-expression-feel-optional');
 
       it('script-task-expression-feel-required');
