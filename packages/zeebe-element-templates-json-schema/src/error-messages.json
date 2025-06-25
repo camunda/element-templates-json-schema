@@ -317,5 +317,22 @@
       "type"
     ],
     "errorMessage": "Incorrect type ${0}. Must be one of { Hidden, Dropdown } for binding with `property`=`bindingType`"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      18,
+      "then",
+      "allOf",
+      0,
+      "properties",
+      "type"
+    ],
+    "errorMessage": "Incorrect type ${0}. Must be one of { String, Text, Hidden, Dropdown } for binding with `property`=`versionTag`"
   }
 ]
