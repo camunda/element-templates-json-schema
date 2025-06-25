@@ -497,7 +497,6 @@
         }
       },
       {
-        "description": "Result variable for script task must not support feel expressions.",
         "if": {
           "properties": {
             "binding": {
@@ -528,7 +527,6 @@
         }
       },
       {
-        "description": "Expression for script task must require feel expressions.",
         "if": {
           "properties": {
             "type": {
@@ -741,7 +739,6 @@
             }
           },
           {
-            "description": "Required property binding for Zeebe script task.",
             "if": {
               "properties": {
                 "type": {
