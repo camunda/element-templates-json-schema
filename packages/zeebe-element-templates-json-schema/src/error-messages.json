@@ -349,5 +349,19 @@
       1
     ],
     "errorMessage": "Binding with `property`=`versionTag` does not support `feel`"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      6,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "Missing binding with `property`=`versionTag` as binding with `property`=`bindingType` and `value`=`versionTag` is set"
   }
 ]

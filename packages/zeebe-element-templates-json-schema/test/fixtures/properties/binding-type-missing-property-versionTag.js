@@ -12,40 +12,54 @@ export const properties = [
 export const errors = {
   'called-decision': [
     {
-      keyword: 'const',
-      dataPath: '/properties/0/binding/property',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
-      params: {
-        allowedValue: 'versionTag'
-      },
-      message: 'should be equal to constant'
-    },
-    {
-      keyword: 'const',
-      dataPath: '/properties/1/binding/property',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
-      params: {
-        allowedValue: 'versionTag'
-      },
-      message: 'should be equal to constant'
-    },
-    {
-      keyword: 'const',
-      dataPath: '/properties/2/binding/property',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
-      params: {
-        allowedValue: 'versionTag'
-      },
-      message: 'should be equal to constant'
-    },
-    {
-      keyword: 'contains',
+      keyword: 'errorMessage',
       dataPath: '/properties',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains',
+      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/errorMessage',
       params: {
-        minContains: 1
+        errors: [
+          {
+            keyword: 'const',
+            dataPath: '/properties/0/binding/property',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
+            params: {
+              allowedValue: 'versionTag'
+            },
+            message: 'should be equal to constant',
+            emUsed: true
+          },
+          {
+            keyword: 'const',
+            dataPath: '/properties/1/binding/property',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
+            params: {
+              allowedValue: 'versionTag'
+            },
+            message: 'should be equal to constant',
+            emUsed: true
+          },
+          {
+            keyword: 'const',
+            dataPath: '/properties/2/binding/property',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
+            params: {
+              allowedValue: 'versionTag'
+            },
+            message: 'should be equal to constant',
+            emUsed: true
+          },
+          {
+            keyword: 'contains',
+            dataPath: '/properties',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains',
+            params: {
+              minContains: 1
+            },
+            message: 'should contain at least 1 valid item(s)',
+            emUsed: true
+          }
+        ]
       },
-      message: 'should contain at least 1 valid item(s)'
+      message: 'Missing binding with `property`=`versionTag` as binding with `property`=`bindingType` and `value`=`versionTag` is set'
     },
     {
       keyword: 'if',
@@ -75,55 +89,70 @@ export const errors = {
       message: 'should match exactly one schema in oneOf'
     }
   ],
-  'form-definition-with-formId':        [
+  'form-definition-with-formId':  [
     {
-      keyword: 'required',
-      dataPath: '/properties/0/binding',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/required',
+      keyword: 'errorMessage',
+      dataPath: '/properties',
+      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/errorMessage',
       params: {
-        missingProperty: 'property'
-      },
-      message: "should have required property 'property'"
-    },
-    {
-      keyword: 'enum',
-      dataPath: '/properties/0/binding/type',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/type/enum',
-      params: {
-        allowedValues: [
-          'zeebe:calledDecision',
-          'zeebe:formDefinition',
-          'zeebe:calledElement'
+        errors: [
+          {
+            keyword: 'required',
+            dataPath: '/properties/0/binding',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/required',
+            params: {
+              missingProperty: 'property'
+            },
+            message: "should have required property 'property'",
+            emUsed: true
+          },
+          {
+            keyword: 'enum',
+            dataPath: '/properties/0/binding/type',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/type/enum',
+            params: {
+              allowedValues: [
+                'zeebe:calledDecision',
+                'zeebe:formDefinition',
+                'zeebe:calledElement'
+              ]
+            },
+            message: 'should be equal to one of the allowed values',
+            emUsed: true
+          },
+          {
+            keyword: 'const',
+            dataPath: '/properties/1/binding/property',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
+            params: {
+              allowedValue: 'versionTag'
+            },
+            message: 'should be equal to constant',
+            emUsed: true
+          },
+          {
+            keyword: 'const',
+            dataPath: '/properties/2/binding/property',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
+            params: {
+              allowedValue: 'versionTag'
+            },
+            message: 'should be equal to constant',
+            emUsed: true
+          },
+          {
+            keyword: 'contains',
+            dataPath: '/properties',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains',
+            params: {
+              minContains: 1
+            },
+            message: 'should contain at least 1 valid item(s)',
+            emUsed: true
+          }
         ]
       },
-      message: 'should be equal to one of the allowed values'
-    },
-    {
-      keyword: 'const',
-      dataPath: '/properties/1/binding/property',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
-      params: {
-        allowedValue: 'versionTag'
-      },
-      message: 'should be equal to constant'
-    },
-    {
-      keyword: 'const',
-      dataPath: '/properties/2/binding/property',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
-      params: {
-        allowedValue: 'versionTag'
-      },
-      message: 'should be equal to constant'
-    },
-    {
-      keyword: 'contains',
-      dataPath: '/properties',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains',
-      params: {
-        minContains: 1
-      },
-      message: 'should contain at least 1 valid item(s)'
+      message: 'Missing binding with `property`=`versionTag` as binding with `property`=`bindingType` and `value`=`versionTag` is set'
     },
     {
       keyword: 'if',
@@ -153,55 +182,70 @@ export const errors = {
       message: 'should match exactly one schema in oneOf'
     }
   ],
-  'called-element': [
+  'called-element':  [
     {
-      keyword: 'required',
-      dataPath: '/properties/0/binding',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/required',
+      keyword: 'errorMessage',
+      dataPath: '/properties',
+      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/errorMessage',
       params: {
-        missingProperty: 'property'
-      },
-      message: "should have required property 'property'"
-    },
-    {
-      keyword: 'enum',
-      dataPath: '/properties/0/binding/type',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/type/enum',
-      params: {
-        allowedValues: [
-          'zeebe:calledDecision',
-          'zeebe:formDefinition',
-          'zeebe:calledElement'
+        errors: [
+          {
+            keyword: 'required',
+            dataPath: '/properties/0/binding',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/required',
+            params: {
+              missingProperty: 'property'
+            },
+            message: "should have required property 'property'",
+            emUsed: true
+          },
+          {
+            keyword: 'enum',
+            dataPath: '/properties/0/binding/type',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/type/enum',
+            params: {
+              allowedValues: [
+                'zeebe:calledDecision',
+                'zeebe:formDefinition',
+                'zeebe:calledElement'
+              ]
+            },
+            message: 'should be equal to one of the allowed values',
+            emUsed: true
+          },
+          {
+            keyword: 'const',
+            dataPath: '/properties/1/binding/property',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
+            params: {
+              allowedValue: 'versionTag'
+            },
+            message: 'should be equal to constant',
+            emUsed: true
+          },
+          {
+            keyword: 'const',
+            dataPath: '/properties/2/binding/property',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
+            params: {
+              allowedValue: 'versionTag'
+            },
+            message: 'should be equal to constant',
+            emUsed: true
+          },
+          {
+            keyword: 'contains',
+            dataPath: '/properties',
+            schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains',
+            params: {
+              minContains: 1
+            },
+            message: 'should contain at least 1 valid item(s)',
+            emUsed: true
+          }
         ]
       },
-      message: 'should be equal to one of the allowed values'
-    },
-    {
-      keyword: 'const',
-      dataPath: '/properties/1/binding/property',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
-      params: {
-        allowedValue: 'versionTag'
-      },
-      message: 'should be equal to constant'
-    },
-    {
-      keyword: 'const',
-      dataPath: '/properties/2/binding/property',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains/properties/binding/properties/property/const',
-      params: {
-        allowedValue: 'versionTag'
-      },
-      message: 'should be equal to constant'
-    },
-    {
-      keyword: 'contains',
-      dataPath: '/properties',
-      schemaPath: '#/allOf/1/allOf/6/then/properties/properties/contains',
-      params: {
-        minContains: 1
-      },
-      message: 'should contain at least 1 valid item(s)'
+      message: 'Missing binding with `property`=`versionTag` as binding with `property`=`bindingType` and `value`=`versionTag` is set'
     },
     {
       keyword: 'if',
