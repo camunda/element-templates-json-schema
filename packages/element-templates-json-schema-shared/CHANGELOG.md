@@ -6,6 +6,10 @@ All notable changes to [@camunda/element-templates-json-schema-shared](https://g
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.12.1
+
+* `TEST`: add full validation error output for failed test ([#172](https://github.com/camunda/element-templates-json-schema/pull/172))
+
 ## 0.12.0
 
 * `FEAT`: support `keywords` property ([#159](https://github.com/camunda/element-templates-json-schema/pull/159))
