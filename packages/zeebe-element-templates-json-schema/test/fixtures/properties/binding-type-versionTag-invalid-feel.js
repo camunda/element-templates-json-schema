@@ -22,11 +22,22 @@ export const properties = [
 
 export const errors = [
   {
-    keyword: 'not',
+    keyword: 'errorMessage',
     dataPath: '/properties/3',
-    schemaPath: '#/allOf/1/items/allOf/18/then/allOf/1/not',
-    params: {},
-    message: 'should NOT be valid'
+    schemaPath: '#/allOf/1/items/allOf/18/then/allOf/1/errorMessage',
+    params: {
+      errors: [
+        {
+          keyword: 'not',
+          dataPath: '/properties/3',
+          schemaPath: '#/allOf/1/items/allOf/18/then/allOf/1/not',
+          params: {},
+          message: 'should NOT be valid',
+          emUsed: true
+        }
+      ]
+    },
+    message: 'Binding with `property`=`versionTag` does not support `feel`'
   },
   {
     keyword: 'if',
@@ -55,5 +66,4 @@ export const errors = [
     },
     message: 'should match exactly one schema in oneOf'
   }
-]
-;
+];
