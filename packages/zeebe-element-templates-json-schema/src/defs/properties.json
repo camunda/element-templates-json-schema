@@ -60,7 +60,8 @@
                     "zeebe:calledElement",
                     "zeebe:linkedResource",
                     "zeebe:formDefinition",
-                    "zeebe:calledDecision"
+                    "zeebe:calledDecision",
+                    "zeebe:script"
                   ]
                 }
               },
@@ -327,16 +328,27 @@
                 "binding": {
                   "properties": {
                     "type": {
-                      "enum": ["zeebe:input", "zeebe:output"]
+                      "enum": [
+                        "zeebe:input",
+                        "zeebe:output"
+                      ]
                     }
                   },
-                  "required": ["type"]
+                  "required": [
+                    "type"
+                  ]
                 },
                 "type": {
-                  "enum": ["Boolean", "Number"]
+                  "enum": [
+                    "Boolean",
+                    "Number"
+                  ]
                 }
               },
-              "required": ["binding", "type"]
+              "required": [
+                "binding",
+                "type"
+              ]
             },
             "then": {
               "properties": {
@@ -455,6 +467,119 @@
                   "enum": [
                     "resultVariable",
                     "decisionId"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden",
+                "String",
+                "Text",
+                "Dropdown"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:script"
+                },
+                "property": {
+                  "const": "resultVariable"
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "not": {
+            "required": [
+              "feel"
+            ]
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "type": {
+              "enum": [
+                "String",
+                "Text"
+              ]
+            },
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:script"
+                },
+                "property": {
+                  "const": "expression"
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "binding"
+          ]
+        },
+        "then": {
+          "properties": {
+            "feel": {
+              "enum": [
+                "required"
+              ]
+            }
+          },
+          "required": [
+            "feel"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:script"
+                },
+                "property": {
+                  "enum": [
+                    "resultVariable",
+                    "expression"
                   ]
                 }
               },
@@ -617,6 +742,31 @@
             "if": {
               "properties": {
                 "type": {
+                  "const": "zeebe:script"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "properties": {
+                "property": {
+                  "enum": [
+                    "expression",
+                    "resultVariable"
+                  ]
+                }
+              },
+              "required": [
+                "property"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
                   "const": "zeebe:formDefinition"
                 }
               },
@@ -686,7 +836,8 @@
               "zeebe:linkedResource",
               "zeebe:userTask",
               "zeebe:formDefinition",
-              "zeebe:calledDecision"
+              "zeebe:calledDecision",
+              "zeebe:script"
             ]
           },
           "name": {

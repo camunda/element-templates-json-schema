@@ -86,14 +86,14 @@ export const errors = [
   {
     keyword: 'enum',
     dataPath: '/properties/0/binding/property',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/7/then/properties/property/enum',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/8/then/properties/property/enum',
     params: { allowedValues: [ 'decisionId', 'resultVariable' ] },
     message: 'should be equal to one of the allowed values',
   },
   {
     keyword: 'if',
     dataPath: '/properties/0/binding',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/7/if',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/8/if',
     params: { failingKeyword: 'then' },
     message: 'should match "then" schema',
   },
