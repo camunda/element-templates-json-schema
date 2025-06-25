@@ -119,7 +119,7 @@ describe('validation', function() {
     return createTestWithProperties(name, additionalPropertiesName, bindingType, iit);
   };
 
-  describe('should support binding types', function() {
+  describe('should support property `bindingTypes`: `versionTag`, `deployment`, and `latest`', function() {
     [ { name: 'called-decision', bindingType: 'zeebe:calledDecision' },
       { name: 'form-definition-with-formId', bindingType: 'zeebe:formDefinition' },
       { name: 'called-element', bindingType: 'zeebe:calledElement' }
@@ -475,6 +475,8 @@ describe('validation', function() {
       it('called-element-missing-processId');
 
       it('called-element-missing-property');
+
+      it('called-element-with-io-mapping');
     });
 
 
