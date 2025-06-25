@@ -470,6 +470,149 @@
               "properties": {
                 "binding": {
                   "properties": {
+                    "type": {
+                      "const": "zeebe:script"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "anyOf": [
+          {
+            "required": [
+              "elementType"
+            ],
+            "properties": {
+              "elementType": {
+                "required": [
+                  "value"
+                ],
+                "properties": {
+                  "value": {
+                    "const": "bpmn:ScriptTask"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "appliesTo"
+            ],
+            "properties": {
+              "appliesTo": {
+                "const": [
+                  "bpmn:ScriptTask"
+                ]
+              }
+            }
+          }
+        ],
+        "allOf": [
+          {
+            "properties": {
+              "properties": {
+                "contains": {
+                  "properties": {
+                    "binding": {
+                      "properties": {
+                        "property": {
+                          "const": "expression"
+                        }
+                      },
+                      "required": [
+                        "property"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "binding"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "properties": {
+                "contains": {
+                  "properties": {
+                    "binding": {
+                      "properties": {
+                        "property": {
+                          "const": "resultVariable"
+                        }
+                      },
+                      "required": [
+                        "property"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "binding"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "not": {
+              "properties": {
+                "properties": {
+                  "contains": {
+                    "properties": {
+                      "binding": {
+                        "properties": {
+                          "type": {
+                            "enum": [
+                              "zeebe:taskDefinition",
+                              "zeebe:taskDefinition:type"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "binding"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "properties"
+              ]
+            }
+          }
+        ],
+        "required": [
+          "properties"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
                     "property": {
                       "const": "bindingType"
                     },
