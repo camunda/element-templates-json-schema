@@ -587,22 +587,7 @@ describe('validation', function() {
 
     describe('bindingType property', function() {
 
-
-      it('binding-type-missing-property-binding-type');
-
-      it('binding-type-missing-property-versionTag');
-
-      it('binding-type-invalid-value');
-
-      it('binding-type-deployment');
-
-      it('binding-type-versionTag');
-
-      it('binding-type-latest');
-
-      it('binding-type-versionTag-invalid-mixed-type');
-
-      it('binding-type-invalid-element-type');
+      it('binding-type-invalid-mixed-types');
 
     });
 
