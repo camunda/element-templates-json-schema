@@ -99,7 +99,8 @@ export const template = {
 };
 
 // there is no explicit rule to catch this. This is covered by existing mutually exclusive requirements
-export const errors = [
+export const errors =
+[
   {
     keyword: 'const',
     dataPath: '/elementType/value',
@@ -191,175 +192,204 @@ export const errors = [
     message: 'should match "then" schema'
   },
   {
-    keyword: 'const',
-    dataPath: '/properties/0/binding/type',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
-    params: {
-      allowedValue: 'zeebe:formDefinition'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/0/binding/property',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'formId'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/1/binding/type',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
-    params: {
-      allowedValue: 'zeebe:formDefinition'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/1/binding/property',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'formId'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/2/binding/type',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
-    params: {
-      allowedValue: 'zeebe:formDefinition'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/2/binding/property',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'formId'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/3/binding/type',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
-    params: {
-      allowedValue: 'zeebe:formDefinition'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/3/binding/property',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'formId'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'required',
-    dataPath: '/properties/4/binding',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/required',
-    params: {
-      missingProperty: 'property'
-    },
-    message: "should have required property 'property'"
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/4/binding/type',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
-    params: {
-      allowedValue: 'zeebe:formDefinition'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/5/binding/property',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'formId'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/6/binding/property',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'formId'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/7/binding/type',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
-    params: {
-      allowedValue: 'zeebe:formDefinition'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/7/binding/property',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'formId'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/8/binding/type',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
-    params: {
-      allowedValue: 'zeebe:formDefinition'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/8/binding/property',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'formId'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/9/binding/type',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
-    params: {
-      allowedValue: 'zeebe:formDefinition'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/9/binding/property',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'formId'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'contains',
+    keyword: 'errorMessage',
     dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains',
+    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/errorMessage',
     params: {
-      minContains: 1
+      errors: [
+        {
+          keyword: 'const',
+          dataPath: '/properties/0/binding/type',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:formDefinition'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/0/binding/property',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'formId'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/1/binding/type',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:formDefinition'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/1/binding/property',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'formId'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/2/binding/type',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:formDefinition'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/2/binding/property',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'formId'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/3/binding/type',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:formDefinition'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/3/binding/property',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'formId'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'required',
+          dataPath: '/properties/4/binding',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/required',
+          params: {
+            missingProperty: 'property'
+          },
+          message: "should have required property 'property'",
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/4/binding/type',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:formDefinition'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/5/binding/property',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'formId'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/6/binding/property',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'formId'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/7/binding/type',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:formDefinition'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/7/binding/property',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'formId'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/8/binding/type',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:formDefinition'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/8/binding/property',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'formId'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/9/binding/type',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:formDefinition'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/9/binding/property',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'formId'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'contains',
+          dataPath: '/properties',
+          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains',
+          params: {
+            minContains: 1
+          },
+          message: 'should contain at least 1 valid item(s)',
+          emUsed: true
+        }
+      ]
     },
-    message: 'should contain at least 1 valid item(s)'
+    message: '`property`=`bindingType` is not supported when using `property`=`externalReference`. Use `formId` with `bindingType`'
   },
   {
     keyword: 'if',
@@ -388,6 +418,4 @@ export const errors = [
     },
     message: 'should match exactly one schema in oneOf'
   }
-]
-
-;
+];

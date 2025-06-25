@@ -363,5 +363,19 @@
       "properties"
     ],
     "errorMessage": "Missing binding with `property`=`versionTag` as binding with `property`=`bindingType` and `value`=`versionTag` is set"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      8,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "`property`=`bindingType` is not supported when using `property`=`externalReference`. Use `formId` with `bindingType`"
   }
 ]
