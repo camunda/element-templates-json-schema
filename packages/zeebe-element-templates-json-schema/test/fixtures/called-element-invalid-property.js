@@ -20,6 +20,14 @@ export const template = {
       }
     },
     {
+      'type': 'Hidden',
+      'value': 'paymentProcess',
+      'binding': {
+        'type': 'zeebe:calledElement',
+        'property': 'processId'
+      }
+    },
+    {
       'label': 'Payment ID',
       'type': 'String',
       'binding': {
@@ -49,87 +57,6 @@ export const template = {
 };
 
 export const errors = [
-  {
-    keyword: 'const',
-    dataPath: '/properties/0/binding/property',
-    schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'processId'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'required',
-    dataPath: '/properties/1/binding',
-    schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains/properties/binding/required',
-    params: {
-      missingProperty: 'property'
-    },
-    message: "should have required property 'property'"
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/1/binding/type',
-    schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains/properties/binding/properties/type/const',
-    params: {
-      allowedValue: 'zeebe:calledElement'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'required',
-    dataPath: '/properties/2/binding',
-    schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains/properties/binding/required',
-    params: {
-      missingProperty: 'property'
-    },
-    message: "should have required property 'property'"
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/2/binding/type',
-    schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains/properties/binding/properties/type/const',
-    params: {
-      allowedValue: 'zeebe:calledElement'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'required',
-    dataPath: '/properties/3/binding',
-    schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains/properties/binding/required',
-    params: {
-      missingProperty: 'property'
-    },
-    message: "should have required property 'property'"
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/3/binding/type',
-    schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains/properties/binding/properties/type/const',
-    params: {
-      allowedValue: 'zeebe:calledElement'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'contains',
-    dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains',
-    params: {
-      minContains: 1
-    },
-    message: 'should contain at least 1 valid item(s)'
-  },
-  {
-    keyword: 'if',
-    dataPath: '',
-    schemaPath: '#/allOf/1/allOf/9/if',
-    params: {
-      failingKeyword: 'then'
-    },
-    message: 'should match "then" schema'
-  },
   {
     keyword: 'enum',
     dataPath: '/properties/0/binding/property',
@@ -170,5 +97,4 @@ export const errors = [
     },
     message: 'should match exactly one schema in oneOf'
   }
-]
-;
+];

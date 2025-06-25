@@ -377,5 +377,19 @@
       "properties"
     ],
     "errorMessage": "`property`=`bindingType` is not supported when using `property`=`externalReference`. Use `formId` with `bindingType`"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      9,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "Binding with `property`=`processId` and `type`=`zeebe:calledElement` is required, when using a binding with `type`=`zeebe:calledElement`"
   }
 ]

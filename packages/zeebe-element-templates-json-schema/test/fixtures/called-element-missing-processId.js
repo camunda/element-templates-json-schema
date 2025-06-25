@@ -23,22 +23,34 @@ export const template = {
 
 export const errors = [
   {
-    keyword: 'const',
-    dataPath: '/properties/0/binding/property',
-    schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'processId'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'contains',
+    keyword: 'errorMessage',
     dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains',
+    schemaPath: '#/allOf/1/allOf/9/then/properties/properties/errorMessage',
     params: {
-      minContains: 1
+      errors: [
+        {
+          keyword: 'const',
+          dataPath: '/properties/0/binding/property',
+          schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'processId'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'contains',
+          dataPath: '/properties',
+          schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains',
+          params: {
+            minContains: 1
+          },
+          message: 'should contain at least 1 valid item(s)',
+          emUsed: true
+        }
+      ]
     },
-    message: 'should contain at least 1 valid item(s)'
+    message: 'Binding with `property`=`processId` and `type`=`zeebe:calledElement` is required, when using a binding with `type`=`zeebe:calledElement`'
   },
   {
     keyword: 'if',
@@ -67,5 +79,4 @@ export const errors = [
     },
     message: 'should match exactly one schema in oneOf'
   }
-]
-;
+];
