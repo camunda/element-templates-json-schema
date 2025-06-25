@@ -119,27 +119,6 @@ describe('validation', function() {
     return createTestWithProperties(name, additionalPropertiesName, bindingType, iit);
   };
 
-  describe('should support property `bindingTypes`: `versionTag`, `deployment`, and `latest`', function() {
-    [ { name: 'called-decision', bindingType: 'zeebe:calledDecision' },
-      { name: 'form-definition-with-formId', bindingType: 'zeebe:formDefinition' },
-      { name: 'called-element', bindingType: 'zeebe:calledElement' }
-    ].forEach(({ name, bindingType }) => {
-      it.withProperties(name, 'binding-type-deployment', bindingType);
-      it.withProperties(name, 'binding-type-invalid-feel', bindingType);
-      it.withProperties(name, 'binding-type-invalid-value', bindingType);
-      it.withProperties(name, 'binding-type-invalid-input-type', bindingType);
-      it.withProperties(name, 'binding-type-latest', bindingType);
-      it.withProperties(name, 'binding-type-missing-property-binding-type', bindingType);
-      it.withProperties(name, 'binding-type-missing-property-versionTag', bindingType);
-      it.withProperties(name, 'binding-type-versionTag', bindingType);
-      it.withProperties(name, 'binding-type-versionTag-invalid-feel', bindingType);
-      it.withProperties(name, 'binding-type-versionTag-invalid-input-type', bindingType);
-    });
-
-
-  });
-
-
   describe('should validate single template', function() {
 
     it('cloud-rest-connector');
@@ -585,12 +564,37 @@ describe('validation', function() {
       it('business-rule-task-conflicting-deprecated-bindings');
     });
 
-    describe('bindingType property', function() {
+    describe('should support property `bindingType`: `versionTag`, `deployment`, and `latest`', function() {
+
+      [
+        { name: 'called-decision', bindingType: 'zeebe:calledDecision' },
+        { name: 'form-definition-with-formId', bindingType: 'zeebe:formDefinition' },
+        { name: 'called-element', bindingType: 'zeebe:calledElement' }
+      ].forEach(({ name, bindingType }) => {
+
+        it.withProperties(name, 'binding-type-deployment', bindingType);
+
+        it.withProperties(name, 'binding-type-invalid-feel', bindingType);
+
+        it.withProperties(name, 'binding-type-invalid-input-type', bindingType);
+
+        it.withProperties(name, 'binding-type-invalid-value', bindingType);
+
+        it.withProperties(name, 'binding-type-latest', bindingType);
+
+        it.withProperties(name, 'binding-type-missing-property-binding-type', bindingType);
+
+        it.withProperties(name, 'binding-type-missing-property-versionTag', bindingType);
+
+        it.withProperties(name, 'binding-type-versionTag', bindingType);
+
+        it.withProperties(name, 'binding-type-versionTag-invalid-feel', bindingType);
+
+        it.withProperties(name, 'binding-type-versionTag-invalid-input-type', bindingType);
+      });
 
       it('binding-type-invalid-mixed-types');
-
     });
-
   });
 
 });
