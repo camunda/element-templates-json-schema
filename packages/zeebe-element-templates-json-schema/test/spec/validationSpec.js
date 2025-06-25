@@ -126,6 +126,7 @@ describe('validation', function() {
     ].forEach(({ name, bindingType }) => {
       it.withProperties(name, 'binding-type-deployment', bindingType);
       it.withProperties(name, 'binding-type-invalid-value', bindingType);
+      it.withProperties(name, 'binding-type-invalid-input-type', bindingType);
       it.withProperties(name, 'binding-type-latest', bindingType);
       it.withProperties(name, 'binding-type-missing-property-binding-type', bindingType);
       it.withProperties(name, 'binding-type-missing-property-versionTag', bindingType);

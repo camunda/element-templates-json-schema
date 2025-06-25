@@ -302,5 +302,20 @@
       "properties"
     ],
     "errorMessage": "Biding with property=`bindingType` and value=`versionTag` must be set when using a binding with property=`versionTag`"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      17,
+      "then",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "Incorrect type ${0}. Must be one of { Hidden, Dropdown } for binding with `property`=`bindingType`"
   }
 ]

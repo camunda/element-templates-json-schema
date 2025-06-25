@@ -1,8 +1,8 @@
 export const properties = [
 
   {
-    'type': 'Boolean',
-    'value': true,
+    'type': 'Hidden',
+    'value': 'versionTag',
     'binding': {
       'type': 'to be inserted by `itWithProperties`',
       'property': 'bindingType'
