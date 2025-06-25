@@ -621,7 +621,6 @@
                   "properties": {
                     "type": {
                       "const": "zeebe:formDefinition"
-
                     },
                     "property": {
                       "const": "formId"

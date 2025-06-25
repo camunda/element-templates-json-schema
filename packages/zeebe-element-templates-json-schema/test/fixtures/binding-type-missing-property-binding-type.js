@@ -44,67 +44,84 @@ export const template = {
 
 export const errors = [
   {
-    keyword: 'const',
-    dataPath: '/properties/0/binding/property',
-    schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'bindingType'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/0/value',
-    schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/value/const',
-    params: {
-      allowedValue: 'versionTag'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/1/binding/property',
-    schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'bindingType'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/1/value',
-    schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/value/const',
-    params: {
-      allowedValue: 'versionTag'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/2/binding/property',
-    schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'bindingType'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/2/value',
-    schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/value/const',
-    params: {
-      allowedValue: 'versionTag'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'contains',
+    keyword: 'errorMessage',
     dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains',
+    schemaPath: '#/allOf/1/allOf/7/then/properties/properties/errorMessage',
     params: {
-      minContains: 1
+      errors: [
+        {
+          keyword: 'const',
+          dataPath: '/properties/0/binding/property',
+          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'bindingType'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/0/value',
+          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/value/const',
+          params: {
+            allowedValue: 'versionTag'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/1/binding/property',
+          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'bindingType'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/1/value',
+          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/value/const',
+          params: {
+            allowedValue: 'versionTag'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/2/binding/property',
+          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/binding/properties/property/const',
+          params: {
+            allowedValue: 'bindingType'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/2/value',
+          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/value/const',
+          params: {
+            allowedValue: 'versionTag'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'contains',
+          dataPath: '/properties',
+          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains',
+          params: {
+            minContains: 1
+          },
+          message: 'should contain at least 1 valid item(s)',
+          emUsed: true
+        }
+      ]
     },
-    message: 'should contain at least 1 valid item(s)'
+    message: 'Biding with property=`bindingType` and value=`versionTag` must be set when using a binding with property=`versionTag`'
   },
   {
     keyword: 'if',

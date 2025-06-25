@@ -288,5 +288,19 @@
       "then"
     ],
     "errorMessage": "Property \"resultVariable\" cannot be a Feel expression"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      7,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "Biding with property=`bindingType` and value=`versionTag` must be set when using a binding with property=`versionTag`"
   }
 ]
