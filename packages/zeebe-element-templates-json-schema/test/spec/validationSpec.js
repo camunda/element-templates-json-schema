@@ -125,6 +125,7 @@ describe('validation', function() {
       { name: 'called-element', bindingType: 'zeebe:calledElement' }
     ].forEach(({ name, bindingType }) => {
       it.withProperties(name, 'binding-type-deployment', bindingType);
+      it.withProperties(name, 'binding-type-invalid-feel', bindingType);
       it.withProperties(name, 'binding-type-invalid-value', bindingType);
       it.withProperties(name, 'binding-type-invalid-input-type', bindingType);
       it.withProperties(name, 'binding-type-latest', bindingType);
