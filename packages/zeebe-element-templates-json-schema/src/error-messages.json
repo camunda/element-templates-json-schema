@@ -215,10 +215,10 @@
       "allOf",
       4,
       "then",
-      "allOf",
-      0
+      "properties",
+      "properties"
     ],
-    "errorMessage": "When using \"zeebe:formDefinition\", \"zeebe:userTask\" must be set on the same element"
+    "errorMessage": "When using ${0/0/binding/type}, \"zeebe:userTask\" must be set on the same element"
   },
   {
     "path": [
@@ -427,20 +427,6 @@
       1,
       "allOf",
       11,
-      "then",
-      "properties",
-      "properties"
-    ],
-    "errorMessage": "When using \"zeebe:assignmentDefinition\", \"zeebe:userTask\" must be set on the same element"
-  },
-  {
-    "path": [
-      "definitions",
-      "template",
-      "allOf",
-      1,
-      "allOf",
-      12,
       "then",
       "properties",
       "properties"

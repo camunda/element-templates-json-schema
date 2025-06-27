@@ -7,7 +7,7 @@ export const template = {
     'bpmn:Task'
   ],
   elementType: {
-    value: 'bpmn:Task'
+    value: 'bpmn:UserTask'
   },
   properties: [
     {

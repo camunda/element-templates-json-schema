@@ -39,13 +39,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/11/then/properties/properties/errorMessage',
+    schemaPath: '#/allOf/1/allOf/4/then/properties/properties/errorMessage',
     params: {
       errors: [
         {
           keyword: 'const',
           dataPath: '/properties/0/binding/type',
-          schemaPath: '#/allOf/1/allOf/11/then/properties/properties/contains/properties/binding/properties/type/const',
+          schemaPath: '#/allOf/1/allOf/4/then/properties/properties/contains/properties/binding/properties/type/const',
           params: {
             allowedValue: 'zeebe:userTask'
           },
@@ -55,7 +55,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/1/binding/type',
-          schemaPath: '#/allOf/1/allOf/11/then/properties/properties/contains/properties/binding/properties/type/const',
+          schemaPath: '#/allOf/1/allOf/4/then/properties/properties/contains/properties/binding/properties/type/const',
           params: {
             allowedValue: 'zeebe:userTask'
           },
@@ -65,7 +65,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/2/binding/type',
-          schemaPath: '#/allOf/1/allOf/11/then/properties/properties/contains/properties/binding/properties/type/const',
+          schemaPath: '#/allOf/1/allOf/4/then/properties/properties/contains/properties/binding/properties/type/const',
           params: {
             allowedValue: 'zeebe:userTask'
           },
@@ -75,7 +75,7 @@ export const errors = [
         {
           keyword: 'contains',
           dataPath: '/properties',
-          schemaPath: '#/allOf/1/allOf/11/then/properties/properties/contains',
+          schemaPath: '#/allOf/1/allOf/4/then/properties/properties/contains',
           params: {
             minContains: 1
           },
@@ -89,7 +89,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '',
-    schemaPath: '#/allOf/1/allOf/11/if',
+    schemaPath: '#/allOf/1/allOf/4/if',
     params: {
       failingKeyword: 'then'
     },
