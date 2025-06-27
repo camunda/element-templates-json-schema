@@ -431,6 +431,20 @@
       "properties",
       "properties"
     ],
+    "errorMessage": "When using \"zeebe:assignmentDefinition\", \"zeebe:userTask\" must be set on the same element"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      11,
+      "then",
+      "properties",
+      "properties"
+    ],
     "errorMessage": "\"formId\" and \"externalReference\" cannot be used together"
   }
 ]
