@@ -44,4 +44,4 @@ export const template = {
   ]
 };
 
-export const errors = [];
+export const errors = null;

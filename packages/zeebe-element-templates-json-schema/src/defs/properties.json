@@ -61,7 +61,8 @@
                     "zeebe:linkedResource",
                     "zeebe:formDefinition",
                     "zeebe:calledDecision",
-                    "zeebe:script"
+                    "zeebe:script",
+                    "zeebe:assignmentDefinition"
                   ]
                 }
               },
@@ -924,6 +925,32 @@
             }
           },
           {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:assignmentDefinition"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "properties": {
+                "property": {
+                  "enum": [
+                    "assignee",
+                    "candidateUsers",
+                    "candidateGroups"
+                  ]
+                }
+              },
+              "required": [
+                "property"
+              ]
+            }
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -947,7 +974,8 @@
               "zeebe:userTask",
               "zeebe:formDefinition",
               "zeebe:calledDecision",
-              "zeebe:script"
+              "zeebe:script",
+              "zeebe:assignmentDefinition"
             ]
           },
           "name": {
