@@ -61,7 +61,8 @@
                     "zeebe:linkedResource",
                     "zeebe:formDefinition",
                     "zeebe:calledDecision",
-                    "zeebe:script"
+                    "zeebe:script",
+                    "zeebe:assignmentDefinition"
                   ]
                 }
               },
@@ -608,6 +609,134 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "property": {
+                  "const": "bindingType"
+                },
+                "type": {
+                  "enum": [
+                    "zeebe:calledDecision",
+                    "zeebe:formDefinition",
+                    "zeebe:calledElement"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden",
+                "Dropdown"
+              ]
+            },
+            "value": {
+              "enum": [
+                "latest",
+                "versionTag",
+                "deployment"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "property": {
+                  "const": "versionTag"
+                },
+                "type": {
+                  "enum": [
+                    "zeebe:calledDecision",
+                    "zeebe:formDefinition",
+                    "zeebe:calledElement"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "allOf": [
+            {
+              "required": [
+                "type",
+                "value"
+              ],
+              "properties": {
+                "type": {
+                  "enum": [
+                    "Hidden",
+                    "Dropdown",
+                    "String",
+                    "Text"
+                  ]
+                }
+              }
+            },
+            {
+              "not": {
+                "required": [
+                  "feel"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": { "const": "zeebe:assignmentDefinition" },
+                "property": {"enum": ["assignee", "candidateUsers", "candidateGroups"]}
+              },
+              "required": ["type", "property"]
+            }
+          },
+          "required": ["binding"]
+        },
+        "then": {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden", "String", "Text", "Dropdown"
+              ]
+            }
+          }
+        }
       }
     ],
     "properties": {
@@ -730,7 +859,11 @@
             "then": {
               "properties": {
                 "property": {
-                  "const": "processId"
+                  "enum": [
+                    "processId",
+                    "bindingType",
+                    "versionTag"
+                  ]
                 }
               },
               "required": [
@@ -779,7 +912,9 @@
                 "property": {
                   "enum": [
                     "formId",
-                    "externalReference"
+                    "externalReference",
+                    "bindingType",
+                    "versionTag"
                   ]
                 }
               },
@@ -804,7 +939,35 @@
                 "property": {
                   "enum": [
                     "decisionId",
-                    "resultVariable"
+                    "resultVariable",
+                    "versionTag",
+                    "bindingType"
+                  ]
+                }
+              },
+              "required": [
+                "property"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:assignmentDefinition"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "properties": {
+                "property": {
+                  "enum": [
+                    "assignee",
+                    "candidateUsers",
+                    "candidateGroups"
                   ]
                 }
               },
@@ -837,7 +1000,8 @@
               "zeebe:userTask",
               "zeebe:formDefinition",
               "zeebe:calledDecision",
-              "zeebe:script"
+              "zeebe:script",
+              "zeebe:assignmentDefinition"
             ]
           },
           "name": {

@@ -53,6 +53,53 @@ function createTest(name, file, it) {
   });
 }
 
+/**
+ * Run a test by merging a base template with properties from another file.
+ * @param {string} name - name of the base template
+ * @param {string} additionalPropertiesName - Name of the file containing additional properties
+ * @param {Mocha.TestFunction} it - Mocha's `it` function to run the test
+ */
+function createTestWithProperties(name, additionalPropertiesName, bindingType, it) {
+  it(`${name} with ${additionalPropertiesName}`, async function() {
+
+    // given
+    const base = await import(`../fixtures/${name}.js`);
+    const props = await import(`../fixtures/properties/${additionalPropertiesName}.js`);
+
+    // Fail if base file has errors
+    if (base.errors !== null) {
+      throw new Error(`Base file '${name}'.js must have errors === null, got: ${JSON.stringify(base.errors)}`);
+    }
+
+    // Merge: use base template, but replace properties with those from properties file and update type
+    const template = {
+      ...base.template,
+      properties: [ ...base.template.properties, ...props.properties.map((elementProperty) => {
+        elementProperty.binding = {
+          ...elementProperty.binding,
+          type: bindingType || elementProperty.binding.type
+        };
+        return elementProperty;
+      })
+      ]
+    };
+
+    // Use only errors from properties file.
+    // Some files lead to slightly different errors, due to ordering and the errors being aggressively set on the first element in the properties array.
+    const expectedErrors = props.errors instanceof Array || props.errors === null ? props.errors : props.errors[name];
+
+    if (expectedErrors === undefined) {
+      throw new Error(`Expected errors for '${name}' but errors was undefined`);
+    }
+
+    // when
+    const { errors } = validateTemplate(template);
+
+    // then
+    expect(errors).to.eqlErrors(expectedErrors);
+  });
+}
+
 
 describe('validation', function() {
 
@@ -68,6 +115,9 @@ describe('validation', function() {
     return createTest(name, file, iit.skip);
   };
 
+  it.withProperties = function withProperties(name, additionalPropertiesName, bindingType) {
+    return createTestWithProperties(name, additionalPropertiesName, bindingType, iit);
+  };
 
   describe('should validate single template', function() {
 
@@ -402,7 +452,11 @@ describe('validation', function() {
 
       it('called-element-invalid-property');
 
+      it('called-element-missing-processId');
+
       it('called-element-missing-property');
+
+      it('called-element-with-io-mapping');
     });
 
     describe('zeebe:script', function() {
@@ -442,6 +496,10 @@ describe('validation', function() {
       it('linked-resource-invalid-property');
 
       it('linked-resource-missing-linkName');
+
+      it.skip('linked-resource-missing-versionTag');
+
+      it.skip('linked-resource-invalid-bindingType');
 
     });
 
@@ -499,6 +557,8 @@ describe('validation', function() {
 
       it('form-definition-with-external-reference-feel');
 
+      it('form-definition-with-external-reference-invalid-property-bindingType');
+
       it('form-definition-with-formId');
 
       it('form-definition-invalid-type-number');
@@ -511,13 +571,13 @@ describe('validation', function() {
 
       it('called-decision');
 
-      it('called-decision-incorrect-property');
-
       it('called-decision-missing-decisionId');
 
       it('called-decision-missing-resultVariable');
 
       it('called-decision-missing-element-type');
+
+      it('called-decision-invalid-property');
 
       it('called-decision-invalid-element-type');
 
@@ -532,6 +592,61 @@ describe('validation', function() {
       it('business-rule-task-conflicting-deprecated-bindings');
     });
 
+    describe('should support property `bindingType`: `versionTag`, `deployment`, and `latest`', function() {
+
+      [
+        { name: 'called-decision', bindingType: 'zeebe:calledDecision' },
+        { name: 'form-definition-with-formId', bindingType: 'zeebe:formDefinition' },
+        { name: 'called-element', bindingType: 'zeebe:calledElement' }
+      ].forEach(({ name, bindingType }) => {
+
+        it.withProperties(name, 'binding-type-deployment', bindingType);
+
+        it.withProperties(name, 'binding-type-invalid-feel', bindingType);
+
+        it.withProperties(name, 'binding-type-invalid-input-type', bindingType);
+
+        it.withProperties(name, 'binding-type-invalid-value', bindingType);
+
+        it.withProperties(name, 'binding-type-latest', bindingType);
+
+        it.withProperties(name, 'binding-type-missing-property-binding-type', bindingType);
+
+        it.withProperties(name, 'binding-type-missing-property-versionTag', bindingType);
+
+        it.withProperties(name, 'binding-type-versionTag', bindingType);
+
+        it.withProperties(name, 'binding-type-versionTag-invalid-feel', bindingType);
+
+        it.withProperties(name, 'binding-type-versionTag-invalid-input-type', bindingType);
+      });
+
+      it('binding-type-invalid-mixed-types');
+    });
+
+    describe('zeebe:assignmentDefinition', function() {
+
+      it('assignment-definition');
+
+      it('assignment-definition-invalid-element-type');
+
+      it('assignment-definition-invalid-input-type');
+
+      it('assignment-definition-invalid-property');
+
+      it('assignment-definition-missing-property');
+
+      it('assignment-definition-missing-zeebe-user-task');
+
+      it('assignment-definition-property-assignee');
+
+      it('assignment-definition-property-candidateGroups');
+
+      it('assignment-definition-property-candidateUsers');
+
+      it('assignment-definition-with-feel');
+
+    });
   });
 
 });
