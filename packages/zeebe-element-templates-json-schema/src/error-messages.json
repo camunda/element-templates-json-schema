@@ -328,7 +328,7 @@
       "properties",
       "properties"
     ],
-    "errorMessage": "Biding with property=`bindingType` and value=`versionTag` must be set when using a binding with property=`versionTag`"
+    "errorMessage": "Binding with property=`bindingType` and value=`versionTag` must be set when using a binding with property=`versionTag`"
   },
   {
     "path": [

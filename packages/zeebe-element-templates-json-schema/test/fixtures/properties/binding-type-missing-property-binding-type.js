@@ -90,7 +90,7 @@ export const errors = {
           }
         ]
       },
-      message: 'Biding with property=`bindingType` and value=`versionTag` must be set when using a binding with property=`versionTag`'
+      message: 'Binding with property=`bindingType` and value=`versionTag` must be set when using a binding with property=`versionTag`'
     },
     {
       keyword: 'if',
@@ -199,7 +199,7 @@ export const errors = {
           }
         ]
       },
-      message: 'Biding with property=`bindingType` and value=`versionTag` must be set when using a binding with property=`versionTag`'
+      message: 'Binding with property=`bindingType` and value=`versionTag` must be set when using a binding with property=`versionTag`'
     },
     {
       keyword: 'if',
@@ -308,7 +308,7 @@ export const errors = {
           }
         ]
       },
-      message: 'Biding with property=`bindingType` and value=`versionTag` must be set when using a binding with property=`versionTag`'
+      message: 'Binding with property=`bindingType` and value=`versionTag` must be set when using a binding with property=`versionTag`'
     },
     {
       keyword: 'if',
