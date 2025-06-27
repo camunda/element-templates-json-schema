@@ -711,6 +711,32 @@
             }
           ]
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": { "const": "zeebe:assignmentDefinition" },
+                "property": {"enum": ["assignee", "candidateUsers", "candidateGroups"]}
+              },
+              "required": ["type", "property"]
+            }
+          },
+          "required": ["binding"]
+        },
+        "then": {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden", "String", "Text", "Dropdown"
+              ]
+            }
+          }
+        }
       }
     ],
     "properties": {
