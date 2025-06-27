@@ -418,5 +418,19 @@
       "properties"
     ],
     "errorMessage": "Binding with `property`=`processId` and `type`=`zeebe:calledElement` is required, when using a binding with `type`=`zeebe:calledElement`"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      11,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "When using \"zeebe:assignmentDefinition\", \"zeebe:userTask\" must be set on the same element"
   }
 ]
