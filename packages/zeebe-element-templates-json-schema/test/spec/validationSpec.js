@@ -654,6 +654,8 @@ describe('validation', function() {
 
       it('assignment-definition');
 
+      it('assignment-definition-invalid-element-type');
+
       it('assignment-definition-invalid-input-type');
 
       it('assignment-definition-invalid-property');
