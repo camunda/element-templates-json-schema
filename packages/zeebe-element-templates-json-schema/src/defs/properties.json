@@ -62,7 +62,8 @@
                     "zeebe:formDefinition",
                     "zeebe:calledDecision",
                     "zeebe:script",
-                    "zeebe:assignmentDefinition"
+                    "zeebe:assignmentDefinition",
+                    "zeebe:priorityDefinition"
                   ]
                 }
               },
@@ -737,6 +738,64 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:priorityDefinition"
+                },
+                "property": {
+                  "const": "priority"
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "anyOf": [
+            {
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "enum": [
+                    "Hidden",
+                    "Number",
+                    "Dropdown"
+                  ]
+                }
+              }
+            },
+            {
+              "required": [
+                "type",
+                "feel"
+              ],
+              "properties": {
+                "type": {
+                  "enum": [
+                    "String",
+                    "Text"
+                  ]
+                },
+                "feel": {
+                  "const": "required"
+                }
+              }
+            }
+          ]
+        }
       }
     ],
     "properties": {
@@ -977,6 +1036,32 @@
             }
           },
           {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:priorityDefinition"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "properties": {
+                "property": {
+                  "enum": [
+                    "priority",
+                    "candidateUsers",
+                    "candidateGroups"
+                  ]
+                }
+              },
+              "required": [
+                "property"
+              ]
+            }
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -1001,7 +1086,8 @@
               "zeebe:formDefinition",
               "zeebe:calledDecision",
               "zeebe:script",
-              "zeebe:assignmentDefinition"
+              "zeebe:assignmentDefinition",
+              "zeebe:priorityDefinition"
             ]
           },
           "name": {
