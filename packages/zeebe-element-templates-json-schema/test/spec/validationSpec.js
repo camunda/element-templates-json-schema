@@ -498,6 +498,8 @@ describe('validation', function() {
 
       it('form-definition-invalid-element-type');
 
+      it('form-definition-invalid-external-reference-and-formId');
+
       it('form-definition-invalid-formId-feel');
 
       it('form-definition-missing-zeebe-user-task');
