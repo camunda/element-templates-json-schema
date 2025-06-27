@@ -53,7 +53,8 @@ export const errors = [
               'zeebe:formDefinition',
               'zeebe:calledDecision',
               'zeebe:script',
-              'zeebe:assignmentDefinition'
+              'zeebe:assignmentDefinition',
+              'zeebe:priorityDefinition'
             ]
           },
           message: 'should be equal to one of the allowed values'
