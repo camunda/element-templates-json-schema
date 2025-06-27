@@ -315,5 +315,19 @@
       "then"
     ],
     "errorMessage": "Property \"resultVariable\" cannot be a Feel expression"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      7,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "\"formId\" and \"externalReference\" cannot be used together"
   }
 ]
