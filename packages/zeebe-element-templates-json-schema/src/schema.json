@@ -21,6 +21,9 @@
         },
         {
           "$ref": "src/defs/template.json"
+        },
+        {
+          "$ref": "src/defs/feel-required.json"
         }
       ],
       "properties": {

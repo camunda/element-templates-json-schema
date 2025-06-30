@@ -487,6 +487,7 @@ describe('validation', function() {
 
     });
 
+
     describe('zeebe:formDefinition', function() {
 
       it('form-definition-invalid-element-type');
@@ -507,6 +508,7 @@ describe('validation', function() {
 
     });
 
+
     describe('zeebe:calledDecision', function() {
 
       it('called-decision');
@@ -524,6 +526,7 @@ describe('validation', function() {
       it('called-decision-invalid-feel-resultVariable');
     });
 
+
     describe('bpmn:businessRuleTask', function() {
       it('business-rule-task-task-definition');
 
@@ -532,6 +535,20 @@ describe('validation', function() {
       it('business-rule-task-conflicting-deprecated-bindings');
     });
 
+
+    describe('property', function() {
+
+      it('property/valid-feel-required');
+
+
+      it('property/invalid-missing-feel-completion-condition');
+
+
+      it('property/invalid-missing-feel-activation-condition');
+
+
+      it('property/invalid-missing-feel-condition-expression');
+    });
   });
 
 });
