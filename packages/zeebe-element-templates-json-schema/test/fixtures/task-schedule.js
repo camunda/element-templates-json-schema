@@ -24,7 +24,7 @@ export const template = [ {
     },
     {
       'type': 'Hidden',
-      'value': '2020-10-01T12:00:00Z',
+      'value': '2019-10-02T08:09:40+02:00',
       'binding': {
         'type': 'zeebe:taskSchedule',
         'property': 'followUpDate'
@@ -50,7 +50,7 @@ export const template = [ {
     },
     {
       'type': 'Hidden',
-      'value': '2020-10-01T12:00:00Z',
+      'value': '2019-10-02T08:09:40+02:00[Europe/Berlin]',
       'binding': {
         'type': 'zeebe:taskSchedule',
         'property': 'followUpDate'
