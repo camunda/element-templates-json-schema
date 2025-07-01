@@ -33,4 +33,41 @@ export const template = {
 };
 
 // This is caught transitively by requiring `zeebe:userTask`
-export const errors = [ {} ];
+export const errors = [
+  {
+    keyword: 'const',
+    dataPath: '/elementType/value',
+    schemaPath: '#/allOf/1/allOf/3/then/properties/elementType/properties/value/const',
+    params: {
+      allowedValue: 'bpmn:UserTask'
+    },
+    message: 'should be equal to constant'
+  },
+  {
+    keyword: 'if',
+    dataPath: '',
+    schemaPath: '#/allOf/1/allOf/3/if',
+    params: {
+      failingKeyword: 'then'
+    },
+    message: 'should match "then" schema'
+  },
+  {
+    keyword: 'type',
+    dataPath: '',
+    schemaPath: '#/oneOf/1/type',
+    params: {
+      type: 'array'
+    },
+    message: 'should be array'
+  },
+  {
+    keyword: 'oneOf',
+    dataPath: '',
+    schemaPath: '#/oneOf',
+    params: {
+      passingSchemas: null
+    },
+    message: 'should match exactly one schema in oneOf'
+  }
+];
