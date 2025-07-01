@@ -84,7 +84,6 @@ export const template = [ {
     }
   ]
 }
-
-][0];
+];
 
 export const errors = null;

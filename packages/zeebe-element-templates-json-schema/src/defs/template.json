@@ -273,7 +273,8 @@
                       "enum": [
                         "zeebe:assignmentDefinition",
                         "zeebe:formDefinition",
-                        "zeebe:priorityDefinition"
+                        "zeebe:priorityDefinition",
+                        "zeebe:taskSchedule"
                       ]
                     }
                   },
