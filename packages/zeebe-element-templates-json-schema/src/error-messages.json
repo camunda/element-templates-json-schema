@@ -467,5 +467,20 @@
       "value"
     ],
     "errorMessage": "Invalid value for priority. Must be between 0 and 100."
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      28,
+      "then",
+      "properties",
+      "value"
+    ],
+    "errorMessage": "Must be conforming to an ISO 8601 combined date and time representation"
   }
 ]
