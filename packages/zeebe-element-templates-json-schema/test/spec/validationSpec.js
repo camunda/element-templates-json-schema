@@ -158,6 +158,12 @@ describe('validation', function() {
     it('feel');
 
 
+    it('feel-missing-type');
+
+
+    it('feel-missing-type-multiple-templates');
+
+
     it('feel-type-mismatch');
 
 
