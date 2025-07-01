@@ -63,7 +63,8 @@
                     "zeebe:calledDecision",
                     "zeebe:script",
                     "zeebe:assignmentDefinition",
-                    "zeebe:priorityDefinition"
+                    "zeebe:priorityDefinition",
+                    "zeebe:taskSchedule"
                   ]
                 }
               },
@@ -924,6 +925,47 @@
             }
           }
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:taskSchedule"
+                },
+                "property": {
+                  "enum": [
+                    "dueDate",
+                    "followUpDate"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden",
+                "String",
+                "Dropdown",
+                "Text"
+              ]
+            }
+          }
+        }
       }
     ],
     "properties": {
@@ -1190,6 +1232,31 @@
             }
           },
           {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:taskSchedule"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "properties": {
+                "property": {
+                  "enum": [
+                    "dueDate",
+                    "followUpDate"
+                  ]
+                }
+              },
+              "required": [
+                "property"
+              ]
+            }
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -1215,7 +1282,8 @@
               "zeebe:calledDecision",
               "zeebe:script",
               "zeebe:assignmentDefinition",
-              "zeebe:priorityDefinition"
+              "zeebe:priorityDefinition",
+              "zeebe:taskSchedule"
             ]
           },
           "name": {

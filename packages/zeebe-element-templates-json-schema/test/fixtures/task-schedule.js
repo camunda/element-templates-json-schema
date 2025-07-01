@@ -60,7 +60,7 @@ export const template = [ {
 },
 {
   'name': 'task schedule',
-  'id': 'task-schedule-1',
+  'id': 'task-schedule-3',
   'appliesTo': [
     'bpmn:Task'
   ],
@@ -85,6 +85,6 @@ export const template = [ {
   ]
 }
 
-];
+][0];
 
 export const errors = null;
