@@ -432,5 +432,40 @@
       "properties"
     ],
     "errorMessage": "\"formId\" and \"externalReference\" cannot be used together"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      25,
+      "then",
+      "properties",
+      "value"
+    ],
+    "errorMessage": "Invalid value for priority. Must be between 0 and 100."
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      26,
+      "then",
+      "properties",
+      "choices",
+      "items",
+      "allOf",
+      1,
+      "properties",
+      "value"
+    ],
+    "errorMessage": "Invalid value for priority. Must be between 0 and 100."
   }
 ]

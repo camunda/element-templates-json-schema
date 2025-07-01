@@ -796,6 +796,134 @@
             }
           ]
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "value": {},
+            "type": {
+              "const": "Number"
+            },
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:priorityDefinition"
+                },
+                "property": {
+                  "const": "priority"
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding",
+            "value",
+            "type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "value": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "value": {},
+            "type": {
+              "enum": [
+                "Hidden",
+                "Dropdown"
+              ]
+            },
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:priorityDefinition"
+                },
+                "property": {
+                  "const": "priority"
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding",
+            "value",
+            "type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "value": {
+              "type": "string",
+              "pattern": "^(100|[1-9]?[0-9])$"
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "type": {
+              "const": "Dropdown"
+            },
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:priorityDefinition"
+                },
+                "property": {
+                  "const": "priority"
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            },
+            "choices": {}
+          },
+          "required": [
+            "binding",
+            "type",
+            "choices"
+          ]
+        },
+        "then": {
+          "properties": {
+            "choices": {
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "../../../element-templates-json-schema-shared/src/defs/base-properties.json#/items/properties/choices/items"
+                  },
+                  {
+                    "properties": {
+                      "value": {
+                        "type": "string",
+                        "pattern": "^(100|[1-9]?[0-9])$"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
       }
     ],
     "properties": {
