@@ -608,70 +608,6 @@
                 "binding": {
                   "properties": {
                     "property": {
-                      "const": "formId"
-                    },
-                    "type": {
-                      "const": "zeebe:formDefinition"
-                    }
-                  },
-                  "required": [
-                    "property",
-                    "type"
-                  ]
-                }
-              },
-              "required": [
-                "binding"
-              ]
-            }
-          }
-        },
-        "required": [
-          "properties"
-        ]
-      },
-      "then": {
-        "properties": {
-          "properties": {
-            "not": {
-              "contains": {
-                "properties": {
-                  "binding": {
-                    "properties": {
-                      "type": {
-                        "const": "zeebe:formDefinition"
-                      },
-                      "property": {
-                        "const": "externalReference"
-                      }
-                    },
-                    "required": [
-                      "property",
-                      "type"
-                    ]
-                  }
-                },
-                "required": [
-                  "binding"
-                ]
-              }
-            }
-          }
-        },
-        "required": [
-          "properties"
-        ]
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "properties": {
-            "contains": {
-              "properties": {
-                "binding": {
-                  "properties": {
-                    "property": {
                       "const": "bindingType"
                     },
                     "type": {
@@ -894,6 +830,70 @@
               "required": [
                 "binding"
               ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "property": {
+                      "const": "formId"
+                    },
+                    "type": {
+                      "const": "zeebe:formDefinition"
+                    }
+                  },
+                  "required": [
+                    "property",
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "not": {
+              "contains": {
+                "properties": {
+                  "binding": {
+                    "properties": {
+                      "type": {
+                        "const": "zeebe:formDefinition"
+                      },
+                      "property": {
+                        "const": "externalReference"
+                      }
+                    },
+                    "required": [
+                      "property",
+                      "type"
+                    ]
+                  }
+                },
+                "required": [
+                  "binding"
+                ]
+              }
             }
           }
         },

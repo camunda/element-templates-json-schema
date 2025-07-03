@@ -426,7 +426,7 @@
       "allOf",
       1,
       "allOf",
-      7,
+      11,
       "then",
       "properties",
       "properties"
