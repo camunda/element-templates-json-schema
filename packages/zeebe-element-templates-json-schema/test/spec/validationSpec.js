@@ -692,6 +692,24 @@ describe('validation', function() {
 
   });
 
+  describe('zeebe:taskSchedule', function() {
+
+    it('task-schedule');
+
+    it('task-schedule-feel');
+
+    it('task-schedule-invalid-element-type');
+
+    it('task-schedule-invalid-input-type');
+
+    it('task-schedule-invalid-value');
+
+    it('task-schedule-missing-property');
+
+    it('task-schedule-missing-zeebe-user-task');
+
+  });
+
 });
 
 
