@@ -1,70 +1,62 @@
 export const template = {
   '$schema': 'https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json',
-  'name': 'Reusable Rule Template',
-  'id': 'io.camunda.examples.Decision',
-  'description': 'A reusable rule template',
-  'version': 1,
-  'engines': {
-    'camunda': '^8.6'
-  },
+  'name': 'Form Definition with external reference',
+  'id': 'formDefinitionWithExternalReference',
   'appliesTo': [
-    'bpmn:Task',
-    'bpmn:BusinessRuleTask'
+    'bpmn:Task'
   ],
   'elementType': {
-    'value': 'bpmn:BusinessRuleTask'
+    'value': 'bpmn:UserTask'
   },
   'properties': [
     {
       'type': 'Hidden',
-      'value': 'aReusableRule',
       'binding': {
-        'type': 'zeebe:calledDecision',
-        'property': 'decisionId'
+        'type': 'zeebe:userTask',
       }
     },
     {
       'type': 'Hidden',
-      'value': 'aResultVariable',
+      'value': 'aReference',
       'binding': {
-        'type': 'zeebe:calledDecision',
-        'property': 'resultVariable'
+        'type': 'zeebe:formDefinition',
+        'property': 'externalReference'
       }
     },
     {
-      'value': 'io.camunda:decisionTask',
+      'type': 'Hidden',
+      'value': 'anId',
       'binding': {
-        'property': 'type',
-        'type': 'zeebe:taskDefinition'
-      },
-      'type': 'Hidden'
-    },
+        'type': 'zeebe:formDefinition',
+        'property': 'formId'
+      }
+    }
   ]
 };
 
 export const errors = [
   {
     keyword: 'errorMessage',
-    dataPath: '',
-    schemaPath: '#/allOf/1/allOf/5/then/allOf/2/errorMessage',
+    dataPath: '/properties',
+    schemaPath: '#/allOf/1/allOf/7/then/properties/properties/errorMessage',
     params: {
       errors: [
         {
           keyword: 'not',
           dataPath: '/properties',
-          schemaPath: '#/allOf/1/allOf/5/then/allOf/2/properties/properties/not',
+          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/not',
           params: {},
           message: 'should NOT be valid',
           emUsed: true
         }
       ]
     },
-    message: 'Binding type "zeebe:taskDefinition" or "zeebe:taskDefinition:type" cannot be set when binding type "zeebe:calledDecision" is set.'
+    message: '"formId" and "externalReference" cannot be used together'
   },
   {
     keyword: 'if',
     dataPath: '',
-    schemaPath: '#/allOf/1/allOf/5/if',
+    schemaPath: '#/allOf/1/allOf/7/if',
     params: {
       failingKeyword: 'then'
     },

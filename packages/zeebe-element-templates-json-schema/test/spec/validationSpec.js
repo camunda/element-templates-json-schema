@@ -208,6 +208,12 @@ describe('validation', function() {
     it('feel');
 
 
+    it('feel-missing-type');
+
+
+    it('feel-missing-type-multiple-templates');
+
+
     it('feel-type-mismatch');
 
 
@@ -545,9 +551,12 @@ describe('validation', function() {
 
     });
 
+
     describe('zeebe:formDefinition', function() {
 
       it('form-definition-invalid-element-type');
+
+      it('form-definition-invalid-external-reference-and-formId');
 
       it('form-definition-invalid-formId-feel');
 
@@ -567,6 +576,7 @@ describe('validation', function() {
 
     });
 
+
     describe('zeebe:calledDecision', function() {
 
       it('called-decision');
@@ -584,12 +594,28 @@ describe('validation', function() {
       it('called-decision-invalid-feel-resultVariable');
     });
 
+
     describe('bpmn:businessRuleTask', function() {
       it('business-rule-task-task-definition');
 
       it('business-rule-task-conflicting-bindings');
 
       it('business-rule-task-conflicting-deprecated-bindings');
+    });
+
+
+    describe('property', function() {
+
+      it('property/valid-feel-required');
+
+
+      it('property/invalid-missing-feel-completion-condition');
+
+
+      it('property/invalid-missing-feel-activation-condition');
+
+
+      it('property/invalid-missing-feel-condition-expression');
     });
 
     describe('should support property `bindingType`: `versionTag`, `deployment`, and `latest`', function() {

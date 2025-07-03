@@ -43,48 +43,48 @@ export const template = {
 
 export const errors = [
   {
-    'keyword': 'errorMessage',
-    'dataPath': '',
-    'schemaPath': '#/allOf/1/allOf/5/then/allOf/2/errorMessage',
-    'params': {
-      'errors': [
+    keyword: 'errorMessage',
+    dataPath: '',
+    schemaPath: '#/allOf/1/allOf/5/then/allOf/2/errorMessage',
+    params: {
+      errors: [
         {
-          'keyword': 'not',
-          'dataPath': '',
-          'schemaPath': '#/allOf/1/allOf/5/then/allOf/2/not',
-          'params': {},
-          'message': 'should NOT be valid',
-          'emUsed': true
+          keyword: 'not',
+          dataPath: '/properties',
+          schemaPath: '#/allOf/1/allOf/5/then/allOf/2/properties/properties/not',
+          params: {},
+          message: 'should NOT be valid',
+          emUsed: true
         }
       ]
     },
-    'message': 'Binding type "zeebe:taskDefinition" or "zeebe:taskDefinition:type" cannot be set when binding type "zeebe:calledDecision" is set.'
+    message: 'Binding type "zeebe:taskDefinition" or "zeebe:taskDefinition:type" cannot be set when binding type "zeebe:calledDecision" is set.'
   },
   {
-    'keyword': 'if',
-    'dataPath': '',
-    'schemaPath': '#/allOf/1/allOf/5/if',
-    'params': {
-      'failingKeyword': 'then'
+    keyword: 'if',
+    dataPath: '',
+    schemaPath: '#/allOf/1/allOf/5/if',
+    params: {
+      failingKeyword: 'then'
     },
-    'message': 'should match "then" schema'
+    message: 'should match "then" schema'
   },
   {
-    'keyword': 'type',
-    'dataPath': '',
-    'schemaPath': '#/oneOf/1/type',
-    'params': {
-      'type': 'array'
+    keyword: 'type',
+    dataPath: '',
+    schemaPath: '#/oneOf/1/type',
+    params: {
+      type: 'array'
     },
-    'message': 'should be array'
+    message: 'should be array'
   },
   {
-    'keyword': 'oneOf',
-    'dataPath': '',
-    'schemaPath': '#/oneOf',
-    'params': {
-      'passingSchemas': null
+    keyword: 'oneOf',
+    dataPath: '',
+    schemaPath: '#/oneOf',
+    params: {
+      passingSchemas: null
     },
-    'message': 'should match exactly one schema in oneOf'
+    message: 'should match exactly one schema in oneOf'
   }
 ];

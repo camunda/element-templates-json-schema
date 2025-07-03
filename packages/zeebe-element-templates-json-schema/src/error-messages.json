@@ -418,5 +418,19 @@
       "properties"
     ],
     "errorMessage": "Binding with `property`=`processId` and `type`=`zeebe:calledElement` is required, when using a binding with `type`=`zeebe:calledElement`"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      7,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "\"formId\" and \"externalReference\" cannot be used together"
   }
 ]
