@@ -49,31 +49,138 @@ export const template = {
 
 export const errors = [
   {
+    keyword: 'errorMessage',
+    dataPath: '/properties',
+    schemaPath: '#/allOf/1/allOf/10/then/properties/properties/errorMessage',
+    params: {
+      errors: [
+        {
+          keyword: 'required',
+          dataPath: '/properties/0/binding',
+          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/required',
+          params: {
+            missingProperty: 'property'
+          },
+          message: "should have required property 'property'",
+          emUsed: true
+        },
+        {
+          keyword: 'required',
+          dataPath: '/properties/1/binding',
+          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/required',
+          params: {
+            missingProperty: 'property'
+          },
+          message: "should have required property 'property'",
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/1/binding/type',
+          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:calledElement'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'required',
+          dataPath: '/properties/2/binding',
+          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/required',
+          params: {
+            missingProperty: 'property'
+          },
+          message: "should have required property 'property'",
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/2/binding/type',
+          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:calledElement'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'required',
+          dataPath: '/properties/3/binding',
+          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/required',
+          params: {
+            missingProperty: 'property'
+          },
+          message: "should have required property 'property'",
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/3/binding/type',
+          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:calledElement'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'contains',
+          dataPath: '/properties',
+          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains',
+          params: {
+            minContains: 1
+          },
+          message: 'should contain at least 1 valid item(s)',
+          emUsed: true
+        }
+      ]
+    },
+    message: 'Binding with `property`=`processId` and `type`=`zeebe:calledElement` is required, when using a binding with `type`=`zeebe:calledElement`'
+  },
+  {
+    keyword: 'if',
+    dataPath: '',
+    schemaPath: '#/allOf/1/allOf/10/if',
+    params: {
+      failingKeyword: 'then'
+    },
+    message: 'should match "then" schema'
+  },
+  {
     keyword: 'required',
     dataPath: '/properties/0/binding',
     schemaPath: '#/allOf/1/items/properties/binding/allOf/5/then/required',
-    params: { missingProperty: 'property' },
-    message: 'should have required property \'property\''
+    params: {
+      missingProperty: 'property'
+    },
+    message: "should have required property 'property'"
   },
   {
     keyword: 'if',
     dataPath: '/properties/0/binding',
     schemaPath: '#/allOf/1/items/properties/binding/allOf/5/if',
-    params: { failingKeyword: 'then' },
+    params: {
+      failingKeyword: 'then'
+    },
     message: 'should match "then" schema'
   },
   {
     keyword: 'type',
     dataPath: '',
     schemaPath: '#/oneOf/1/type',
-    params: { type: 'array' },
+    params: {
+      type: 'array'
+    },
     message: 'should be array'
   },
   {
     keyword: 'oneOf',
     dataPath: '',
     schemaPath: '#/oneOf',
-    params: { passingSchemas: null },
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   }
 ];
