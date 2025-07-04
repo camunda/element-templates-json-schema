@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.25.1
+
+* `FIX`: ensure that `formId` and `externalResource` cannot be used together ([#175](https://github.com/camunda/element-templates-json-schema/pull/175))
+
 ## 0.25.0
 
 * `FEAT`: require `feel` for `bpmn:Expression` properties ([#176](https://github.com/camunda/element-templates-json-schema/pull/176))
