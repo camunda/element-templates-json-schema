@@ -20,6 +20,14 @@ export const template = {
       }
     },
     {
+      'type': 'Hidden',
+      'value': 'paymentProcess',
+      'binding': {
+        'type': 'zeebe:calledElement',
+        'property': 'processId'
+      }
+    },
+    {
       'label': 'Payment ID',
       'type': 'String',
       'binding': {
@@ -50,31 +58,43 @@ export const template = {
 
 export const errors = [
   {
-    keyword: 'const',
+    keyword: 'enum',
     dataPath: '/properties/0/binding/property',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/5/then/properties/property/const',
-    params: { allowedValue: 'processId' },
-    message: 'should be equal to constant'
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/5/then/properties/property/enum',
+    params: {
+      allowedValues: [
+        'processId',
+        'bindingType',
+        'versionTag'
+      ]
+    },
+    message: 'should be equal to one of the allowed values'
   },
   {
     keyword: 'if',
     dataPath: '/properties/0/binding',
     schemaPath: '#/allOf/1/items/properties/binding/allOf/5/if',
-    params: { failingKeyword: 'then' },
+    params: {
+      failingKeyword: 'then'
+    },
     message: 'should match "then" schema'
   },
   {
     keyword: 'type',
     dataPath: '',
     schemaPath: '#/oneOf/1/type',
-    params: { type: 'array' },
+    params: {
+      type: 'array'
+    },
     message: 'should be array'
   },
   {
     keyword: 'oneOf',
     dataPath: '',
     schemaPath: '#/oneOf',
-    params: { passingSchemas: null },
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   }
 ];

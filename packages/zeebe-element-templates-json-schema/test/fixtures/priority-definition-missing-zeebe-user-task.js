@@ -1,21 +1,41 @@
 export const template = {
-  '$schema': 'https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json',
-  'name': 'Form Definition with external reference',
-  'id': 'formDefinitionWithExternalReference',
+  'name': 'Priority Definition',
+  'id': 'priority-definition',
+  'description': 'A template to define task priority based on a variable.',
+  'version': 1,
   'appliesTo': [
     'bpmn:Task'
   ],
   'elementType': {
-    'value': 'bpmn:UserTask'
+    'value': 'bpmn:Task'
   },
   'properties': [
     {
-      'type': 'Hidden',
-      'value': 'aReference',
+      'label': 'Prio',
+      'value': '100',
+      'description': 'Prio for task',
+      'constraints': {
+        'notEmpty': true
+      },
+      'type': 'Dropdown',
       'binding': {
-        'type': 'zeebe:formDefinition',
-        'property': 'externalReference'
-      }
+        'type': 'zeebe:priorityDefinition',
+        'property': 'priority'
+      },
+      'choices': [
+        {
+          'name': 'High',
+          'value': '100'
+        },
+        {
+          'name': 'Medium',
+          'value': '50'
+        },
+        {
+          'name': 'Low',
+          'value': '0'
+        }
+      ]
     }
   ]
 };
@@ -49,7 +69,7 @@ export const errors = [
         }
       ]
     },
-    message: 'When using "zeebe:formDefinition", "zeebe:userTask" must be set on the same element'
+    message: 'When using "zeebe:priorityDefinition", "zeebe:userTask" must be set on the same element'
   },
   {
     keyword: 'if',

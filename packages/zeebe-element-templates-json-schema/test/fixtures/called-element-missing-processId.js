@@ -1,20 +1,21 @@
 export const template = {
   '$schema': 'https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json',
-  'name': 'Form Definition with external reference',
-  'id': 'formDefinitionWithExternalReference',
+  'id': 'io.camunda.examples.Payment',
+  'name': 'Payment',
+  'description': 'Payment process call activity',
   'appliesTo': [
     'bpmn:Task'
   ],
   'elementType': {
-    'value': 'bpmn:UserTask'
+    'value': 'bpmn:CallActivity'
   },
-  'properties': [
+  'properties':[
     {
       'type': 'Hidden',
-      'value': 'aReference',
+      'value': 'deployment',
       'binding': {
-        'type': 'zeebe:formDefinition',
-        'property': 'externalReference'
+        'type': 'zeebe:calledElement',
+        'property': 'bindingType'
       }
     }
   ]
@@ -24,15 +25,15 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/4/then/properties/properties/errorMessage',
+    schemaPath: '#/allOf/1/allOf/10/then/properties/properties/errorMessage',
     params: {
       errors: [
         {
           keyword: 'const',
-          dataPath: '/properties/0/binding/type',
-          schemaPath: '#/allOf/1/allOf/4/then/properties/properties/contains/properties/binding/properties/type/const',
+          dataPath: '/properties/0/binding/property',
+          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/properties/property/const',
           params: {
-            allowedValue: 'zeebe:userTask'
+            allowedValue: 'processId'
           },
           message: 'should be equal to constant',
           emUsed: true
@@ -40,7 +41,7 @@ export const errors = [
         {
           keyword: 'contains',
           dataPath: '/properties',
-          schemaPath: '#/allOf/1/allOf/4/then/properties/properties/contains',
+          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains',
           params: {
             minContains: 1
           },
@@ -49,12 +50,12 @@ export const errors = [
         }
       ]
     },
-    message: 'When using "zeebe:formDefinition", "zeebe:userTask" must be set on the same element'
+    message: 'Binding with `property`=`processId` and `type`=`zeebe:calledElement` is required, when using a binding with `type`=`zeebe:calledElement`'
   },
   {
     keyword: 'if',
     dataPath: '',
-    schemaPath: '#/allOf/1/allOf/4/if',
+    schemaPath: '#/allOf/1/allOf/10/if',
     params: {
       failingKeyword: 'then'
     },
