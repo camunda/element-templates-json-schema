@@ -1,7 +1,7 @@
 export const template = {
   '$schema': 'https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json',
-  'name': 'Form Definition with external reference',
-  'id': 'formDefinitionWithExternalReference',
+  'name': 'Form Definition with FormId',
+  'id': 'formDefinitionWithFormId',
   'appliesTo': [
     'bpmn:Task'
   ],
@@ -17,46 +17,42 @@ export const template = {
     },
     {
       'type': 'Hidden',
-      'value': 'aReference',
+      'value': 'aFormId',
       'binding': {
         'type': 'zeebe:formDefinition',
-        'property': 'externalReference'
+        'property': 'formId'
       }
     },
     {
       'type': 'Hidden',
-      'value': 'anId',
+      'value': 'youShallNotPass',
       'binding': {
         'type': 'zeebe:formDefinition',
-        'property': 'formId'
+        'property': 'bindingType'
       }
     }
   ]
 };
 
+
 export const errors = [
   {
-    keyword: 'errorMessage',
-    dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/11/then/properties/properties/errorMessage',
+    keyword: 'enum',
+    dataPath: '/properties/2/value',
+    schemaPath: '#/allOf/1/items/allOf/20/allOf/0/then/properties/value/enum',
     params: {
-      errors: [
-        {
-          keyword: 'not',
-          dataPath: '/properties',
-          schemaPath: '#/allOf/1/allOf/11/then/properties/properties/not',
-          params: {},
-          message: 'should NOT be valid',
-          emUsed: true
-        }
+      allowedValues: [
+        'latest',
+        'versionTag',
+        'deployment'
       ]
     },
-    message: '"formId" and "externalReference" cannot be used together'
+    message: 'should be equal to one of the allowed values'
   },
   {
     keyword: 'if',
-    dataPath: '',
-    schemaPath: '#/allOf/1/allOf/11/if',
+    dataPath: '/properties/2',
+    schemaPath: '#/allOf/1/items/allOf/20/allOf/0/if',
     params: {
       failingKeyword: 'then'
     },

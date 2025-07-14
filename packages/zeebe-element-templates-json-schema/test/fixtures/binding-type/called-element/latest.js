@@ -25,6 +25,14 @@ export const template = {
         'type': 'zeebe:calledElement',
         'property': 'processId'
       }
+    },
+    {
+      'type': 'Hidden',
+      'value': 'latest',
+      'binding': {
+        'type': 'zeebe:calledElement',
+        'property': 'bindingType'
+      }
     }
   ]
 };

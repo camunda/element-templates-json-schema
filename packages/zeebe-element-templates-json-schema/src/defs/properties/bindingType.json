@@ -1,0 +1,105 @@
+{
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "binding": {
+            "properties": {
+              "property": {
+                "const": "bindingType"
+              },
+              "type": {
+                "enum": [
+                  "zeebe:calledDecision",
+                  "zeebe:formDefinition",
+                  "zeebe:calledElement"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "property"
+            ]
+          }
+        },
+        "required": [
+          "binding"
+        ]
+      },
+      "then": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "Hidden",
+              "Dropdown"
+            ]
+          },
+          "value": {
+            "enum": [
+              "latest",
+              "versionTag",
+              "deployment"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "binding": {
+            "properties": {
+              "property": {
+                "const": "versionTag"
+              },
+              "type": {
+                "enum": [
+                  "zeebe:calledDecision",
+                  "zeebe:formDefinition",
+                  "zeebe:calledElement"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "property"
+            ]
+          }
+        },
+        "required": [
+          "binding"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "Hidden",
+                  "Dropdown",
+                  "String",
+                  "Text"
+                ]
+              }
+            }
+          },
+          {
+            "not": {
+              "required": [
+                "feel"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

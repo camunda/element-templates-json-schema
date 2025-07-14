@@ -4,19 +4,18 @@ export const template = {
   'name': 'Payment',
   'description': 'Payment process call activity',
   'appliesTo': [
-    'bpmn:Task',
-    'bpmn:CallActivity'
+    'bpmn:Task'
   ],
   'elementType': {
     'value': 'bpmn:CallActivity'
   },
   'properties':[
     {
-      'type': 'Hidden',
-      'value': 'paymentProcess',
+      'label': 'Payment ID',
+      'type': 'String',
       'binding': {
-        'type': 'zeebe:calledElement',
-        'property': 'nonExistingProperty'
+        'type': 'zeebe:input',
+        'name': 'paymentID'
       }
     },
     {
@@ -28,52 +27,35 @@ export const template = {
       }
     },
     {
-      'label': 'Payment ID',
-      'type': 'String',
+      'type': 'Hidden',
+      'value': 'youShallNotPass',
       'binding': {
-        'type': 'zeebe:input',
-        'name': 'paymentID'
-      }
-    },
-    {
-      'label': 'Amount',
-      'type': 'String',
-      'binding': {
-        'type': 'zeebe:input',
-        'name': 'amount'
-      }
-    },
-    {
-      'label': 'Outcome',
-      'type': 'String',
-      'description': 'Name of variable to store the result data in.',
-      'value': 'paymentOutcome',
-      'binding': {
-        'type': 'zeebe:output',
-        'source': '=outcome'
+        'type': 'zeebe:calledElement',
+        'property': 'bindingType'
       }
     }
   ]
 };
 
+
 export const errors = [
   {
     keyword: 'enum',
-    dataPath: '/properties/0/binding/property',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/5/then/properties/property/enum',
+    dataPath: '/properties/2/value',
+    schemaPath: '#/allOf/1/items/allOf/20/allOf/0/then/properties/value/enum',
     params: {
       allowedValues: [
-        'processId',
-        'bindingType',
-        'versionTag'
+        'latest',
+        'versionTag',
+        'deployment'
       ]
     },
     message: 'should be equal to one of the allowed values'
   },
   {
     keyword: 'if',
-    dataPath: '/properties/0/binding',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/5/if',
+    dataPath: '/properties/2',
+    schemaPath: '#/allOf/1/items/allOf/20/allOf/0/if',
     params: {
       failingKeyword: 'then'
     },

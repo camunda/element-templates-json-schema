@@ -608,6 +608,9 @@
             }
           }
         }
+      },
+      {
+        "$ref": "./properties/bindingType.json"
       }
     ],
     "properties": {
@@ -730,7 +733,11 @@
             "then": {
               "properties": {
                 "property": {
-                  "const": "processId"
+                  "enum": [
+                    "processId",
+                    "bindingType",
+                    "versionTag"
+                  ]
                 }
               },
               "required": [
@@ -779,7 +786,9 @@
                 "property": {
                   "enum": [
                     "formId",
-                    "externalReference"
+                    "externalReference",
+                    "bindingType",
+                    "versionTag"
                   ]
                 }
               },
@@ -804,7 +813,9 @@
                 "property": {
                   "enum": [
                     "decisionId",
-                    "resultVariable"
+                    "resultVariable",
+                    "versionTag",
+                    "bindingType"
                   ]
                 }
               },

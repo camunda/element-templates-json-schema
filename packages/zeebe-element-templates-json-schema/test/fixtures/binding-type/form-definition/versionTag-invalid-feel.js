@@ -1,7 +1,7 @@
 export const template = {
   '$schema': 'https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json',
-  'name': 'Form Definition with external reference',
-  'id': 'formDefinitionWithExternalReference',
+  'name': 'Form Definition with FormId',
+  'id': 'formDefinitionWithFormId',
   'appliesTo': [
     'bpmn:Task'
   ],
@@ -17,18 +17,27 @@ export const template = {
     },
     {
       'type': 'Hidden',
-      'value': 'aReference',
+      'value': 'aFormId',
       'binding': {
         'type': 'zeebe:formDefinition',
-        'property': 'externalReference'
+        'property': 'formId'
       }
     },
     {
       'type': 'Hidden',
-      'value': 'anId',
+      'value': 'versionTag',
       'binding': {
         'type': 'zeebe:formDefinition',
-        'property': 'formId'
+        'property': 'bindingType'
+      }
+    },
+    {
+      'type': 'String',
+      'feel': 'optional',
+      'value': 'vers-1',
+      'binding': {
+        'type': 'zeebe:formDefinition',
+        'property': 'versionTag'
       }
     }
   ]
@@ -37,26 +46,26 @@ export const template = {
 export const errors = [
   {
     keyword: 'errorMessage',
-    dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/11/then/properties/properties/errorMessage',
+    dataPath: '/properties/3',
+    schemaPath: '#/allOf/1/items/allOf/20/allOf/1/then/allOf/1/errorMessage',
     params: {
       errors: [
         {
           keyword: 'not',
-          dataPath: '/properties',
-          schemaPath: '#/allOf/1/allOf/11/then/properties/properties/not',
+          dataPath: '/properties/3',
+          schemaPath: '#/allOf/1/items/allOf/20/allOf/1/then/allOf/1/not',
           params: {},
           message: 'should NOT be valid',
           emUsed: true
         }
       ]
     },
-    message: '"formId" and "externalReference" cannot be used together'
+    message: 'Binding with `property`=`versionTag` does not support `feel`'
   },
   {
     keyword: 'if',
-    dataPath: '',
-    schemaPath: '#/allOf/1/allOf/11/if',
+    dataPath: '/properties/3',
+    schemaPath: '#/allOf/1/items/allOf/20/allOf/1/if',
     params: {
       failingKeyword: 'then'
     },

@@ -4,19 +4,18 @@ export const template = {
   'name': 'Payment',
   'description': 'Payment process call activity',
   'appliesTo': [
-    'bpmn:Task',
-    'bpmn:CallActivity'
+    'bpmn:Task'
   ],
   'elementType': {
     'value': 'bpmn:CallActivity'
   },
   'properties':[
     {
-      'type': 'Hidden',
-      'value': 'paymentProcess',
+      'label': 'Payment ID',
+      'type': 'String',
       'binding': {
-        'type': 'zeebe:calledElement',
-        'property': 'nonExistingProperty'
+        'type': 'zeebe:input',
+        'name': 'paymentID'
       }
     },
     {
@@ -28,29 +27,20 @@ export const template = {
       }
     },
     {
-      'label': 'Payment ID',
-      'type': 'String',
+      'type': 'Hidden',
+      'value': 'versionTag',
       'binding': {
-        'type': 'zeebe:input',
-        'name': 'paymentID'
+        'type': 'zeebe:calledElement',
+        'property': 'bindingType'
       }
     },
     {
-      'label': 'Amount',
       'type': 'String',
+      'feel': 'optional',
+      'value': 'vers-1',
       'binding': {
-        'type': 'zeebe:input',
-        'name': 'amount'
-      }
-    },
-    {
-      'label': 'Outcome',
-      'type': 'String',
-      'description': 'Name of variable to store the result data in.',
-      'value': 'paymentOutcome',
-      'binding': {
-        'type': 'zeebe:output',
-        'source': '=outcome'
+        'type': 'zeebe:calledElement',
+        'property': 'versionTag'
       }
     }
   ]
@@ -58,22 +48,27 @@ export const template = {
 
 export const errors = [
   {
-    keyword: 'enum',
-    dataPath: '/properties/0/binding/property',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/5/then/properties/property/enum',
+    keyword: 'errorMessage',
+    dataPath: '/properties/3',
+    schemaPath: '#/allOf/1/items/allOf/20/allOf/1/then/allOf/1/errorMessage',
     params: {
-      allowedValues: [
-        'processId',
-        'bindingType',
-        'versionTag'
+      errors: [
+        {
+          keyword: 'not',
+          dataPath: '/properties/3',
+          schemaPath: '#/allOf/1/items/allOf/20/allOf/1/then/allOf/1/not',
+          params: {},
+          message: 'should NOT be valid',
+          emUsed: true
+        }
       ]
     },
-    message: 'should be equal to one of the allowed values'
+    message: 'Binding with `property`=`versionTag` does not support `feel`'
   },
   {
     keyword: 'if',
-    dataPath: '/properties/0/binding',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/5/if',
+    dataPath: '/properties/3',
+    schemaPath: '#/allOf/1/items/allOf/20/allOf/1/if',
     params: {
       failingKeyword: 'then'
     },

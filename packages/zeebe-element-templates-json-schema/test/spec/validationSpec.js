@@ -68,7 +68,6 @@ describe('validation', function() {
     return createTest(name, file, iit.skip);
   };
 
-
   describe('should validate single template', function() {
 
     it('cloud-rest-connector');
@@ -408,7 +407,11 @@ describe('validation', function() {
 
       it('called-element-invalid-property');
 
+      it('called-element-missing-processId');
+
       it('called-element-missing-property');
+
+      it('called-element-with-io-mapping');
     });
 
     describe('zeebe:script', function() {
@@ -448,6 +451,10 @@ describe('validation', function() {
       it('linked-resource-invalid-property');
 
       it('linked-resource-missing-linkName');
+
+      it.skip('linked-resource-missing-versionTag');
+
+      it.skip('linked-resource-invalid-bindingType');
 
     });
 
@@ -508,6 +515,8 @@ describe('validation', function() {
 
       it('form-definition-with-external-reference-feel');
 
+      it('form-definition-with-external-reference-invalid-property-bindingType');
+
       it('form-definition-with-formId');
 
       it('form-definition-invalid-type-number');
@@ -521,13 +530,13 @@ describe('validation', function() {
 
       it('called-decision');
 
-      it('called-decision-incorrect-property');
-
       it('called-decision-missing-decisionId');
 
       it('called-decision-missing-resultVariable');
 
       it('called-decision-missing-element-type');
+
+      it('called-decision-invalid-property');
 
       it('called-decision-invalid-element-type');
 
@@ -557,6 +566,46 @@ describe('validation', function() {
 
       it('property/invalid-missing-feel-condition-expression');
     });
+
+
+    describe('property bindingType', function() {
+
+      const testCases = [
+        'deployment',
+        'dropdown',
+        'invalid-feel',
+        'invalid-input-type',
+        'invalid-value',
+        'latest',
+        'missing-property-binding-type',
+        'missing-property-versionTag',
+        'versionTag',
+        'versionTag-invalid-feel',
+        'versionTag-invalid-input-type'
+      ];
+
+      describe('called decision', function() {
+
+        for (const testCase of testCases) {
+          it(`binding-type/called-decision/${testCase}`);
+        }
+      });
+
+
+      describe('form definition', function() {
+        for (const testCase of testCases) {
+          it(`binding-type/form-definition/${testCase}`);
+        }
+      });
+
+
+      describe('called element', function() {
+        for (const testCase of testCases) {
+          it(`binding-type/called-element/${testCase}`);
+        }
+      });
+
+    });
   });
 
 });
@@ -572,3 +621,4 @@ function printNested(object) {
     colors: true
   }));
 }
+
