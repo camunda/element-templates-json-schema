@@ -87,7 +87,7 @@ export const errors = [
     keyword: 'enum',
     dataPath: '/properties/0/binding/property',
     schemaPath: '#/allOf/1/items/properties/binding/allOf/8/then/properties/property/enum',
-    params: { allowedValues: [ 'decisionId', 'resultVariable' ] },
+    params: { allowedValues: [ 'decisionId', 'resultVariable', 'versionTag' , 'bindingType' ] },
     message: 'should be equal to one of the allowed values',
   },
   {

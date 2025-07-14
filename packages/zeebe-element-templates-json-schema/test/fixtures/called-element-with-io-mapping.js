@@ -11,6 +11,14 @@ export const template = {
   },
   'properties':[
     {
+      'type': 'Hidden',
+      'value': 'paymentProcess',
+      'binding': {
+        'type': 'zeebe:calledElement',
+        'property': 'processId'
+      }
+    },
+    {
       'label': 'Payment ID',
       'type': 'String',
       'binding': {
@@ -19,11 +27,21 @@ export const template = {
       }
     },
     {
-      'type': 'Hidden',
-      'value': 'paymentProcess',
+      'label': 'Amount',
+      'type': 'String',
       'binding': {
-        'type': 'zeebe:calledElement',
-        'property': 'processId'
+        'type': 'zeebe:input',
+        'name': 'amount'
+      }
+    },
+    {
+      'label': 'Outcome',
+      'type': 'String',
+      'description': 'Name of variable to store the result data in.',
+      'value': 'paymentOutcome',
+      'binding': {
+        'type': 'zeebe:output',
+        'source': '=outcome'
       }
     }
   ]

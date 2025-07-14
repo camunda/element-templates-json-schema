@@ -323,7 +323,116 @@
       "allOf",
       1,
       "allOf",
+      8,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "Binding with property=`bindingType` and value=`versionTag` must be set when using a binding with property=`versionTag`"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      20,
+      "allOf",
+      0,
+      "then",
+      "properties",
+      "type"
+    ],
+    "errorMessage": "Incorrect type ${0}. Must be one of { Hidden, Dropdown } for binding with `property`=`bindingType`"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      20,
+      "allOf",
+      1,
+      "then",
+      "allOf",
+      0,
+      "properties",
+      "type"
+    ],
+    "errorMessage": "Incorrect type ${0}. Must be one of { String, Text, Hidden, Dropdown } for binding with `property`=`versionTag`"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      20,
+      "allOf",
+      1,
+      "then",
+      "allOf",
+      1
+    ],
+    "errorMessage": "Binding with `property`=`versionTag` does not support `feel`"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
       7,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "Missing binding with `property`=`versionTag` as binding with `property`=`bindingType` and `value`=`versionTag` is set"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      9,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "`property`=`bindingType` is not supported when using `property`=`externalReference`. Use `formId` with `bindingType`"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      10,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "Binding with `property`=`processId` and `type`=`zeebe:calledElement` is required, when using a binding with `type`=`zeebe:calledElement`"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      11,
       "then",
       "properties",
       "properties"
