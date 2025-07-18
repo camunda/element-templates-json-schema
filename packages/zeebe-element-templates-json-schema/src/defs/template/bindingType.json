@@ -82,6 +82,14 @@
               "properties": {
                 "binding": {
                   "properties": {
+                    "type": {
+                      "enum": [
+                        "zeebe:calledDecision",
+                        "zeebe:calledElement",
+                        "zeebe:formDefinition",
+                        "zeebe:linkedResource"
+                      ]
+                    },
                     "property": {
                       "const": "versionTag"
                     }

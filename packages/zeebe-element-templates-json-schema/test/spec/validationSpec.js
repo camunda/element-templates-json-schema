@@ -586,6 +586,11 @@ describe('validation', function() {
         'versionTag-invalid-input-type'
       ];
 
+      describe('additional property', function() {
+
+        it('binding-type/additional-property');
+      });
+
       describe('called decision', function() {
 
         for (const testCase of testCases) {
