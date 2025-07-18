@@ -1,36 +1,51 @@
 export const template = {
   '$schema': 'https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json',
-  'id': 'io.camunda.examples.Payment',
-  'name': 'Payment',
-  'description': 'Payment process call activity',
+  'name': 'Form Definition with FormId',
+  'id': 'formDefinitionWithFormId',
   'appliesTo': [
     'bpmn:Task'
   ],
   'elementType': {
-    'value': 'bpmn:CallActivity'
+    'value': 'bpmn:UserTask'
   },
-  'properties':[
+  'properties': [
     {
-      'label': 'Payment ID',
+      'type': 'Hidden',
+      'binding': {
+        'type': 'zeebe:userTask',
+      }
+    },
+    {
+      'type': 'Hidden',
+      'value': 'aFormId',
+      'binding': {
+        'type': 'zeebe:formDefinition',
+        'property': 'formId'
+      }
+    },
+    {
+      'type': 'Dropdown',
+      'value': 'versionTag',
+      'choices': [
+        {
+          'name': 'versionTag',
+          'value': 'versionTag'
+        },
+        {
+          'name': 'deployment',
+          'value': 'deployment'
+        }
+      ],
+      'binding': {
+        'type': 'zeebe:formDefinition',
+        'property': 'bindingType'
+      }
+    },
+    {
       'type': 'String',
-      'binding': {
-        'type': 'zeebe:input',
-        'name': 'paymentID'
-      }
-    },
-    {
-      'type': 'Hidden',
-      'value': 'paymentProcess',
-      'binding': {
-        'type': 'zeebe:calledElement',
-        'property': 'processId'
-      }
-    },
-    {
-      'type': 'Hidden',
       'value': 'vers-1',
       'binding': {
-        'type': 'zeebe:calledElement',
+        'type': 'zeebe:formDefinition',
         'property': 'versionTag'
       }
     }
@@ -65,16 +80,6 @@ export const errors = [
           emUsed: true
         },
         {
-          dataPath: '/properties/0/type',
-          emUsed: true,
-          keyword: 'const',
-          message: 'should be equal to constant',
-          params: {
-            allowedValue: 'Hidden'
-          },
-          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/type/const'
-        },
-        {
           keyword: 'const',
           dataPath: '/properties/1/binding/property',
           schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/binding/properties/property/const',
@@ -96,7 +101,17 @@ export const errors = [
         },
         {
           keyword: 'const',
-          dataPath: '/properties/2/binding/property',
+          dataPath: '/properties/2/type',
+          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/type/const',
+          params: {
+            allowedValue: 'Hidden'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/3/binding/property',
           schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/binding/properties/property/const',
           params: {
             allowedValue: 'bindingType'
@@ -106,10 +121,20 @@ export const errors = [
         },
         {
           keyword: 'const',
-          dataPath: '/properties/2/value',
+          dataPath: '/properties/3/value',
           schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/value/const',
           params: {
             allowedValue: 'versionTag'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/3/type',
+          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/type/const',
+          params: {
+            allowedValue: 'Hidden'
           },
           message: 'should be equal to constant',
           emUsed: true

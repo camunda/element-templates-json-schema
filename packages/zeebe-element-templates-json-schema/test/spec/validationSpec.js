@@ -582,6 +582,7 @@ describe('validation', function() {
         'missing-property-versionTag',
         'versionTag',
         'versionTag-invalid-feel',
+        'versionTag-invalid-unconditional',
         'versionTag-invalid-input-type'
       ];
 
