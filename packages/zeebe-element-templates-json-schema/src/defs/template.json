@@ -213,6 +213,34 @@
               }
             }
           }
+        ],
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:calledElement"
+                    },
+                    "property": {
+                      "const": "processId"
+                    }
+                  },
+                  "required": [
+                    "property",
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
         ]
       }
     },
@@ -600,250 +628,7 @@
       }
     },
     {
-      "if": {
-        "properties": {
-          "properties": {
-            "contains": {
-              "properties": {
-                "binding": {
-                  "properties": {
-                    "property": {
-                      "const": "bindingType"
-                    },
-                    "type": {
-                      "enum": [
-                        "zeebe:calledDecision",
-                        "zeebe:formDefinition",
-                        "zeebe:calledElement"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "property",
-                    "type"
-                  ]
-                },
-                "value": {
-                  "const": "versionTag"
-                }
-              },
-              "required": [
-                "binding",
-                "value"
-              ]
-            }
-          }
-        },
-        "required": [
-          "properties"
-        ]
-      },
-      "then": {
-        "properties": {
-          "properties": {
-            "contains": {
-              "properties": {
-                "binding": {
-                  "properties": {
-                    "type": {
-                      "enum": [
-                        "zeebe:calledDecision",
-                        "zeebe:formDefinition",
-                        "zeebe:calledElement"
-                      ]
-                    },
-                    "property": {
-                      "const": "versionTag"
-                    }
-                  },
-                  "required": [
-                    "property",
-                    "type"
-                  ]
-                }
-              },
-              "required": [
-                "binding"
-              ]
-            }
-          }
-        },
-        "required": [
-          "properties"
-        ]
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "properties": {
-            "contains": {
-              "properties": {
-                "binding": {
-                  "properties": {
-                    "property": {
-                      "const": "versionTag"
-                    }
-                  },
-                  "required": [
-                    "property"
-                  ]
-                }
-              },
-              "required": ["binding"],
-              "not": {
-                "required": [
-                  "condition"
-                ]
-              }
-            }
-          }
-        },
-        "required": ["properties"]
-      },
-      "then": {
-        "properties": {
-          "properties": {
-            "contains": {
-              "properties": {
-                "binding": {
-                  "properties": {
-                    "property": {
-                      "const": "bindingType"
-                    }
-                  },
-                  "required": ["property"]
-                },
-                "value": {
-                  "const": "versionTag"
-                }
-              },
-              "required": ["binding", "value"]
-            }
-          }
-        },
-        "required": ["properties"]
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "properties": {
-            "contains": {
-              "properties": {
-                "binding": {
-                  "properties": {
-                    "property": {
-                      "const": "bindingType"
-                    },
-                    "type": {
-                      "const": "zeebe:formDefinition"
-                    }
-                  },
-                  "required": [
-                    "property",
-                    "type"
-                  ]
-                }
-              },
-              "required": [
-                "binding"
-              ]
-            }
-          }
-        },
-        "required": [
-          "properties"
-        ]
-      },
-      "then": {
-        "properties": {
-          "properties": {
-            "contains": {
-              "properties": {
-                "binding": {
-                  "properties": {
-                    "type": {
-                      "const": "zeebe:formDefinition"
-                    },
-                    "property": {
-                      "const": "formId"
-                    }
-                  },
-                  "required": [
-                    "property",
-                    "type"
-                  ]
-                }
-              },
-              "required": [
-                "binding"
-              ]
-            }
-          }
-        },
-        "required": [
-          "properties"
-        ]
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "properties": {
-            "contains": {
-              "properties": {
-                "binding": {
-                  "properties": {
-                    "type": {
-                      "const": "zeebe:calledElement"
-                    }
-                  },
-                  "required": [
-                    "type"
-                  ]
-                }
-              },
-              "required": [
-                "binding"
-              ]
-            }
-          }
-        },
-        "required": [
-          "properties"
-        ]
-      },
-      "then": {
-        "properties": {
-          "properties": {
-            "contains": {
-              "properties": {
-                "binding": {
-                  "properties": {
-                    "type": {
-                      "const": "zeebe:calledElement"
-                    },
-                    "property": {
-                      "const": "processId"
-                    }
-                  },
-                  "required": [
-                    "property",
-                    "type"
-                  ]
-                }
-              },
-              "required": [
-                "binding"
-              ]
-            }
-          }
-        },
-        "required": [
-          "properties"
-        ]
-      }
+      "$ref": "./template/bindingType.json"
     },
     {
       "if": {

@@ -25,13 +25,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/10/then/properties/properties/errorMessage',
+    schemaPath: '#/allOf/1/allOf/2/then/properties/properties/errorMessage',
     params: {
       errors: [
         {
           keyword: 'const',
           dataPath: '/properties/0/binding/property',
-          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/properties/property/const',
+          schemaPath: '#/allOf/1/allOf/2/then/properties/properties/contains/properties/binding/properties/property/const',
           params: {
             allowedValue: 'processId'
           },
@@ -41,7 +41,7 @@ export const errors = [
         {
           keyword: 'contains',
           dataPath: '/properties',
-          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains',
+          schemaPath: '#/allOf/1/allOf/2/then/properties/properties/contains',
           params: {
             minContains: 1
           },
@@ -55,7 +55,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '',
-    schemaPath: '#/allOf/1/allOf/10/if',
+    schemaPath: '#/allOf/1/allOf/2/if',
     params: {
       failingKeyword: 'then'
     },
