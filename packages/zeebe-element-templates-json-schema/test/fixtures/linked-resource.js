@@ -29,7 +29,7 @@ export const template = {
       }
     },
     {
-      'type': 'String',
+      'type': 'Hidden',
       'value': 'versionTag',
       'binding': {
         'type': 'zeebe:linkedResource',

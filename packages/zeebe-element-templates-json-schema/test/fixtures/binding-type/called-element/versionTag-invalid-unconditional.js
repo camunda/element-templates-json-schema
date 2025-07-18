@@ -27,7 +27,25 @@ export const template = {
       }
     },
     {
-      'type': 'Hidden',
+      'type': 'Dropdown',
+      'value': 'versionTag',
+      'choices': [
+        {
+          'name': 'versionTag',
+          'value': 'versionTag'
+        },
+        {
+          'name': 'deployment',
+          'value': 'deployment'
+        }
+      ],
+      'binding': {
+        'type': 'zeebe:calledElement',
+        'property': 'bindingType'
+      }
+    },
+    {
+      'type': 'String',
       'value': 'vers-1',
       'binding': {
         'type': 'zeebe:calledElement',
@@ -65,14 +83,14 @@ export const errors = [
           emUsed: true
         },
         {
-          dataPath: '/properties/0/type',
-          emUsed: true,
           keyword: 'const',
-          message: 'should be equal to constant',
+          dataPath: '/properties/0/type',
+          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/type/const',
           params: {
             allowedValue: 'Hidden'
           },
-          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/type/const'
+          message: 'should be equal to constant',
+          emUsed: true
         },
         {
           keyword: 'const',
@@ -96,7 +114,17 @@ export const errors = [
         },
         {
           keyword: 'const',
-          dataPath: '/properties/2/binding/property',
+          dataPath: '/properties/2/type',
+          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/type/const',
+          params: {
+            allowedValue: 'Hidden'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/3/binding/property',
           schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/binding/properties/property/const',
           params: {
             allowedValue: 'bindingType'
@@ -106,10 +134,20 @@ export const errors = [
         },
         {
           keyword: 'const',
-          dataPath: '/properties/2/value',
+          dataPath: '/properties/3/value',
           schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/value/const',
           params: {
             allowedValue: 'versionTag'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/3/type',
+          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/type/const',
+          params: {
+            allowedValue: 'Hidden'
           },
           message: 'should be equal to constant',
           emUsed: true

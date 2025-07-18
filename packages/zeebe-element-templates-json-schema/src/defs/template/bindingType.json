@@ -123,11 +123,15 @@
                 },
                 "value": {
                   "const": "versionTag"
+                },
+                "type": {
+                  "const": "Hidden"
                 }
               },
               "required": [
                 "binding",
-                "value"
+                "value",
+                "type"
               ]
             }
           }
