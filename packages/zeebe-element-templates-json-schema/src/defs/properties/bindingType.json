@@ -32,6 +32,20 @@
           "value"
         ],
         "properties": {
+          "choices": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "latest",
+                    "versionTag",
+                    "deployment"
+                  ]
+                }
+              }
+            }
+          },
           "type": {
             "enum": [
               "Hidden",
