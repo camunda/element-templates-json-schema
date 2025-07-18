@@ -51,13 +51,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/10/then/properties/properties/errorMessage',
+    schemaPath: '#/allOf/1/allOf/2/then/properties/properties/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           dataPath: '/properties/0/binding',
-          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/required',
+          schemaPath: '#/allOf/1/allOf/2/then/properties/properties/contains/properties/binding/required',
           params: {
             missingProperty: 'property'
           },
@@ -67,7 +67,7 @@ export const errors = [
         {
           keyword: 'required',
           dataPath: '/properties/1/binding',
-          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/required',
+          schemaPath: '#/allOf/1/allOf/2/then/properties/properties/contains/properties/binding/required',
           params: {
             missingProperty: 'property'
           },
@@ -77,7 +77,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/1/binding/type',
-          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/properties/type/const',
+          schemaPath: '#/allOf/1/allOf/2/then/properties/properties/contains/properties/binding/properties/type/const',
           params: {
             allowedValue: 'zeebe:calledElement'
           },
@@ -87,7 +87,7 @@ export const errors = [
         {
           keyword: 'required',
           dataPath: '/properties/2/binding',
-          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/required',
+          schemaPath: '#/allOf/1/allOf/2/then/properties/properties/contains/properties/binding/required',
           params: {
             missingProperty: 'property'
           },
@@ -97,7 +97,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/2/binding/type',
-          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/properties/type/const',
+          schemaPath: '#/allOf/1/allOf/2/then/properties/properties/contains/properties/binding/properties/type/const',
           params: {
             allowedValue: 'zeebe:calledElement'
           },
@@ -107,7 +107,7 @@ export const errors = [
         {
           keyword: 'required',
           dataPath: '/properties/3/binding',
-          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/required',
+          schemaPath: '#/allOf/1/allOf/2/then/properties/properties/contains/properties/binding/required',
           params: {
             missingProperty: 'property'
           },
@@ -117,7 +117,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/3/binding/type',
-          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains/properties/binding/properties/type/const',
+          schemaPath: '#/allOf/1/allOf/2/then/properties/properties/contains/properties/binding/properties/type/const',
           params: {
             allowedValue: 'zeebe:calledElement'
           },
@@ -127,7 +127,7 @@ export const errors = [
         {
           keyword: 'contains',
           dataPath: '/properties',
-          schemaPath: '#/allOf/1/allOf/10/then/properties/properties/contains',
+          schemaPath: '#/allOf/1/allOf/2/then/properties/properties/contains',
           params: {
             minContains: 1
           },
@@ -141,7 +141,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '',
-    schemaPath: '#/allOf/1/allOf/10/if',
+    schemaPath: '#/allOf/1/allOf/2/if',
     params: {
       failingKeyword: 'then'
     },

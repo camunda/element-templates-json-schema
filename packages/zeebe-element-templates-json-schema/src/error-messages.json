@@ -323,7 +323,9 @@
       "allOf",
       1,
       "allOf",
-      8,
+      7,
+      "allOf",
+      1,
       "then",
       "properties",
       "properties"
@@ -391,6 +393,8 @@
       1,
       "allOf",
       7,
+      "allOf",
+      0,
       "then",
       "properties",
       "properties"
@@ -404,7 +408,9 @@
       "allOf",
       1,
       "allOf",
-      9,
+      7,
+      "allOf",
+      2,
       "then",
       "properties",
       "properties"
@@ -418,7 +424,7 @@
       "allOf",
       1,
       "allOf",
-      10,
+      2,
       "then",
       "properties",
       "properties"
@@ -432,7 +438,7 @@
       "allOf",
       1,
       "allOf",
-      11,
+      8,
       "then",
       "properties",
       "properties"

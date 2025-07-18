@@ -38,13 +38,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/8/then/properties/properties/errorMessage',
+    schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           dataPath: '/properties/0',
-          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/required',
+          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/required',
           params: {
             missingProperty: 'value'
           },
@@ -54,7 +54,7 @@ export const errors = [
         {
           keyword: 'required',
           dataPath: '/properties/0/binding',
-          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/required',
+          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/binding/required',
           params: {
             missingProperty: 'property'
           },
@@ -64,7 +64,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/1/binding/property',
-          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
+          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/binding/properties/property/const',
           params: {
             allowedValue: 'bindingType'
           },
@@ -74,7 +74,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/1/value',
-          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/value/const',
+          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/value/const',
           params: {
             allowedValue: 'versionTag'
           },
@@ -84,7 +84,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/2/binding/property',
-          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/binding/properties/property/const',
+          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/binding/properties/property/const',
           params: {
             allowedValue: 'bindingType'
           },
@@ -94,7 +94,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/2/value',
-          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains/properties/value/const',
+          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains/properties/value/const',
           params: {
             allowedValue: 'versionTag'
           },
@@ -104,7 +104,7 @@ export const errors = [
         {
           keyword: 'contains',
           dataPath: '/properties',
-          schemaPath: '#/allOf/1/allOf/8/then/properties/properties/contains',
+          schemaPath: '#/allOf/1/allOf/7/allOf/1/then/properties/properties/contains',
           params: {
             minContains: 1
           },
@@ -118,7 +118,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '',
-    schemaPath: '#/allOf/1/allOf/8/if',
+    schemaPath: '#/allOf/1/allOf/7/allOf/1/if',
     params: {
       failingKeyword: 'then'
     },

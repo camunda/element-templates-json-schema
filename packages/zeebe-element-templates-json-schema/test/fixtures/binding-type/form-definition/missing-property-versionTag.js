@@ -38,13 +38,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/7/then/properties/properties/errorMessage',
+    schemaPath: '#/allOf/1/allOf/7/allOf/0/then/properties/properties/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
           dataPath: '/properties/0/binding',
-          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/binding/required',
+          schemaPath: '#/allOf/1/allOf/7/allOf/0/then/properties/properties/contains/properties/binding/required',
           params: {
             missingProperty: 'property'
           },
@@ -54,7 +54,7 @@ export const errors = [
         {
           keyword: 'enum',
           dataPath: '/properties/0/binding/type',
-          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/binding/properties/type/enum',
+          schemaPath: '#/allOf/1/allOf/7/allOf/0/then/properties/properties/contains/properties/binding/properties/type/enum',
           params: {
             allowedValues: [
               'zeebe:calledDecision',
@@ -68,7 +68,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/1/binding/property',
-          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/binding/properties/property/const',
+          schemaPath: '#/allOf/1/allOf/7/allOf/0/then/properties/properties/contains/properties/binding/properties/property/const',
           params: {
             allowedValue: 'versionTag'
           },
@@ -78,7 +78,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/2/binding/property',
-          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains/properties/binding/properties/property/const',
+          schemaPath: '#/allOf/1/allOf/7/allOf/0/then/properties/properties/contains/properties/binding/properties/property/const',
           params: {
             allowedValue: 'versionTag'
           },
@@ -88,7 +88,7 @@ export const errors = [
         {
           keyword: 'contains',
           dataPath: '/properties',
-          schemaPath: '#/allOf/1/allOf/7/then/properties/properties/contains',
+          schemaPath: '#/allOf/1/allOf/7/allOf/0/then/properties/properties/contains',
           params: {
             minContains: 1
           },
@@ -102,7 +102,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '',
-    schemaPath: '#/allOf/1/allOf/7/if',
+    schemaPath: '#/allOf/1/allOf/7/allOf/0/if',
     params: {
       failingKeyword: 'then'
     },
