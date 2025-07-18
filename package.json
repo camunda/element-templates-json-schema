@@ -5,6 +5,7 @@
   "scripts": {
     "lint": "eslint packages",
     "test": "lerna run test",
+    "test:integration": "lerna run test:integration",
     "dev": "run-s build \"lerna-dev -- {@}\" -- ",
     "lerna-dev": "lerna run dev --stream --scope",
     "build": "lerna run build --parallel --stream",
@@ -16,7 +17,8 @@
     "lerna-publish:dry": "lerna version --no-git-tag-version --no-push",
     "release": "run-s build test lerna-publish",
     "release:alpha": "run-s build test lerna-publish:alpha",
-    "release:dry": "run-s build test lerna-publish:dry"
+    "release:dry": "run-s build test lerna-publish:dry",
+    "fetch:connector-templates": "node tasks/fetch-connector-templates.js" 
   },
   "repository": {
     "type": "git",
