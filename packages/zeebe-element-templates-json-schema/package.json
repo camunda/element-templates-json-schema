@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "test": "mocha --reporter=spec --recursive test/spec",
+    "test:integration": "mocha --reporter=spec --recursive test/integration",
     "dev": "npm run test -- --watch",
     "all": "run-s build test",
     "build": "run-s build:error-messages build:schema",
