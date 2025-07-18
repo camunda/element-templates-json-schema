@@ -573,6 +573,7 @@ describe('validation', function() {
       const testCases = [
         'deployment',
         'dropdown',
+        'dropdown-invalid-choices',
         'invalid-feel',
         'invalid-input-type',
         'invalid-value',
