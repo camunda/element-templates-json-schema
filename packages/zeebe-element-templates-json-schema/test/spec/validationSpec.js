@@ -452,10 +452,6 @@ describe('validation', function() {
 
       it('linked-resource-missing-linkName');
 
-      it.skip('linked-resource-missing-versionTag');
-
-      it.skip('linked-resource-invalid-bindingType');
-
     });
 
 
@@ -609,6 +605,13 @@ describe('validation', function() {
       describe('called element', function() {
         for (const testCase of testCases) {
           it(`binding-type/called-element/${testCase}`);
+        }
+      });
+
+
+      describe('linked resource', function() {
+        for (const testCase of testCases) {
+          it(`binding-type/linked-resource/${testCase}`);
         }
       });
 
