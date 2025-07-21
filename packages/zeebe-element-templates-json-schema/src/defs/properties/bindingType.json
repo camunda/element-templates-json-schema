@@ -12,7 +12,8 @@
                 "enum": [
                   "zeebe:calledDecision",
                   "zeebe:formDefinition",
-                  "zeebe:calledElement"
+                  "zeebe:calledElement",
+                  "zeebe:linkedResource"
                 ]
               }
             },
@@ -74,7 +75,8 @@
                 "enum": [
                   "zeebe:calledDecision",
                   "zeebe:formDefinition",
-                  "zeebe:calledElement"
+                  "zeebe:calledElement",
+                  "zeebe:linkedResource"
                 ]
               }
             },

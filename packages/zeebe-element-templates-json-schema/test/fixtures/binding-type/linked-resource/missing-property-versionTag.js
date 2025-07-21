@@ -6,28 +6,15 @@ export const template = {
     'bpmn:Task'
   ],
   'elementType': {
-    'value': 'bpmn:UserTask'
+    'value': 'bpmn:ServiceTask'
   },
   'properties': [
     {
       'type': 'Hidden',
-      'binding': {
-        'type': 'zeebe:userTask',
-      }
-    },
-    {
-      'type': 'Hidden',
-      'value': 'aFormId',
-      'binding': {
-        'type': 'zeebe:formDefinition',
-        'property': 'formId'
-      }
-    },
-    {
-      'type': 'Hidden',
       'value': 'versionTag',
       'binding': {
-        'type': 'zeebe:formDefinition',
+        'type': 'zeebe:linkedResource',
+        'linkName': 'persistedLink',
         'property': 'bindingType'
       }
     }
@@ -42,43 +29,8 @@ export const errors = [
     params: {
       errors: [
         {
-          keyword: 'required',
-          dataPath: '/properties/0/binding',
-          schemaPath: '#/allOf/1/allOf/7/allOf/0/then/properties/properties/contains/properties/binding/required',
-          params: {
-            missingProperty: 'property'
-          },
-          message: "should have required property 'property'",
-          emUsed: true
-        },
-        {
-          keyword: 'enum',
-          dataPath: '/properties/0/binding/type',
-          schemaPath: '#/allOf/1/allOf/7/allOf/0/then/properties/properties/contains/properties/binding/properties/type/enum',
-          params: {
-            allowedValues: [
-              'zeebe:calledDecision',
-              'zeebe:formDefinition',
-              'zeebe:calledElement',
-              'zeebe:linkedResource'
-            ]
-          },
-          message: 'should be equal to one of the allowed values',
-          emUsed: true
-        },
-        {
           keyword: 'const',
-          dataPath: '/properties/1/binding/property',
-          schemaPath: '#/allOf/1/allOf/7/allOf/0/then/properties/properties/contains/properties/binding/properties/property/const',
-          params: {
-            allowedValue: 'versionTag'
-          },
-          message: 'should be equal to constant',
-          emUsed: true
-        },
-        {
-          keyword: 'const',
-          dataPath: '/properties/2/binding/property',
+          dataPath: '/properties/0/binding/property',
           schemaPath: '#/allOf/1/allOf/7/allOf/0/then/properties/properties/contains/properties/binding/properties/property/const',
           params: {
             allowedValue: 'versionTag'

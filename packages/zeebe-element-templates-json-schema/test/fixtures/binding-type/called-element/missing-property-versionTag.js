@@ -62,7 +62,8 @@ export const errors = [
             allowedValues: [
               'zeebe:calledDecision',
               'zeebe:formDefinition',
-              'zeebe:calledElement'
+              'zeebe:calledElement',
+              'zeebe:linkedResource'
             ]
           },
           message: 'should be equal to one of the allowed values',
