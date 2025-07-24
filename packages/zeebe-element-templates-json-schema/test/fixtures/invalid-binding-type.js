@@ -33,7 +33,6 @@ export const errors = [
       errors: [
         {
           keyword: 'enum',
-          emUsed: true,
           dataPath: '/properties/1/binding/type',
           schemaPath: '#/allOf/1/items/properties/binding/properties/type/enum',
           params: {
@@ -52,31 +51,33 @@ export const errors = [
               'zeebe:userTask',
               'zeebe:formDefinition',
               'zeebe:calledDecision',
-              'zeebe:script'
+              'zeebe:script',
+              'zeebe:assignmentDefinition'
             ]
           },
-          message: 'should be equal to one of the allowed values'
+          message: 'should be equal to one of the allowed values',
+          emUsed: true
         }
       ]
     },
-    message: 'invalid property.binding type "foo"; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:formDefinition, zeebe:calledDecision, zeebe:script }'
+    message: 'invalid property.binding type "foo"; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:formDefinition, zeebe:calledDecision, zeebe:script, zeebe:assignmentDefinition }'
   },
   {
-    dataPath: '',
     keyword: 'type',
-    message: 'should be array',
-    params: {
-      type: 'array',
-    },
+    dataPath: '',
     schemaPath: '#/oneOf/1/type',
+    params: {
+      type: 'array'
+    },
+    message: 'should be array'
   },
   {
-    dataPath: '',
     keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
+    dataPath: '',
+    schemaPath: '#/oneOf',
     params: {
       passingSchemas: null
     },
-    schemaPath: '#/oneOf'
+    message: 'should match exactly one schema in oneOf'
   }
 ];

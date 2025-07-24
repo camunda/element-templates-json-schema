@@ -61,7 +61,8 @@
                     "zeebe:linkedResource",
                     "zeebe:formDefinition",
                     "zeebe:calledDecision",
-                    "zeebe:script"
+                    "zeebe:script",
+                    "zeebe:assignmentDefinition"
                   ]
                 }
               },
@@ -611,6 +612,32 @@
       },
       {
         "$ref": "./properties/bindingType.json"
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": { "const": "zeebe:assignmentDefinition" },
+                "property": {"enum": ["assignee", "candidateUsers", "candidateGroups"]}
+              },
+              "required": ["type", "property"]
+            }
+          },
+          "required": ["binding"]
+        },
+        "then": {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden", "String", "Text", "Dropdown"
+              ]
+            }
+          }
+        }
       }
     ],
     "properties": {
@@ -825,6 +852,32 @@
             }
           },
           {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:assignmentDefinition"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "then": {
+              "properties": {
+                "property": {
+                  "enum": [
+                    "assignee",
+                    "candidateUsers",
+                    "candidateGroups"
+                  ]
+                }
+              },
+              "required": [
+                "property"
+              ]
+            }
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -848,7 +901,8 @@
               "zeebe:userTask",
               "zeebe:formDefinition",
               "zeebe:calledDecision",
-              "zeebe:script"
+              "zeebe:script",
+              "zeebe:assignmentDefinition"
             ]
           },
           "name": {
