@@ -75,6 +75,6 @@ async function fetchTemplate(templateMetadata, id) {
 
     return templateJson;
   } catch (error) {
-    throw new Error(`Failed to parse template ${ id } version ${ templateMetadata.version } fetched from ${ ref }`, { cause: error });
+    throw new Error(`Failed to parse template ${ id } version ${ templateMetadata.version } fetched from ${ ref } (error: ${error.message})`);
   }
 }
