@@ -31,9 +31,7 @@ async function fetchTemplates() {
   let response = await fetch(URL);
 
   if (!response.ok) {
-    console.warn(`Failed to fetch templates from ${ URL } (HTTP ${ response.status })`);
-
-    return [];
+    throw new Error(`Failed to fetch templates from ${ URL } (HTTP ${ response.status })`);
   }
 
   /** @type {TemplatesByIdMetadata} */
@@ -49,7 +47,15 @@ async function fetchTemplates() {
     }
   }
 
-  return (await Promise.all(tasks)).filter(template => template !== null);
+  // Collect all results to display all errors at once
+  const results = await Promise.allSettled(tasks);
+  const failed = results.filter(result => result.status === 'rejected');
+
+  if (failed.length > 0) {
+    throw new Error(`Failed to fetch some templates:\n${ failed.map(result => result.reason.message).join('\n') }`);
+  }
+
+  return results.filter(r => r.status === 'fulfilled').map(r => r.value);
 }
 
 async function fetchTemplate(templateMetadata, id) {
@@ -58,9 +64,7 @@ async function fetchTemplate(templateMetadata, id) {
   const response = await fetch(ref);
 
   if (!response.ok) {
-    console.warn(`Failed to fetch template ${ id } version ${ templateMetadata.version } from ${ ref } (HTTP ${ response.status })`);
-
-    return null;
+    throw new Error(`Failed to fetch template ${ id } version ${ templateMetadata.version } from ${ ref } (HTTP ${ response.status })`);
   }
 
   try {
@@ -71,8 +75,6 @@ async function fetchTemplate(templateMetadata, id) {
 
     return templateJson;
   } catch (error) {
-    console.warn(`Failed to parse template ${ id } version ${ templateMetadata.version } fetched from ${ ref }`, error);
-
-    return null;
+    throw new Error(`Failed to parse template ${ id } version ${ templateMetadata.version } fetched from ${ ref } (error: ${error.message})`);
   }
 }
