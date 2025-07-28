@@ -1,27 +1,42 @@
-
 {
   "if": {
     "properties": {
-      "type": {
-        "const": "zeebe:assignmentDefinition"
-      }
-    },
-    "required": [
-      "type"
-    ]
-  },
-  "then": {
-    "properties": {
-      "property": {
-        "enum": [
-          "assignee",
-          "candidateUsers",
-          "candidateGroups"
+      "binding": {
+        "properties": {
+          "type": {
+            "const": "zeebe:assignmentDefinition"
+          },
+          "property": {
+            "enum": [
+              "assignee",
+              "candidateUsers",
+              "candidateGroups"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "property"
         ]
       }
     },
     "required": [
-      "property"
+      "binding"
     ]
+  },
+  "then": {
+    "required": [
+      "type"
+    ],
+    "properties": {
+      "type": {
+        "enum": [
+          "Hidden",
+          "String",
+          "Text",
+          "Dropdown"
+        ]
+      }
+    }
   }
 }

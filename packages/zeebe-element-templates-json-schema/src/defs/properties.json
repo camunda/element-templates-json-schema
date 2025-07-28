@@ -614,30 +614,7 @@
         "$ref": "./properties/bindingType.json"
       },
       {
-        "if": {
-          "properties": {
-            "binding": {
-              "properties": {
-                "type": { "const": "zeebe:assignmentDefinition" },
-                "property": {"enum": ["assignee", "candidateUsers", "candidateGroups"]}
-              },
-              "required": ["type", "property"]
-            }
-          },
-          "required": ["binding"]
-        },
-        "then": {
-          "required": [
-            "type"
-          ],
-          "properties": {
-            "type": {
-              "enum": [
-                "Hidden", "String", "Text", "Dropdown"
-              ]
-            }
-          }
-        }
+        "$ref": "./properties/assignmentDefinition.json"
       }
     ],
     "properties": {
@@ -852,7 +829,7 @@
             }
           },
           {
-            "$ref": "./properties/assignmentDefinition.json"
+            "$ref": "./properties/binding/assignmentDefinition.json"
           },
           {
             "$ref": "examples.json#/binding"
