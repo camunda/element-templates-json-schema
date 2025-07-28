@@ -852,30 +852,7 @@
             }
           },
           {
-            "if": {
-              "properties": {
-                "type": {
-                  "const": "zeebe:assignmentDefinition"
-                }
-              },
-              "required": [
-                "type"
-              ]
-            },
-            "then": {
-              "properties": {
-                "property": {
-                  "enum": [
-                    "assignee",
-                    "candidateUsers",
-                    "candidateGroups"
-                  ]
-                }
-              },
-              "required": [
-                "property"
-              ]
-            }
+            "$ref": "./properties/assignmentDefinition.json"
           },
           {
             "$ref": "examples.json#/binding"

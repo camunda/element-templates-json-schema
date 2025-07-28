@@ -218,7 +218,7 @@
       "allOf",
       0
     ],
-    "errorMessage": "When using \"zeebe:formDefinition\", \"zeebe:userTask\" must be set on the same element"
+    "errorMessage": "When using \"zeebe:formDefinition\" or \"zeebe:assignmentDefinition\", \"zeebe:userTask\" must be set on the same element"
   },
   {
     "path": [
@@ -444,19 +444,5 @@
       "properties"
     ],
     "errorMessage": "\"formId\" and \"externalReference\" cannot be used together"
-  },
-  {
-    "path": [
-      "definitions",
-      "template",
-      "allOf",
-      1,
-      "allOf",
-      9,
-      "then",
-      "properties",
-      "properties"
-    ],
-    "errorMessage": "When using \"zeebe:assignmentDefinition\", \"zeebe:userTask\" must be set on the same element"
   }
 ]
