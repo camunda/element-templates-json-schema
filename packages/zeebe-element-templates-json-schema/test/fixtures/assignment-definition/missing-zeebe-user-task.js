@@ -38,14 +38,14 @@ export const template = {
 export const errors = [
   {
     keyword: 'errorMessage',
-    dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/9/then/properties/properties/errorMessage',
+    dataPath: '',
+    schemaPath: '#/allOf/1/allOf/4/then/allOf/0/errorMessage',
     params: {
       errors: [
         {
           keyword: 'const',
           dataPath: '/properties/0/binding/type',
-          schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains/properties/binding/properties/type/const',
+          schemaPath: '#/allOf/1/allOf/4/then/allOf/0/properties/properties/contains/properties/binding/properties/type/const',
           params: {
             allowedValue: 'zeebe:userTask'
           },
@@ -55,7 +55,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/1/binding/type',
-          schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains/properties/binding/properties/type/const',
+          schemaPath: '#/allOf/1/allOf/4/then/allOf/0/properties/properties/contains/properties/binding/properties/type/const',
           params: {
             allowedValue: 'zeebe:userTask'
           },
@@ -65,7 +65,7 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/2/binding/type',
-          schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains/properties/binding/properties/type/const',
+          schemaPath: '#/allOf/1/allOf/4/then/allOf/0/properties/properties/contains/properties/binding/properties/type/const',
           params: {
             allowedValue: 'zeebe:userTask'
           },
@@ -75,7 +75,7 @@ export const errors = [
         {
           keyword: 'contains',
           dataPath: '/properties',
-          schemaPath: '#/allOf/1/allOf/9/then/properties/properties/contains',
+          schemaPath: '#/allOf/1/allOf/4/then/allOf/0/properties/properties/contains',
           params: {
             minContains: 1
           },
@@ -84,12 +84,12 @@ export const errors = [
         }
       ]
     },
-    message: 'When using "zeebe:assignmentDefinition", "zeebe:userTask" must be set on the same element'
+    message: 'When using "zeebe:formDefinition" or "zeebe:assignmentDefinition", "zeebe:userTask" must be set on the same element'
   },
   {
     keyword: 'if',
     dataPath: '',
-    schemaPath: '#/allOf/1/allOf/9/if',
+    schemaPath: '#/allOf/1/allOf/4/if',
     params: {
       failingKeyword: 'then'
     },

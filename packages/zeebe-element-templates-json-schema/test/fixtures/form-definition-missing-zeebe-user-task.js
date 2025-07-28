@@ -49,7 +49,7 @@ export const errors = [
         }
       ]
     },
-    message: 'When using "zeebe:formDefinition", "zeebe:userTask" must be set on the same element'
+    message: 'When using "zeebe:formDefinition" or "zeebe:assignmentDefinition", "zeebe:userTask" must be set on the same element'
   },
   {
     keyword: 'if',
