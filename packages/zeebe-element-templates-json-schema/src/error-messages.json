@@ -215,8 +215,8 @@
       "allOf",
       4,
       "then",
-      "allOf",
-      0
+      "properties",
+      "properties"
     ],
     "errorMessage": "When using \"zeebe:formDefinition\" or \"zeebe:assignmentDefinition\", \"zeebe:userTask\" must be set on the same element"
   },

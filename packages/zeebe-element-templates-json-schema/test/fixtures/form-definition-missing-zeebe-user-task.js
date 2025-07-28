@@ -23,14 +23,14 @@ export const template = {
 export const errors = [
   {
     keyword: 'errorMessage',
-    dataPath: '',
-    schemaPath: '#/allOf/1/allOf/4/then/allOf/0/errorMessage',
+    dataPath: '/properties',
+    schemaPath: '#/allOf/1/allOf/4/then/properties/properties/errorMessage',
     params: {
       errors: [
         {
           keyword: 'const',
           dataPath: '/properties/0/binding/type',
-          schemaPath: '#/allOf/1/allOf/4/then/allOf/0/properties/properties/contains/properties/binding/properties/type/const',
+          schemaPath: '#/allOf/1/allOf/4/then/properties/properties/contains/properties/binding/properties/type/const',
           params: {
             allowedValue: 'zeebe:userTask'
           },
@@ -40,7 +40,7 @@ export const errors = [
         {
           keyword: 'contains',
           dataPath: '/properties',
-          schemaPath: '#/allOf/1/allOf/4/then/allOf/0/properties/properties/contains',
+          schemaPath: '#/allOf/1/allOf/4/then/properties/properties/contains',
           params: {
             minContains: 1
           },
