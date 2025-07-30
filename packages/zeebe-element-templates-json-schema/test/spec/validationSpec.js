@@ -199,6 +199,12 @@ describe('validation', function() {
     it('element-type-invalid');
 
 
+    it('hidden-property');
+
+
+    it('hidden-zeebe-user-task');
+
+
     describe('element type - event definition', function() {
 
       it('element-type-event-definition');
