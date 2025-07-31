@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.27.0
+
+* `FEAT`: support `zeebe:assignmentDefinition` ([#186](https://github.com/camunda/element-templates-json-schema/pull/186))
+
 ## 0.26.0
 
 * `FEAT`: support `bindingType` property for linked element extensions ([#173](https://github.com/camunda/element-templates-json-schema/pull/173), [#183](https://github.com/camunda/element-templates-json-schema/pull/183))

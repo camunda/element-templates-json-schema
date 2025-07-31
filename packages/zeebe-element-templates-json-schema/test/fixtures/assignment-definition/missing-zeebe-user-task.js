@@ -1,20 +1,35 @@
 export const template = {
-  '$schema': 'https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json',
-  'name': 'Form Definition with external reference',
-  'id': 'formDefinitionWithExternalReference',
-  'appliesTo': [
+  name: 'AssignmentDefinition',
+  id: 'com.camunda.example.AssignmentDefinition',
+  appliesTo: [
     'bpmn:Task'
   ],
-  'elementType': {
-    'value': 'bpmn:UserTask'
+  elementType: {
+    value: 'bpmn:UserTask'
   },
-  'properties': [
+  properties: [
     {
-      'type': 'Hidden',
-      'value': 'aReference',
-      'binding': {
-        'type': 'zeebe:formDefinition',
-        'property': 'externalReference'
+      label: 'Assignee',
+      description: 'Assignee for user task',
+      type: 'String',
+      binding: {
+        type: 'zeebe:assignmentDefinition',
+        property: 'assignee'
+      }
+    },
+    {
+      type: 'Hidden',
+      binding: {
+        type: 'zeebe:assignmentDefinition',
+        property: 'candidateUsers'
+      }
+    },
+    {
+      type: 'Hidden',
+      value: 'someDefaultGroup',
+      binding: {
+        type: 'zeebe:assignmentDefinition',
+        property: 'candidateGroups'
       }
     }
   ]
@@ -30,6 +45,26 @@ export const errors = [
         {
           keyword: 'const',
           dataPath: '/properties/0/binding/type',
+          schemaPath: '#/allOf/1/allOf/4/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:userTask'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/1/binding/type',
+          schemaPath: '#/allOf/1/allOf/4/then/properties/properties/contains/properties/binding/properties/type/const',
+          params: {
+            allowedValue: 'zeebe:userTask'
+          },
+          message: 'should be equal to constant',
+          emUsed: true
+        },
+        {
+          keyword: 'const',
+          dataPath: '/properties/2/binding/type',
           schemaPath: '#/allOf/1/allOf/4/then/properties/properties/contains/properties/binding/properties/type/const',
           params: {
             allowedValue: 'zeebe:userTask'

@@ -616,6 +616,31 @@ describe('validation', function() {
       });
 
     });
+
+    describe('zeebe:assignmentDefinition', function() {
+
+
+      it('assignment-definition/invalid-element-type');
+
+      it('assignment-definition/invalid-input-type');
+
+      it('assignment-definition/invalid-property');
+
+      it('assignment-definition/missing-property');
+
+      it('assignment-definition/missing-zeebe-user-task');
+
+      it('assignment-definition/valid-all-properties');
+
+      it('assignment-definition/valid-assignee');
+
+      it('assignment-definition/valid-candidateGroups');
+
+      it('assignment-definition/valid-candidateUsers');
+
+      it('assignment-definition/valid-with-feel');
+
+    });
   });
 
 });

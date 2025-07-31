@@ -298,7 +298,10 @@
                 "binding": {
                   "properties": {
                     "type": {
-                      "const": "zeebe:formDefinition"
+                      "enum": [
+                        "zeebe:formDefinition",
+                        "zeebe:assignmentDefinition"
+                      ]
                     }
                   },
                   "required": [
@@ -317,33 +320,29 @@
         ]
       },
       "then": {
-        "allOf": [
-          {
-            "properties": {
+        "properties": {
+          "properties": {
+            "contains": {
               "properties": {
-                "contains": {
+                "binding": {
                   "properties": {
-                    "binding": {
-                      "properties": {
-                        "type": {
-                          "const": "zeebe:userTask"
-                        }
-                      },
-                      "required": [
-                        "type"
-                      ]
+                    "type": {
+                      "const": "zeebe:userTask"
                     }
                   },
                   "required": [
-                    "binding"
+                    "type"
                   ]
                 }
-              }
-            },
-            "required": [
-              "properties"
-            ]
+              },
+              "required": [
+                "binding"
+              ]
+            }
           }
+        },
+        "required": [
+          "properties"
         ]
       }
     },
