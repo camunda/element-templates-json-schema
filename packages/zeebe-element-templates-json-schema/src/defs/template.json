@@ -300,7 +300,8 @@
                     "type": {
                       "enum": [
                         "zeebe:formDefinition",
-                        "zeebe:assignmentDefinition"
+                        "zeebe:assignmentDefinition",
+                        "zeebe:priorityDefinition"
                       ]
                     }
                   },

@@ -643,6 +643,25 @@ describe('validation', function() {
     });
   });
 
+
+  describe('zeebe:priorityDefinition', function() {
+
+    it('priority-definition/invalid-element-type');
+
+    it('priority-definition/invalid-input-types');
+
+    it('priority-definition/invalid-property');
+
+    it('priority-definition/invalid-values');
+
+    it('priority-definition/missing-zeebe-user-task');
+
+    it('priority-definition/valid');
+
+    it('priority-definition/valid-with-feel');
+
+  });
+
 });
 
 

@@ -62,7 +62,8 @@
                     "zeebe:formDefinition",
                     "zeebe:calledDecision",
                     "zeebe:script",
-                    "zeebe:assignmentDefinition"
+                    "zeebe:assignmentDefinition",
+                    "zeebe:priorityDefinition"
                   ]
                 }
               },
@@ -615,6 +616,9 @@
       },
       {
         "$ref": "./properties/assignmentDefinition.json"
+      },
+      {
+        "$ref": "./properties/priorityDefinition.json"
       }
     ],
     "properties": {
@@ -832,6 +836,9 @@
             "$ref": "./properties/binding/assignmentDefinition.json"
           },
           {
+            "$ref": "./properties/binding/priorityDefinition.json"
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -856,7 +863,8 @@
               "zeebe:formDefinition",
               "zeebe:calledDecision",
               "zeebe:script",
-              "zeebe:assignmentDefinition"
+              "zeebe:assignmentDefinition",
+              "zeebe:priorityDefinition"
             ]
           },
           "name": {

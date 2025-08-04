@@ -149,7 +149,7 @@
       "properties",
       "type"
     ],
-    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:formDefinition, zeebe:calledDecision, zeebe:script, zeebe:assignmentDefinition }"
+    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:formDefinition, zeebe:calledDecision, zeebe:script, zeebe:assignmentDefinition, zeebe:priorityDefinition }"
   },
   {
     "path": [
@@ -218,7 +218,7 @@
       "properties",
       "properties"
     ],
-    "errorMessage": "When using \"zeebe:formDefinition\" or \"zeebe:assignmentDefinition\", \"zeebe:userTask\" must be set on the same element"
+    "errorMessage": "When using ${0/0/binding/type}, \"zeebe:userTask\" must be set on the same element"
   },
   {
     "path": [
@@ -444,5 +444,42 @@
       "properties"
     ],
     "errorMessage": "\"formId\" and \"externalReference\" cannot be used together"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      22,
+      "allOf",
+      2,
+      "then",
+      "properties",
+      "value"
+    ],
+    "errorMessage": "Invalid value for priority. Must be between 0 and 100."
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      22,
+      "allOf",
+      3,
+      "then",
+      "properties",
+      "choices",
+      "items",
+      "properties",
+      "value"
+    ],
+    "errorMessage": "Invalid value for priority. Must be between 0 and 100."
   }
 ]
