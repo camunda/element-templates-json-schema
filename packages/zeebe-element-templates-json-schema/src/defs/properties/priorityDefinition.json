@@ -133,41 +133,7 @@
           "value": {
             "type": "string",
             "pattern": "^(100|[1-9]?[0-9])$"
-          }
-        }
-      }
-    },
-    {
-      "if": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "const": "Dropdown"
           },
-          "binding": {
-            "properties": {
-              "type": {
-                "const": "zeebe:priorityDefinition"
-              },
-              "property": {
-                "const": "priority"
-              }
-            },
-            "required": [
-              "type",
-              "property"
-            ]
-          },
-          "choices": {}
-        },
-        "required": [
-          "binding",
-          "type",
-          "choices"
-        ]
-      },
-      "then": {
-        "properties": {
           "choices": {
             "items": {
               "properties": {
