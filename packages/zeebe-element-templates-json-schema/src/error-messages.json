@@ -460,7 +460,7 @@
       "properties",
       "value"
     ],
-    "errorMessage": "Invalid value for priority. Must be between 0 and 100."
+    "errorMessage": "Invalid value for priority. Must be between 0 and 100"
   },
   {
     "path": [
@@ -472,7 +472,7 @@
       "allOf",
       22,
       "allOf",
-      3,
+      2,
       "then",
       "properties",
       "choices",
@@ -480,6 +480,6 @@
       "properties",
       "value"
     ],
-    "errorMessage": "Invalid value for priority. Must be between 0 and 100."
+    "errorMessage": "Invalid value for priority. Must be between 0 and 100"
   }
 ]

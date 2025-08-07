@@ -124,7 +124,6 @@
         },
         "required": [
           "binding",
-          "value",
           "type"
         ]
       },
