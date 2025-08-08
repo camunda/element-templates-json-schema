@@ -1,0 +1,22 @@
+{
+  "if": {
+    "properties": {
+      "type": {
+        "const": "zeebe:priorityDefinition"
+      }
+    },
+    "required": [
+      "type"
+    ]
+  },
+  "then": {
+    "properties": {
+      "property": {
+        "const": "priority"
+      }
+    },
+    "required": [
+      "property"
+    ]
+  }
+}

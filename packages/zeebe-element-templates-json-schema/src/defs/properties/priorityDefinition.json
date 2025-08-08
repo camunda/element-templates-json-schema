@@ -1,0 +1,150 @@
+{
+  "allOf": [
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "binding": {
+            "properties": {
+              "type": {
+                "const": "zeebe:priorityDefinition"
+              },
+              "property": {
+                "const": "priority"
+              }
+            },
+            "required": [
+              "type",
+              "property"
+            ]
+          }
+        },
+        "required": [
+          "binding"
+        ]
+      },
+      "then": {
+        "anyOf": [
+          {
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "Hidden",
+                  "Number",
+                  "Dropdown"
+                ]
+              }
+            }
+          },
+          {
+            "required": [
+              "type",
+              "feel"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "String",
+                  "Text"
+                ]
+              },
+              "feel": {
+                "const": "required"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "Number"
+          },
+          "binding": {
+            "properties": {
+              "type": {
+                "const": "zeebe:priorityDefinition"
+              },
+              "property": {
+                "const": "priority"
+              }
+            },
+            "required": [
+              "type",
+              "property"
+            ]
+          }
+        },
+        "required": [
+          "binding",
+          "value",
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "Hidden",
+              "Dropdown"
+            ]
+          },
+          "binding": {
+            "properties": {
+              "type": {
+                "const": "zeebe:priorityDefinition"
+              },
+              "property": {
+                "const": "priority"
+              }
+            },
+            "required": [
+              "type",
+              "property"
+            ]
+          }
+        },
+        "required": [
+          "binding",
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "type": "string",
+            "pattern": "^(100|[1-9]?[0-9])$"
+          },
+          "choices": {
+            "items": {
+              "properties": {
+                "value": {
+                  "type": "string",
+                  "pattern": "^(100|[1-9]?[0-9])$"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
