@@ -64,7 +64,8 @@
                     "zeebe:script",
                     "zeebe:assignmentDefinition",
                     "zeebe:priorityDefinition",
-                    "zeebe:adHoc"
+                    "zeebe:adHoc",
+                    "zeebe:taskSchedule"
                   ]
                 }
               },
@@ -623,6 +624,9 @@
       },
       {
         "$ref": "./properties/adHoc.json"
+      },
+      {
+        "$ref": "./properties/taskSchedule.json"
       }
     ],
     "properties": {
@@ -846,6 +850,9 @@
             "$ref": "./properties/binding/adHoc.json"
           },
           {
+            "$ref": "./properties/binding/taskSchedule.json"
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -872,7 +879,8 @@
               "zeebe:script",
               "zeebe:assignmentDefinition",
               "zeebe:priorityDefinition",
-              "zeebe:adHoc"
+              "zeebe:adHoc",
+              "zeebe:taskSchedule"
             ]
           },
           "name": {

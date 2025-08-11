@@ -1,0 +1,25 @@
+{
+  "if": {
+    "properties": {
+      "type": {
+        "const": "zeebe:taskSchedule"
+      }
+    },
+    "required": [
+      "type"
+    ]
+  },
+  "then": {
+    "properties": {
+      "property": {
+        "enum": [
+          "dueDate",
+          "followUpDate"
+        ]
+      }
+    },
+    "required": [
+      "property"
+    ]
+  }
+}
