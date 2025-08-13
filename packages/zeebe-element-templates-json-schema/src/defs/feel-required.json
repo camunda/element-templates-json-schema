@@ -221,6 +221,67 @@
           }
         }
       }
+    },
+    {
+      "if": {
+        "anyOf": [
+          {
+            "required": [
+              "elementType"
+            ],
+            "properties": {
+              "elementType": {
+                "required": [
+                  "value"
+                ],
+                "properties": {
+                  "value": {
+                    "const": "bpmn:AdHocSubProcess"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "appliesTo"
+            ],
+            "properties": {
+              "appliesTo": {
+                "const": [
+                  "bpmn:AdHocSubProcess"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "items": {
+              "if": {
+                "properties": {
+                  "binding": {
+                    "properties": {
+                      "type": { "const": "zeebe:adHoc" },
+                      "property": { "const": "outputElement" }
+                    },
+                    "required": [ "type", "property" ]
+                  }
+                },
+                "required": [ "binding" ]
+              },
+              "then": {
+                "properties": {
+                  "feel": { "const": "required" }
+                },
+                "required": [ "feel" ]
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }
