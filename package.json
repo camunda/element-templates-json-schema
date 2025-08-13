@@ -18,7 +18,7 @@
     "release": "run-s build test lerna-publish",
     "release:alpha": "run-s build test lerna-publish:alpha",
     "release:dry": "run-s build test lerna-publish:dry",
-    "fetch:connector-templates": "node tasks/fetch-connector-templates.js" 
+    "fetch:connector-templates": "node tasks/fetch-connector-templates.js"
   },
   "repository": {
     "type": "git",
