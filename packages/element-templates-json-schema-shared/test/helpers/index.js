@@ -10,11 +10,13 @@ const AjvErrors = require('ajv-errors');
 
 module.exports = {
   createValidator,
-  withErrorMessages
+  withErrorMessages,
+  withDeprecationWarnings
 };
 
-function createValidator(schema, errors) {
+function createValidator(schema, errors, deprecations) {
 
+  let deprecationWarnings = [];
   const ajv = new Ajv({
     allErrors: true,
     strict: false,
@@ -23,7 +25,60 @@ function createValidator(schema, errors) {
 
   AjvErrors(ajv);
 
-  return ajv.compile(withErrorMessages(schema, errors));
+  ajv.addKeyword({
+    keyword: 'isDeprecated',
+    errors: true,
+    compile(schema, parentSchema) {
+      return function(data, dataCtx) {
+        if (schema) {
+          deprecationWarnings = [];
+
+          // AJV doesn't support real warnings, so this adds a non-strict validation with keyword 'isDeprecated'
+          const deprecationWarning = {
+            keyword: 'isDeprecated',
+
+            // TODO: schemaPath
+            dataPath: dataCtx.dataPath,
+            message: parentSchema.deprecatedWarning || 'This property is deprecated',
+          };
+
+          deprecationWarnings.push({
+            id: dataCtx.rootData.id,
+            warningDescription: deprecationWarning,
+          });
+
+          // just return true to not fail validation
+          return true;
+        }
+        return true;
+      };
+    }
+  });
+
+  const validator = ajv.compile(withErrorMessages(withDeprecationWarnings(schema, deprecations), errors));
+
+
+  const getDeprecationWarnings = function(data) {
+    if (deprecationWarnings.length > 0 && data.id === deprecationWarnings[0].id) {
+      return deprecationWarnings.map(warning => warning.warningDescription);
+    }
+  };
+
+  // wrapper function checks for warnings before each validation
+  const wrappedValidator = function(data, ...args) {
+
+    // Empty deprecation before each validation
+    deprecationWarnings = [];
+
+    const result = validator.call(this, data, ...args);
+
+    wrappedValidator.errors = validator.errors;
+    wrappedValidator.warnings = getDeprecationWarnings(data);
+
+    return result;
+  };
+
+  return wrappedValidator;
 }
 
 function withErrorMessages(schema, errors) {
@@ -72,3 +127,33 @@ function eqlErrors(chai, utils) {
 }
 
 chai.use(eqlErrors);
+
+function withDeprecationWarnings(schema, deprecations) {
+  if (!deprecations || !deprecations.length) {
+    return schema;
+  }
+
+  // clone a new copy
+  let newSchema = JSON.parse(JSON.stringify(schema));
+
+  // set deprecation warnings for given paths
+  forEach(deprecations, function(deprecation) {
+    newSchema = setDeprecationWarning(newSchema, deprecation);
+  });
+
+  return newSchema;
+}
+
+function setDeprecationWarning(schema, deprecation) {
+  const {
+    path,
+    warningMessage
+  } = deprecation;
+
+  const deprecationPath = [
+    ...path,
+    'deprecatedWarning'
+  ];
+
+  return set(schema, deprecationPath, warningMessage);
+}

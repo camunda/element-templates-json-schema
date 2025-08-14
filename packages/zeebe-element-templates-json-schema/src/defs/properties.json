@@ -662,7 +662,7 @@
                   { "required": [ "generatedValue" ] }
                 ]
               },
-              "deprecated": true
+              "isDeprecated": true
             }
           ]
         }
