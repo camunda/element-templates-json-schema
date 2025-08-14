@@ -1,5 +1,6 @@
 export const template = {
   'name': 'HiddenProperty',
+  '$schema': '../../resources/schema.json',
   'id': 'com.camunda.example.HiddenProperty',
   'appliesTo': [
     'bpmn:Task'
@@ -10,20 +11,28 @@ export const template = {
   'properties': [
     {
       'type': 'Hidden',
-      'value': 'decision',
       'binding': {
-        'type': 'zeebe:calledDecision',
-        'property': 'decisionId'
+        'type': 'property',
+        'name': 'resultVariable'
       }
     },
     {
       'type': 'Hidden',
+      'value': 'hiddenValue',
       'binding': {
-        'type': 'zeebe:calledDecision',
-        'property': 'resultVariable'
+        'type': 'property',
+        'name': 'resultVariable'
       }
     }
   ]
 };
 
 export const errors = null;
+
+export const warnings = [
+  {
+    keyword: 'isDeprecated',
+    dataPath: '/properties/0',
+    message: 'Hidden property must specify either "value" or "generatedValue"'
+  }
+];

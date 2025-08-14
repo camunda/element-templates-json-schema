@@ -17,3 +17,11 @@ export const template = {
 };
 
 export const errors = null;
+
+export const warnings = [
+  {
+    keyword: 'isDeprecated',
+    dataPath: '/properties/0',
+    message: 'Hidden property must specify either "value" or "generatedValue"'
+  }
+];
