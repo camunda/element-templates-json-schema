@@ -646,6 +646,8 @@ describe('validation', function() {
 
       it('ad-hoc/invalid-missing-feel-output-element');
 
+      it('ad-hoc/invalid-property');
+
       it('ad-hoc/missing-output-collection');
 
       it('ad-hoc/missing-output-element');
