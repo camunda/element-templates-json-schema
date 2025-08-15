@@ -1,7 +1,7 @@
 export const template = {
     '$schema': 'https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json',
     'name': 'AdHoc Template',
-    'id': 'io.camunda.examples.AdHoc.Valid',
+    'id': 'io.camunda.examples.AdHoc.InvalidElementType',
     'version': 1,
     'appliesTo': [ 'bpmn:Activity' ],
     'elementType': { 'value': 'bpmn:' },
