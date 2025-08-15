@@ -262,6 +262,7 @@
             "items": {
               "if": {
                 "properties": {
+                  "type": {"enum":  ["String", "Text"]},
                   "binding": {
                     "properties": {
                       "type": { "const": "zeebe:adHoc" },
@@ -270,7 +271,7 @@
                     "required": [ "type", "property" ]
                   }
                 },
-                "required": [ "binding" ]
+                "required": [ "binding", "type" ]
               },
               "then": {
                 "properties": {
