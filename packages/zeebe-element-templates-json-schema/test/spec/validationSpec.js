@@ -646,6 +646,8 @@ describe('validation', function() {
 
       it('ad-hoc/invalid-element-type');
 
+      it('ad-hoc/invalid-input-type');
+
       it('ad-hoc/invalid-missing-feel-output-element');
 
       it('ad-hoc/invalid-property');
