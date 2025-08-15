@@ -26,85 +26,85 @@ export const template = {
 };
 
 export const errors = [
-    {
-        keyword: "const",
-        dataPath: "/properties/0/binding/property",
-        schemaPath: "#/allOf/1/allOf/12/then/properties/properties/contains/properties/binding/properties/property/const",
-        params: {
-            allowedValue: "type"
-        },
-        message: "should be equal to constant"
+  {
+    keyword: 'const',
+    dataPath: '/properties/0/binding/property',
+    schemaPath: '#/allOf/1/allOf/12/then/properties/properties/contains/properties/binding/properties/property/const',
+    params: {
+      allowedValue: 'type'
     },
-    {
-        keyword: "const",
-        dataPath: "/properties/1/binding/type",
-        schemaPath: "#/allOf/1/allOf/12/then/properties/properties/contains/properties/binding/properties/type/const",
-        params: {
-            allowedValue: "zeebe:taskDefinition"
-        },
-        message: "should be equal to constant"
+    message: 'should be equal to constant'
+  },
+  {
+    keyword: 'const',
+    dataPath: '/properties/1/binding/type',
+    schemaPath: '#/allOf/1/allOf/12/then/properties/properties/contains/properties/binding/properties/type/const',
+    params: {
+      allowedValue: 'zeebe:taskDefinition'
     },
-    {
-        keyword: "const",
-        dataPath: "/properties/1/binding/property",
-        schemaPath: "#/allOf/1/allOf/12/then/properties/properties/contains/properties/binding/properties/property/const",
-        params: {
-            allowedValue: "type"
-        },
-        message: "should be equal to constant"
+    message: 'should be equal to constant'
+  },
+  {
+    keyword: 'const',
+    dataPath: '/properties/1/binding/property',
+    schemaPath: '#/allOf/1/allOf/12/then/properties/properties/contains/properties/binding/properties/property/const',
+    params: {
+      allowedValue: 'type'
     },
-    {
-        keyword: "const",
-        dataPath: "/properties/2/binding/type",
-        schemaPath: "#/allOf/1/allOf/12/then/properties/properties/contains/properties/binding/properties/type/const",
-        params: {
-            allowedValue: "zeebe:taskDefinition"
-        },
-        message: "should be equal to constant"
+    message: 'should be equal to constant'
+  },
+  {
+    keyword: 'const',
+    dataPath: '/properties/2/binding/type',
+    schemaPath: '#/allOf/1/allOf/12/then/properties/properties/contains/properties/binding/properties/type/const',
+    params: {
+      allowedValue: 'zeebe:taskDefinition'
     },
-    {
-        keyword: "const",
-        dataPath: "/properties/2/binding/property",
-        schemaPath: "#/allOf/1/allOf/12/then/properties/properties/contains/properties/binding/properties/property/const",
-        params: {
-            allowedValue: "type"
-        },
-        message: "should be equal to constant"
+    message: 'should be equal to constant'
+  },
+  {
+    keyword: 'const',
+    dataPath: '/properties/2/binding/property',
+    schemaPath: '#/allOf/1/allOf/12/then/properties/properties/contains/properties/binding/properties/property/const',
+    params: {
+      allowedValue: 'type'
     },
-    {
-        keyword: "contains",
-        dataPath: "/properties",
-        schemaPath: "#/allOf/1/allOf/12/then/properties/properties/contains",
-        params: {
-            minContains: 1
-        },
-        message: "should contain at least 1 valid item(s)"
+    message: 'should be equal to constant'
+  },
+  {
+    keyword: 'contains',
+    dataPath: '/properties',
+    schemaPath: '#/allOf/1/allOf/12/then/properties/properties/contains',
+    params: {
+      minContains: 1
     },
-    {
-        keyword: "if",
-        dataPath: "",
-        schemaPath: "#/allOf/1/allOf/12/if",
-        params: {
-            failingKeyword: "then"
-        },
-        message: "should match \"then\" schema"
+    message: 'should contain at least 1 valid item(s)'
+  },
+  {
+    keyword: 'if',
+    dataPath: '',
+    schemaPath: '#/allOf/1/allOf/12/if',
+    params: {
+      failingKeyword: 'then'
     },
-    {
-        keyword: "type",
-        dataPath: "",
-        schemaPath: "#/oneOf/1/type",
-        params: {
-            type: "array"
-        },
-        message: "should be array"
+    message: 'should match "then" schema'
+  },
+  {
+    keyword: 'type',
+    dataPath: '',
+    schemaPath: '#/oneOf/1/type',
+    params: {
+      type: 'array'
     },
-    {
-        keyword: "oneOf",
-        dataPath: "",
-        schemaPath: "#/oneOf",
-        params: {
-            passingSchemas: null
-        },
-        message: "should match exactly one schema in oneOf"
-    }
+    message: 'should be array'
+  },
+  {
+    keyword: 'oneOf',
+    dataPath: '',
+    schemaPath: '#/oneOf',
+    params: {
+      passingSchemas: null
+    },
+    message: 'should match exactly one schema in oneOf'
+  }
 ];
