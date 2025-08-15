@@ -206,7 +206,8 @@
       "then"
     ],
     "errorMessage": "Property \"formId\" cannot be a FEEL expression"
-  },{
+  },
+  {
     "path": [
       "definitions",
       "template",
@@ -496,5 +497,59 @@
       "then"
     ],
     "errorMessage": "Property \"outputCollection\" cannot be a FEEL expression"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      9,
+      "allOf",
+      1,
+      "then",
+      "properties",
+      "properties",
+      "allOf",
+      0
+    ],
+    "errorMessage": "When \"outputCollection\" is defined for \"zeebe:adHoc\", \"outputElement\" must be defined, too"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      9,
+      "allOf",
+      1,
+      "then",
+      "properties",
+      "properties",
+      "allOf",
+      1
+    ],
+    "errorMessage": "When \"outputElement\" is defined for \"zeebe:adHoc\", \"outputCollection\" must be defined, too"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      9,
+      "allOf",
+      1,
+      "then",
+      "properties",
+      "properties",
+      "allOf",
+      2
+    ],
+    "errorMessage": "When using \"zeebe:adHoc\" with properties \"outputCollection\" and \"outputElement\", \"zeebe:taskDefinition\" with property=\"type\" must be set on the same element"
   }
 ]

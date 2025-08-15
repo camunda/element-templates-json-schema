@@ -18,6 +18,11 @@ export const template = {
     },
     {
       'type': 'String',
+      'binding': { 'type': 'zeebe:adHoc', 'property': 'outputCollection' },
+      'value': '={ id: toolCall._meta.id, name: toolCall._meta.name, content: toolCallResult }'
+    },
+    {
+      'type': 'String',
       'binding': { 'type': 'zeebe:adHoc', 'property': 'outputElement' },
       'feel': 'required',
       'value': '={ id: toolCall._meta.id, name: toolCall._meta.name, content: toolCallResult }'
@@ -26,60 +31,6 @@ export const template = {
 };
 
 export const errors = [
-  {
-    keyword: 'const',
-    dataPath: '/properties/0/binding/type',
-    schemaPath: '#/allOf/1/allOf/11/then/properties/properties/contains/properties/binding/properties/type/const',
-    params: {
-      allowedValue: 'zeebe:adHoc'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/0/binding/property',
-    schemaPath: '#/allOf/1/allOf/11/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'outputCollection'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/1/binding/property',
-    schemaPath: '#/allOf/1/allOf/11/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'outputCollection'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'const',
-    dataPath: '/properties/2/binding/property',
-    schemaPath: '#/allOf/1/allOf/11/then/properties/properties/contains/properties/binding/properties/property/const',
-    params: {
-      allowedValue: 'outputCollection'
-    },
-    message: 'should be equal to constant'
-  },
-  {
-    keyword: 'contains',
-    dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/11/then/properties/properties/contains',
-    params: {
-      minContains: 1
-    },
-    message: 'should contain at least 1 valid item(s)'
-  },
-  {
-    keyword: 'if',
-    dataPath: '',
-    schemaPath: '#/allOf/1/allOf/11/if',
-    params: {
-      failingKeyword: 'then'
-    },
-    message: 'should match "then" schema'
-  },
   {
     keyword: 'enum',
     dataPath: '/properties/1/binding/property',

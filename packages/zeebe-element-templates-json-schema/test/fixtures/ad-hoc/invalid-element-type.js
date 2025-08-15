@@ -49,7 +49,7 @@ export const errors = [
   {
     keyword: 'const',
     dataPath: '/elementType/value',
-    schemaPath: '#/allOf/1/allOf/9/then/anyOf/0/properties/elementType/properties/value/const',
+    schemaPath: '#/allOf/1/allOf/9/allOf/0/then/anyOf/0/properties/elementType/properties/value/const',
     params: {
       allowedValue: 'bpmn:AdHocSubProcess'
     },
@@ -58,7 +58,7 @@ export const errors = [
   {
     keyword: 'const',
     dataPath: '/appliesTo',
-    schemaPath: '#/allOf/1/allOf/9/then/anyOf/1/properties/appliesTo/const',
+    schemaPath: '#/allOf/1/allOf/9/allOf/0/then/anyOf/1/properties/appliesTo/const',
     params: {
       allowedValue: [
         'bpmn:AdHocSubProcess'
@@ -69,14 +69,14 @@ export const errors = [
   {
     keyword: 'anyOf',
     dataPath: '',
-    schemaPath: '#/allOf/1/allOf/9/then/anyOf',
+    schemaPath: '#/allOf/1/allOf/9/allOf/0/then/anyOf',
     params: {},
     message: 'should match some schema in anyOf'
   },
   {
     keyword: 'if',
     dataPath: '',
-    schemaPath: '#/allOf/1/allOf/9/if',
+    schemaPath: '#/allOf/1/allOf/9/allOf/0/if',
     params: {
       failingKeyword: 'then'
     },
