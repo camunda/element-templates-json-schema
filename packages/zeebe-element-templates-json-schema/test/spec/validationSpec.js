@@ -666,8 +666,6 @@ describe('validation', function() {
 
       it('ad-hoc/valid');
 
-      // it.only('incorrect-type-properties');
-
     });
 
   });
