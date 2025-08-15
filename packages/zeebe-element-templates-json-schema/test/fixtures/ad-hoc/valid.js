@@ -17,9 +17,8 @@ export const template = {
       'value': 'toolCallResults'
     },
     {
-      'type': 'String',
+      'type': 'Hidden',
       'binding': { 'type': 'zeebe:adHoc', 'property': 'outputElement' },
-      'feel': 'required',
       'value': '={ id: toolCall._meta.id, name: toolCall._meta.name, content: toolCallResult }'
     }
   ]
