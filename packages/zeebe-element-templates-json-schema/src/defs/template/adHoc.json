@@ -1,0 +1,180 @@
+{
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:adHoc"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "anyOf": [
+          {
+            "required": [
+              "elementType"
+            ],
+            "properties": {
+              "elementType": {
+                "required": [
+                  "value"
+                ],
+                "properties": {
+                  "value": {
+                    "const": "bpmn:AdHocSubProcess"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "appliesTo"
+            ],
+            "properties": {
+              "appliesTo": {
+                "const": [
+                  "bpmn:AdHocSubProcess"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:adHoc"
+                    },
+                    "property": {
+                      "enum": [
+                        "outputCollection",
+                        "outputElement"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "property"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "allOf": [
+              {
+                "contains": {
+                  "properties": {
+                    "binding": {
+                      "properties": {
+                        "type": {
+                          "const": "zeebe:adHoc"
+                        },
+                        "property": {
+                          "const": "outputElement"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "property"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "binding"
+                  ]
+                }
+              },
+              {
+                "contains": {
+                  "properties": {
+                    "binding": {
+                      "properties": {
+                        "type": {
+                          "const": "zeebe:adHoc"
+                        },
+                        "property": {
+                          "const": "outputCollection"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "property"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "binding"
+                  ]
+                }
+              },
+              {
+                "contains": {
+                  "properties": {
+                    "binding": {
+                      "properties": {
+                        "type": {
+                          "const": "zeebe:taskDefinition"
+                        },
+                        "property": {
+                          "const": "type"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "property"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "binding"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
+    }
+  ]
+}
