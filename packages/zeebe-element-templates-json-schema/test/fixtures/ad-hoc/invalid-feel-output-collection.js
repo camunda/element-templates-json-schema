@@ -26,39 +26,51 @@ export const template = {
   ]
 };
 
-export const errors = [
-  {
-    keyword: 'not',
-    dataPath: '/properties/1',
-    schemaPath: '#/allOf/1/items/allOf/23/allOf/1/then/not',
-    params: {},
-    message: 'should NOT be valid'
-  },
-  {
-    keyword: 'if',
-    dataPath: '/properties/1',
-    schemaPath: '#/allOf/1/items/allOf/23/allOf/1/if',
-    params: {
-      failingKeyword: 'then'
+export const errors =         [
+    {
+      keyword: "errorMessage",
+      dataPath: "/properties/1",
+      schemaPath: "#/allOf/1/items/allOf/23/allOf/1/then/errorMessage",
+      params: {
+        errors: [
+          {
+            keyword: "not",
+            dataPath: "/properties/1",
+            schemaPath: "#/allOf/1/items/allOf/23/allOf/1/then/not",
+            params: {},
+            message: "should NOT be valid",
+            emUsed: true
+          }
+        ]
+      },
+      message: "Property \"outputCollection\" cannot be a FEEL expression"
     },
-    message: 'should match "then" schema'
-  },
-  {
-    keyword: 'type',
-    dataPath: '',
-    schemaPath: '#/oneOf/1/type',
-    params: {
-      type: 'array'
+    {
+      keyword: "if",
+      dataPath: "/properties/1",
+      schemaPath: "#/allOf/1/items/allOf/23/allOf/1/if",
+      params: {
+        failingKeyword: "then"
+      },
+      message: "should match \"then\" schema"
     },
-    message: 'should be array'
-  },
-  {
-    keyword: 'oneOf',
-    dataPath: '',
-    schemaPath: '#/oneOf',
-    params: {
-      passingSchemas: null
+    {
+      keyword: "type",
+      dataPath: "",
+      schemaPath: "#/oneOf/1/type",
+      params: {
+        type: "array"
+      },
+      message: "should be array"
     },
-    message: 'should match exactly one schema in oneOf'
-  }
-];
+    {
+      keyword: "oneOf",
+      dataPath: "",
+      schemaPath: "#/oneOf",
+      params: {
+        passingSchemas: null
+      },
+      message: "should match exactly one schema in oneOf"
+    }
+  ]
+;
