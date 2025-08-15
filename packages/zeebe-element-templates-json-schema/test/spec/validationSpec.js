@@ -643,18 +643,21 @@ describe('validation', function() {
     });
 
     describe('zeebe:adHoc', function() {
-      it('ad-hoc/ad-hoc-valid');
-
-      it('ad-hoc/ad-hoc-missing-output-element');
-
-      it('ad-hoc/ad-hoc-missing-output-collection');
-
-      it('ad-hoc/ad-hoc-missing-task-definition');
-
-      it('ad-hoc/ad-hoc-missing-output-element-feel');
 
       it('ad-hoc/invalid-missing-feel-output-element');
+
+      it('ad-hoc/missing-output-collection');
+
+      it('ad-hoc/missing-output-element');
+
+      it('ad-hoc/missing-output-element-feel');
+
+      it('ad-hoc/missing-task-definition');
+
+      it('ad-hoc/valid');
+
     });
+
   });
 
 
