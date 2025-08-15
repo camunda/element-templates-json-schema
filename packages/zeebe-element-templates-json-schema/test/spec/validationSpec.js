@@ -658,6 +658,8 @@ describe('validation', function() {
 
       it('ad-hoc/missing-task-definition');
 
+      it('ad-hoc/missing-task-definition-type-property');
+
       it('ad-hoc/valid');
 
     });
