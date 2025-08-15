@@ -1,4 +1,4 @@
-{
+{"allOf": [{
   "$comment": "For zeebe:adHoc property bindings: outputCollection and outputElement are optional; if one is present both must be present; they only make sense when a non-empty taskDefinition (type or retries) is configured. Cross-property + taskDefinition presence cannot be enforced at single-property schema level.",
   "if": {
     "properties": {
@@ -39,4 +39,34 @@
       }
     }
   }
-}
+},
+  {
+    "if": {
+      "properties": {
+        "binding": {
+          "properties": {
+            "type": {
+              "const": "zeebe:adHoc"
+            },
+            "property": {
+              "const": "outputCollection"
+            }
+          },
+          "required": [
+            "type",
+            "property"
+          ]
+        }
+      },
+      "required": [
+        "binding"
+      ]
+    },
+    "then": {
+      "not": {
+        "required": [
+          "feel"
+        ]
+      }
+    }
+  }]}

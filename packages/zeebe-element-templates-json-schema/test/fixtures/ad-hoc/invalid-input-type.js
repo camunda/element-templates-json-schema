@@ -34,11 +34,11 @@ export const template = {
   ]
 };
 
-export const errors = [
+export const errors =         [
   {
     keyword: "enum",
     dataPath: "/properties/1/type",
-    schemaPath: "#/allOf/1/items/allOf/23/then/properties/type/enum",
+    schemaPath: "#/allOf/1/items/allOf/23/allOf/0/then/properties/type/enum",
     params: {
       allowedValues: [
         "Hidden",
@@ -52,7 +52,7 @@ export const errors = [
   {
     keyword: "if",
     dataPath: "/properties/1",
-    schemaPath: "#/allOf/1/items/allOf/23/if",
+    schemaPath: "#/allOf/1/items/allOf/23/allOf/0/if",
     params: {
       failingKeyword: "then"
     },
@@ -61,7 +61,7 @@ export const errors = [
   {
     keyword: "enum",
     dataPath: "/properties/2/type",
-    schemaPath: "#/allOf/1/items/allOf/23/then/properties/type/enum",
+    schemaPath: "#/allOf/1/items/allOf/23/allOf/0/then/properties/type/enum",
     params: {
       allowedValues: [
         "Hidden",
@@ -75,7 +75,7 @@ export const errors = [
   {
     keyword: "if",
     dataPath: "/properties/2",
-    schemaPath: "#/allOf/1/items/allOf/23/if",
+    schemaPath: "#/allOf/1/items/allOf/23/allOf/0/if",
     params: {
       failingKeyword: "then"
     },
@@ -84,7 +84,7 @@ export const errors = [
   {
     keyword: "enum",
     dataPath: "/properties/3/type",
-    schemaPath: "#/allOf/1/items/allOf/23/then/properties/type/enum",
+    schemaPath: "#/allOf/1/items/allOf/23/allOf/0/then/properties/type/enum",
     params: {
       allowedValues: [
         "Hidden",
@@ -98,7 +98,7 @@ export const errors = [
   {
     keyword: "if",
     dataPath: "/properties/3",
-    schemaPath: "#/allOf/1/items/allOf/23/if",
+    schemaPath: "#/allOf/1/items/allOf/23/allOf/0/if",
     params: {
       failingKeyword: "then"
     },
@@ -107,7 +107,7 @@ export const errors = [
   {
     keyword: "enum",
     dataPath: "/properties/4/type",
-    schemaPath: "#/allOf/1/items/allOf/23/then/properties/type/enum",
+    schemaPath: "#/allOf/1/items/allOf/23/allOf/0/then/properties/type/enum",
     params: {
       allowedValues: [
         "Hidden",
@@ -121,7 +121,7 @@ export const errors = [
   {
     keyword: "if",
     dataPath: "/properties/4",
-    schemaPath: "#/allOf/1/items/allOf/23/if",
+    schemaPath: "#/allOf/1/items/allOf/23/allOf/0/if",
     params: {
       failingKeyword: "then"
     },
