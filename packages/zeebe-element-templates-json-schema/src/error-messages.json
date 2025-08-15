@@ -149,7 +149,7 @@
       "properties",
       "type"
     ],
-    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:formDefinition, zeebe:calledDecision, zeebe:script, zeebe:assignmentDefinition, zeebe:priorityDefinition }"
+    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:formDefinition, zeebe:calledDecision, zeebe:script, zeebe:assignmentDefinition, zeebe:priorityDefinition, zeebe:adHoc }"
   },
   {
     "path": [
@@ -206,7 +206,8 @@
       "then"
     ],
     "errorMessage": "Property \"formId\" cannot be a FEEL expression"
-  },{
+  },
+  {
     "path": [
       "definitions",
       "template",
@@ -481,5 +482,74 @@
       "value"
     ],
     "errorMessage": "Invalid value for priority. Must be between 0 and 100"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      23,
+      "allOf",
+      1,
+      "then"
+    ],
+    "errorMessage": "Property \"outputCollection\" cannot be a FEEL expression"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      9,
+      "allOf",
+      1,
+      "then",
+      "properties",
+      "properties",
+      "allOf",
+      0
+    ],
+    "errorMessage": "When \"outputCollection\" is defined for \"zeebe:adHoc\", \"outputElement\" must be defined, too"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      9,
+      "allOf",
+      1,
+      "then",
+      "properties",
+      "properties",
+      "allOf",
+      1
+    ],
+    "errorMessage": "When \"outputElement\" is defined for \"zeebe:adHoc\", \"outputCollection\" must be defined, too"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      9,
+      "allOf",
+      1,
+      "then",
+      "properties",
+      "properties",
+      "allOf",
+      2
+    ],
+    "errorMessage": "When using \"zeebe:adHoc\" with properties \"outputCollection\" and \"outputElement\", \"zeebe:taskDefinition\" with property=\"type\" must be set on the same element"
   }
 ]

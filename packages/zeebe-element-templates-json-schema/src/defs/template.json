@@ -693,6 +693,9 @@
           "properties"
         ]
       }
+    },
+    {
+      "$ref": "./template/adHoc.json"
     }
   ]
 }

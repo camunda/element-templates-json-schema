@@ -641,6 +641,33 @@ describe('validation', function() {
       it('assignment-definition/valid-with-feel');
 
     });
+
+    describe('zeebe:adHoc', function() {
+
+      it('ad-hoc/invalid-element-type');
+
+      it('ad-hoc/invalid-feel-output-collection');
+
+      it('ad-hoc/invalid-input-type');
+
+      it('ad-hoc/invalid-missing-feel-output-element');
+
+      it('ad-hoc/invalid-property');
+
+      it('ad-hoc/missing-output-collection');
+
+      it('ad-hoc/missing-output-element');
+
+      it('ad-hoc/missing-output-element-feel');
+
+      it('ad-hoc/missing-task-definition');
+
+      it('ad-hoc/missing-task-definition-type-property');
+
+      it('ad-hoc/valid');
+
+    });
+
   });
 
 
@@ -675,4 +702,3 @@ function printNested(object) {
     colors: true
   }));
 }
-

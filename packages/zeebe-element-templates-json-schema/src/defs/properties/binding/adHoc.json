@@ -1,0 +1,25 @@
+{
+  "if": {
+    "properties": {
+      "type": {
+        "const": "zeebe:adHoc"
+      }
+    },
+    "required": [
+      "type"
+    ]
+  },
+  "then": {
+    "properties": {
+      "property": {
+        "enum": [
+          "outputCollection",
+          "outputElement"
+        ]
+      }
+    },
+    "required": [
+      "property"
+    ]
+  }
+}

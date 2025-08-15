@@ -63,7 +63,8 @@
                     "zeebe:calledDecision",
                     "zeebe:script",
                     "zeebe:assignmentDefinition",
-                    "zeebe:priorityDefinition"
+                    "zeebe:priorityDefinition",
+                    "zeebe:adHoc"
                   ]
                 }
               },
@@ -619,6 +620,9 @@
       },
       {
         "$ref": "./properties/priorityDefinition.json"
+      },
+      {
+        "$ref": "./properties/adHoc.json"
       }
     ],
     "properties": {
@@ -839,6 +843,9 @@
             "$ref": "./properties/binding/priorityDefinition.json"
           },
           {
+            "$ref": "./properties/binding/adHoc.json"
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -864,7 +871,8 @@
               "zeebe:calledDecision",
               "zeebe:script",
               "zeebe:assignmentDefinition",
-              "zeebe:priorityDefinition"
+              "zeebe:priorityDefinition",
+              "zeebe:adHoc"
             ]
           },
           "name": {
