@@ -1,7 +1,7 @@
 {
   "allOf": [
     {
-      "$comment": "For zeebe:adHoc property bindings: outputCollection and outputElement are optional; if one is present both must be present; they only make sense when a non-empty taskDefinition (type or retries) is configured. Cross-property + taskDefinition presence cannot be enforced at single-property schema level.",
+      "$comment": "AdHoc output properties require string-based types (Hidden, String, Text, or Dropdown)",
       "if": {
         "properties": {
           "binding": {
@@ -43,6 +43,7 @@
       }
     },
     {
+      "$comment": "outputCollection properties must not be FEEL expressions",
       "if": {
         "properties": {
           "binding": {

@@ -62,6 +62,7 @@
       }
     },
     {
+      "$comment": "When zeebe:adHoc output properties are used, all three required bindings must be present together",
       "if": {
         "properties": {
           "properties": {
