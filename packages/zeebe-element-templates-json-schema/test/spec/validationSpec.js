@@ -644,6 +644,8 @@ describe('validation', function() {
 
     describe('zeebe:adHoc', function() {
 
+      it('ad-hoc/invalid-bpmn-ad-hoc-impl-properties');
+
       it('ad-hoc/invalid-element-type');
 
       it('ad-hoc/invalid-feel-output-collection');

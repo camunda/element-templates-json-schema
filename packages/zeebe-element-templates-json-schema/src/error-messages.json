@@ -555,6 +555,44 @@
   {
     "path": [
       "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      9,
+      "allOf",
+      2,
+      "then",
+      "allOf",
+        0,
+      "properties",
+      "properties",
+      "items"
+    ],
+    "errorMessage": "Property ${0/binding/name} must not be set when using a \"zeebe:taskDefinition\" implementation for a \"bpmn:AdHocSubProcess\""
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      9,
+      "allOf",
+      2,
+      "then",
+      "allOf",
+      1,
+      "properties",
+      "properties",
+      "items"
+    ],
+    "errorMessage": "Property ${0/binding/property} must not be set when using a \"zeebe:taskDefinition\" implementation for a \"bpmn:AdHocSubProcess\""
+  },
+  {
+    "path": [
+      "definitions",
       "properties",
       "allOf",
       1,

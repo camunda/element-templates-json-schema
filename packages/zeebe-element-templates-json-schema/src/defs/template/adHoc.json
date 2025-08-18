@@ -176,6 +176,148 @@
           "properties"
         ]
       }
+    },
+    {
+      "$comment": "When JOB_WORKER implementation type properties are set (zeebe:taskDefinition), BPMN implementation properties (cancelRemainingInstances, completionCondition, activeElementsCollection)  must not be set on AdHocSubProcess",
+      "if": {
+        "allOf": [
+          {
+            "anyOf": [
+              {
+                "required": [
+                  "elementType"
+                ],
+                "properties": {
+                  "elementType": {
+                    "required": [
+                      "value"
+                    ],
+                    "properties": {
+                      "value": {
+                        "const": "bpmn:AdHocSubProcess"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "required": [
+                  "appliesTo"
+                ],
+                "properties": {
+                  "appliesTo": {
+                    "const": [
+                      "bpmn:AdHocSubProcess"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "properties": {
+              "properties": {
+                "contains": {
+                  "type": "object",
+                  "properties": {
+                    "binding": {
+                      "properties": {
+                        "type": {
+                          "const": "zeebe:taskDefinition"
+                        },
+                        "property": {
+                          "const": "type"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "property"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "binding"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "properties"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "properties": {
+              "properties": {
+                "items": {
+                  "not": {
+                    "properties": {
+                      "binding": {
+                        "properties": {
+                          "type": {
+                            "const": "property"
+                          },
+                          "name": {
+                            "enum": [
+                              "cancelRemainingInstances",
+                              "completionCondition"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "name"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "binding"
+                    ]
+                  }
+                }
+              }
+            },
+            "required": [
+              "properties"
+            ]
+          },
+          {
+            "properties": {
+              "properties": {
+                "items": {
+                  "not": {
+                    "properties": {
+                      "binding": {
+                        "properties": {
+                          "type": {
+                            "const": "zeebe:adHoc"
+                          },
+                          "property": {
+                            "const": "activeElementsCollection"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "property"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "binding"
+                    ]
+                  }
+                }
+              }
+            },
+            "required": [
+              "properties"
+            ]
+          }
+        ]
+      }
     }
   ]
 }
