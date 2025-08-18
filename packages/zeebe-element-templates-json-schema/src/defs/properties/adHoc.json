@@ -1,72 +1,76 @@
-{"allOf": [{
-  "$comment": "For zeebe:adHoc property bindings: outputCollection and outputElement are optional; if one is present both must be present; they only make sense when a non-empty taskDefinition (type or retries) is configured. Cross-property + taskDefinition presence cannot be enforced at single-property schema level.",
-  "if": {
-    "properties": {
-      "binding": {
+{
+  "allOf": [
+    {
+      "$comment": "For zeebe:adHoc property bindings: outputCollection and outputElement are optional; if one is present both must be present; they only make sense when a non-empty taskDefinition (type or retries) is configured. Cross-property + taskDefinition presence cannot be enforced at single-property schema level.",
+      "if": {
         "properties": {
-          "type": {
-            "const": "zeebe:adHoc"
-          },
-          "property": {
-            "enum": [
-              "outputCollection",
-              "outputElement"
+          "binding": {
+            "properties": {
+              "type": {
+                "const": "zeebe:adHoc"
+              },
+              "property": {
+                "enum": [
+                  "outputCollection",
+                  "outputElement"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "property"
             ]
           }
         },
         "required": [
-          "type",
-          "property"
+          "binding"
         ]
+      },
+      "then": {
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "Hidden",
+              "String",
+              "Text",
+              "Dropdown"
+            ]
+          }
+        }
       }
     },
-    "required": [
-      "binding"
-    ]
-  },
-  "then": {
-    "required": [
-      "type"
-    ],
-    "properties": {
-      "type": {
-        "enum": [
-          "Hidden",
-          "String",
-          "Text",
-          "Dropdown"
-        ]
-      }
-    }
-  }
-},
-  {
-    "if": {
-      "properties": {
-        "binding": {
-          "properties": {
-            "type": {
-              "const": "zeebe:adHoc"
+    {
+      "if": {
+        "properties": {
+          "binding": {
+            "properties": {
+              "type": {
+                "const": "zeebe:adHoc"
+              },
+              "property": {
+                "const": "outputCollection"
+              }
             },
-            "property": {
-              "const": "outputCollection"
-            }
-          },
+            "required": [
+              "type",
+              "property"
+            ]
+          }
+        },
+        "required": [
+          "binding"
+        ]
+      },
+      "then": {
+        "not": {
           "required": [
-            "type",
-            "property"
+            "feel"
           ]
         }
-      },
-      "required": [
-        "binding"
-      ]
-    },
-    "then": {
-      "not": {
-        "required": [
-          "feel"
-        ]
       }
     }
-  }]}
+  ]
+}
