@@ -178,7 +178,7 @@
       }
     },
     {
-      "$comment": "When JOB_WORKER implementation type properties are set (zeebe:taskDefinition), BPMN implementation properties (cancelRemainingInstances, completionCondition, activeElementsCollection)  must not be set on AdHocSubProcess",
+      "$comment": "When zeebe:taskDefinition is used, bpmn:cancelRemainingInstances, bpmn:completionCondition, and zeebe:activeElementsCollection properties are not allowed",
       "if": {
         "allOf": [
           {
