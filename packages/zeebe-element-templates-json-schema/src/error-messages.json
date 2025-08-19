@@ -149,7 +149,7 @@
       "properties",
       "type"
     ],
-    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:formDefinition, zeebe:calledDecision, zeebe:script, zeebe:assignmentDefinition, zeebe:priorityDefinition, zeebe:adHoc }"
+    "errorMessage": "invalid property.binding type ${0}; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:formDefinition, zeebe:calledDecision, zeebe:script, zeebe:assignmentDefinition, zeebe:priorityDefinition, zeebe:adHoc, zeebe:taskSchedule }"
   },
   {
     "path": [
@@ -551,5 +551,22 @@
       2
     ],
     "errorMessage": "When using \"zeebe:adHoc\" with properties \"outputCollection\" and \"outputElement\", \"zeebe:taskDefinition\" with property=\"type\" must be set on the same element"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      24,
+      "allOf",
+      1,
+      "then",
+      "properties",
+      "value"
+    ],
+    "errorMessage": "Must be conforming to an ISO 8601 combined date and time representation"
   }
 ]
