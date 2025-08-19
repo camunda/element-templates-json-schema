@@ -1,4 +1,3 @@
-
 export const template = {
   'name': 'task schedule',
   'id': 'task-schedule-1',
