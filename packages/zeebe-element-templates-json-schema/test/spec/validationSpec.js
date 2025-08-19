@@ -689,6 +689,29 @@ describe('validation', function() {
 
   });
 
+
+  describe('zeebe:taskSchedule', function() {
+
+    it('task-schedule/invalid-element-type');
+
+    it('task-schedule/invalid-input-type');
+
+    it('task-schedule/invalid-iso-date-value');
+
+    it('task-schedule/invalid-property');
+
+    it('task-schedule/invalid-value');
+
+    it('task-schedule/missing-property');
+
+    it('task-schedule/missing-zeebe-user-task');
+
+    it('task-schedule/valid');
+
+    it('task-schedule/valid-feel');
+
+  });
+
 });
 
 
