@@ -13,7 +13,7 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.29.0
 
-* `FEAT`: support `zeebe:addHoc` ([#190](https://github.com/camunda/element-templates-json-schema/pull/190))
+* `FEAT`: support `zeebe:addHoc` ([#193](https://github.com/camunda/element-templates-json-schema/pull/193))
 
 ## 0.28.0
 
