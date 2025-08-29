@@ -277,7 +277,19 @@
         "then": {
           "properties": {
             "value": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^="
+                },
+                {
+                  "type": "string",
+                  "not": {
+                    "pattern": "^="
+                  },
+                  "deprecated": true
+                }
+              ]
             }
           }
         }
