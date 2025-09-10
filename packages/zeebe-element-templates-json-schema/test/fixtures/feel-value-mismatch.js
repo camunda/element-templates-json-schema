@@ -39,9 +39,36 @@ export const errors = [
   {
     keyword: 'type',
     dataPath: '/properties/1/value',
-    schemaPath: '#/allOf/1/items/allOf/9/then/properties/value/type',
-    params: { type: 'string' },
+    schemaPath: '#/allOf/1/items/allOf/9/then/properties/value/oneOf/0/type',
+    params: {
+      type: 'string'
+    },
     message: 'should be string'
+  },
+  {
+    keyword: 'type',
+    dataPath: '/properties/1/value',
+    schemaPath: '#/allOf/1/items/allOf/9/then/properties/value/oneOf/1/type',
+    params: {
+      type: 'string'
+    },
+    message: 'should be string'
+  },
+  {
+    keyword: 'not',
+    dataPath: '/properties/1/value',
+    schemaPath: '#/allOf/1/items/allOf/9/then/properties/value/oneOf/1/not',
+    params: {},
+    message: 'should NOT be valid'
+  },
+  {
+    keyword: 'oneOf',
+    dataPath: '/properties/1/value',
+    schemaPath: '#/allOf/1/items/allOf/9/then/properties/value/oneOf',
+    params: {
+      passingSchemas: null
+    },
+    message: 'should match exactly one schema in oneOf'
   },
   {
     keyword: 'if',
@@ -53,9 +80,36 @@ export const errors = [
   {
     keyword: 'type',
     dataPath: '/properties/2/value',
-    schemaPath: '#/allOf/1/items/allOf/9/then/properties/value/type',
-    params: { type: 'string' },
+    schemaPath: '#/allOf/1/items/allOf/9/then/properties/value/oneOf/0/type',
+    params: {
+      type: 'string'
+    },
     message: 'should be string'
+  },
+  {
+    keyword: 'type',
+    dataPath: '/properties/2/value',
+    schemaPath: '#/allOf/1/items/allOf/9/then/properties/value/oneOf/1/type',
+    params: {
+      type: 'string'
+    },
+    message: 'should be string'
+  },
+  {
+    keyword: 'not',
+    dataPath: '/properties/2/value',
+    schemaPath: '#/allOf/1/items/allOf/9/then/properties/value/oneOf/1/not',
+    params: {},
+    message: 'should NOT be valid'
+  },
+  {
+    keyword: 'oneOf',
+    dataPath: '/properties/2/value',
+    schemaPath: '#/allOf/1/items/allOf/9/then/properties/value/oneOf',
+    params: {
+      passingSchemas: null
+    },
+    message: 'should match exactly one schema in oneOf'
   },
   {
     keyword: 'if',
