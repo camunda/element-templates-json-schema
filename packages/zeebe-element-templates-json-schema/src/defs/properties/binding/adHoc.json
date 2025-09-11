@@ -13,6 +13,7 @@
     "properties": {
       "property": {
         "enum": [
+          "activeElementsCollection",
           "outputCollection",
           "outputElement"
         ]

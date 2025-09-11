@@ -37,6 +37,7 @@ export const errors = [
     schemaPath: '#/allOf/1/items/properties/binding/allOf/11/then/properties/property/enum',
     params: {
       allowedValues: [
+        'activeElementsCollection',
         'outputCollection',
         'outputElement'
       ]
