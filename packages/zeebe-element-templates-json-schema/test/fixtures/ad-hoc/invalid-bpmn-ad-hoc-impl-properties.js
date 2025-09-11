@@ -101,27 +101,6 @@ export const errors = [
     message: 'should match "then" schema'
   },
   {
-    keyword: 'enum',
-    dataPath: '/properties/3/binding/property',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/11/then/properties/property/enum',
-    params: {
-      allowedValues: [
-        'outputCollection',
-        'outputElement'
-      ]
-    },
-    message: 'should be equal to one of the allowed values'
-  },
-  {
-    keyword: 'if',
-    dataPath: '/properties/3/binding',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/11/if',
-    params: {
-      failingKeyword: 'then'
-    },
-    message: 'should match "then" schema'
-  },
-  {
     keyword: 'type',
     dataPath: '',
     schemaPath: '#/oneOf/1/type',
