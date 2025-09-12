@@ -1,0 +1,17 @@
+[  
+    {
+  "path": [
+    "definitions",
+    "properties",
+    "allOf",
+    1,
+    "items",
+    "allOf",
+    25,
+    "then",
+    "anyOf",
+    2
+    ],
+  "warningMessage": "Hidden property must specify either \"value\" or \"generatedValue\""
+  }
+]
