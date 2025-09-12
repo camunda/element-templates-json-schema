@@ -8,7 +8,8 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.31.0
 
-* `FEAT`: support `activeElementsCollection` property on `zeebe:adHoc`
+* `FEAT`: support `activeElementsCollection` property on `zeebe:adHoc` ([#198](https://github.com/camunda/element-templates-json-schema/pull/198))
+* `FIX`: deprecate `value` of a property with `feel: required` which doesn't start with `=` ([#196](https://github.com/camunda/element-templates-json-schema/pull/196))
 
 ## 0.30.0
 
