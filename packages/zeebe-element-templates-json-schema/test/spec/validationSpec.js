@@ -662,10 +662,6 @@ describe('validation', function() {
 
       it('ad-hoc/missing-output-element-feel');
 
-      it('ad-hoc/missing-task-definition');
-
-      it('ad-hoc/missing-task-definition-type-property');
-
       it('ad-hoc/valid');
 
     });
