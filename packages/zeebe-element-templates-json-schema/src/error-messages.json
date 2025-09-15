@@ -543,24 +543,6 @@
       "allOf",
       9,
       "allOf",
-      1,
-      "then",
-      "properties",
-      "properties",
-      "allOf",
-      2
-    ],
-    "errorMessage": "When using \"zeebe:adHoc\" with properties \"outputCollection\" and \"outputElement\", \"zeebe:taskDefinition\" with property=\"type\" must be set on the same element"
-  },
-  {
-    "path": [
-      "definitions",
-      "template",
-      "allOf",
-      1,
-      "allOf",
-      9,
-      "allOf",
       2,
       "then",
       "allOf",

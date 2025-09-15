@@ -55,6 +55,48 @@ export const template = [
         'value': '=anActiveElementsCollection'
       }
     ]
+  },
+  {
+    '$schema': 'https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json',
+    'name': 'AdHoc Template - BPMN implementation',
+    'id': 'io.camunda.examples.AdHoc.Valid.BPMN',
+    'description': 'activeElementsCollection, completionCondition, and cancelRemainingInstances',
+    'version': 2,
+    'appliesTo': [ 'bpmn:AdHocSubProcess' ],
+    'elementType': { 'value': 'bpmn:AdHocSubProcess' },
+    'properties': [
+      {
+        'type': 'Hidden',
+        'binding': {
+          'type': 'property',
+          'name': 'cancelRemainingInstances'
+        },
+        'value': 'false'
+      },
+      {
+        'type': 'String',
+        'feel': 'required',
+        'binding': {
+          'type': 'property',
+          'name': 'completionCondition'
+        }
+      },
+      {
+        'type': 'Hidden',
+        'binding': { 'type': 'zeebe:adHoc', 'property': 'activeElementsCollection' },
+        'value': '=anActiveElementsCollection'
+      },
+      {
+        'type': 'Hidden',
+        'binding': { 'type': 'zeebe:adHoc', 'property': 'outputCollection' },
+        'value': 'toolCallResults'
+      },
+      {
+        'type': 'Hidden',
+        'binding': { 'type': 'zeebe:adHoc', 'property': 'outputElement' },
+        'value': '={ id: toolCall._meta.id, name: toolCall._meta.name, content: toolCallResult }'
+      }
+    ]
   }
 ];
 

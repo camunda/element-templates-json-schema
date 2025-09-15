@@ -62,7 +62,7 @@
       }
     },
     {
-      "$comment": "When zeebe:adHoc output properties are used, all three required bindings must be present together",
+      "$comment": "When zeebe:adHoc output properties are used, both required bindings must be present together",
       "if": {
         "properties": {
           "properties": {
@@ -133,29 +133,6 @@
                         },
                         "property": {
                           "const": "outputCollection"
-                        }
-                      },
-                      "required": [
-                        "type",
-                        "property"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "binding"
-                  ]
-                }
-              },
-              {
-                "contains": {
-                  "properties": {
-                    "binding": {
-                      "properties": {
-                        "type": {
-                          "const": "zeebe:taskDefinition"
-                        },
-                        "property": {
-                          "const": "type"
                         }
                       },
                       "required": [
