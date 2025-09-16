@@ -639,6 +639,45 @@
       },
       {
         "$ref": "./properties/taskSchedule.json"
+      },
+      {
+        "if": {
+          "properties": {
+            "type": {
+              "const": "Hidden"
+            },
+            "binding": {
+            "properties": {
+              "type": { 
+                "not": {
+                "const": "zeebe:userTask" 
+                }
+              }
+            },
+            "required": [
+              "type"
+            ]
+          }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        "then": {
+          "anyOf": [
+            { "required": [ "value" ] },
+            { "required": [ "generatedValue" ] },
+            {
+              "not": {
+                "anyOf": [
+                  { "required": [ "value" ] },
+                  { "required": [ "generatedValue" ] }
+                ]
+              },
+              "isDeprecated": true
+            }
+          ]
+        }
       }
     ],
     "properties": {
