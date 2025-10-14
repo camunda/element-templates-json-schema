@@ -9,19 +9,21 @@
         "type": {
           "$id": "#/condition/type",
           "const": "simple",
-          "description": "The type of the condition.",
+          "description": "Defines the input type in the properties panel. Can be String, Text, Number, Boolean (checkbox), Dropdown, or Hidden.",
           "default": "simple"
         },
         "property": {
           "$id": "#/condition/property",
           "type": "string",
-          "description": "The id of the property to check."
+          "description": "The ID of the property to check."
         }
       },
       "oneOf": [
         {
+          "description": "Checks if the referenced property's value is in the list of values defined in the condition.",
           "properties": {
             "equals": {
+              "description": "Checks if the referenced property's value is equal to the value defined in the condition.",
               "type": [
                 "string",
                 "number",
@@ -53,7 +55,7 @@
           "properties": {
             "isActive": {
               "type": "boolean",
-              "description": "For `true`, activates the property when given property is active"
+              "description": "Checks if the referenced property is currently active and not hidden by other conditions."
             }
           },
           "required": [
@@ -99,11 +101,11 @@
   "properties": {
     "id": {
       "type": "string",
-      "description": "Unique identifier of the property."
+      "description": "The ID of the property to check."
     },
     "condition": {
       "type": "object",
-      "description": "Condition(s) to activate the binding.",
+      "description": "Object that defines when a property should be active depending on other property values.",
       "allOf": [
         {
           "$ref": "examples.json#/condition"
@@ -121,7 +123,8 @@
               "items": {
                 "$ref": "#/definitions/condition"
               },
-              "minItems": 1
+              "minItems": 1,
+              "description": "List of conditions that must all be met for the property to be active."
             }
           },
           "required": [

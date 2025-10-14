@@ -3,12 +3,13 @@
     "properties": {
       "tooltip": {
         "$id": "#/groups/group/tooltip",
-        "type": "string"
+        "type": "string",
+        "description": "Tooltip shown when hovering over the group name in the properties panel."
       },
       "openByDefault": {
         "$id": "#/groups/group/openByDefault",
         "type": "boolean",
-        "description": "Specifies whether the Group should be opened when first viewed. Defaults to false.",
+        "description": "Controls whether the group is initially expanded in the properties panel. Optional; default is false.",
         "default": false
       }
     }

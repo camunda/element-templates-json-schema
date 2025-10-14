@@ -1,7 +1,7 @@
 {
   "$id": "#/engines",
   "type": "object",
-  "description": "Defines the compatibility of this element template with different engines. Keys are engine names, values are semantic version ranges.",
+  "description": "Dictionary of environments compatible with the template. Environment version is specified with semantic versions range.",
   "default": {},
   "examples": [
     {
@@ -12,8 +12,20 @@
     "camunda": {
       "$id": "#/engines/camunda",
       "type": "string",
-      "description": "A semantic version range that denotes compatible Camunda versions.",
+      "description": "Defines compatibility with Camunda orchestration cluster versions.",
       "default": ""
+    },
+    "camundaDesktopModeler": {
+        "$id": "#/engines/camundaDesktopModeler",
+        "type": "string",
+        "description": "Defines compatibility with Desktop Modeler versions.",
+        "default": ""
+    },
+    "camundaWebModeler": {
+        "$id": "#/engines/camundaWebModeler",
+        "type": "string",
+        "description": "Defines compatibility with Web Modeler versions.",
+        "default": ""
     }
   }
 }

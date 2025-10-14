@@ -1,6 +1,6 @@
 {
   "type": "array",
-  "description": "List of properties of the element template.",
+  "description": "List of the template's properties.",
   "allOf": [
     { "$ref": "examples.json#/properties" }
   ],
@@ -80,7 +80,8 @@
         "then": {
           "properties": {
             "placeholder": {
-              "type": "string"
+              "type": "string",
+              "description": "Placeholder text shown in the property input field when it is empty. Can be used to show example input."
             }
           }
         },
@@ -101,17 +102,17 @@
           "number",
           "boolean"
         ],
-        "description": "The value of a control field."
+        "description": "Default value to be used if the user does not provide a value or if the type is Hidden."
       },
       "description": {
         "$id": "#/properties/property/description",
         "type": "string",
-        "description": "The description of a control field."
+        "description": "Hint text shown below the property input field."
       },
       "label": {
         "$id": "#/properties/property/label",
         "type": "string",
-        "description": "The label of a control field."
+        "description": "Label text shown above the property input field."
       },
       "type": {
         "$id": "#/properties/property/type",
@@ -121,12 +122,12 @@
       "editable": {
         "$id": "#/properties/property/editable",
         "type": "boolean",
-        "description": "Indicates whether a control field is editable or not."
+        "description": "Defines whether users can edit the property in the properties panel. By default, all non-hidden properties are editable."
       },
       "choices": {
         "$id": "#/properties/property/choices",
         "type": "array",
-        "description": "The choices for dropdown fields.",
+        "description": "Object that contains choices for a dropdown field.",
         "default": [],
         "items": {
           "$id": "#/properties/property/choices/item",
@@ -136,12 +137,12 @@
             "name": {
               "$id": "#/properties/property/choices/item/name",
               "type": "string",
-              "description": "The name of a choice."
+              "description": "Display name for a choice in a dropdown field. Shown to the user."
             },
             "value": {
               "$id": "#/properties/property/choices/item/value",
               "type": "string",
-              "description": "The value of a choice."
+              "description": "Value for a choice in a dropdown field. Stored in the XML."
             },
             "condition": {
               "$ref": "condition.json#/properties/condition"
@@ -156,7 +157,7 @@
       "constraints": {
         "$id": "#/properties/property/constraints",
         "type": "object",
-        "description": "The validation constraints of a control field.",
+        "description": "Object that contains rules to validate user input to the template.",
         "allOf": [
           { "$ref": "examples.json#/constraints" }
         ],
@@ -178,7 +179,7 @@
           },
           "pattern": {
             "$id": "#/properties/property/constraints/pattern",
-            "description": "A regular expression pattern for a constraint.",
+            "description": "Object that defines a regular expression that the user's input must match.",
             "oneOf": [
               {
                 "type": "object",
@@ -187,12 +188,12 @@
                   "value": {
                     "$id": "#/properties/property/constraints/pattern/value",
                     "type": "string",
-                    "description": "The regular expression of a pattern."
+                    "description": "The value of the regular expression."
                   },
                   "message": {
                     "$id": "#/properties/property/constraints/pattern/message",
                     "type": "string",
-                    "description": "The validation message of a pattern."
+                    "description": "Custom error message to show when the user's input does not match the regular expression."
                   }
                 }
               },
@@ -206,7 +207,7 @@
       "group": {
         "$id": "#/properties/property/group",
         "type": "string",
-        "description": "The custom group of a control field."
+        "description": "Group in the properties panel that the property belongs to. A property can only be assigned to one group."
       }
     }
   }

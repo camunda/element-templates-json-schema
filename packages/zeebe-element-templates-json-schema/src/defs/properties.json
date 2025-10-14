@@ -97,7 +97,8 @@
         "if": {
           "properties": {
             "optional": {
-              "const": true
+              "const": true,
+              "description": "Controls whether empty values persist in XML. When true, clearing the field removes the mapped element."
             }
           },
           "required": [
@@ -898,22 +899,22 @@
           "name": {
             "$id": "#/properties/property/binding/name",
             "type": "string",
-            "description": "The name of a property binding."
+            "description": "The name of the binding object."
           },
           "source": {
             "$id": "#/properties/property/binding/source",
             "type": "string",
-            "description": "The source value of a property binding (zeebe:output)."
+            "description": "Source of the output parameter for an output mapping (created with zeebe:output)."
           },
           "key": {
             "$id": "#/properties/property/binding/key",
             "type": "string",
-            "description": "The key value of a property binding (zeebe:taskHeader)."
+            "description": "Key of a task header (created with zeebe:taskHeader)."
           },
           "property": {
             "$id": "#/properties/property/binding/property",
             "type": "string",
-            "description": "The name of the property defined in the binding."
+            "description": "Name of a binding property. Used for zeebe:taskDefinition, zeebe:calledElement, zeebe:formDefinition, zeebe:assignmentDefinition, zeebe:taskSchedule, and zeebe:priorityDefinition."
           },
           "linkName": {
             "$id": "#/properties/property/binding/linkName",
@@ -930,7 +931,7 @@
       "feel": {
         "$id": "#/properties/property/feel",
         "type": "string",
-        "description": "Indicates whether the property can be a feel expression",
+        "description": "Defines whether the property supports FEEL expressions. Values can be \"optional\" (toggle), \"required\", or \"static\" (for Boolean/Number fields, persisted as FEEL).",
         "enum": [
           "optional",
           "required",
@@ -945,12 +946,14 @@
       "generatedValue": {
         "$id": "#/properties/property/generatedValue",
         "type": "object",
+        "description": "Object that automatically generates values instead of requiring user input.",
         "required": [
           "type"
         ],
         "properties": {
           "type": {
-            "const": "uuid"
+            "const": "uuid",
+            "description": "The type of a generated value, such as \"uuid\"."
           }
         },
         "description": "Sets property to a generated value according to given scheme."

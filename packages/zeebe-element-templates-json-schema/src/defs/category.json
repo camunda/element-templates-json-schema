@@ -1,7 +1,7 @@
 {
   "$id": "#/category",
   "type": "object",
-  "description": "A custom category to semantically group element templates",
+  "description": "Object that defines a custom category for grouping templates in the selection modal. If a category is not defined, the template is shown in the Templates group.",
   "default": {},
   "example": {
     "id": "custom-category",
@@ -11,12 +11,12 @@
     "id": {
       "$id": "#/category/id",
       "type": "string",
-      "description": "The unique identifier of the category."
+      "description": "Unique identifier for a category object. Required if using category."
     },
     "name": {
       "$id": "#/category/name",
       "type": "string",
-      "description": "The name of the category."
+      "description": "Display name of the category. Shown in the template selection modal. Required if using category."
     }
   },
   "required": [

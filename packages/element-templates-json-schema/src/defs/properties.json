@@ -187,7 +187,7 @@
       "binding": {
         "$id": "#/properties/property/binding",
         "type": "object",
-        "description": "Specifying how the property is mapped to BPMN or Camunda extension elements and attributes.",
+        "description": "Object that defines how the property is mapped to BPMN or Camunda extensions. Required.",
         "required": [
           "type"
         ],

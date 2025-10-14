@@ -1,7 +1,7 @@
 {
   "$id": "#/icon",
   "type": "object",
-  "description": "Custom icon to be shown on the element",
+  "description": "Custom icon shown in the element template selection modal and the properties panel. Must be a valid data URI or HTTP(s) URL. Square icons recommended.",
   "default": {},
   "properties": {
     "contents": {
