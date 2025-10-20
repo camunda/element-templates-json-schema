@@ -14,7 +14,7 @@
     "name": {
       "$id": "#/name",
       "type": "string",
-      "description": "Template name. Shown in template selection modal and properties panel. Required."
+      "description": "Template name. Shown during template selection and editing of a templated element . Required."
     },
     "id": {
       "$id": "#/id",
