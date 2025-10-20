@@ -9,7 +9,7 @@
     "$schema": {
       "$id": "#/$schema",
       "type": "string",
-      "description": "URL pointing to the schema that defines the structure of the element template .json file."
+      "description": "Reference to the Element Template JSON schema this document follows."
     },
     "name": {
       "$id": "#/name",
