@@ -24,7 +24,7 @@
     "description": {
       "$id": "#/description",
       "type": "string",
-      "description": "Template description. Shown in the element template selection modal and in the properties panel after applying an element template."
+      "description": "Template description. Shown during template selection and editing of a templated element."
     },
     "version": {
       "$id": "#/version",
@@ -108,7 +108,7 @@
     "entriesVisible": {
       "$id": "#/entriesVisible",
       "type": "boolean",
-      "description": "Defines whether all property input fields are shown, even those normally hidden by the template. Not recommended."
+      "description": "Defines whether all property input fields are shown, even those normally hidden by the template."
     },
     "groups": {
       "$ref": "groups.json"

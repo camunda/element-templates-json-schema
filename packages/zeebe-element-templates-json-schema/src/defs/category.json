@@ -1,7 +1,7 @@
 {
   "$id": "#/category",
   "type": "object",
-  "description": "Object that defines a custom category for grouping templates in the selection modal. If a category is not defined, the template is shown in the Templates group.",
+  "description": "Object that defines a custom category for grouping templates, for example, in a selection modal. If not defined, defaults to Templates.",
   "default": {},
   "example": {
     "id": "custom-category",
