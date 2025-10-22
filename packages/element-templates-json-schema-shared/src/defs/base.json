@@ -19,7 +19,7 @@
     "id": {
       "$id": "#/id",
       "type": "string",
-      "description": "Template identifier. If you add a version to a template, it will be considered unique based on its ID and version. Two templates can have the same ID if their version is different. Required."
+      "description": "Template identifier. Required."
     },
     "description": {
       "$id": "#/description",
