@@ -179,7 +179,7 @@
           },
           "pattern": {
             "$id": "#/properties/property/constraints/pattern",
-            "description": "Object that defines a regular expression that the user's input must match.",
+            "description": "String or object that defines a regular expression that the user's input must match.",
             "oneOf": [
               {
                 "type": "object",
