@@ -1,7 +1,7 @@
 {
   "$id": "#/groups",
   "type": "array",
-  "description": "Object that defines groups to organize related fields in the properties panel. A template can contain multiple groups.",
+  "description": "Object that defines custom groups to organize related fields in the properties panel.",
   "allOf": [
     {
       "$ref": "examples.json#/groups"
