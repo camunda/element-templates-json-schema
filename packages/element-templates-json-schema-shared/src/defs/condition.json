@@ -105,7 +105,7 @@
     },
     "condition": {
       "type": "object",
-      "description": "Object that defines when a property should be active depending on other property values.",
+      "description": "Object that defines when a property should be displayed in the properties panel and its value should be included in the XML.",
       "allOf": [
         {
           "$ref": "examples.json#/condition"
