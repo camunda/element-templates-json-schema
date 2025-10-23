@@ -29,7 +29,7 @@
     "version": {
       "$id": "#/version",
       "type": "integer",
-      "description": "Optional version of the template. If you add a version to a template, it will be considered unique based on its ID and version. Two templates can have the same ID if their version is different."
+      "description": "Optional version of the template. If you add a version to a template, it will be considered unique based on its ID and version. Two templates can have the same ID if their versions are different."
     },
     "isDefault": {
       "$id": "#/isDefault",
