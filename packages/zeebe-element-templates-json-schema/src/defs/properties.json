@@ -913,7 +913,7 @@
           "property": {
             "$id": "#/properties/property/binding/property",
             "type": "string",
-            "description": "Name of a binding property. Used for zeebe:taskDefinition, zeebe:calledElement, zeebe:formDefinition, zeebe:assignmentDefinition, zeebe:taskSchedule, and zeebe:priorityDefinition."
+            "description": "Name of a binding property."
           },
           "linkName": {
             "$id": "#/properties/property/binding/linkName",
