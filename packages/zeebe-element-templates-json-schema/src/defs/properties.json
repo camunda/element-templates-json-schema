@@ -953,7 +953,7 @@
         "properties": {
           "type": {
             "const": "uuid",
-            "description": "The type of a generated value, such as \"uuid\"."
+            "description": "Value is generated as UUID."
           }
         },
         "description": "Sets property to a generated value according to given scheme."
