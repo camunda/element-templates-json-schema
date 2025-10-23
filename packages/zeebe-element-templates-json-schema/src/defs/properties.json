@@ -97,8 +97,7 @@
         "if": {
           "properties": {
             "optional": {
-              "const": true,
-              "description": "Controls whether empty values persist in XML. When true, clearing the field removes the mapped element."
+              "const": true
             }
           },
           "required": [
