@@ -101,7 +101,7 @@
   "properties": {
     "id": {
       "type": "string",
-      "description": "The ID of the property to check."
+      "description": "Unique identifier of the property. Can be used to, for example, reference the property for checks."
     },
     "condition": {
       "type": "object",
