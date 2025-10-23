@@ -1,7 +1,7 @@
 {
   "$id": "#/groups",
   "type": "array",
-  "description": "Object that defines custom groups to organize related fields in the properties panel.",
+  "description": "List of custom groups to organize related fields in the properties panel.",
   "allOf": [
     {
       "$ref": "examples.json#/groups"
