@@ -9,7 +9,7 @@
         "type": {
           "$id": "#/condition/type",
           "const": "simple",
-          "description": "Defines the input type in the properties panel. Can be String, Text, Number, Boolean (checkbox), Dropdown, or Hidden.",
+          "description": "Defines the type of the condition (always \"simple\").",
           "default": "simple"
         },
         "property": {
