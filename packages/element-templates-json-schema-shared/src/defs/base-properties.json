@@ -127,7 +127,7 @@
       "choices": {
         "$id": "#/properties/property/choices",
         "type": "array",
-        "description": "Object that contains choices for a dropdown field.",
+        "description": "List of choices for a dropdown field.",
         "default": [],
         "items": {
           "$id": "#/properties/property/choices/item",
