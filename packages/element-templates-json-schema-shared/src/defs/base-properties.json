@@ -207,7 +207,7 @@
       "group": {
         "$id": "#/properties/property/group",
         "type": "string",
-        "description": "Group in the properties panel that the property belongs to. A property can only be assigned to one group."
+        "description": "Group in the properties panel that the property belongs to."
       }
     }
   }
