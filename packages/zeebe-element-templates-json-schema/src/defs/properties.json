@@ -946,7 +946,7 @@
       "generatedValue": {
         "$id": "#/properties/property/generatedValue",
         "type": "object",
-        "description": "Object that automatically generates values instead of requiring user input.",
+        "description": "Object that defines how a default value should be generated.",
         "required": [
           "type"
         ],
