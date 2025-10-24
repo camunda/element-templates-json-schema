@@ -15,7 +15,7 @@
         "property": {
           "$id": "#/condition/property",
           "type": "string",
-          "description": "Unique identifier of the property. Used, for example, to reference the property in conditions."
+          "description": "Reference to the property used to evaluate the condition."
         }
       },
       "oneOf": [
