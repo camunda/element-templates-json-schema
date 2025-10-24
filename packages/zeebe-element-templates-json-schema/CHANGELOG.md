@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.32.0
+
+* `FEAT`: update descriptions ([#202](https://github.com/camunda/element-templates-json-schema/pull/202))
+
 ## 0.31.1
 
 * `FIX`: allow to use `output*` properties without task definition in `bpmn:AdHocSubProcess`
