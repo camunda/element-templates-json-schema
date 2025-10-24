@@ -1,7 +1,7 @@
 {
   "$id": "#/groups",
   "type": "array",
-  "description": "Custom fields can be ordered together via groups.",
+  "description": "List of custom groups to organize related fields in the properties panel.",
   "allOf": [
     {
       "$ref": "examples.json#/groups"
@@ -19,12 +19,12 @@
       "id": {
         "$id": "#/groups/group/id",
         "type": "string",
-        "description": "The id of the custom group"
+        "description": "Uniquely identifies a group object. Required if using groups."
       },
       "label": {
         "$id": "#/groups/group/label",
         "type": "string",
-        "description": "The label of the custom group"
+        "description": "The label of the group, shown as a section header in the properties panel. Required if using groups."
       }
     }
   }

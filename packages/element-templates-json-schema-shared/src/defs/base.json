@@ -6,25 +6,30 @@
     "properties"
   ],
   "properties": {
+    "$schema": {
+      "$id": "#/$schema",
+      "type": "string",
+      "description": "Reference to the Element Template JSON schema this document follows."
+    },
     "name": {
       "$id": "#/name",
       "type": "string",
-      "description": "The name of the element template."
+      "description": "Template name. Shown during template selection and editing of a templated element. Required."
     },
     "id": {
       "$id": "#/id",
       "type": "string",
-      "description": "The identifier of the element template."
+      "description": "Template identifier. Required."
     },
     "description": {
       "$id": "#/description",
       "type": "string",
-      "description": "The description of the element template."
+      "description": "Template description. Shown during template selection and editing of a templated element."
     },
     "version": {
       "$id": "#/version",
       "type": "integer",
-      "description": "Optional version of the template. If you add a version to a template it will be considered unique based on its ID and version. Two templates can have the same ID if their version is different."
+      "description": "Optional version of the template. If you add a version to a template, it will be considered unique based on its ID and version. Two templates can have the same ID if their versions are different."
     },
     "isDefault": {
       "$id": "#/isDefault",
@@ -34,7 +39,7 @@
     "deprecated": {
       "$id": "#/deprecated",
       "type": ["boolean", "object"],
-      "description": "Indicates whether the element template is deprecated.",
+      "description": "Marks the template as deprecated. Value can be either a boolean or an object with a message and a link to migration documentation.",
       "properties": {
         "message": {
           "$id": "#/deprecated/message",
@@ -45,14 +50,14 @@
           "$id": "#/deprecated/documentationRef",
           "type": "string",
           "pattern": "^(https|http)://.*",
-          "description": "Optional link to migration documentation."
+          "description": "URL pointing to template documentation. Must be a valid http(s) URL."
         }
       }
     },
     "appliesTo": {
       "$id": "#/appliesTo",
       "type": "array",
-      "description": "List of BPMN types the template can be applied to.",
+      "description": "List of BPMN types the template can be applied to. Required.",
       "default": [],
       "items": {
         "$id": "#/appliesTo/items",
@@ -68,7 +73,7 @@
     "elementType": {
       "$id": "#/elementType",
       "type": "object",
-      "description": "The BPMN type the element will be transformed into.",
+      "description": "Object that sets the type of the element. Some properties require a specific value for elementType.",
       "default": {},
       "required": [
         "value"
@@ -78,6 +83,7 @@
           "$id": "#/elementType/value",
           "type": "string",
           "pattern": "^[\\w\\d]+:[\\w\\d]+$",
+          "description": "Specifies the target BPMN element type. The element is replaced with the specified type when a user applies the template. Required if using elementType.",
           "allOf": [
             {
               "$ref": "examples.json#/elementType"
@@ -96,13 +102,13 @@
       "$id": "#/keywords",
       "type": "array",
       "items": { "type": "string" },
-      "description": "List of keywords to describe the element template.",
+      "description": "List of keywords to help users find the template. Used in search and filtering, but not displayed in the UI.",
       "default": []
     },
     "entriesVisible": {
       "$id": "#/entriesVisible",
       "type": "boolean",
-      "description": "Select whether non-template entries are visible in the properties panel."
+      "description": "Defines whether all property input fields are shown, even those normally hidden by the template."
     },
     "groups": {
       "$ref": "groups.json"

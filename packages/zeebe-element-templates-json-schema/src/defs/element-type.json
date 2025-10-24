@@ -4,6 +4,7 @@
       "properties": {
         "eventDefinition": {
           "$id": "#/elementType/eventDefinition",
+          "description": "If templating a message event, set this key's value to \"bpmn:MessageEventDefinition\". Otherwise, ignore.",
           "enum": [
             "bpmn:MessageEventDefinition"
           ]
