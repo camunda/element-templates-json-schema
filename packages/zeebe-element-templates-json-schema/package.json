@@ -10,8 +10,9 @@
     "test:integration": "mocha --reporter=spec --recursive test/integration",
     "dev": "npm run test -- --watch",
     "all": "run-s build test",
-    "build": "run-s build:error-messages build:schema",
+    "build": "run-s build:error-messages build:deprecated-warnings build:schema",
     "build:error-messages": "node ../../tasks/generate-error-messages.js --input=./src/error-messages.json --output=./resources/error-messages.json",
+    "build:deprecated-warnings": "node ../../tasks/generate-deprecated-warnings.js --input=./src/deprecated-warnings.json --output=./resources/deprecated-warnings.json",
     "build:schema": "node ../../tasks/generate-schema.js --input=./src/schema.json --output=./resources/schema.json",
     "prepare": "run-s build"
   },
