@@ -639,6 +639,9 @@
       },
       {
         "$ref": "./properties/taskSchedule.json"
+      },
+      {
+        "$ref": "./properties/signal.json"
       }
     ],
     "properties": {
@@ -659,7 +662,8 @@
                     "zeebe:property",
                     "zeebe:input",
                     "bpmn:Message#property",
-                    "bpmn:Message#zeebe:subscription#property"
+                    "bpmn:Message#zeebe:subscription#property",
+                    "bpmn:Signal#property"
                   ]
                 }
               },
@@ -865,6 +869,9 @@
             "$ref": "./properties/binding/taskSchedule.json"
           },
           {
+            "$ref": "./properties/binding/signal.json"
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -892,7 +899,8 @@
               "zeebe:assignmentDefinition",
               "zeebe:priorityDefinition",
               "zeebe:adHoc",
-              "zeebe:taskSchedule"
+              "zeebe:taskSchedule",
+              "bpmn:Signal#property"
             ]
           },
           "name": {

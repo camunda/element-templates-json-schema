@@ -362,6 +362,36 @@ describe('validation', function() {
     });
 
 
+    describe('signal', function() {
+
+      it('signal/valid');
+
+
+      it('signal/valid-feel');
+
+
+      it('signal/missing-event-definition');
+
+
+      it('signal/invalid-event-definition');
+
+
+      it('signal/invalid-element-type');
+
+
+      it('signal/missing-property');
+
+
+      it('signal/missing-property-name');
+
+
+      it('signal/invalid-property');
+
+
+      it('signal/invalid-type');
+    });
+
+
     describe('generated value', function() {
 
       it('generated-value-valid');

@@ -1,0 +1,101 @@
+{
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "bpmn:Signal#property"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "required": [
+          "elementType"
+        ],
+        "properties": {
+          "elementType": {
+            "required": [
+              "eventDefinition",
+              "value"
+            ],
+            "properties": {
+              "value": {
+                "enum": [
+                  "bpmn:StartEvent",
+                  "bpmn:IntermediateCatchEvent",
+                  "bpmn:IntermediateThrowEvent",
+                  "bpmn:BoundaryEvent",
+                  "bpmn:EndEvent"
+                ]
+              },
+              "eventDefinition": {
+                "const": "bpmn:SignalEventDefinition"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "elementType": {
+            "properties": {
+              "eventDefinition": {
+                "const": "bpmn:SignalEventDefinition"
+              }
+            },
+            "required": [
+              "eventDefinition"
+            ]
+          }
+        },
+        "required": [
+          "elementType"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "bpmn:Signal#property"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

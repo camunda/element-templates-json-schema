@@ -18,7 +18,8 @@ export const errors = [
     'message': 'should be equal to one of the allowed values',
     'params': {
       'allowedValues': [
-        'bpmn:MessageEventDefinition'
+        'bpmn:MessageEventDefinition',
+        'bpmn:SignalEventDefinition'
       ]
     },
     'schemaPath': '#/properties/elementType/allOf/0/allOf/0/properties/eventDefinition/enum'
