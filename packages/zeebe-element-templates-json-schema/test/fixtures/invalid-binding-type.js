@@ -55,7 +55,8 @@ export const errors = [
               'zeebe:assignmentDefinition',
               'zeebe:priorityDefinition',
               'zeebe:adHoc',
-              'zeebe:taskSchedule'
+              'zeebe:taskSchedule',
+              'bpmn:Signal#property'
             ]
           },
           message: 'should be equal to one of the allowed values',
@@ -63,7 +64,7 @@ export const errors = [
         }
       ]
     },
-    message: 'invalid property.binding type "foo"; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:formDefinition, zeebe:calledDecision, zeebe:script, zeebe:assignmentDefinition, zeebe:priorityDefinition, zeebe:adHoc, zeebe:taskSchedule }'
+    message: 'invalid property.binding type "foo"; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:formDefinition, zeebe:calledDecision, zeebe:script, zeebe:assignmentDefinition, zeebe:priorityDefinition, zeebe:adHoc, zeebe:taskSchedule, bpmn:Signal#property }'
   },
   {
     keyword: 'type',
