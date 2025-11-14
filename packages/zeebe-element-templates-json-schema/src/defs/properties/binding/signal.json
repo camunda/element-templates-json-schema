@@ -1,0 +1,22 @@
+{
+  "if": {
+    "properties": {
+      "type": {
+        "const": "bpmn:Signal#property"
+      }
+    },
+    "required": [
+      "type"
+    ]
+  },
+  "then": {
+    "properties": {
+      "name": {
+        "const": "name"
+      }
+    },
+    "required": [
+      "name"
+    ]
+  }
+}

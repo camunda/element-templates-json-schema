@@ -697,6 +697,9 @@
     },
     {
       "$ref": "./template/adHoc.json"
+    },
+    {
+      "$ref": "./template/signal.json"
     }
   ]
 }
