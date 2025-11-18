@@ -5,12 +5,13 @@ const util = require('util');
 const schema = require('../../resources/schema.json');
 
 const errorMessages = require('../../resources/error-messages.json');
+const deprecatedWarnings = require('../../resources/deprecated-warnings.json');
 
 const {
   createValidator
 } = require('../../../element-templates-json-schema-shared/test/helpers');
 
-const validator = createValidator(schema, errorMessages);
+const validator = createValidator(schema, errorMessages, deprecatedWarnings);
 
 // we save this for some other shinanigans
 const iit = it;
@@ -20,10 +21,12 @@ function validateTemplate(template) {
   const valid = validator(template);
 
   const errors = validator.errors;
+  const warnings = validator.warnings;
 
   return {
     valid,
-    errors
+    errors,
+    warnings
   };
 }
 
@@ -40,16 +43,27 @@ function createTest(name, file, it) {
 
     const {
       errors: expectedErrors,
-      template
+      template,
+      warnings: expectedWarnings
     } = testDefinition;
 
     // when
     const {
-      errors
+      errors,
+      warnings
     } = validateTemplate(template);
 
     // then
     expect(errors).to.eqlErrors(expectedErrors);
+
+    // less strict check for warnings
+    if (expectedWarnings) {
+      expect(warnings).to.eql(expectedWarnings);
+    } else if (warnings && warnings.length > 0) {
+
+      // log warnings without failing the test
+      warnings.forEach(x => console.warn('Deprecation warning:', x.message));
+    }
   });
 }
 
@@ -197,6 +211,12 @@ describe('validation', function() {
 
 
     it('element-type-invalid');
+
+
+    it('hidden-property');
+
+
+    it('hidden-zeebe-user-task');
 
 
     describe('element type - event definition', function() {
