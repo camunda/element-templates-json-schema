@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.33.0
+
+* `FEAT`: support templating signal events ([#205](https://github.com/camunda/element-templates-json-schema/pull/205))
+
 ## 0.32.0
 
 * `FEAT`: update descriptions ([#202](https://github.com/camunda/element-templates-json-schema/pull/202))
