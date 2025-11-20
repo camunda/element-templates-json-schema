@@ -52,7 +52,7 @@
     "eslint": "^9.39.1",
     "eslint-plugin-bpmn-io": "^2.2.0",
     "lerna": "^9.0.1",
-    "min-dash": "^4.0.0",
+    "min-dash": "^4.2.3",
     "mocha": "^10.0.0",
     "mri": "^1.2.0",
     "npm-run-all2": "^8.0.0"
