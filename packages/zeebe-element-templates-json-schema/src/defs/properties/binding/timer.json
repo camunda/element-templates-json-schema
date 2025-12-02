@@ -1,0 +1,26 @@
+{
+  "if": {
+    "properties": {
+      "type": {
+        "const": "bpmn:TimerEventDefinition#property"
+      }
+    },
+    "required": [
+      "type"
+    ]
+  },
+  "then": {
+    "properties": {
+      "name": {
+        "enum": [
+          "timeCycle",
+          "timeDate",
+          "timeDuration"
+        ]
+      }
+    },
+    "required": [
+      "name"
+    ]
+  }
+}

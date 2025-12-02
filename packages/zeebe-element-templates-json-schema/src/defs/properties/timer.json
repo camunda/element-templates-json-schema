@@ -1,0 +1,37 @@
+{
+  "if": {
+    "properties": {
+      "binding": {
+        "properties": {
+          "type": {
+            "const": "bpmn:TimerEventDefinition#property"
+          },
+          "name": {
+            "enum": ["timeDate", "timeDuration", "timeCycle"]
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ]
+      }
+    },
+    "required": [
+      "binding"
+    ]
+  },
+  "then": {
+    "required": [
+      "type"
+    ],
+    "properties": {
+      "type": {
+        "enum": [
+          "Hidden",
+          "String",
+          "Text"
+        ]
+      }
+    }
+  }
+}

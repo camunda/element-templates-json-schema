@@ -689,6 +689,9 @@
             ]
           }
         }
+      },
+      {
+        "$ref": "./properties/timer.json"
       }
     ],
     "properties": {
@@ -710,7 +713,8 @@
                     "zeebe:input",
                     "bpmn:Message#property",
                     "bpmn:Message#zeebe:subscription#property",
-                    "bpmn:Signal#property"
+                    "bpmn:Signal#property",
+                    "bpmn:TimerEventDefinition#property"
                   ]
                 }
               },
@@ -921,6 +925,9 @@
             "$ref": "./properties/binding/signal.json"
           },
           {
+            "$ref": "./properties/binding/timer.json"
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -949,7 +956,8 @@
               "zeebe:priorityDefinition",
               "zeebe:adHoc",
               "zeebe:taskSchedule",
-              "bpmn:Signal#property"
+              "bpmn:Signal#property",
+              "bpmn:TimerEventDefinition#property"
             ]
           },
           "name": {

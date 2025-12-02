@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.35.0
+
+* `FEAT`: support templating timer events ([#209](https://github.com/camunda/element-templates-json-schema/pull/209))
+
 ## 0.34.0
 
 * `FEAT`: support `zeebe:calledElement` variables propagation properties ([#210](https://github.com/camunda/element-templates-json-schema/pull/210))

@@ -7,7 +7,8 @@
           "description": "Define the event definition type for a typed event template. Otherwise, ignore.",
           "enum": [
             "bpmn:MessageEventDefinition",
-            "bpmn:SignalEventDefinition"
+            "bpmn:SignalEventDefinition",
+            "bpmn:TimerEventDefinition"
           ]
         }
       }
@@ -27,6 +28,32 @@
               "bpmn:IntermediateThrowEvent",
               "bpmn:BoundaryEvent",
               "bpmn:EndEvent"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "eventDefinition": {
+            "const": "bpmn:TimerEventDefinition"
+          }
+        },
+        "required": [
+          "eventDefinition"
+        ]
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "bpmn:StartEvent",
+              "bpmn:IntermediateCatchEvent",
+              "bpmn:BoundaryEvent"
             ]
           }
         },

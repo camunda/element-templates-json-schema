@@ -1,0 +1,197 @@
+{
+  "$defs": {
+    "timeDateProperty": {
+      "properties": {
+        "binding": {
+          "properties": {
+            "type": {
+              "const": "bpmn:TimerEventDefinition#property"
+            },
+            "name": {
+              "const": "timeDate"
+            }
+          },
+          "required": [
+            "type",
+            "name"
+          ]
+        }
+      },
+      "required": [
+        "binding"
+      ]
+    },
+    "timeCycleProperty": {
+      "properties": {
+        "binding": {
+          "properties": {
+            "type": {
+              "const": "bpmn:TimerEventDefinition#property"
+            },
+            "name": {
+              "const": "timeCycle"
+            }
+          },
+          "required": [
+            "type",
+            "name"
+          ]
+        }
+      },
+      "required": [
+        "binding"
+      ]
+    },
+    "timeDurationProperty": {
+      "properties": {
+        "binding": {
+          "properties": {
+            "type": {
+              "const": "bpmn:TimerEventDefinition#property"
+            },
+            "name": {
+              "const": "timeDuration"
+            }
+          },
+          "required": [
+            "type",
+            "name"
+          ]
+        }
+      },
+      "required": [
+        "binding"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "bpmn:TimerEventDefinition#property"
+                    },
+                    "name": {
+                      "enum": [
+                        "timeDate",
+                        "timeCycle",
+                        "timeDuration"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "name"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "required": [
+          "elementType"
+        ],
+        "properties": {
+          "elementType": {
+            "required": [
+              "eventDefinition",
+              "value"
+            ],
+            "properties": {
+              "eventDefinition": {
+                "const": "bpmn:TimerEventDefinition"
+              },
+              "value": {
+                "enum": [
+                  "bpmn:StartEvent",
+                  "bpmn:IntermediateCatchEvent",
+                  "bpmn:BoundaryEvent"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "elementType": {
+            "properties": {
+              "eventDefinition": {
+                "const": "bpmn:TimerEventDefinition"
+              }
+            },
+            "required": [
+              "eventDefinition"
+            ]
+          }
+        },
+        "required": [
+          "elementType"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "oneOf": [
+              { "contains": { "$ref": "#/$defs/timeDateProperty" } },
+              { "contains": { "$ref": "#/$defs/timeCycleProperty" } },
+              { "contains": { "$ref": "#/$defs/timeDurationProperty" } }
+            ]
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "elementType": {
+            "properties": {
+              "eventDefinition": {
+                "const": "bpmn:TimerEventDefinition"
+              },
+              "value": {
+                "const": "bpmn:IntermediateCatchEvent"
+              }
+            },
+            "required": [
+              "eventDefinition",
+              "value"
+            ]
+          }
+        },
+        "required": [
+          "elementType"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "not": {
+              "contains": {
+                "$ref": "#/$defs/timeCycleProperty"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
