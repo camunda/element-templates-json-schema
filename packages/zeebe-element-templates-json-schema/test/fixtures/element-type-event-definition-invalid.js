@@ -19,7 +19,8 @@ export const errors = [
     'params': {
       'allowedValues': [
         'bpmn:MessageEventDefinition',
-        'bpmn:SignalEventDefinition'
+        'bpmn:SignalEventDefinition',
+        'bpmn:TimerEventDefinition'
       ]
     },
     'schemaPath': '#/properties/elementType/allOf/0/allOf/0/properties/eventDefinition/enum'

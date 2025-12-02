@@ -700,6 +700,9 @@
     },
     {
       "$ref": "./template/signal.json"
+    },
+    {
+      "$ref": "./template/timer.json"
     }
   ]
 }

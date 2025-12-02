@@ -392,6 +392,39 @@ describe('validation', function() {
     });
 
 
+    describe('timer', function() {
+
+      it('timer/valid');
+
+
+      it('timer/valid-feel');
+
+
+      it('timer/missing-event-definition');
+
+
+      it('timer/invalid-event-definition');
+
+
+      it('timer/invalid-element-type');
+
+
+      it('timer/invalid-type');
+
+
+      it('timer/missing-property');
+
+
+      it('timer/multiple-properties');
+
+
+      it('timer/invalid-binding-name');
+
+
+      it('timer/invalid-time-cycle-intermediate-event');
+    });
+
+
     describe('generated value', function() {
 
       it('generated-value-valid');
