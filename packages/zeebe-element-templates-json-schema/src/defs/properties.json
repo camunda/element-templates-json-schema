@@ -962,8 +962,7 @@
             "const": "uuid",
             "description": "Value is generated as UUID."
           }
-        },
-        "description": "Sets property to a generated value according to given scheme."
+          }
       },
       "tooltip": {
         "$id": "#/properties/property/tooltip",
