@@ -642,6 +642,53 @@
       },
       {
         "$ref": "./properties/signal.json"
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:calledElement"
+                },
+                "property": {
+                  "enum": [
+                    "propagateAllParentVariables",
+                    "propagateAllChildVariables"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "property"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden",
+                "Boolean"
+              ]
+            },
+            "value": {
+              "type": "boolean"
+            }
+          },
+          "not": {
+            "required": [
+              "feel"
+            ]
+          }
+        }
       }
     ],
     "properties": {
@@ -768,7 +815,9 @@
                   "enum": [
                     "processId",
                     "bindingType",
-                    "versionTag"
+                    "versionTag",
+                    "propagateAllParentVariables",
+                    "propagateAllChildVariables"
                   ]
                 }
               },
@@ -962,7 +1011,7 @@
             "const": "uuid",
             "description": "Value is generated as UUID."
           }
-          }
+        }
       },
       "tooltip": {
         "$id": "#/properties/property/tooltip",
