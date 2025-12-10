@@ -604,5 +604,18 @@
       "properties"
     ],
     "errorMessage": "Binding with `type`=`bpmn:Signal#property` is required, when using `elementType.eventDefinition`=`bpmn:SignalEventDefinition`"
+  },
+  {
+    "path": [
+      "definitions",
+      "properties",
+      "allOf",
+      1,
+      "items",
+      "allOf",
+      26,
+      "then"
+    ],
+    "errorMessage": "FEEL is not supported for `zeebe:calledElement` variable propagation properties"
   }
 ]

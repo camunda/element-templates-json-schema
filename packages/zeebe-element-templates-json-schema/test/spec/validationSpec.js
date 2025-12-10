@@ -441,6 +441,10 @@ describe('validation', function() {
 
       it('called-element-missing-property');
 
+      it('called-element-propagate-variables');
+
+      it('called-element-propagate-variables-invalid');
+
       it('called-element-with-io-mapping');
     });
 

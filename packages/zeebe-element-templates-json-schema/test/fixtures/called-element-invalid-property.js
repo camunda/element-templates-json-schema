@@ -65,7 +65,9 @@ export const errors = [
       allowedValues: [
         'processId',
         'bindingType',
-        'versionTag'
+        'versionTag',
+        'propagateAllParentVariables',
+        'propagateAllChildVariables'
       ]
     },
     message: 'should be equal to one of the allowed values'
