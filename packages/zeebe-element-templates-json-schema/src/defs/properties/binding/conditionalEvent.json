@@ -1,0 +1,51 @@
+{
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "bpmn:ConditionalEventDefinition#property"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "name": {
+            "const": "condition"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "bpmn:ConditionalEventDefinition#zeebe:conditionalFilter#property"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "name": {
+            "enum": [ 
+              "variableNames", 
+              "variableEvents" 
+            ]
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  ]
+}

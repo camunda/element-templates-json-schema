@@ -57,7 +57,9 @@ export const errors = [
               'zeebe:adHoc',
               'zeebe:taskSchedule',
               'bpmn:Signal#property',
-              'bpmn:TimerEventDefinition#property'
+              'bpmn:TimerEventDefinition#property',
+              'bpmn:ConditionalEventDefinition#property',
+              'bpmn:ConditionalEventDefinition#zeebe:conditionalFilter#property'
             ]
           },
           message: 'should be equal to one of the allowed values',
