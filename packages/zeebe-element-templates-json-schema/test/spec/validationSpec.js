@@ -425,6 +425,40 @@ describe('validation', function() {
     });
 
 
+    describe('conditional event', function() {
+
+      it('conditional-event/valid');
+
+
+      it('conditional-event/event-definition');
+
+
+      it('conditional-event/invalid-event-definition');
+
+
+      it('conditional-event/condition');
+
+
+      it('conditional-event/invalid-condition-type');
+
+
+      it('conditional-event/invalid-condition-feel');
+
+
+      it('conditional-event/invalid-condition-property');
+
+
+      it('conditional-event/conditional-filter');
+
+
+      it('conditional-event/invalid-conditional-filter-type');
+
+
+      it('conditional-event/invalid-conditional-filter-property');
+
+    });
+
+
     describe('generated value', function() {
 
       it('generated-value-valid');

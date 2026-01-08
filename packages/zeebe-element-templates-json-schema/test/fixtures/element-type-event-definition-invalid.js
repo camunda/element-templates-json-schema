@@ -20,7 +20,8 @@ export const errors = [
       'allowedValues': [
         'bpmn:MessageEventDefinition',
         'bpmn:SignalEventDefinition',
-        'bpmn:TimerEventDefinition'
+        'bpmn:TimerEventDefinition',
+        'bpmn:ConditionalEventDefinition'
       ]
     },
     'schemaPath': '#/properties/elementType/allOf/0/allOf/0/properties/eventDefinition/enum'
