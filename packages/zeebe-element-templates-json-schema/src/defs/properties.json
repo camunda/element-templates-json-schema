@@ -692,6 +692,9 @@
       },
       {
         "$ref": "./properties/timer.json"
+      },
+      {
+        "$ref": "./properties/conditionalEvent.json"
       }
     ],
     "properties": {
@@ -714,7 +717,9 @@
                     "bpmn:Message#property",
                     "bpmn:Message#zeebe:subscription#property",
                     "bpmn:Signal#property",
-                    "bpmn:TimerEventDefinition#property"
+                    "bpmn:TimerEventDefinition#property",
+                    "bpmn:ConditionalEventDefinition#property",
+                    "bpmn:ConditionalEventDefinition#zeebe:conditionalFilter#property"
                   ]
                 }
               },
@@ -928,6 +933,9 @@
             "$ref": "./properties/binding/timer.json"
           },
           {
+            "$ref": "./properties/binding/conditionalEvent.json"
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -957,7 +965,9 @@
               "zeebe:adHoc",
               "zeebe:taskSchedule",
               "bpmn:Signal#property",
-              "bpmn:TimerEventDefinition#property"
+              "bpmn:TimerEventDefinition#property",
+              "bpmn:ConditionalEventDefinition#property",
+              "bpmn:ConditionalEventDefinition#zeebe:conditionalFilter#property"
             ]
           },
           "name": {
