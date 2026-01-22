@@ -478,6 +478,8 @@ describe('validation', function() {
 
       it('called-element-propagate-variables-invalid');
 
+      it('called-element-propagate-child-variables-with-output');
+
       it('called-element-with-io-mapping');
     });
 
