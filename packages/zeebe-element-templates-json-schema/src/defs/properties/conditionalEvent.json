@@ -1,0 +1,95 @@
+{
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "binding": {
+            "properties": {
+              "type": {
+                "const": "bpmn:ConditionalEventDefinition#property"
+              },
+              "name": {
+                "const": "condition"
+              }
+            },
+            "required": [
+              "type",
+              "name"
+            ]
+          }
+        },
+        "required": [
+          "binding"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "Hidden",
+                  "String",
+                  "Text"
+                ]
+              }
+            }
+          },
+          {
+            "required": [
+              "feel"
+            ],
+            "properties": {
+              "feel": {
+                "const": "required"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "binding": {
+            "properties": {
+              "type": {
+                "const": "bpmn:ConditionalEventDefinition#zeebe:conditionalFilter#property"
+              },
+              "name": {
+                "enum": [
+                  "variableNames",
+                  "variableEvents"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "name"
+            ]
+          }
+        },
+        "required": [
+          "binding"
+        ]
+      },
+      "then": {
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "Hidden",
+              "String",
+              "Text"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

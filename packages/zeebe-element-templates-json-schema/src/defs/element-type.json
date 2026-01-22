@@ -8,7 +8,8 @@
           "enum": [
             "bpmn:MessageEventDefinition",
             "bpmn:SignalEventDefinition",
-            "bpmn:TimerEventDefinition"
+            "bpmn:TimerEventDefinition",
+            "bpmn:ConditionalEventDefinition"
           ]
         }
       }
@@ -41,6 +42,32 @@
         "properties": {
           "eventDefinition": {
             "const": "bpmn:TimerEventDefinition"
+          }
+        },
+        "required": [
+          "eventDefinition"
+        ]
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "enum": [
+              "bpmn:StartEvent",
+              "bpmn:IntermediateCatchEvent",
+              "bpmn:BoundaryEvent"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "eventDefinition": {
+            "const": "bpmn:ConditionalEventDefinition"
           }
         },
         "required": [
