@@ -37,8 +37,8 @@
         "properties": {
           "name": {
             "enum": [ 
-              "variableNames", 
-              "variableEvents" 
+              "variableNames",
+              "variableEvents"
             ]
           }
         },
