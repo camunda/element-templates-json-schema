@@ -670,5 +670,19 @@
       "not"
     ],
     "errorMessage": "Binding with `type`=`bpmn:TimerEventDefinition#property` and `name`=`timeCycle` is only allowed on `bpmn:StartEvent` or `bpmn:BoundaryEvent` templates"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      12,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "Binding with `type`=`zeebe:output` cannot be used when `propagateAllChildVariables` is set to `true`"
   }
 ]

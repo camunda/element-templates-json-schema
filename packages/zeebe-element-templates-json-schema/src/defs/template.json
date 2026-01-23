@@ -703,6 +703,70 @@
     },
     {
       "$ref": "./template/timer.json"
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:calledElement"
+                    },
+                    "property": {
+                      "const": "propagateAllChildVariables"
+                    }
+                  },
+                  "required": [
+                    "property",
+                    "type"
+                  ]
+                },
+                "value": {
+                  "const": true
+                }
+              },
+              "required": [
+                "binding",
+                "value"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "not": {
+              "contains": {
+                "properties": {
+                  "binding": {
+                    "properties": {
+                      "type": {
+                        "const": "zeebe:output"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  }
+                },
+                "required": [
+                  "binding"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
     }
   ]
 }
