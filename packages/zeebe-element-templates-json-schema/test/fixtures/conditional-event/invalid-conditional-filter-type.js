@@ -11,14 +11,6 @@ export const template = {
   },
   'properties': [
     {
-      'label': 'Variable Names',
-      'type': 'Number',
-      'binding': {
-        'type': 'bpmn:ConditionalEventDefinition#zeebe:conditionalFilter#property',
-        'name': 'variableNames'
-      }
-    },
-    {
       'label': 'Variable Events',
       'type': 'Boolean',
       'binding': {
@@ -46,28 +38,6 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/0',
-    schemaPath: '#/allOf/1/items/allOf/28/allOf/1/if',
-    params: {
-      failingKeyword: 'then'
-    },
-    message: 'should match "then" schema'
-  },
-  {
-    keyword: 'enum',
-    dataPath: '/properties/1/type',
-    schemaPath: '#/allOf/1/items/allOf/28/allOf/1/then/properties/type/enum',
-    params: {
-      allowedValues: [
-        'Hidden',
-        'String',
-        'Text'
-      ]
-    },
-    message: 'should be equal to one of the allowed values'
-  },
-  {
-    keyword: 'if',
-    dataPath: '/properties/1',
     schemaPath: '#/allOf/1/items/allOf/28/allOf/1/if',
     params: {
       failingKeyword: 'then'

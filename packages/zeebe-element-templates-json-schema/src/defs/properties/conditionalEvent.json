@@ -60,10 +60,7 @@
                 "const": "bpmn:ConditionalEventDefinition#zeebe:conditionalFilter#property"
               },
               "name": {
-                "enum": [
-                  "variableNames",
-                  "variableEvents"
-                ]
+                "const": "variableEvents"
               }
             },
             "required": [
