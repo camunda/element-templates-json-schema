@@ -23,16 +23,13 @@ export const template = {
 
 export const errors = [
   {
-    keyword: 'enum',
+    keyword: 'const',
     dataPath: '/properties/0/binding/name',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/15/allOf/1/then/properties/name/enum',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/15/allOf/1/then/properties/name/const',
     params: {
-      allowedValues: [
-        'variableNames',
-        'variableEvents'
-      ]
+      allowedValue: 'variableEvents'
     },
-    message: 'should be equal to one of the allowed values'
+    message: 'should be equal to constant'
   },
   {
     keyword: 'if',

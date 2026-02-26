@@ -20,15 +20,6 @@ export const template = {
       }
     },
     {
-      'label': 'Variable Names',
-      'type': 'Hidden',
-      'value': 'foo,bar',
-      'binding': {
-        'type': 'bpmn:ConditionalEventDefinition#zeebe:conditionalFilter#property',
-        'name': 'variableNames'
-      }
-    },
-    {
       'label': 'Variable Events',
       'type': 'Hidden',
       'value': 'create,update',

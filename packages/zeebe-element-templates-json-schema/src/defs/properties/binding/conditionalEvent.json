@@ -36,10 +36,7 @@
       "then": {
         "properties": {
           "name": {
-            "enum": [ 
-              "variableNames",
-              "variableEvents"
-            ]
+            "const": "variableEvents"
           }
         },
         "required": [
