@@ -154,6 +154,15 @@ describe('validation', function() {
     it('entries-visible-boolean');
 
 
+    it('entries-visible-object');
+
+
+    it('entries-visible-invalid');
+
+
+    it('entries-visible-invalid-key');
+
+
     it('feel');
 
 

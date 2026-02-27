@@ -49,6 +49,25 @@
         },
         "groups": {
           "$ref": "src/defs/groups.json"
+        },
+        "entriesVisible": {
+          "$id": "#/entriesVisible",
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "outputs": {
+                  "type": "boolean",
+                  "default": false
+                }
+              },
+              "additionalProperties": false
+            }
+          ],
+          "description": "Defines whether standard property groups, normally hidden by the template, are shown. When set to true, all standard groups are shown. When set to an object, specified standard groups are additionally shown (e.g. { \"outputs\": true })."
         }
       }
     }

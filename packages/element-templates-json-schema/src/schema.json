@@ -28,6 +28,11 @@
         "scopes": {
           "$ref": "src/defs/scopes.json",
           "$id": "#/scopes"
+        },
+        "entriesVisible": {
+          "$id": "#/entriesVisible",
+          "type": "boolean",
+          "description": "Defines whether all property input fields are shown, even those normally hidden by the template."
         }
       }
     }
