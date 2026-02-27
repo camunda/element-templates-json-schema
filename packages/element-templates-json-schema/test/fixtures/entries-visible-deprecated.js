@@ -15,7 +15,7 @@ export const errors = [
   {
     keyword: 'type',
     dataPath: '/entriesVisible',
-    schemaPath: '#/allOf/0/properties/entriesVisible/type',
+    schemaPath: '#/properties/entriesVisible/type',
     params: { type: 'boolean' },
     message: 'should be boolean'
   },
