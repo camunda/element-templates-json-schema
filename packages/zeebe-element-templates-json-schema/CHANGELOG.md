@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.37.0
+
+* `FEAT`: allow `entriesVisible` to accept an object with property group ids to show them in properties panel with applied template ([#218](https://github.com/camunda/element-templates-json-schema/pull/218))
+
 ## 0.36.0
 
 * `FEAT`: support templating conditional events ([#212](https://github.com/camunda/element-templates-json-schema/pull/212))
