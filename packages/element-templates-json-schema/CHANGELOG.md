@@ -6,6 +6,10 @@ All notable changes to [@camunda/element-templates-json-schema](https://github.c
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.21.0
+
+* `FEAT`: add `entriesVisible` definition moved from shared schema ([#218](https://github.com/camunda/element-templates-json-schema/pull/218))
+
 ## 0.20.0
 
 * `FEAT`: update descriptions ([#202](https://github.com/camunda/element-templates-json-schema/pull/202))

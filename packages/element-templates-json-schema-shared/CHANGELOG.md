@@ -6,6 +6,10 @@ All notable changes to [@camunda/element-templates-json-schema-shared](https://g
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.14.0
+
+* `FEAT`: remove `entriesVisible` definition from shared schema and define it directly in `element-templates-json-schema` and `zeebe-element-templates-json-schema` ([#218](https://github.com/camunda/element-templates-json-schema/pull/218))
+
 ## 0.13.0
 
 * `FEAT`: update descriptions ([#202](https://github.com/camunda/element-templates-json-schema/pull/202))
