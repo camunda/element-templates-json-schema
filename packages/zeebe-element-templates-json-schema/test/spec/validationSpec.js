@@ -480,6 +480,17 @@ describe('validation', function() {
     });
 
 
+    describe('Hidden without value or generatedValue', function() {
+
+      it('hidden-without-value');
+
+      it('hidden-with-value');
+
+      it('hidden-with-generated-value');
+
+    });
+
+
     describe('tooltip', function() {
 
       it('tooltip');
