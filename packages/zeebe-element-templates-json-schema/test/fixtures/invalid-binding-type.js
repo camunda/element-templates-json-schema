@@ -56,6 +56,8 @@ export const errors = [
               'zeebe:priorityDefinition',
               'zeebe:adHoc',
               'zeebe:taskSchedule',
+              'zeebe:executionListener',
+              'zeebe:taskListener',
               'bpmn:Signal#property',
               'bpmn:TimerEventDefinition#property',
               'bpmn:ConditionalEventDefinition#property',
@@ -67,7 +69,7 @@ export const errors = [
         }
       ]
     },
-    message: 'invalid property.binding type "foo"; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:formDefinition, zeebe:calledDecision, zeebe:script, zeebe:assignmentDefinition, zeebe:priorityDefinition, zeebe:adHoc, zeebe:taskSchedule, bpmn:Signal#property, bpmn:TimerEventDefinition#property }'
+    message: 'invalid property.binding type "foo"; must be any of { property, zeebe:taskDefinition:type, zeebe:input, zeebe:output, zeebe:property, zeebe:taskHeader, bpmn:Message#property, bpmn:Message#zeebe:subscription#property, zeebe:taskDefinition, zeebe:calledElement, zeebe:linkedResource, zeebe:userTask, zeebe:formDefinition, zeebe:calledDecision, zeebe:script, zeebe:assignmentDefinition, zeebe:priorityDefinition, zeebe:adHoc, zeebe:taskSchedule, zeebe:executionListener, zeebe:taskListener, bpmn:Signal#property, bpmn:TimerEventDefinition#property }'
   },
   {
     keyword: 'type',

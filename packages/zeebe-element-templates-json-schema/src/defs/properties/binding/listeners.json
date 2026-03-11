@@ -1,0 +1,81 @@
+{
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "zeebe:executionListener"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "eventType": {
+            "enum": [
+              "start",
+              "end"
+            ]
+          }
+        },
+        "required": [
+          "eventType"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "zeebe:taskListener"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "eventType": {
+            "enum": [
+              "creating",
+              "assigning",
+              "updating",
+              "completing"
+            ]
+          }
+        },
+        "required": [
+          "eventType"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "not": {
+              "enum": [
+                "zeebe:executionListener",
+                "zeebe:taskListener"
+              ]
+            }
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            { "required": ["eventType"] },
+            { "required": ["retries"] }
+          ]
+        }
+      }
+    }
+  ]
+}
