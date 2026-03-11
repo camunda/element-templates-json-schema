@@ -7,8 +7,9 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 ___Note:__ Yet to be released changes appear here._
 
 ## 0.38.0
+
 * `FEAT`: add schema support of templating execution and task listeners ([#224](https://github.com/camunda/element-templates-json-schema/pull/224))
-* `FEAT`: allow to control visibility of execution and task listeners section via `entriesVisible` ([#224](https://github.com/camunda/element-templates-json-schema/pull/224))
+* `FEAT`: allow controlling visibility of an execution and task listeners section via `entriesVisible` ([#224](https://github.com/camunda/element-templates-json-schema/pull/224))
 
 ## 0.37.0
 
