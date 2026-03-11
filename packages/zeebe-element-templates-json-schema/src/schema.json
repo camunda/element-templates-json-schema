@@ -62,6 +62,14 @@
                 "outputs": {
                   "type": "boolean",
                   "default": false
+                },
+                "executionListeners": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "userTaskListeners": {
+                  "type": "boolean",
+                  "default": false
                 }
               },
               "additionalProperties": false

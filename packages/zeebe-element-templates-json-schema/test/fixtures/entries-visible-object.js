@@ -6,7 +6,9 @@ export const template = {
   ],
   'properties': [],
   'entriesVisible': {
-    'outputs': true
+    'outputs': true,
+    'executionListeners': false,
+    'userTaskListeners': true
   }
 };
 
