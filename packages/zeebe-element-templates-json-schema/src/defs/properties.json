@@ -695,6 +695,37 @@
       },
       {
         "$ref": "./properties/conditionalEvent.json"
+      },
+      {
+        "if": {
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "zeebe:executionListener",
+                    "zeebe:taskListener"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "required": [
+            "binding"
+          ]
+        },
+        "then": {
+          "properties": {
+            "type": {
+              "enum": [
+                "Hidden"
+              ]
+            }
+          }
+        }
       }
     ],
     "properties": {
@@ -936,6 +967,9 @@
             "$ref": "./properties/binding/conditionalEvent.json"
           },
           {
+            "$ref": "./properties/binding/listeners.json"
+          },
+          {
             "$ref": "examples.json#/binding"
           }
         ],
@@ -964,6 +998,8 @@
               "zeebe:priorityDefinition",
               "zeebe:adHoc",
               "zeebe:taskSchedule",
+              "zeebe:executionListener",
+              "zeebe:taskListener",
               "bpmn:Signal#property",
               "bpmn:TimerEventDefinition#property",
               "bpmn:ConditionalEventDefinition#property",
@@ -994,6 +1030,16 @@
             "$id": "#/properties/property/binding/linkName",
             "type": "string",
             "description": "The `linkName` of the element (zeebe:linkedResource)."
+          },
+          "eventType": {
+            "$id": "#/properties/property/binding/eventType",
+            "type": "string",
+            "description": "The event type of a property binding (zeebe:executionListener, zeebe:taskListener)."
+          },
+          "retries": {
+            "$id": "#/properties/property/binding/retries",
+            "type": "string",
+            "description": "The number of retries for a listener (zeebe:executionListener, zeebe:taskListener)."
           }
         }
       },

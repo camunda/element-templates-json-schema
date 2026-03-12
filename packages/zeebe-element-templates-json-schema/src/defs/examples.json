@@ -28,6 +28,14 @@
       {
         "type": "zeebe:taskDefinition",
         "property": "type"
+      },
+      {
+        "type": "zeebe:executionListener",
+        "eventType": "start"
+      },
+      {
+        "type": "zeebe:taskListener",
+        "eventType": "completing"
       }
     ]
   }
