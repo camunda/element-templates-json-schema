@@ -1,41 +1,36 @@
 export const template = {
-  'name': 'ExecutionListenerInvalidEventType',
-  'id': 'com.camunda.example.ExecutionListenerInvalidEventType',
+  'name': 'ExecutionListenerMissingEntriesVisible',
+  'id': 'com.camunda.example.ExecutionListenerMissingEntriesVisible',
   'appliesTo': [
     'bpmn:Task'
   ],
-  'entriesVisible': {
-    'executionListeners': false
-  },
   'properties': [
     {
       'type': 'Hidden',
       'value': 'my-listener-type',
       'binding': {
         'type': 'zeebe:executionListener',
-        'eventType': 'invalid'
+        'eventType': 'start'
       }
     }
   ]
 };
 
+// entriesVisible with executionListeners: false is required when using zeebe:executionListener
 export const errors = [
   {
-    keyword: 'enum',
-    dataPath: '/properties/0/binding/eventType',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/16/allOf/0/then/properties/eventType/enum',
+    keyword: 'required',
+    dataPath: '',
+    schemaPath: '#/allOf/1/allOf/13/allOf/1/then/required',
     params: {
-      allowedValues: [
-        'start',
-        'end'
-      ]
+      missingProperty: 'entriesVisible'
     },
-    message: 'should be equal to one of the allowed values'
+    message: "should have required property 'entriesVisible'"
   },
   {
     keyword: 'if',
-    dataPath: '/properties/0/binding',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/16/allOf/0/if',
+    dataPath: '',
+    schemaPath: '#/allOf/1/allOf/13/allOf/1/if',
     params: {
       failingKeyword: 'then'
     },

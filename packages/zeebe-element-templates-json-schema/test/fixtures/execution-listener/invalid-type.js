@@ -4,6 +4,9 @@ export const template = {
   'appliesTo': [
     'bpmn:Task'
   ],
+  'entriesVisible': {
+    'executionListeners': false
+  },
   'properties': [
     {
       'type': 'String',
@@ -18,15 +21,13 @@ export const template = {
 
 export const errors = [
   {
-    keyword: 'enum',
+    keyword: 'const',
     dataPath: '/properties/0/type',
-    schemaPath: '#/allOf/1/items/allOf/29/then/properties/type/enum',
+    schemaPath: '#/allOf/1/items/allOf/29/then/properties/type/const',
     params: {
-      allowedValues: [
-        'Hidden'
-      ]
+      allowedValue: 'Hidden'
     },
-    message: 'should be equal to one of the allowed values'
+    message: 'should be equal to constant'
   },
   {
     keyword: 'if',

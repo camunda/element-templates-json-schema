@@ -836,6 +836,8 @@ describe('validation', function() {
 
     it('execution-listener/missing-event-type');
 
+    it('execution-listener/missing-entries-visible');
+
   });
 
 
@@ -848,6 +850,12 @@ describe('validation', function() {
     it('task-listener/invalid-event-type');
 
     it('task-listener/missing-event-type');
+
+    it('task-listener/invalid-applies-to');
+
+    it('task-listener/valid-element-type');
+
+    it('task-listener/invalid-element-type');
 
   });
 

@@ -4,6 +4,9 @@ export const template = {
   'appliesTo': [
     'bpmn:Task'
   ],
+  'entriesVisible': {
+    'executionListeners': false
+  },
   'properties': [
     {
       'type': 'Hidden',
