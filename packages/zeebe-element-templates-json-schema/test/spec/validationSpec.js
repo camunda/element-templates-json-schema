@@ -838,6 +838,8 @@ describe('validation', function() {
 
     it('execution-listener/missing-entries-visible');
 
+    it('execution-listener/invalid-missing-value');
+
   });
 
 
@@ -860,6 +862,8 @@ describe('validation', function() {
     it('task-listener/invalid-entries-visible');
 
     it('task-listener/invalid-missing-type');
+
+    it('task-listener/invalid-missing-value');
 
   });
 

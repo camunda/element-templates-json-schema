@@ -725,7 +725,11 @@
             "type": {
               "const": "Hidden"
             }
-          }
+          },
+          "anyOf": [
+            { "required": ["value"] },
+            { "required": ["generatedValue"] }
+          ]
         }
       }
     ],

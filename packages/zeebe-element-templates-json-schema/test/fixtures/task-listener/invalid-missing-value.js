@@ -2,14 +2,11 @@ export const template = {
   'name': 'test',
   'id': 'test',
   'appliesTo': [
-    'bpmn:Task'
+    'bpmn:UserTask'
   ],
-  'elementType': {
-    'value': 'bpmn:UserTask'
-  },
   'properties': [
     {
-      'value': 'my-listener-type',
+      'type': 'Hidden',
       'binding': {
         'type': 'zeebe:taskListener',
         'eventType': 'assigning'
@@ -22,11 +19,27 @@ export const errors = [
   {
     keyword: 'required',
     dataPath: '/properties/0',
-    schemaPath: '#/allOf/1/items/allOf/29/then/required',
+    schemaPath: '#/allOf/1/items/allOf/29/then/anyOf/0/required',
     params: {
-      missingProperty: 'type'
+      missingProperty: 'value'
     },
-    message: 'should have required property \'type\''
+    message: 'should have required property \'value\''
+  },
+  {
+    keyword: 'required',
+    dataPath: '/properties/0',
+    schemaPath: '#/allOf/1/items/allOf/29/then/anyOf/1/required',
+    params: {
+      missingProperty: 'generatedValue'
+    },
+    message: 'should have required property \'generatedValue\''
+  },
+  {
+    keyword: 'anyOf',
+    dataPath: '/properties/0',
+    schemaPath: '#/allOf/1/items/allOf/29/then/anyOf',
+    params: {},
+    message: 'should match some schema in anyOf'
   },
   {
     keyword: 'if',
