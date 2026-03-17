@@ -67,7 +67,7 @@
                   "type": "boolean",
                   "default": true
                 },
-                "userTaskListeners": {
+                "taskListeners": {
                   "type": "boolean",
                   "default": false
                 }

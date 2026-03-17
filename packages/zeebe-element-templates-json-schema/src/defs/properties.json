@@ -718,6 +718,9 @@
           ]
         },
         "then": {
+          "required": [
+            "type"
+          ],
           "properties": {
             "type": {
               "const": "Hidden"

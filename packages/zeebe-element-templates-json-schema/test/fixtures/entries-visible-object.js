@@ -8,7 +8,7 @@ export const template = {
   'entriesVisible': {
     'outputs': true,
     'executionListeners': false,
-    'userTaskListeners': true
+    'taskListeners': true
   }
 };
 

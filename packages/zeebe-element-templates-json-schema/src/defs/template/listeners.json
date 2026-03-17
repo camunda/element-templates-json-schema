@@ -106,6 +106,45 @@
           }
         }
       }
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:taskListener"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "properties": {
+          "entriesVisible": {
+            "properties": {
+              "taskListeners": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }
