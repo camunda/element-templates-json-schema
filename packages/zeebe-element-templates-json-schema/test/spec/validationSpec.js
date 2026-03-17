@@ -857,6 +857,10 @@ describe('validation', function() {
 
     it('task-listener/invalid-element-type');
 
+    it('task-listener/invalid-entries-visible');
+
+    it('task-listener/invalid-missing-type');
+
   });
 
 });
