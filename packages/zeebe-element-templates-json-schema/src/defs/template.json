@@ -767,6 +767,9 @@
           "properties"
         ]
       }
+    },
+    {
+      "$ref": "./template/listeners.json"
     }
   ]
 }

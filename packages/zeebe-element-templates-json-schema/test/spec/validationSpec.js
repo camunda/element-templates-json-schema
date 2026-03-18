@@ -103,6 +103,9 @@ describe('validation', function() {
     it('invalid-binding-type');
 
 
+    it('invalid-listener-properties');
+
+
     it('choices-missing-value');
 
 
@@ -819,6 +822,48 @@ describe('validation', function() {
     it('task-schedule/valid');
 
     it('task-schedule/valid-feel');
+
+  });
+
+
+  describe('zeebe:executionListener', function() {
+
+    it('execution-listener/valid');
+
+    it('execution-listener/invalid-type');
+
+    it('execution-listener/invalid-event-type');
+
+    it('execution-listener/missing-event-type');
+
+    it('execution-listener/missing-entries-visible');
+
+    it('execution-listener/invalid-missing-value');
+
+  });
+
+
+  describe('zeebe:taskListener', function() {
+
+    it('task-listener/valid');
+
+    it('task-listener/invalid-type');
+
+    it('task-listener/invalid-event-type');
+
+    it('task-listener/missing-event-type');
+
+    it('task-listener/invalid-applies-to');
+
+    it('task-listener/valid-element-type');
+
+    it('task-listener/invalid-element-type');
+
+    it('task-listener/invalid-entries-visible');
+
+    it('task-listener/invalid-missing-type');
+
+    it('task-listener/invalid-missing-value');
 
   });
 
