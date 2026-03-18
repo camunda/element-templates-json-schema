@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.39.0
+
+* `FEAT`: add deprecation warning for hidden property without `value` or `generatedValue` (except type is `zeebe:userTask`) ([#223](https://github.com/camunda/element-templates-json-schema/pull/223))
+
 ## 0.38.0
 
 * `FEAT`: add schema support of templating execution and task listeners ([#224](https://github.com/camunda/element-templates-json-schema/pull/224))
