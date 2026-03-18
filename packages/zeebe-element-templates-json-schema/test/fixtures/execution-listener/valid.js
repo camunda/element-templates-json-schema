@@ -24,6 +24,17 @@ export const template = {
         'eventType': 'end',
         'retries': '3'
       }
+    },
+    {
+      'type': 'Hidden',
+      'generatedValue': {
+        'type': 'uuid'
+      },
+      'binding': {
+        'type': 'zeebe:executionListener',
+        'eventType': 'end',
+        'retries': '3'
+      }
     }
   ]
 };
