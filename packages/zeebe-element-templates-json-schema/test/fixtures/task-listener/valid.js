@@ -37,6 +37,16 @@ export const template = {
         'type': 'zeebe:taskListener',
         'eventType': 'updating'
       }
+    },
+    {
+      'type': 'Hidden',
+      'generatedValue': {
+        'type': 'uuid'
+      },
+      'binding': {
+        'type': 'zeebe:taskListener',
+        'eventType': 'updating'
+      }
     }
   ]
 };
