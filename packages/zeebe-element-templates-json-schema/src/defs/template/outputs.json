@@ -1,0 +1,113 @@
+{
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:calledElement"
+                    },
+                    "property": {
+                      "const": "propagateAllChildVariables"
+                    }
+                  },
+                  "required": [
+                    "property",
+                    "type"
+                  ]
+                },
+                "value": {
+                  "const": true
+                }
+              },
+              "required": [
+                "binding",
+                "value"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "not": {
+              "contains": {
+                "properties": {
+                  "binding": {
+                    "properties": {
+                      "type": {
+                        "const": "zeebe:output"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  }
+                },
+                "required": [
+                  "binding"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entriesVisible": {
+            "type": "object",
+            "properties": {
+              "outputs": {
+                "const": true
+              }
+            },
+            "required": [
+              "outputs"
+            ]
+          }
+        },
+        "required": [
+          "entriesVisible"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "not": {
+              "contains": {
+                "properties": {
+                  "binding": {
+                    "properties": {
+                      "type": {
+                        "const": "zeebe:output"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  }
+                },
+                "required": [
+                  "binding"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

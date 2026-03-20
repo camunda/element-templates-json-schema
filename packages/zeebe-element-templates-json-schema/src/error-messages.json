@@ -679,10 +679,28 @@
       1,
       "allOf",
       12,
+      "allOf",
+      0,
       "then",
       "properties",
       "properties"
     ],
     "errorMessage": "Binding with `type`=`zeebe:output` cannot be used when `propagateAllChildVariables` is set to `true`"
+  },
+  {
+    "path": [
+      "definitions",
+      "template",
+      "allOf",
+      1,
+      "allOf",
+      12,
+      "allOf",
+      1,
+      "then",
+      "properties",
+      "properties"
+    ],
+    "errorMessage": "Binding with `type`=`zeebe:output` must not be used when `entriesVisible.outputs` is set to `true`"
   }
 ]
