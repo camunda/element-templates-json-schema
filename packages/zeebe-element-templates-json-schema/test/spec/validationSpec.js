@@ -166,6 +166,12 @@ describe('validation', function() {
     it('entries-visible-invalid-key');
 
 
+    it('entries-visible-outputs-with-output-binding');
+
+
+    it('entries-visible-outputs-without-output-binding');
+
+
     it('feel');
 
 

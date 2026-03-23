@@ -1,64 +1,113 @@
 {
-  "if": {
-    "properties": {
-      "properties": {
-        "contains": {
+  "allOf": [
+    {
+      "if": {
+        "properties": {
           "properties": {
-            "binding": {
+            "contains": {
               "properties": {
-                "type": {
-                  "const": "zeebe:calledElement"
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:calledElement"
+                    },
+                    "property": {
+                      "const": "propagateAllChildVariables"
+                    }
+                  },
+                  "required": [
+                    "property",
+                    "type"
+                  ]
                 },
-                "property": {
-                  "const": "propagateAllChildVariables"
+                "value": {
+                  "const": true
                 }
               },
               "required": [
-                "property",
-                "type"
+                "binding",
+                "value"
               ]
-            },
-            "value": {
-              "const": true
             }
-          },
-          "required": [
-            "binding",
-            "value"
-          ]
-        }
-      }
-    },
-    "required": [
-      "properties"
-    ]
-  },
-  "then": {
-    "properties": {
-      "properties": {
-        "not": {
-          "contains": {
-            "properties": {
-              "binding": {
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "not": {
+              "contains": {
                 "properties": {
-                  "type": {
-                    "const": "zeebe:output"
+                  "binding": {
+                    "properties": {
+                      "type": {
+                        "const": "zeebe:output"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
                   }
                 },
                 "required": [
-                  "type"
+                  "binding"
                 ]
+              }
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "entriesVisible": {
+            "type": "object",
+            "properties": {
+              "outputs": {
+                "const": true
               }
             },
             "required": [
-              "binding"
+              "outputs"
             ]
+          }
+        },
+        "required": [
+          "entriesVisible"
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "not": {
+              "contains": {
+                "properties": {
+                  "binding": {
+                    "properties": {
+                      "type": {
+                        "const": "zeebe:output"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  }
+                },
+                "required": [
+                  "binding"
+                ]
+              }
+            }
           }
         }
       }
-    },
-    "required": [
-      "properties"
-    ]
-  }
+    }
+  ]
 }

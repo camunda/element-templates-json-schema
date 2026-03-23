@@ -43,13 +43,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties',
-    schemaPath: '#/allOf/1/allOf/12/then/properties/properties/errorMessage',
+    schemaPath: '#/allOf/1/allOf/12/allOf/0/then/properties/properties/errorMessage',
     params: {
       errors: [
         {
           keyword: 'not',
           dataPath: '/properties',
-          schemaPath: '#/allOf/1/allOf/12/then/properties/properties/not',
+          schemaPath: '#/allOf/1/allOf/12/allOf/0/then/properties/properties/not',
           params: {},
           message: 'should NOT be valid',
           emUsed: true
@@ -61,7 +61,7 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '',
-    schemaPath: '#/allOf/1/allOf/12/if',
+    schemaPath: '#/allOf/1/allOf/12/allOf/0/if',
     params: {
       failingKeyword: 'then'
     },
