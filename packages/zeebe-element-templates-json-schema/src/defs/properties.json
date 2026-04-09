@@ -766,6 +766,26 @@
           "deprecated": true,
           "deprecationWarning": "Hidden property should specify either 'value' or 'generatedValue'"
         }
+      },
+       {
+        "if": {
+          "properties": {
+            "editable": {
+              "const": false
+            },
+            "feel": {
+              "const": "optional"
+            }
+          },
+          "required": [
+            "editable",
+            "feel"
+          ]
+        },
+        "then": {
+          "deprecated": true,
+          "deprecationWarning": "Using 'feel: optional' with 'editable: false' is invalid"
+        }
       }
     ],
     "properties": {
