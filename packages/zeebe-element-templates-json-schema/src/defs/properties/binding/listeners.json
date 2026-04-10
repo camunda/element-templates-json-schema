@@ -54,6 +54,18 @@
     },
     {
       "if": {
+        "required": ["headers"]
+      },
+      "then": {
+        "properties": {
+          "type": {
+            "const": "zeebe:executionListener"
+          }
+        }
+      }
+    },
+    {
+      "if": {
         "properties": {
           "type": {
             "not": {
@@ -72,7 +84,8 @@
         "not": {
           "anyOf": [
             { "required": ["eventType"] },
-            { "required": ["retries"] }
+            { "required": ["retries"] },
+            { "required": ["headers"] }
           ]
         }
       }

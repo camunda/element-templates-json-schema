@@ -857,6 +857,12 @@ describe('validation', function() {
 
     it('execution-listener/invalid-missing-value');
 
+    it('execution-listener/valid-headers');
+
+    it('execution-listener/invalid-headers');
+
+    it('execution-listener/headers-on-non-execution-listener');
+
   });
 
 

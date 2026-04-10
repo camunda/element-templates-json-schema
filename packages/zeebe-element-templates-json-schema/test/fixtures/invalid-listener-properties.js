@@ -21,14 +21,14 @@ export const errors = [
   {
     keyword: 'not',
     dataPath: '/properties/0/binding',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/16/allOf/2/then/not',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/16/allOf/3/then/not',
     params: {},
     message: 'should NOT be valid'
   },
   {
     keyword: 'if',
     dataPath: '/properties/0/binding',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/16/allOf/2/if',
+    schemaPath: '#/allOf/1/items/properties/binding/allOf/16/allOf/3/if',
     params: {
       failingKeyword: 'then'
     },
