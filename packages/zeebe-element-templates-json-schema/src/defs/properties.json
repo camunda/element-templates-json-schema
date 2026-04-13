@@ -786,6 +786,28 @@
           "deprecated": true,
           "deprecationWarning": "Using 'feel: optional' with 'editable: false' is invalid"
         }
+      },
+      {
+        "if": {
+          "properties": {
+            "optional": {
+              "const": true
+            },
+            "binding": {
+              "properties": {
+                "type": {
+                  "const": "zeebe:input"
+                }
+              },
+              "required": ["type"]
+            }
+          },
+          "required": ["optional", "binding"]
+        },
+        "then": {
+          "deprecated": true,
+          "deprecationWarning": "'optional' with 'zeebe:input' binding is deprecated; an empty input mapping (resolved to 'null') should be used for Camunda 8.8+"
+        }
       }
     ],
     "properties": {
