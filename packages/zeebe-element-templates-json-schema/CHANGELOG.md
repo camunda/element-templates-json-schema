@@ -6,6 +6,8 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+* `FIX`: deprecate `optional` property for input mappings ([#235](https://github.com/camunda/element-templates-json-schema/pull/235))
+
 ## 0.39.2
 
 * `FIX`: deprecate `feel: optional` on non-editable properties ([#232](https://github.com/camunda/element-templates-json-schema/pull/232))
