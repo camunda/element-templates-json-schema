@@ -1122,6 +1122,20 @@
             "$id": "#/properties/property/binding/retries",
             "type": "string",
             "description": "The number of retries for a listener (zeebe:executionListener, zeebe:taskListener)."
+          },
+          "headers": {
+            "$id": "#/properties/property/binding/headers",
+            "type": "array",
+            "description": "Headers for an execution listener (zeebe:executionListener).",
+            "items": {
+              "type": "object",
+              "required": ["key", "value"],
+              "properties": {
+                "key": { "type": "string" },
+                "value": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
           }
         }
       },

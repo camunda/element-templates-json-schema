@@ -31,7 +31,10 @@
       },
       {
         "type": "zeebe:executionListener",
-        "eventType": "start"
+        "eventType": "start",
+        "headers": [
+          { "key": "authToken", "value": "abc" }
+        ]
       },
       {
         "type": "zeebe:taskListener",
