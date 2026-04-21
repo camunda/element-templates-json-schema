@@ -6,6 +6,9 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+
+## 0.40.0
+
 * `FEAT`: add execution listener headers templating support ([#233](https://github.com/camunda/element-templates-json-schema/pull/233))
 * `FIX`: deprecate `optional` property for input mappings ([#235](https://github.com/camunda/element-templates-json-schema/pull/235))
 
