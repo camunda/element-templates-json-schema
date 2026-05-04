@@ -48,7 +48,7 @@
     "@apidevtools/json-schema-ref-parser": "^15.0.0",
     "ajv": "^7.2.3",
     "ajv-errors": "^2.0.1",
-    "chai": "^6.2.1",
+    "chai": "^6.2.2",
     "eslint": "^9.39.1",
     "eslint-plugin-bpmn-io": "^2.2.0",
     "lerna": "^9.0.7",
