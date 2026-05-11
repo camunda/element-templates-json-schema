@@ -15,12 +15,12 @@
       "id": {
         "$id": "#/connections/connection/id",
         "type": "string",
-        "description": "Identifier of the connection. Used to reference the connection in property bindings via FEEL expressions (e.g. =camunda.configurations.<id>). Required."
+        "description": "Identifier of the connection. Used to reference the connection in property bindings via FEEL expressions (e.g. =camunda.configurations.<id>)."
       },
       "type": {
         "$id": "#/connections/connection/type",
         "type": "string",
-        "description": "The type of the connection, referencing a connection schema (e.g. \"slack\", \"aws\"). Required."
+        "description": "The type of the connection, referencing a connection schema (e.g. \"slack\", \"aws\")."
       },
       "label": {
         "$id": "#/connections/connection/label",
