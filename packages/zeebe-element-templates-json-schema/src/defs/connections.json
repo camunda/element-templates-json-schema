@@ -1,0 +1,33 @@
+{
+  "$id": "#/connections",
+  "type": "array",
+  "description": "List of connections used by the element template. Connections are reusable, named configuration objects that externalize authentication, endpoint, and other setup details.",
+  "default": [],
+  "items": {
+    "$id": "#/connections/connection",
+    "type": "object",
+    "default": {},
+    "required": [
+      "id",
+      "type"
+    ],
+    "properties": {
+      "id": {
+        "$id": "#/connections/connection/id",
+        "type": "string",
+        "description": "Identifier of the connection. Used to reference the connection in property bindings via FEEL expressions (e.g. =camunda.configurations.<id>). Required."
+      },
+      "type": {
+        "$id": "#/connections/connection/type",
+        "type": "string",
+        "description": "The type of the connection, referencing a connection schema (e.g. \"slack\", \"aws\"). Required."
+      },
+      "label": {
+        "$id": "#/connections/connection/label",
+        "type": "string",
+        "description": "Display label for the connection. Shown in the properties panel when selecting a connection."
+      }
+    },
+    "additionalProperties": false
+  }
+}
