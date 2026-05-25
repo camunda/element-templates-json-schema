@@ -1,0 +1,26 @@
+{
+  "$id": "#/presets",
+  "type": "array",
+  "description": "Predefined property value-mappings for the template. Referenced by leaf steps via presetId.",
+  "items": {
+    "$id": "#/presets/preset",
+    "type": "object",
+    "required": [
+      "id",
+      "properties"
+    ],
+    "properties": {
+      "id": {
+        "$id": "#/presets/preset/id",
+        "type": "string",
+        "description": "Unique identifier for the preset. Referenced by a step's presetId. Required."
+      },
+      "properties": {
+        "$id": "#/presets/preset/properties",
+        "type": "object",
+        "description": "Map of template property names to values applied on top of template defaults. Required.",
+        "additionalProperties": true
+      }
+    }
+  }
+}

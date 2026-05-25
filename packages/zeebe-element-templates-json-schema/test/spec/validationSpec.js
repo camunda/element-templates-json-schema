@@ -774,6 +774,23 @@ describe('validation', function() {
 
     });
 
+    describe('steps and presets', function() {
+
+      it('steps-flat');
+
+      it('steps-nested');
+
+      it('step-both-children-and-presetId');
+
+      it('step-neither');
+
+      it('step-missing-name');
+
+      it('preset-missing-properties');
+
+    });
+
+
     describe('zeebe:adHoc', function() {
 
       it('ad-hoc/invalid-bpmn-ad-hoc-impl-properties');
