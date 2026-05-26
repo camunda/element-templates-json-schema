@@ -50,6 +50,12 @@
         "groups": {
           "$ref": "src/defs/groups.json"
         },
+        "steps": {
+          "$ref": "src/defs/template/steps.json"
+        },
+        "presets": {
+          "$ref": "src/defs/template/presets.json"
+        },
         "entriesVisible": {
           "$id": "#/entriesVisible",
           "oneOf": [

@@ -1,0 +1,72 @@
+{
+  "$id": "#/steps",
+  "type": "array",
+  "description": "Hierarchical menu exposed by this template. Each step is either a category (has nested steps) or a leaf (references a preset via presetId).",
+  "items": {
+    "$ref": "#/definitions/step"
+  },
+  "definitions": {
+    "step": {
+      "$id": "#/steps/step",
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/steps/step/name",
+          "type": "string",
+          "description": "Step name. Shown in the popup menu. Required."
+        },
+        "description": {
+          "$id": "#/steps/step/description",
+          "type": "string",
+          "description": "Optional description shown alongside the step name."
+        },
+        "keywords": {
+          "$id": "#/steps/step/keywords",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Keywords used to match the step in search."
+        },
+        "steps": {
+          "$id": "#/steps/step/steps",
+          "type": "array",
+          "description": "Child steps. Present on category steps.",
+          "items": {
+            "$ref": "#/definitions/step"
+          }
+        },
+        "presetId": {
+          "$id": "#/steps/step/presetId",
+          "type": "string",
+          "description": "Reference to a preset id defined in the template's presets array. Present on leaf steps."
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "steps"
+          ],
+          "not": {
+            "required": [
+              "presetId"
+            ]
+          }
+        },
+        {
+          "required": [
+            "presetId"
+          ],
+          "not": {
+            "required": [
+              "steps"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
