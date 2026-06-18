@@ -64,6 +64,7 @@
                     "zeebe:script",
                     "zeebe:assignmentDefinition",
                     "zeebe:priorityDefinition",
+                    "zeebe:jobPriorityDefinition",
                     "zeebe:adHoc",
                     "zeebe:taskSchedule"
                   ]
@@ -1053,6 +1054,9 @@
           },
           {
             "$ref": "examples.json#/binding"
+          },
+          {
+            "$ref": "./properties/binding/jobPriorityDefinition.json"
           }
         ],
         "properties": {
@@ -1078,6 +1082,7 @@
               "zeebe:script",
               "zeebe:assignmentDefinition",
               "zeebe:priorityDefinition",
+              "zeebe:jobPriorityDefinition",
               "zeebe:adHoc",
               "zeebe:taskSchedule",
               "zeebe:executionListener",
