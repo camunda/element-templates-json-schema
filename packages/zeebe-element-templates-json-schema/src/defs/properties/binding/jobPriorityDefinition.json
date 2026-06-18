@@ -1,0 +1,22 @@
+{
+  "if": {
+    "properties": {
+      "type": {
+        "const": "zeebe:jobPriorityDefinition"
+      }
+    },
+    "required": [
+      "type"
+    ]
+  },
+  "then": {
+    "properties": {
+      "property": {
+        "const": "priority"
+      }
+    },
+    "required": [
+      "property"
+    ]
+  }
+}

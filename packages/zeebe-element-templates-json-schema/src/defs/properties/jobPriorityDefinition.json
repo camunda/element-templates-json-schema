@@ -1,0 +1,135 @@
+{
+  "allOf": [
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "binding": {
+            "properties": {
+              "type": {
+                "const": "zeebe:jobPriorityDefinition"
+              },
+              "property": {
+                "const": "priority"
+              }
+            },
+            "required": [
+              "type",
+              "property"
+            ]
+          }
+        },
+        "required": [
+          "binding"
+        ]
+      },
+      "then": {
+        "properties": {
+          "type": {
+            "enum": [
+              "Hidden",
+              "Number",
+              "Dropdown"
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      }
+    },
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "const": "Number"
+          },
+          "binding": {
+            "properties": {
+              "type": {
+                "const": "zeebe:jobPriorityDefinition"
+              },
+              "property": {
+                "const": "priority"
+              }
+            },
+            "required": [
+              "type",
+              "property"
+            ]
+          }
+        },
+        "required": [
+          "binding",
+          "value",
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string",
+                "pattern": "^=.*"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "Hidden",
+              "Dropdown"
+            ]
+          },
+          "binding": {
+            "properties": {
+              "type": {
+                "const": "zeebe:jobPriorityDefinition"
+              },
+              "property": {
+                "const": "priority"
+              }
+            },
+            "required": [
+              "type",
+              "property"
+            ]
+          }
+        },
+        "required": [
+          "binding",
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "type": "string",
+            "pattern": "^(=.*|-?[0-9]+)$"
+          },
+          "choices": {
+            "items": {
+              "properties": {
+                "value": {
+                  "type": "string",
+                  "pattern": "^(=.*|-?[0-9]+)$"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
