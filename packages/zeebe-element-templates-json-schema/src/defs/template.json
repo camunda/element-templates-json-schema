@@ -709,6 +709,109 @@
     },
     {
       "$ref": "./template/listeners.json"
+    },
+    {
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:jobPriorityDefinition"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "anyOf": [
+          {
+            "required": [
+              "elementType"
+            ],
+            "properties": {
+              "elementType": {
+                "required": [
+                  "value"
+                ],
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "bpmn:ScriptTask",
+                      "bpmn:BusinessRuleTask",
+                      "bpmn:ServiceTask",
+                      "bpmn:SendTask",
+                      "bpmn:AdHocSubProcess",
+                      "bpmn:Process",
+                      "bpmn:IntermediateThrowEvent",
+                      "bpmn:EndEvent"
+                    ]
+                  }
+                },
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": {
+                        "value": {
+                          "enum": [
+                            "bpmn:IntermediateThrowEvent",
+                            "bpmn:EndEvent"
+                          ]
+                        }
+                      }
+                    },
+                    "then": {
+                      "properties": {
+                        "eventDefinition": {
+                          "const": "bpmn:MessageEventDefinition"
+                        }
+                      },
+                      "required": [
+                        "eventDefinition"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "required": [
+              "appliesTo"
+            ],
+            "properties": {
+              "appliesTo": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "enum": [
+                    "bpmn:ScriptTask",
+                    "bpmn:BusinessRuleTask",
+                    "bpmn:ServiceTask",
+                    "bpmn:SendTask",
+                    "bpmn:AdHocSubProcess",
+                    "bpmn:Process"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
     }
   ]
 }

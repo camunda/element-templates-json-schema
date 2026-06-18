@@ -64,6 +64,7 @@
                     "zeebe:script",
                     "zeebe:assignmentDefinition",
                     "zeebe:priorityDefinition",
+                    "zeebe:jobPriorityDefinition",
                     "zeebe:adHoc",
                     "zeebe:taskSchedule"
                   ]
@@ -808,6 +809,9 @@
           "deprecated": true,
           "deprecationWarning": "'optional' with 'zeebe:input' binding is deprecated; an empty input mapping (resolved to 'null') should be used for Camunda 8.8+"
         }
+      },
+      {
+        "$ref": "./properties/jobPriorityDefinition.json"
       }
     ],
     "properties": {
@@ -1053,6 +1057,9 @@
           },
           {
             "$ref": "examples.json#/binding"
+          },
+          {
+            "$ref": "./properties/binding/jobPriorityDefinition.json"
           }
         ],
         "properties": {
@@ -1078,6 +1085,7 @@
               "zeebe:script",
               "zeebe:assignmentDefinition",
               "zeebe:priorityDefinition",
+              "zeebe:jobPriorityDefinition",
               "zeebe:adHoc",
               "zeebe:taskSchedule",
               "zeebe:executionListener",

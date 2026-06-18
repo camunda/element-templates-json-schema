@@ -837,6 +837,39 @@ describe('validation', function() {
   });
 
 
+  describe('zeebe:jobPriorityDefinition', function() {
+
+    it('job-priority-definition/invalid-element-type');
+
+    it('job-priority-definition/invalid-missing-element-type');
+
+    it('job-priority-definition/invalid-missing-event-definition');
+
+    it('job-priority-definition/invalid-property');
+
+    it('job-priority-definition/invalid-string-type');
+
+    it('job-priority-definition/invalid-input-types');
+
+    it('job-priority-definition/invalid-values');
+
+    it('job-priority-definition/invalid-hidden-dropdown-values');
+
+    it('job-priority-definition/valid');
+
+    it('job-priority-definition/valid-feel');
+
+    it('job-priority-definition/valid-applies-to');
+
+    it('job-priority-definition/valid-message-throw-event');
+
+    it('job-priority-definition/valid-message-end-event');
+
+    it('job-priority-definition/valid-send-task');
+
+  });
+
+
   describe('zeebe:taskSchedule', function() {
 
     it('task-schedule/invalid-element-type');
