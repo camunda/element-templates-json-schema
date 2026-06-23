@@ -26,7 +26,8 @@ export const errors = [
         'creating',
         'assigning',
         'updating',
-        'completing'
+        'completing',
+        'canceling'
       ]
     },
     message: 'should be equal to one of the allowed values'
