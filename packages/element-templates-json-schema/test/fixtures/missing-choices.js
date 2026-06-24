@@ -21,18 +21,18 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/0',
-    schemaPath: '#/allOf/0/items/allOf/0/then/errorMessage',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/0/then/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
-          emUsed: true,
           dataPath: '/properties/0',
-          schemaPath: '#/allOf/0/items/allOf/0/then/required',
+          schemaPath: '#/definitions/properties/allOf/0/items/allOf/0/then/required',
           params: {
             missingProperty: 'choices'
           },
-          message: "should have required property 'choices'"
+          message: 'should have required property \'choices\'',
+          emUsed: true
         }
       ]
     },
@@ -41,28 +41,28 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/0',
-    schemaPath: '#/allOf/0/items/allOf/0/if',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/0/if',
     params: {
-      'failingKeyword': 'then'
+      failingKeyword: 'then'
     },
     message: 'should match "then" schema'
   },
   {
-    dataPath: '',
     keyword: 'type',
-    message: 'should be array',
-    params: {
-      type: 'array',
-    },
+    dataPath: '',
     schemaPath: '#/oneOf/1/type',
+    params: {
+      type: 'array'
+    },
+    message: 'should be array'
   },
   {
-    dataPath: '',
     keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
+    dataPath: '',
+    schemaPath: '#/oneOf',
     params: {
       passingSchemas: null
     },
-    schemaPath: '#/oneOf'
+    message: 'should match exactly one schema in oneOf'
   }
 ];

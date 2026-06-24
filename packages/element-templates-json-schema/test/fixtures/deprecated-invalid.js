@@ -10,16 +10,16 @@ export const template = {
 
 export const errors = [
   {
-    dataPath: '/deprecated',
     keyword: 'type',
-    message: 'should be boolean,object',
+    dataPath: '/deprecated',
+    schemaPath: '#/allOf/0/properties/deprecated/type',
     params: {
       type: [
         'boolean',
         'object'
       ]
     },
-    schemaPath: '#/allOf/0/properties/deprecated/type'
+    message: 'should be boolean,object'
   },
   {
     keyword: 'type',

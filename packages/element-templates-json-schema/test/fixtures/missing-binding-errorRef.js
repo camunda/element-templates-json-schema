@@ -47,24 +47,28 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/0/binding',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/4/then/errorMessage',
+    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/4/then/errorMessage',
     params: {
       errors: [
         {
           keyword: 'required',
-          emUsed: true,
           dataPath: '/properties/0/binding',
-          schemaPath: '#/allOf/1/items/properties/binding/allOf/4/then/oneOf/0/required',
-          params: { missingProperty: 'errorRef' },
-          message: "should have required property 'errorRef'"
+          schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/4/then/oneOf/0/required',
+          params: {
+            missingProperty: 'errorRef'
+          },
+          message: 'should have required property \'errorRef\'',
+          emUsed: true
         },
         {
           keyword: 'oneOf',
-          emUsed: true,
           dataPath: '/properties/0/binding',
-          schemaPath: '#/allOf/1/items/properties/binding/allOf/4/then/oneOf',
-          params: { passingSchemas: null },
-          message: 'should match exactly one schema in oneOf'
+          schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/4/then/oneOf',
+          params: {
+            passingSchemas: null
+          },
+          message: 'should match exactly one schema in oneOf',
+          emUsed: true
         }
       ]
     },
@@ -73,22 +77,28 @@ export const errors = [
   {
     keyword: 'if',
     dataPath: '/properties/0/binding',
-    schemaPath: '#/allOf/1/items/properties/binding/allOf/4/if',
-    params: { failingKeyword: 'then' },
+    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/allOf/4/if',
+    params: {
+      failingKeyword: 'then'
+    },
     message: 'should match "then" schema'
   },
   {
     keyword: 'type',
     dataPath: '',
     schemaPath: '#/oneOf/1/type',
-    params: { type: 'array' },
+    params: {
+      type: 'array'
+    },
     message: 'should be array'
   },
   {
     keyword: 'oneOf',
     dataPath: '',
     schemaPath: '#/oneOf',
-    params: { passingSchemas: null },
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   }
 ];

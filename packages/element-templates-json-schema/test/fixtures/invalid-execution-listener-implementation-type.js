@@ -32,9 +32,9 @@ export const template = {
 
 export const errors = [
   {
-    dataPath: '/properties/0/binding/implementationType',
     keyword: 'enum',
-    message: 'should be equal to one of the allowed values',
+    dataPath: '/properties/0/binding/implementationType',
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/1/then/properties/binding/properties/implementationType/enum',
     params: {
       allowedValues: [
         'class',
@@ -43,95 +43,95 @@ export const errors = [
         'script'
       ]
     },
-    schemaPath: '#/allOf/1/items/allOf/1/then/properties/binding/properties/implementationType/enum'
+    message: 'should be equal to one of the allowed values'
   },
   {
-    dataPath: '/properties/0',
     keyword: 'if',
-    message: 'should match "then" schema',
+    dataPath: '/properties/0',
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/1/if',
     params: {
       failingKeyword: 'then'
     },
-    schemaPath: '#/allOf/1/items/allOf/1/if'
+    message: 'should match "then" schema'
   },
   {
-    dataPath: '/properties/1/binding',
     keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
+    dataPath: '/properties/1/binding',
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/1/then/properties/binding/oneOf',
     params: {
       passingSchemas: [
         0,
         1
       ]
     },
-    schemaPath: '#/allOf/1/items/allOf/1/then/properties/binding/oneOf'
+    message: 'should match exactly one schema in oneOf'
   },
   {
+    keyword: 'if',
     dataPath: '/properties/1',
-    keyword: 'if',
-    message: 'should match "then" schema',
-    params: {
-      failingKeyword: 'then',
-    },
-    schemaPath: '#/allOf/1/items/allOf/1/if'
-  },
-  {
-    dataPath: '/properties/2/binding',
-    keyword: 'not',
-    message: 'should NOT be valid',
-    params: {},
-    schemaPath: '#/allOf/1/items/allOf/1/then/properties/binding/oneOf/0/not'
-  },
-  {
-    dataPath: '/properties/2/binding',
-    keyword: 'required',
-    message: "should have required property 'scriptFormat'",
-    params: {
-      missingProperty: 'scriptFormat'
-    },
-    schemaPath: '#/allOf/1/items/allOf/1/then/properties/binding/oneOf/1/required'
-  },
-  {
-    dataPath: '/properties/2/binding',
-    keyword: 'not',
-    message: 'should NOT be valid',
-    params: {},
-    schemaPath: '#/allOf/1/items/allOf/1/then/properties/binding/oneOf/2/allOf/0/not'
-  },
-  {
-    dataPath: '/properties/2/binding',
-    keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
-    params: {
-      passingSchemas: null
-    },
-    schemaPath: '#/allOf/1/items/allOf/1/then/properties/binding/oneOf'
-  },
-  {
-    dataPath: '/properties/2',
-    keyword: 'if',
-    message: 'should match "then" schema',
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/1/if',
     params: {
       failingKeyword: 'then'
     },
-    schemaPath: '#/allOf/1/items/allOf/1/if'
+    message: 'should match "then" schema'
   },
   {
-    dataPath: '',
-    keyword: 'type',
-    message: 'should be array',
+    keyword: 'not',
+    dataPath: '/properties/2/binding',
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/1/then/properties/binding/oneOf/0/not',
+    params: {},
+    message: 'should NOT be valid'
+  },
+  {
+    keyword: 'required',
+    dataPath: '/properties/2/binding',
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/1/then/properties/binding/oneOf/1/required',
     params: {
-      type: 'array'
+      missingProperty: 'scriptFormat'
     },
-    schemaPath: '#/oneOf/1/type'
+    message: 'should have required property \'scriptFormat\''
   },
   {
-    dataPath: '',
+    keyword: 'not',
+    dataPath: '/properties/2/binding',
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/1/then/properties/binding/oneOf/2/allOf/0/not',
+    params: {},
+    message: 'should NOT be valid'
+  },
+  {
     keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
+    dataPath: '/properties/2/binding',
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/1/then/properties/binding/oneOf',
     params: {
       passingSchemas: null
     },
-    schemaPath: '#/oneOf'
+    message: 'should match exactly one schema in oneOf'
+  },
+  {
+    keyword: 'if',
+    dataPath: '/properties/2',
+    schemaPath: '#/definitions/properties/allOf/1/items/allOf/1/if',
+    params: {
+      failingKeyword: 'then'
+    },
+    message: 'should match "then" schema'
+  },
+  {
+    keyword: 'type',
+    dataPath: '',
+    schemaPath: '#/oneOf/1/type',
+    params: {
+      type: 'array'
+    },
+    message: 'should be array'
+  },
+  {
+    keyword: 'oneOf',
+    dataPath: '',
+    schemaPath: '#/oneOf',
+    params: {
+      passingSchemas: null
+    },
+    message: 'should match exactly one schema in oneOf'
   }
 ];

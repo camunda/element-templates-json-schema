@@ -30,7 +30,7 @@ export const errors = [
   {
     keyword: 'type',
     dataPath: '/properties/0/value',
-    schemaPath: '#/allOf/0/items/allOf/2/then/properties/value/type',
+    schemaPath: '#/allOf/0/items/allOf/1/then/properties/value/type',
     params: {
       type: [
         'string',
@@ -40,30 +40,30 @@ export const errors = [
     message: 'should be string,boolean'
   },
   {
-    dataPath: '/properties/0',
     keyword: 'if',
-    message: 'should match "then" schema',
+    dataPath: '/properties/0',
+    schemaPath: '#/allOf/0/items/allOf/1/if',
     params: {
       failingKeyword: 'then'
     },
-    schemaPath: '#/allOf/0/items/allOf/2/if'
+    message: 'should match "then" schema'
   },
   {
-    dataPath: '',
     keyword: 'type',
-    message: 'should be array',
-    params: {
-      type: 'array',
-    },
+    dataPath: '',
     schemaPath: '#/oneOf/1/type',
+    params: {
+      type: 'array'
+    },
+    message: 'should be array'
   },
   {
-    dataPath: '',
     keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
+    dataPath: '',
+    schemaPath: '#/oneOf',
     params: {
       passingSchemas: null
     },
-    schemaPath: '#/oneOf'
+    message: 'should match exactly one schema in oneOf'
   }
 ];

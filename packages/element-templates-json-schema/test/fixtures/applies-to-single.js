@@ -10,25 +10,27 @@ export const errors = [
     keyword: 'type',
     dataPath: '/appliesTo',
     schemaPath: '#/allOf/0/properties/appliesTo/type',
-    params: { type: 'array' },
+    params: {
+      type: 'array'
+    },
     message: 'should be array'
   },
   {
-    dataPath: '',
     keyword: 'type',
-    message: 'should be array',
-    params: {
-      type: 'array',
-    },
+    dataPath: '',
     schemaPath: '#/oneOf/1/type',
+    params: {
+      type: 'array'
+    },
+    message: 'should be array'
   },
   {
-    dataPath: '',
     keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
+    dataPath: '',
+    schemaPath: '#/oneOf',
     params: {
       passingSchemas: null
     },
-    schemaPath: '#/oneOf'
+    message: 'should match exactly one schema in oneOf'
   }
 ];

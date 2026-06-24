@@ -47,120 +47,164 @@ export const errors = [
   {
     keyword: 'type',
     dataPath: '/properties/1/condition/equals',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf/0/properties/equals/type',
-    params: { type: [ 'string', 'number', 'boolean' ] },
+    schemaPath: '#/definitions/properties/allOf/2/items/allOf/0/definitions/condition/oneOf/0/properties/equals/type',
+    params: {
+      type: [
+        'string',
+        'number',
+        'boolean'
+      ]
+    },
     message: 'should be string,number,boolean'
   },
   {
     keyword: 'required',
     dataPath: '/properties/1/condition',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf/1/required',
-    params: { missingProperty: 'oneOf' },
-    message: "should have required property 'oneOf'"
+    schemaPath: '#/definitions/properties/allOf/2/items/allOf/0/definitions/condition/oneOf/1/required',
+    params: {
+      missingProperty: 'oneOf'
+    },
+    message: 'should have required property \'oneOf\''
   },
   {
     keyword: 'required',
     dataPath: '/properties/1/condition',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf/2/required',
-    params: { missingProperty: 'isActive' },
-    message: "should have required property 'isActive'"
+    schemaPath: '#/definitions/properties/allOf/2/items/allOf/0/definitions/condition/oneOf/2/required',
+    params: {
+      missingProperty: 'isActive'
+    },
+    message: 'should have required property \'isActive\''
   },
   {
     keyword: 'required',
     dataPath: '/properties/1/condition',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf/3/required',
-    params: { missingProperty: 'isEmpty' },
-    message: "should have required property 'isEmpty'"
+    schemaPath: '#/definitions/properties/allOf/2/items/allOf/0/definitions/condition/oneOf/3/required',
+    params: {
+      missingProperty: 'isEmpty'
+    },
+    message: 'should have required property \'isEmpty\''
   },
   {
     keyword: 'oneOf',
     dataPath: '/properties/1/condition',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf',
-    params: { passingSchemas: null },
+    schemaPath: '#/definitions/properties/allOf/2/items/allOf/0/definitions/condition/oneOf',
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   },
   {
     keyword: 'required',
     dataPath: '/properties/1/condition',
-    schemaPath: '#/allOf/0/items/allOf/1/properties/condition/oneOf/1/required',
-    params: { missingProperty: 'allMatch' },
-    message: "should have required property 'allMatch'"
+    schemaPath: '#/allOf/2/items/allOf/0/properties/condition/oneOf/1/required',
+    params: {
+      missingProperty: 'allMatch'
+    },
+    message: 'should have required property \'allMatch\''
   },
   {
     keyword: 'oneOf',
     dataPath: '/properties/1/condition',
-    schemaPath: '#/allOf/0/items/allOf/1/properties/condition/oneOf',
-    params: { passingSchemas: null },
+    schemaPath: '#/allOf/2/items/allOf/0/properties/condition/oneOf',
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   },
   {
     keyword: 'required',
     dataPath: '/properties/2/condition',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf/0/required',
-    params: { missingProperty: 'equals' },
-    message: "should have required property 'equals'"
+    schemaPath: '#/definitions/properties/allOf/2/items/allOf/0/definitions/condition/oneOf/0/required',
+    params: {
+      missingProperty: 'equals'
+    },
+    message: 'should have required property \'equals\''
   },
   {
     keyword: 'type',
     dataPath: '/properties/2/condition/oneOf/0',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf/1/properties/oneOf/items/type',
-    params: { type: [ 'string', 'number' ] },
+    schemaPath: '#/definitions/properties/allOf/2/items/allOf/0/definitions/condition/oneOf/1/properties/oneOf/items/type',
+    params: {
+      type: [
+        'string',
+        'number'
+      ]
+    },
     message: 'should be string,number'
   },
   {
     keyword: 'type',
     dataPath: '/properties/2/condition/oneOf/1',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf/1/properties/oneOf/items/type',
-    params: { type: [ 'string', 'number' ] },
+    schemaPath: '#/definitions/properties/allOf/2/items/allOf/0/definitions/condition/oneOf/1/properties/oneOf/items/type',
+    params: {
+      type: [
+        'string',
+        'number'
+      ]
+    },
     message: 'should be string,number'
   },
   {
     keyword: 'required',
     dataPath: '/properties/2/condition',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf/2/required',
-    params: { missingProperty: 'isActive' },
-    message: "should have required property 'isActive'"
+    schemaPath: '#/definitions/properties/allOf/2/items/allOf/0/definitions/condition/oneOf/2/required',
+    params: {
+      missingProperty: 'isActive'
+    },
+    message: 'should have required property \'isActive\''
   },
   {
     keyword: 'required',
     dataPath: '/properties/2/condition',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf/3/required',
-    params: { missingProperty: 'isEmpty' },
-    message: "should have required property 'isEmpty'"
+    schemaPath: '#/definitions/properties/allOf/2/items/allOf/0/definitions/condition/oneOf/3/required',
+    params: {
+      missingProperty: 'isEmpty'
+    },
+    message: 'should have required property \'isEmpty\''
   },
   {
     keyword: 'oneOf',
     dataPath: '/properties/2/condition',
-    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf',
-    params: { passingSchemas: null },
+    schemaPath: '#/definitions/properties/allOf/2/items/allOf/0/definitions/condition/oneOf',
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   },
   {
     keyword: 'required',
     dataPath: '/properties/2/condition',
-    schemaPath: '#/allOf/0/items/allOf/1/properties/condition/oneOf/1/required',
-    params: { missingProperty: 'allMatch' },
-    message: "should have required property 'allMatch'"
+    schemaPath: '#/allOf/2/items/allOf/0/properties/condition/oneOf/1/required',
+    params: {
+      missingProperty: 'allMatch'
+    },
+    message: 'should have required property \'allMatch\''
   },
   {
     keyword: 'oneOf',
     dataPath: '/properties/2/condition',
-    schemaPath: '#/allOf/0/items/allOf/1/properties/condition/oneOf',
-    params: { passingSchemas: null },
+    schemaPath: '#/allOf/2/items/allOf/0/properties/condition/oneOf',
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   },
   {
     keyword: 'type',
     dataPath: '',
     schemaPath: '#/oneOf/1/type',
-    params: { type: 'array' },
+    params: {
+      type: 'array'
+    },
     message: 'should be array'
   },
   {
     keyword: 'oneOf',
     dataPath: '',
     schemaPath: '#/oneOf',
-    params: { passingSchemas: null },
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   }
 ];

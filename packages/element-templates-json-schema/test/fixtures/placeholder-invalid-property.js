@@ -28,45 +28,53 @@ export const template = {
 
 export const errors = [
   {
-    'dataPath': '/properties/0',
-    'keyword': 'not',
-    'message': 'should NOT be valid',
-    'params': {},
-    'schemaPath': '#/allOf/0/items/allOf/3/else/not',
+    keyword: 'not',
+    dataPath: '/properties/0',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/2/else/not',
+    params: {},
+    message: 'should NOT be valid'
   },
   {
-    'dataPath': '/properties/0',
-    'keyword': 'if',
-    'message': 'should match "else" schema',
-    params: { failingKeyword: 'else' },
-    schemaPath: '#/allOf/0/items/allOf/3/if'
+    keyword: 'if',
+    dataPath: '/properties/0',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/2/if',
+    params: {
+      failingKeyword: 'else'
+    },
+    message: 'should match "else" schema'
   },
   {
-    'dataPath': '/properties/1',
-    'keyword': 'not',
-    'message': 'should NOT be valid',
-    'params': {},
-    'schemaPath': '#/allOf/0/items/allOf/3/else/not',
+    keyword: 'not',
+    dataPath: '/properties/1',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/2/else/not',
+    params: {},
+    message: 'should NOT be valid'
   },
   {
-    'dataPath': '/properties/1',
-    'keyword': 'if',
-    'message': 'should match "else" schema',
-    params: { failingKeyword: 'else' },
-    schemaPath: '#/allOf/0/items/allOf/3/if'
+    keyword: 'if',
+    dataPath: '/properties/1',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/2/if',
+    params: {
+      failingKeyword: 'else'
+    },
+    message: 'should match "else" schema'
   },
   {
     keyword: 'type',
     dataPath: '',
     schemaPath: '#/oneOf/1/type',
-    params: { type: 'array' },
+    params: {
+      type: 'array'
+    },
     message: 'should be array'
   },
   {
     keyword: 'oneOf',
     dataPath: '',
     schemaPath: '#/oneOf',
-    params: { passingSchemas: null },
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   }
 ];

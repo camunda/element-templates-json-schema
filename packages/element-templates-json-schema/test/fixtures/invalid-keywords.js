@@ -10,30 +10,30 @@ export const template = {
 
 export const errors = [
   {
-    'keyword': 'type',
-    'dataPath': '/keywords',
-    'schemaPath': '#/allOf/0/properties/keywords/type',
-    'params': {
-      'type': 'array'
+    keyword: 'type',
+    dataPath: '/keywords',
+    schemaPath: '#/allOf/0/properties/keywords/type',
+    params: {
+      type: 'array'
     },
-    'message': 'should be array'
+    message: 'should be array'
   },
   {
-    'keyword': 'type',
-    'dataPath': '',
-    'schemaPath': '#/oneOf/1/type',
-    'params': {
-      'type': 'array'
+    keyword: 'type',
+    dataPath: '',
+    schemaPath: '#/oneOf/1/type',
+    params: {
+      type: 'array'
     },
-    'message': 'should be array'
+    message: 'should be array'
   },
   {
-    'keyword': 'oneOf',
-    'dataPath': '',
-    'schemaPath': '#/oneOf',
-    'params': {
-      'passingSchemas': null
+    keyword: 'oneOf',
+    dataPath: '',
+    schemaPath: '#/oneOf',
+    params: {
+      passingSchemas: null
     },
-    'message': 'should match exactly one schema in oneOf'
+    message: 'should match exactly one schema in oneOf'
   }
 ];

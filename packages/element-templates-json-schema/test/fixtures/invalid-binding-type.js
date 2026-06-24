@@ -28,14 +28,13 @@ export const errors = [
   {
     keyword: 'errorMessage',
     dataPath: '/properties/1/binding/type',
-    schemaPath: '#/allOf/1/items/properties/binding/properties/type/errorMessage',
+    schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/properties/type/errorMessage',
     params: {
       errors: [
         {
           keyword: 'enum',
-          emUsed: true,
           dataPath: '/properties/1/binding/type',
-          schemaPath: '#/allOf/1/items/properties/binding/properties/type/enum',
+          schemaPath: '#/definitions/properties/allOf/1/items/properties/binding/properties/type/enum',
           params: {
             allowedValues: [
               'property',
@@ -50,28 +49,29 @@ export const errors = [
               'camunda:errorEventDefinition'
             ]
           },
-          message: 'should be equal to one of the allowed values'
+          message: 'should be equal to one of the allowed values',
+          emUsed: true
         }
       ]
     },
     message: 'invalid property.binding type "foo"; must be any of { property, camunda:property, camunda:inputParameter, camunda:outputParameter, camunda:in, camunda:out, camunda:in:businessKey, camunda:executionListener, camunda:field, camunda:errorEventDefinition }'
   },
   {
-    dataPath: '',
     keyword: 'type',
-    message: 'should be array',
-    params: {
-      type: 'array',
-    },
+    dataPath: '',
     schemaPath: '#/oneOf/1/type',
+    params: {
+      type: 'array'
+    },
+    message: 'should be array'
   },
   {
-    dataPath: '',
     keyword: 'oneOf',
-    message: 'should match exactly one schema in oneOf',
+    dataPath: '',
+    schemaPath: '#/oneOf',
     params: {
       passingSchemas: null
     },
-    schemaPath: '#/oneOf'
+    message: 'should match exactly one schema in oneOf'
   }
 ];

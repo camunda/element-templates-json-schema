@@ -16,7 +16,9 @@ export const errors = [
           keyword: 'pattern',
           dataPath: '/appliesTo/0',
           schemaPath: '#/allOf/0/properties/appliesTo/items/pattern',
-          params: { pattern: '^[\\w\\d]+:[\\w\\d]+$' },
+          params: {
+            pattern: '^[\\w\\d]+:[\\w\\d]+$'
+          },
           message: 'should match pattern "^[\\w\\d]+:[\\w\\d]+$"',
           emUsed: true
         }
@@ -28,14 +30,18 @@ export const errors = [
     keyword: 'type',
     dataPath: '',
     schemaPath: '#/oneOf/1/type',
-    params: { type: 'array' },
+    params: {
+      type: 'array'
+    },
     message: 'should be array'
   },
   {
     keyword: 'oneOf',
     dataPath: '',
     schemaPath: '#/oneOf',
-    params: { passingSchemas: null },
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   }
 ];
