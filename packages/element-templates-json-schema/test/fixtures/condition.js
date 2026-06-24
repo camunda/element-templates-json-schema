@@ -102,6 +102,30 @@ export const template = {
         'type': 'property',
         'name': 'input4'
       }
+    },
+    {
+      'label': 'isEmpty (true)',
+      'type': 'String',
+      'condition': {
+        property: 'myId',
+        isEmpty: true
+      },
+      'binding': {
+        'type': 'property',
+        'name': 'input5'
+      }
+    },
+    {
+      'label': 'isEmpty (false)',
+      'type': 'String',
+      'condition': {
+        property: 'myId',
+        isEmpty: false
+      },
+      'binding': {
+        'type': 'property',
+        'name': 'input6'
+      }
     }
   ]
 };

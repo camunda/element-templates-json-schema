@@ -61,6 +61,17 @@
           "required": [
             "isActive"
           ]
+        },
+        {
+          "properties": {
+            "isEmpty": {
+              "type": "boolean",
+              "description": "Checks if the referenced property's value is empty (true) or not empty (false)."
+            }
+          },
+          "required": [
+            "isEmpty"
+          ]
         }
       ]
     },

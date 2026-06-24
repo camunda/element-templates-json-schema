@@ -66,6 +66,13 @@ export const errors = [
     message: "should have required property 'isActive'"
   },
   {
+    keyword: 'required',
+    dataPath: '/properties/1/condition',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf/3/required',
+    params: { missingProperty: 'isEmpty' },
+    message: "should have required property 'isEmpty'"
+  },
+  {
     keyword: 'oneOf',
     dataPath: '/properties/1/condition',
     schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf',
@@ -113,6 +120,13 @@ export const errors = [
     schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf/2/required',
     params: { missingProperty: 'isActive' },
     message: "should have required property 'isActive'"
+  },
+  {
+    keyword: 'required',
+    dataPath: '/properties/2/condition',
+    schemaPath: '#/definitions/properties/allOf/0/items/allOf/1/definitions/condition/oneOf/3/required',
+    params: { missingProperty: 'isEmpty' },
+    message: "should have required property 'isEmpty'"
   },
   {
     keyword: 'oneOf',
