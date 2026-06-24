@@ -19,8 +19,10 @@ export const errors = [
           keyword: 'required',
           dataPath: '/elementType',
           schemaPath: '#/allOf/0/properties/elementType/required',
-          params: { missingProperty: 'value' },
-          message: "should have required property 'value'",
+          params: {
+            missingProperty: 'value'
+          },
+          message: 'should have required property \'value\'',
           emUsed: true
         }
       ]
@@ -31,14 +33,18 @@ export const errors = [
     keyword: 'type',
     dataPath: '',
     schemaPath: '#/oneOf/1/type',
-    params: { type: 'array' },
+    params: {
+      type: 'array'
+    },
     message: 'should be array'
   },
   {
     keyword: 'oneOf',
     dataPath: '',
     schemaPath: '#/oneOf',
-    params: { passingSchemas: null },
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   }
 ];

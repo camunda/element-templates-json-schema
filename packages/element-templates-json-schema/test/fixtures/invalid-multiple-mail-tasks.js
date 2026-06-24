@@ -149,7 +149,9 @@ export const errors = [
     keyword: 'type',
     dataPath: '',
     schemaPath: '#/type',
-    params: { type: 'object' },
+    params: {
+      type: 'object'
+    },
     message: 'should be object'
   },
   {
@@ -162,8 +164,10 @@ export const errors = [
           keyword: 'required',
           dataPath: '/0',
           schemaPath: '#/allOf/0/required',
-          params: { missingProperty: 'appliesTo' },
-          message: "should have required property 'appliesTo'",
+          params: {
+            missingProperty: 'appliesTo'
+          },
+          message: 'should have required property \'appliesTo\'',
           emUsed: true
         }
       ]
@@ -180,8 +184,10 @@ export const errors = [
           keyword: 'required',
           dataPath: '/1',
           schemaPath: '#/allOf/0/required',
-          params: { missingProperty: 'appliesTo' },
-          message: "should have required property 'appliesTo'",
+          params: {
+            missingProperty: 'appliesTo'
+          },
+          message: 'should have required property \'appliesTo\'',
           emUsed: true
         }
       ]
@@ -192,7 +198,9 @@ export const errors = [
     keyword: 'oneOf',
     dataPath: '',
     schemaPath: '#/oneOf',
-    params: { passingSchemas: null },
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   }
 ];

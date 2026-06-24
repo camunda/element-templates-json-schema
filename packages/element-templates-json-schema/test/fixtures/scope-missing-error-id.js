@@ -54,9 +54,11 @@ export const errors = [
           keyword: 'required',
           dataPath: '/scopes/0',
           schemaPath: '#/properties/scopes/items/allOf/0/then/required',
-          params: { missingProperty: 'id' },
-          emUsed: true,
-          message: "should have required property 'id'"
+          params: {
+            missingProperty: 'id'
+          },
+          message: 'should have required property \'id\'',
+          emUsed: true
         }
       ]
     },
@@ -66,21 +68,27 @@ export const errors = [
     keyword: 'if',
     dataPath: '/scopes/0',
     schemaPath: '#/properties/scopes/items/allOf/0/if',
-    params: { failingKeyword: 'then' },
+    params: {
+      failingKeyword: 'then'
+    },
     message: 'should match "then" schema'
   },
   {
     keyword: 'type',
     dataPath: '',
     schemaPath: '#/oneOf/1/type',
-    params: { type: 'array' },
+    params: {
+      type: 'array'
+    },
     message: 'should be array'
   },
   {
     keyword: 'oneOf',
     dataPath: '',
     schemaPath: '#/oneOf',
-    params: { passingSchemas: null },
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   }
 ];

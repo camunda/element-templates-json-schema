@@ -30,29 +30,37 @@ export const errors = [
   {
     keyword: 'type',
     dataPath: '/properties/0/constraints/minLength',
-    schemaPath: '#/allOf/0/items/properties/constraints/properties/minLength/type',
-    params: { type: 'number' },
+    schemaPath: '#/definitions/properties/allOf/0/items/properties/constraints/properties/minLength/type',
+    params: {
+      type: 'number'
+    },
     message: 'should be number'
   },
   {
     keyword: 'type',
     dataPath: '/properties/0/constraints/maxLength',
-    schemaPath: '#/allOf/0/items/properties/constraints/properties/maxLength/type',
-    params: { type: 'number' },
+    schemaPath: '#/definitions/properties/allOf/0/items/properties/constraints/properties/maxLength/type',
+    params: {
+      type: 'number'
+    },
     message: 'should be number'
   },
   {
     keyword: 'type',
     dataPath: '',
     schemaPath: '#/oneOf/1/type',
-    params: { type: 'array' },
+    params: {
+      type: 'array'
+    },
     message: 'should be array'
   },
   {
     keyword: 'oneOf',
     dataPath: '',
     schemaPath: '#/oneOf',
-    params: { passingSchemas: null },
+    params: {
+      passingSchemas: null
+    },
     message: 'should match exactly one schema in oneOf'
   }
 ];
