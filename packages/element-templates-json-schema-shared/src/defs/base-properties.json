@@ -26,9 +26,6 @@
         }
       },
       {
-        "$ref": "condition.json"
-      },
-      {
         "if": {
           "properties": {
             "type": {
@@ -144,9 +141,6 @@
               "type": "string",
               "description": "Value for a choice in a dropdown field. Stored in the XML."
             },
-            "condition": {
-              "$ref": "condition.json#/properties/condition"
-            }
           },
           "required": [
             "value",
