@@ -1,4 +1,32 @@
 {
+  "condition": {
+    "examples": [
+      {
+        "type": "simple",
+        "property": "httpMethod",
+        "equals": "GET"
+      },
+      {
+        "type": "simple",
+        "property": "httpMethod",
+        "oneOf": [ "POST", "PUT", "DELETE" ]
+      },
+      {
+        "allMatch": [
+          {
+            "type": "simple",
+            "property": "authType",
+            "equals": "Basic"
+          },
+          {
+            "type": "simple",
+            "property": "httpMethod",
+            "oneOf": [ "POST", "PUT", "DELETE" ]
+          }
+        ]
+      }
+    ]
+  },
   "binding": {
     "examples": [
       {

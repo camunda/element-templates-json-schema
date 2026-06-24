@@ -299,26 +299,6 @@ describe('validation', function() {
     });
 
 
-    describe('condition', function() {
-
-      it('condition');
-
-
-      it('condition-missing-property');
-
-
-      it('condition-missing-condition-keyword');
-
-
-      it('condition-wrong-types');
-
-
-      it('condition-default-type');
-
-
-      it('condition-wrong-type');
-    });
-
   });
 
 
