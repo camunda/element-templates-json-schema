@@ -56,5 +56,8 @@
     "mocha": "^11.7.5",
     "mri": "^1.2.0",
     "npm-run-all2": "^9.0.0"
+  },
+  "allowScripts": {
+    "nx@22.5.4": true
   }
 }
