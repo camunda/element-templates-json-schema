@@ -6,6 +6,9 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.42.0
+
+* `FEAT`: support `isEmpty` condition ([#252](https://github.com/camunda/element-templates-json-schema/pull/252))
 * `CHORE`: in-source `condition` schema aspect ([#253](https://github.com/camunda/element-templates-json-schema/pull/253))
 
 ## 0.41.1

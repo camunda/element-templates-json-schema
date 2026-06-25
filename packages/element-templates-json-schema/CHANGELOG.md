@@ -6,6 +6,8 @@ All notable changes to [@camunda/element-templates-json-schema](https://github.c
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.22.0
+
 * `CHORE`: remove `condition` support (never implemented in Camunda 7 element templates) ([#253](https://github.com/camunda/element-templates-json-schema/pull/253))
 
 ## 0.21.0
