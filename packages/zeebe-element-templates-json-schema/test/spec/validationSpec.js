@@ -837,6 +837,17 @@ describe('validation', function() {
   });
 
 
+  describe('zeebe:jobPriorityDefinition', function() {
+
+    it('job-priority-definition/invalid-property');
+
+    it('job-priority-definition/valid');
+
+    it('job-priority-definition/valid-with-feel');
+
+  });
+
+
   describe('zeebe:taskSchedule', function() {
 
     it('task-schedule/invalid-element-type');
