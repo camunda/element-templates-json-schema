@@ -6,6 +6,10 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.39.3
+
+* `FIX`: add previously missing `canceling` task listener event type ([#255](https://github.com/camunda/element-templates-json-schema/pull/255))
+
 ## 0.39.2
 
 * `FIX`: deprecate `feel: optional` on non-editable properties ([#232](https://github.com/camunda/element-templates-json-schema/pull/232))
