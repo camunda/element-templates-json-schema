@@ -31,6 +31,14 @@
             "feel"
           ]
         }
+      },
+      {
+        "$comment": "`optional` is not supported in configuration templates.",
+        "not": {
+          "required": [
+            "optional"
+          ]
+        }
       }
     ],
     "properties": {
