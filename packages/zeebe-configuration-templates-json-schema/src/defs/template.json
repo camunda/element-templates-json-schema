@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "base.json"
+    }
+  ],
+  "properties": {
+    "properties": {
+      "allOf": [
+        {
+          "$ref": "../../../element-templates-json-schema-shared/src/defs/base-properties.json"
+        },
+        {
+          "$ref": "properties.json"
+        },
+        {
+          "items": {
+            "allOf": [
+              { "$ref": "condition.json" }
+            ],
+            "properties": {
+              "choices": {
+                "items": {
+                  "properties": {
+                    "condition": {
+                      "$ref": "condition.json#/properties/condition"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "groups": {
+      "$ref": "../../../element-templates-json-schema-shared/src/defs/groups.json"
+    }
+  }
+}

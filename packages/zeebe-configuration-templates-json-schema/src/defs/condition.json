@@ -7,13 +7,11 @@
       ],
       "properties": {
         "type": {
-          "$id": "#/condition/type",
           "const": "simple",
           "description": "Defines the type of the condition (always \"simple\").",
           "default": "simple"
         },
         "property": {
-          "$id": "#/condition/property",
           "type": "string",
           "description": "Reference to the property used to evaluate the condition."
         }
@@ -124,7 +122,6 @@
         {
           "properties": {
             "allMatch": {
-              "$id": "#/allMatch",
               "type": "array",
               "items": {
                 "$ref": "#/definitions/condition"
