@@ -84,6 +84,9 @@ describe('validation', function() {
     it('feel-not-supported');
 
 
+    it('optional-not-supported');
+
+
     it('invalid-binding-type');
 
 
