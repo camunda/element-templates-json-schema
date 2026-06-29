@@ -1,27 +1,30 @@
 {
-  "name": "@camunda/zeebe-element-templates-json-schema",
-  "version": "0.43.0-alpha.0",
-  "description": "JSON Schema for (Zeebe) Element Templates",
+  "name": "@camunda/zeebe-configuration-templates-json-schema",
+  "version": "0.2.0-alpha.0",
+  "description": "JSON Schema for (Zeebe) Configuration Templates",
   "files": [
     "resources"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "mocha --reporter=spec --recursive test/spec",
     "test:integration": "mocha --reporter=spec --recursive test/integration",
     "dev": "npm run test -- --watch",
     "all": "run-s build test",
-    "build": "run-s build:error-messages build:schema",
-    "build:error-messages": "node ../../tasks/generate-error-messages.js --input=./src/error-messages.json --output=./resources/error-messages.json",
+    "build": "run-s build:schema",
     "build:schema": "node ../../tasks/generate-schema.js --input=./src/schema.json --output=./resources/schema.json",
     "prepare": "run-s build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/camunda/element-templates-json-schema.git",
-    "directory": "packages/zeebe-element-templates-json-schema"
+    "directory": "packages/zeebe-configuration-templates-json-schema"
   },
   "keywords": [
     "json-schema",
+    "configuration-templates",
     "element-templates",
     "camunda"
   ],
