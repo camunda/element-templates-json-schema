@@ -72,6 +72,11 @@
               "required": [
                 "type"
               ]
+            },
+            "type": {
+              "not": {
+                "const": "Configuration"
+              }
             }
           },
           "required": [
@@ -808,6 +813,39 @@
           "deprecated": true,
           "deprecationWarning": "'optional' with 'zeebe:input' binding is deprecated; an empty input mapping (resolved to 'null') should be used for Camunda 8.8+"
         }
+      },
+      {
+        "$comment": "A `Configuration` property renders a configuration chooser, bound via `zeebe:input` (outbound) or `zeebe:property` (inbound), and references a compatible configuration template.",
+        "if": {
+          "properties": {
+            "type": {
+              "const": "Configuration"
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        "then": {
+          "required": [
+            "configurationTemplate"
+          ],
+          "properties": {
+            "binding": {
+              "properties": {
+                "type": {
+                  "enum": [
+                    "zeebe:input",
+                    "zeebe:property"
+                  ]
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          }
+        }
       }
     ],
     "properties": {
@@ -1177,6 +1215,11 @@
         "$id": "#/properties/property/tooltip",
         "type": "string",
         "description": "Hints for the control field."
+      },
+      "configurationTemplate": {
+        "$id": "#/properties/property/configurationTemplate",
+        "type": "string",
+        "description": "Identifies the compatible configuration template for a `Configuration` property. Matches the `id` of a configuration template. The Modeler uses it to filter the chooser to compatible configuration instances."
       }
     }
   }

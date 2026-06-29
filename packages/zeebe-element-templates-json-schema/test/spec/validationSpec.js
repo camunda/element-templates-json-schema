@@ -907,6 +907,21 @@ describe('validation', function() {
 
   });
 
+
+  describe('Configuration', function() {
+
+    it('configuration-property');
+
+    it('configuration-property-inbound');
+
+    it('configuration-property-missing-template');
+
+    it('configuration-property-invalid-binding');
+
+    it('configuration-templates-invalid');
+
+  });
+
 });
 
 
