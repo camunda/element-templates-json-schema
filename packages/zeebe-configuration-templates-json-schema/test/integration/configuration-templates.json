@@ -1,0 +1,1005 @@
+[
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-configuration-templates-json-schema/resources/schema.json",
+    "kind": "CREDENTIAL",
+    "id": "io.camunda:aws-credential:1",
+    "name": "AWS credential",
+    "version": 1,
+    "properties": [
+      {
+        "id": "type",
+        "label": "Authentication strategy",
+        "type": "Dropdown",
+        "value": "credentials",
+        "binding": {
+          "type": "property",
+          "name": "type"
+        },
+        "choices": [
+          {
+            "name": "Default Credentials Chain (Hybrid/Self-Managed only)",
+            "value": "defaultCredentialsChain"
+          },
+          {
+            "name": "Credentials",
+            "value": "credentials"
+          }
+        ]
+      },
+      {
+        "id": "accessKey",
+        "label": "Access key",
+        "type": "String",
+        "secret": true,
+        "description": "IAM access key. Store as a secret reference, e.g. camunda.secrets.AWS_ACCESS_KEY.",
+        "binding": {
+          "type": "property",
+          "name": "accessKey"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "credentials",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "secretKey",
+        "label": "Secret key",
+        "type": "String",
+        "secret": true,
+        "description": "IAM secret key. Store as a secret reference, e.g. camunda.secrets.AWS_SECRET_KEY.",
+        "binding": {
+          "type": "property",
+          "name": "secretKey"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "credentials",
+          "type": "simple"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-configuration-templates-json-schema/resources/schema.json",
+    "kind": "CREDENTIAL",
+    "id": "io.camunda:idp-extraction-provider-credential:1",
+    "name": "IDP extraction provider credential",
+    "version": 1,
+    "properties": [
+      {
+        "id": "type",
+        "label": "Text extraction providers",
+        "type": "Dropdown",
+        "binding": {
+          "type": "property",
+          "name": "type"
+        },
+        "choices": [
+          {
+            "name": "Apache PdfBox text extractor",
+            "value": "pdfBox"
+          },
+          {
+            "name": "In-model text extractor (multimodal)",
+            "value": "multimodal"
+          },
+          {
+            "name": "Azure Document Intelligence extractor",
+            "value": "documentIntelligence"
+          },
+          {
+            "name": "GCP DocumentAI extractor",
+            "value": "documentAi"
+          },
+          {
+            "name": "AWS Textract extractor",
+            "value": "textract"
+          },
+          {
+            "name": "ABBYY Vantage extractor",
+            "value": "abbyy"
+          }
+        ]
+      },
+      {
+        "id": "endpoint",
+        "label": "Azure Document Intelligence Endpoint",
+        "description": "Specify the endpoint of the Azure Document Intelligence",
+        "type": "Text",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "endpoint"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "documentIntelligence",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "apiKey",
+        "label": "Azure Document Intelligence API Key",
+        "description": "Specify the API key of the Azure Document Intelligence",
+        "type": "Text",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "apiKey"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "documentIntelligence",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "authType",
+        "label": "Type",
+        "type": "Dropdown",
+        "value": "refresh",
+        "choices": [
+          {
+            "name": "Bearer token",
+            "value": "bearer"
+          },
+          {
+            "name": "Refresh token",
+            "value": "refresh"
+          },
+          {
+            "name": "Service account",
+            "value": "service_account"
+          }
+        ],
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "authType"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "documentAi",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "bearerToken",
+        "label": "Bearer token",
+        "description": "Enter a valid Google API Bearer token",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "bearerToken"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "authType",
+              "equals": "bearer",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "documentAi",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "oauthClientId",
+        "label": "Client ID",
+        "description": "Enter Google API Client ID",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "oauthClientId"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "authType",
+              "equals": "refresh",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "documentAi",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "oauthClientSecret",
+        "label": "Client secret",
+        "description": "Enter Google API client Secret",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "oauthClientSecret"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "authType",
+              "equals": "refresh",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "documentAi",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "oauthRefreshToken",
+        "label": "Refresh token",
+        "description": "Enter a valid Google API refresh token",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "oauthRefreshToken"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "authType",
+              "equals": "refresh",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "documentAi",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "serviceAccountJson",
+        "label": "Service account json",
+        "description": "Enter a the contents of your service account json file",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "serviceAccountJson"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "authType",
+              "equals": "service_account",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "documentAi",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "documentAiRegion",
+        "label": "Region",
+        "description": "Select the region for Document AI",
+        "type": "Dropdown",
+        "choices": [
+          {
+            "name": "EU",
+            "value": "eu"
+          },
+          {
+            "name": "US",
+            "value": "us"
+          }
+        ],
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "region"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "documentAi",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "projectId",
+        "label": "Project ID",
+        "type": "String",
+        "binding": {
+          "type": "property",
+          "name": "projectId"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "documentAi",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "processorId",
+        "label": "Processor ID",
+        "description": "The id of the processor used to parse the document",
+        "type": "String",
+        "binding": {
+          "type": "property",
+          "name": "processorId"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "documentAi",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "awsAuthType",
+        "label": "Authentication type",
+        "type": "Dropdown",
+        "value": "credentials",
+        "choices": [
+          {
+            "name": "Credentials",
+            "value": "credentials"
+          },
+          {
+            "name": "Default Credentials Chain (Hybrid/Self-Managed only)",
+            "value": "defaultCredentialsChain"
+          }
+        ],
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "awsAuthType"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "textract",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "accessKey",
+        "label": "Access key",
+        "description": "Provide an IAM access key tailored to a user, equipped with the necessary permissions",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "accessKey"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "awsAuthType",
+              "equals": "credentials",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "textract",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "secretKey",
+        "label": "Secret key",
+        "description": "Provide a secret key of a user with permissions to invoke specified AWS Lambda function",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "secretKey"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "awsAuthType",
+              "equals": "credentials",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "textract",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "region",
+        "label": "Region",
+        "description": "Specify the AWS region",
+        "type": "Text",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "region"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "textract",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "bucketName",
+        "label": "AWS S3 Bucket name",
+        "description": "Specify the name of the AWS S3 bucket where document will be stored temporarily during Textract analysis",
+        "type": "Text",
+        "value": "idp-extraction-connector",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "bucketName"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "textract",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "abbyyBaseUrl",
+        "label": "ABBYY Vantage Base URL",
+        "description": "Base URL of the ABBYY Vantage instance (e.g., https://vantage-us.abbyy.com)",
+        "type": "Text",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "baseUrl"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "abbyy",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "abbyyClientId",
+        "label": "Client ID",
+        "description": "OAuth2 Client ID from ABBYY Vantage Public API Client settings",
+        "type": "Text",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "clientId"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "abbyy",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "abbyyClientSecret",
+        "label": "Client Secret",
+        "description": "OAuth2 Client Secret from ABBYY Vantage Public API Client settings",
+        "type": "Text",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "clientSecret"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "abbyy",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "abbyySkillId",
+        "label": "Skill ID",
+        "description": "The ABBYY Vantage OCR skill ID (skill must be configured to output Text format)",
+        "type": "Text",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "skillId"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "abbyy",
+          "type": "simple"
+        }
+      }
+    ]
+  },
+  {
+    "$schema": "https://unpkg.com/@camunda/zeebe-configuration-templates-json-schema/resources/schema.json",
+    "kind": "CREDENTIAL",
+    "id": "io.camunda:idp-ai-provider-credential:1",
+    "name": "IDP AI provider credential",
+    "version": 1,
+    "properties": [
+      {
+        "id": "type",
+        "label": "Text extraction providers",
+        "type": "Dropdown",
+        "binding": {
+          "type": "property",
+          "name": "type"
+        },
+        "choices": [
+          {
+            "name": "Azure AI Foundry",
+            "value": "azureAiFoundry"
+          },
+          {
+            "name": "AWS Bedrock AI",
+            "value": "bedrockAi"
+          },
+          {
+            "name": "OpenAi Compatible",
+            "value": "openAi"
+          },
+          {
+            "name": "GCP VertexAi",
+            "value": "vertexAi"
+          }
+        ]
+      },
+      {
+        "id": "usingOpenAI",
+        "label": "Model type",
+        "description": "Specify if the Azure AI Foundry is using OpenAI",
+        "type": "Dropdown",
+        "value": "false",
+        "choices": [
+          {
+            "name": "Base Azure Foundry model",
+            "value": "false"
+          },
+          {
+            "name": "Azure OpenAI model",
+            "value": "true"
+          }
+        ],
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "usingOpenAI"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "azureAiFoundry",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "endpoint",
+        "label": "Azure AI Endpoint",
+        "description": "Specify the endpoint of Azure AI",
+        "type": "Text",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "endpoint"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "azureAiFoundry",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "apiKey",
+        "label": "Azure AI API Key",
+        "description": "Specify the API key of Azure AI",
+        "type": "Text",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "apiKey"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "azureAiFoundry",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "awsAuthType",
+        "label": "Authentication type",
+        "type": "Dropdown",
+        "value": "credentials",
+        "choices": [
+          {
+            "name": "Credentials",
+            "value": "credentials"
+          },
+          {
+            "name": "Default Credentials Chain (Hybrid/Self-Managed only)",
+            "value": "defaultCredentialsChain"
+          }
+        ],
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "awsAuthType"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "bedrockAi",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "accessKey",
+        "label": "Access key",
+        "description": "Provide an IAM access key tailored to a user, equipped with the necessary permissions",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "accessKey"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "awsAuthType",
+              "equals": "credentials",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "bedrockAi",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "secretKey",
+        "label": "Secret key",
+        "description": "Provide a secret key of a user with permissions to invoke specified AWS Lambda function",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "secretKey"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "awsAuthType",
+              "equals": "credentials",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "bedrockAi",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "region",
+        "label": "Region",
+        "description": "Specify the AWS region",
+        "type": "Text",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "region"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "bedrockAi",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "openAiEndpoint",
+        "label": "OpenAI Spec Endpoint",
+        "description": "Specify the OpenAI compatible specification endpoint.",
+        "type": "Text",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "openAiEndpoint"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "openAi",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "openAiHeaders",
+        "label": "Headers",
+        "description": "Map of HTTP headers to add to the request.",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "openAiHeaders"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "openAi",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "authType",
+        "label": "Type",
+        "type": "Dropdown",
+        "value": "refresh",
+        "choices": [
+          {
+            "name": "Bearer token",
+            "value": "bearer"
+          },
+          {
+            "name": "Refresh token",
+            "value": "refresh"
+          },
+          {
+            "name": "Service account",
+            "value": "service_account"
+          }
+        ],
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "authType"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "vertexAi",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "bearerToken",
+        "label": "Bearer token",
+        "description": "Enter a valid Google API Bearer token",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "bearerToken"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "authType",
+              "equals": "bearer",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "vertexAi",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "oauthClientId",
+        "label": "Client ID",
+        "description": "Enter Google API Client ID",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "binding": {
+          "type": "property",
+          "name": "oauthClientId"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "authType",
+              "equals": "refresh",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "vertexAi",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "oauthClientSecret",
+        "label": "Client secret",
+        "description": "Enter Google API client Secret",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "oauthClientSecret"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "authType",
+              "equals": "refresh",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "vertexAi",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "oauthRefreshToken",
+        "label": "Refresh token",
+        "description": "Enter a valid Google API refresh token",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "oauthRefreshToken"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "authType",
+              "equals": "refresh",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "vertexAi",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "serviceAccountJson",
+        "label": "Service account json",
+        "description": "Enter a the contents of your service account json file",
+        "type": "String",
+        "constraints": {
+          "notEmpty": true
+        },
+        "secret": true,
+        "binding": {
+          "type": "property",
+          "name": "serviceAccountJson"
+        },
+        "condition": {
+          "allMatch": [
+            {
+              "property": "authType",
+              "equals": "service_account",
+              "type": "simple"
+            },
+            {
+              "property": "type",
+              "equals": "vertexAi",
+              "type": "simple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gcpRegion",
+        "label": "Region",
+        "type": "String",
+        "binding": {
+          "type": "property",
+          "name": "region"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "vertexAi",
+          "type": "simple"
+        }
+      },
+      {
+        "id": "vertexProjectId",
+        "label": "Project ID",
+        "type": "String",
+        "binding": {
+          "type": "property",
+          "name": "projectId"
+        },
+        "condition": {
+          "property": "type",
+          "equals": "vertexAi",
+          "type": "simple"
+        }
+      }
+    ]
+  }
+]
