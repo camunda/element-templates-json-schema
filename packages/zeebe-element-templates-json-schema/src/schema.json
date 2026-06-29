@@ -68,6 +68,14 @@
         "groups": {
           "$ref": "src/defs/groups.json"
         },
+        "configurationTemplates": {
+          "$id": "#/configurationTemplates",
+          "type": "array",
+          "description": "Configuration templates embedded in the element template. Each entry defines the shape of a configuration (e.g. a credential) that a `Configuration` property can choose. Used by the Modeler to render the configuration editor and filter compatible configuration instances.",
+          "items": {
+            "$ref": "../../packages/zeebe-configuration-templates-json-schema/src/defs/template.json"
+          }
+        },
         "steps": {
           "$ref": "src/defs/template/steps.json"
         },
