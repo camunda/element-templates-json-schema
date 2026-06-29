@@ -5,3 +5,7 @@ coverage/
 *.iml
 .DS_Store
 packages/**/test/integration/*.json
+
+# committed integration fixtures (not fetched artifacts)
+!packages/**/test/integration/credential-element-templates.json
+!packages/**/test/integration/configuration-templates.json
