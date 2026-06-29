@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "array",
+  "description": "List of properties of the configuration template.",
+  "items": {
+    "type": "object",
+    "default": {},
+    "required": [
+      "binding"
+    ],
+    "allOf": [
+      {
+        "$comment": "Only atomic property types are supported; `Configuration` is forbidden.",
+        "properties": {
+          "type": {
+            "enum": [
+              "String",
+              "Text",
+              "Hidden",
+              "Dropdown",
+              "Boolean",
+              "Number"
+            ]
+          }
+        }
+      },
+      {
+        "$comment": "Configuration field values are atomic literals or secret references, never FEEL expressions.",
+        "not": {
+          "required": [
+            "feel"
+          ]
+        }
+      }
+    ],
+    "properties": {
+      "binding": {
+        "$id": "#/properties/property/binding",
+        "type": "object",
+        "description": "Specifying how the property is mapped to the configuration value. Only the `property` binding is supported.",
+        "required": [
+          "type",
+          "name"
+        ],
+        "properties": {
+          "type": {
+            "$id": "#/properties/property/binding/type",
+            "type": "string",
+            "description": "The type of a property binding. Always \"property\" for configuration templates.",
+            "const": "property"
+          },
+          "name": {
+            "$id": "#/properties/property/binding/name",
+            "type": "string",
+            "description": "The key of the property in the configuration's value object."
+          }
+        }
+      },
+      "secret": {
+        "$id": "#/properties/property/secret",
+        "type": "boolean",
+        "description": "Marks the property as a field that typically holds a secret reference. Used by the configuration editor as a rendering hint (e.g. obfuscated input or secret picker); not enforced."
+      },
+      "tooltip": {
+        "$id": "#/properties/property/tooltip",
+        "type": "string",
+        "description": "Hints for the control field."
+      }
+    }
+  }
+}
