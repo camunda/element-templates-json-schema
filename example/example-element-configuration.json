@@ -13,6 +13,7 @@
       "label": "AWS credential",
       "group": "auth",
       "configurationTemplate": "io.camunda:aws-credential:1",
+      "configurationTemplateVersion": 1,
       "binding": { "type": "zeebe:input", "name": "authentication" }
     }
   ],

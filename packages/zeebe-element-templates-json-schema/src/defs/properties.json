@@ -1220,6 +1220,11 @@
         "$id": "#/properties/property/configurationTemplate",
         "type": "string",
         "description": "Identifies the compatible configuration template for a `Configuration` property. Matches the `id` of a configuration template. The Modeler uses it to filter the chooser to compatible configuration instances."
+      },
+      "configurationTemplateVersion": {
+        "$id": "#/properties/property/configurationTemplateVersion",
+        "type": "integer",
+        "description": "Optional minimum version of the referenced configuration template for a `Configuration` property. When set, a chosen configuration whose template version is below this floor is flagged incompatible at design time. This is a design-time floor only; it is not persisted to the BPMN model."
       }
     }
   }
