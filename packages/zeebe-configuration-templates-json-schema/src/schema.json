@@ -3,50 +3,8 @@
   "$id": "http://camunda.org/schema/zeebe-configuration-templates/1.0",
   "title": "Configuration Template Schema",
   "definitions": {
-    "properties": {
-      "allOf": [
-        {
-          "$ref": "../../packages/element-templates-json-schema-shared/src/defs/base-properties.json"
-        },
-        {
-          "$ref": "src/defs/properties.json"
-        },
-        {
-          "items": {
-            "allOf": [
-              { "$ref": "src/defs/condition.json" }
-            ],
-            "properties": {
-              "choices": {
-                "items": {
-                  "properties": {
-                    "condition": {
-                      "$ref": "src/defs/condition.json#/properties/condition"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "template": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "src/defs/base.json"
-        }
-      ],
-      "properties": {
-        "properties": {
-          "$ref": "#/definitions/properties",
-          "$id": "#/properties"
-        },
-        "groups": {
-          "$ref": "../../packages/element-templates-json-schema-shared/src/defs/groups.json"
-        }
-      }
+      "$ref": "src/defs/template.json"
     }
   },
   "oneOf": [
