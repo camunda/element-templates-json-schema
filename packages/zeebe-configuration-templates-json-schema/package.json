@@ -5,6 +5,9 @@
   "files": [
     "resources"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "mocha --reporter=spec --recursive test/spec",
     "test:integration": "mocha --reporter=spec --recursive test/integration",
