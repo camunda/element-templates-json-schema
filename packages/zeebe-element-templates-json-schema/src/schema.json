@@ -65,6 +65,9 @@
             }
           ]
         },
+        "connections": {
+          "$ref": "src/defs/connections.json"
+        },
         "groups": {
           "$ref": "src/defs/groups.json"
         },

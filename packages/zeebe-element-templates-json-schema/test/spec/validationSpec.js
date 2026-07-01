@@ -576,6 +576,19 @@ describe('validation', function() {
     });
 
 
+    describe('connections', function() {
+
+      it('connections');
+
+      it('connections-missing-id');
+
+      it('connections-missing-type');
+
+      it('connections-invalid');
+
+    });
+
+
     describe('zeebe:linkedResource', function() {
 
       it('linked-resource');
