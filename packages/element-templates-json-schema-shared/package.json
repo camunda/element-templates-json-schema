@@ -5,6 +5,9 @@
   "files": [
     "src"
   ],
+  "scripts": {
+    "all": "npm pack --dry-run"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/camunda/element-templates-json-schema.git",
