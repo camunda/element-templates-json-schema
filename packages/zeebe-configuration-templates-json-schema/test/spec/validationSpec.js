@@ -8,7 +8,7 @@ const {
 
 const validator = createValidator(schema);
 
-// we save this for some other shinanigans
+// we save this for some other shenanigans
 const iit = it;
 
 function createTest(name, file, it) {
