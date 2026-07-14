@@ -18,7 +18,7 @@ describe('schema validation', function() {
 
     // then
     expect(valid).to.be.true;
-    expect(valid.errors).to.not.exist;
+    expect(ajv.errors).to.not.exist;
   });
 
 
