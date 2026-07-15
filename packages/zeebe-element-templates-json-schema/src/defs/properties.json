@@ -939,7 +939,8 @@
                     "bindingType",
                     "versionTag",
                     "propagateAllParentVariables",
-                    "propagateAllChildVariables"
+                    "propagateAllChildVariables",
+                    "businessId"
                   ]
                 }
               },

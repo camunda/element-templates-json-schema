@@ -67,7 +67,8 @@ export const errors = [
         'bindingType',
         'versionTag',
         'propagateAllParentVariables',
-        'propagateAllChildVariables'
+        'propagateAllChildVariables',
+        'businessId'
       ]
     },
     message: 'should be equal to one of the allowed values'
