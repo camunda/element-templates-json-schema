@@ -525,6 +525,14 @@ describe('validation', function() {
 
       it('called-element-applies-to-only');
 
+      it('called-element-business-id');
+
+      it('called-element-business-id-max-length');
+
+      it('called-element-business-id-too-long');
+
+      it('called-element-business-id-feel-not-length-checked');
+
       it('called-element-invalid-applies-to-no-element-type');
 
       it('called-element-invalid-element-type');
