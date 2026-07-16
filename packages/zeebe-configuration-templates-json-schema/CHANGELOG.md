@@ -6,6 +6,6 @@ All notable changes to [@camunda/zeebe-configuration-templates-json-schema](http
 
 ___Note:__ Yet to be released changes appear here._
 
-## 0.1.0
+## 0.2.0
 
 * `FEAT`: initial version of the configuration template schema
