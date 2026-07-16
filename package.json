@@ -11,6 +11,7 @@
     "build": "npm run build --workspaces --if-present",
     "build:camunda": "npm run build --workspace @camunda/element-templates-json-schema",
     "build:zeebe": "npm run build --workspace @camunda/zeebe-element-templates-json-schema",
+    "build:zeebe-configuration": "npm run build --workspace @camunda/zeebe-configuration-templates-json-schema",
     "all": "run-s build lint test",
     "release": "npx @bpmn-io/release",
     "fetch:connector-templates": "node tasks/fetch-connector-templates.js"
@@ -27,6 +28,7 @@
   "workspaces": [
     "packages/element-templates-json-schema-shared",
     "packages/element-templates-json-schema",
+    "packages/zeebe-configuration-templates-json-schema",
     "packages/zeebe-element-templates-json-schema"
   ],
   "author": "Niklas Kiefer <niklas.kiefer@camunda.com (https://github.com/pinussilvestrus)",
