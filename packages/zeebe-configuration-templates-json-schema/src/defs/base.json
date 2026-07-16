@@ -1,0 +1,47 @@
+{
+  "required": [
+    "name",
+    "id",
+    "kind",
+    "version",
+    "properties"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to the Configuration Template JSON schema this document follows."
+    },
+    "name": {
+      "type": "string",
+      "description": "Configuration template name. Shown in the configuration editor and used as the primary chooser label. Required."
+    },
+    "id": {
+      "type": "string",
+      "description": "Configuration template identifier. Matches the `configurationTemplate` referenced from element templates. Required."
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The class of configuration this template produces, e.g. \"CREDENTIAL\". Internal identifier, never shown to users. Required."
+    },
+    "version": {
+      "type": "integer",
+      "description": "Version of the configuration template. Considered unique based on its id and version. Required."
+    },
+    "description": {
+      "type": "string",
+      "description": "Configuration template description. Shown in the configuration editor."
+    },
+    "documentationRef": {
+      "type": "string",
+      "pattern": "^(https|http)://.*",
+      "description": "URL pointing to external documentation. Must be a valid http(s) URL."
+    },
+    "keywords": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of keywords to help users discover the configuration template. Used in search and filtering, but not displayed in the UI.",
+      "default": []
+    }
+  }
+}
