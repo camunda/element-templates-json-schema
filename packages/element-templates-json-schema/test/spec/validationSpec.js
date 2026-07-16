@@ -38,8 +38,6 @@ function createTest(name, file, it) {
     // given
     const testDefinition = await import(file);
 
-    console.log('name', testDefinition);
-
     const {
       errors: expectedErrors,
       template
