@@ -6,6 +6,8 @@ All notable changes to [@camunda/zeebe-element-templates-json-schema](https://gi
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.44.0
+
 * `FEAT`: support `Configuration` property type with `configurationTemplate` reference
 * `FEAT`: support embedding configuration templates via `configurationTemplates`
 
