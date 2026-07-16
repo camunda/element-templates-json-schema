@@ -1,0 +1,60 @@
+{
+  "$schema": "../packages/zeebe-element-templates-json-schema/resources/schema.json",
+  "name": "AWS S3 Connector",
+  "id": "io.camunda.example.AwsS3Connector",
+  "appliesTo": [ "bpmn:ServiceTask" ],
+  "groups": [
+    { "id": "auth", "label": "Authentication" }
+  ],
+  "properties": [
+    {
+      "id": "credential",
+      "type": "Configuration",
+      "label": "AWS credential",
+      "group": "auth",
+      "configurationTemplate": "io.camunda:aws-credential:1",
+      "configurationTemplateVersion": 1,
+      "binding": { "type": "zeebe:input", "name": "authentication" }
+    }
+  ],
+  "configurationTemplates": [
+    {
+      "name": "AWS Credential",
+      "id": "io.camunda:aws-credential:1",
+      "kind": "CREDENTIAL",
+      "version": 1,
+      "groups": [
+        { "id": "auth", "label": "Authentication" }
+      ],
+      "properties": [
+        {
+          "id": "typeProperty",
+          "label": "Authentication type",
+          "type": "Dropdown",
+          "group": "auth",
+          "binding": { "type": "property", "name": "type" },
+          "choices": [
+            { "name": "Default credentials chain", "value": "defaultCredentialsChain" },
+            { "name": "Access key / Secret key", "value": "credentials" }
+          ]
+        },
+        {
+          "label": "Access key",
+          "type": "String",
+          "group": "auth",
+          "secret": true,
+          "binding": { "type": "property", "name": "accessKey" },
+          "condition": { "property": "typeProperty", "equals": "credentials" }
+        },
+        {
+          "label": "Secret key",
+          "type": "String",
+          "group": "auth",
+          "secret": true,
+          "binding": { "type": "property", "name": "secretKey" },
+          "condition": { "property": "typeProperty", "equals": "credentials" }
+        }
+      ]
+    }
+  ]
+}
