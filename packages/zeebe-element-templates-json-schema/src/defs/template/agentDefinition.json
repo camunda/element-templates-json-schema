@@ -1,0 +1,326 @@
+{
+  "allOf": [
+    {
+      "$comment": "zeebe:agentDefinition may only be used on bpmn:ServiceTask or bpmn:AdHocSubProcess, and the two are mutually exclusive when selected via appliesTo alone (no elementType)",
+      "if": {
+        "properties": {
+          "properties": {
+            "contains": {
+              "properties": {
+                "binding": {
+                  "properties": {
+                    "type": {
+                      "const": "zeebe:agentDefinition"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                }
+              },
+              "required": [
+                "binding"
+              ]
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      },
+      "then": {
+        "anyOf": [
+          {
+            "required": [
+              "elementType"
+            ],
+            "properties": {
+              "elementType": {
+                "required": [
+                  "value"
+                ],
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "bpmn:ServiceTask",
+                      "bpmn:AdHocSubProcess"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "appliesTo"
+            ],
+            "properties": {
+              "appliesTo": {
+                "anyOf": [
+                  {
+                    "const": [
+                      "bpmn:ServiceTask"
+                    ]
+                  },
+                  {
+                    "const": [
+                      "bpmn:AdHocSubProcess"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "$comment": "On bpmn:ServiceTask (via elementType or appliesTo), agentType is restricted to aiAgentTask or external",
+      "if": {
+        "allOf": [
+          {
+            "anyOf": [
+              {
+                "required": [
+                  "elementType"
+                ],
+                "properties": {
+                  "elementType": {
+                    "required": [
+                      "value"
+                    ],
+                    "properties": {
+                      "value": {
+                        "const": "bpmn:ServiceTask"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "required": [
+                  "appliesTo"
+                ],
+                "properties": {
+                  "appliesTo": {
+                    "const": [
+                      "bpmn:ServiceTask"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "properties": {
+              "properties": {
+                "contains": {
+                  "properties": {
+                    "binding": {
+                      "properties": {
+                        "type": {
+                          "const": "zeebe:agentDefinition"
+                        },
+                        "property": {
+                          "const": "agentType"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "property"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "binding"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "properties"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "items": {
+              "if": {
+                "properties": {
+                  "binding": {
+                    "properties": {
+                      "type": {
+                        "const": "zeebe:agentDefinition"
+                      },
+                      "property": {
+                        "const": "agentType"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "property"
+                    ]
+                  }
+                },
+                "required": [
+                  "binding"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "aiAgentTask",
+                      "external"
+                    ]
+                  },
+                  "choices": {
+                    "items": {
+                      "properties": {
+                        "value": {
+                          "enum": [
+                            "aiAgentTask",
+                            "external"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
+    },
+    {
+      "$comment": "On bpmn:AdHocSubProcess (via elementType or appliesTo), agentType is restricted to aiAgentSubProcess or external",
+      "if": {
+        "allOf": [
+          {
+            "anyOf": [
+              {
+                "required": [
+                  "elementType"
+                ],
+                "properties": {
+                  "elementType": {
+                    "required": [
+                      "value"
+                    ],
+                    "properties": {
+                      "value": {
+                        "const": "bpmn:AdHocSubProcess"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "required": [
+                  "appliesTo"
+                ],
+                "properties": {
+                  "appliesTo": {
+                    "const": [
+                      "bpmn:AdHocSubProcess"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "properties": {
+              "properties": {
+                "contains": {
+                  "properties": {
+                    "binding": {
+                      "properties": {
+                        "type": {
+                          "const": "zeebe:agentDefinition"
+                        },
+                        "property": {
+                          "const": "agentType"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "property"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "binding"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "properties"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "properties": {
+            "items": {
+              "if": {
+                "properties": {
+                  "binding": {
+                    "properties": {
+                      "type": {
+                        "const": "zeebe:agentDefinition"
+                      },
+                      "property": {
+                        "const": "agentType"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "property"
+                    ]
+                  }
+                },
+                "required": [
+                  "binding"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "aiAgentSubProcess",
+                      "external"
+                    ]
+                  },
+                  "choices": {
+                    "items": {
+                      "properties": {
+                        "value": {
+                          "enum": [
+                            "aiAgentSubProcess",
+                            "external"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
+    }
+  ]
+}

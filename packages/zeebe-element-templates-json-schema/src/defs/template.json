@@ -812,6 +812,9 @@
           }
         ]
       }
+    },
+    {
+      "$ref": "./template/agentDefinition.json"
     }
   ]
 }
