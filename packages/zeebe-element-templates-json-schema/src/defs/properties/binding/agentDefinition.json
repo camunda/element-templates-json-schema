@@ -1,0 +1,22 @@
+{
+  "if": {
+    "properties": {
+      "type": {
+        "const": "zeebe:agentDefinition"
+      }
+    },
+    "required": [
+      "type"
+    ]
+  },
+  "then": {
+    "properties": {
+      "property": {
+        "const": "agentType"
+      }
+    },
+    "required": [
+      "property"
+    ]
+  }
+}

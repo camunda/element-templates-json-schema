@@ -1,0 +1,37 @@
+{
+  "if": {
+    "type": "object",
+    "properties": {
+      "binding": {
+        "properties": {
+          "type": {
+            "const": "zeebe:agentDefinition"
+          },
+          "property": {
+            "const": "agentType"
+          }
+        },
+        "required": [
+          "type",
+          "property"
+        ]
+      }
+    },
+    "required": [
+      "binding"
+    ]
+  },
+  "then": {
+    "required": [
+      "type"
+    ],
+    "properties": {
+      "type": {
+        "enum": [
+          "Hidden",
+          "Dropdown"
+        ]
+      }
+    }
+  }
+}

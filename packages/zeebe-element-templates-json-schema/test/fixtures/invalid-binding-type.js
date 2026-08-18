@@ -62,7 +62,8 @@ export const errors = [
               'bpmn:Signal#property',
               'bpmn:TimerEventDefinition#property',
               'bpmn:ConditionalEventDefinition#property',
-              'bpmn:ConditionalEventDefinition#zeebe:conditionalFilter#property'
+              'bpmn:ConditionalEventDefinition#zeebe:conditionalFilter#property',
+              'zeebe:agentDefinition'
             ]
           },
           message: 'should be equal to one of the allowed values',

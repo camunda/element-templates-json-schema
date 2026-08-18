@@ -878,6 +878,33 @@ describe('validation', function() {
   });
 
 
+  describe('zeebe:agentDefinition', function() {
+
+    it('agent-definition/valid-service-task');
+
+    it('agent-definition/valid-service-task-appliesTo-only');
+
+    it('agent-definition/valid-adhoc-sub-process');
+
+    it('agent-definition/valid-dropdown-choices');
+
+    it('agent-definition/invalid-wrong-element-type');
+
+    it('agent-definition/invalid-value-for-service-task');
+
+    it('agent-definition/invalid-value-for-adhoc');
+
+    it('agent-definition/invalid-value-appliesTo-only');
+
+    it('agent-definition/invalid-property');
+
+    it('agent-definition/invalid-input-types');
+
+    it('agent-definition/invalid-both-element-types');
+
+  });
+
+
   describe('zeebe:taskSchedule', function() {
 
     it('task-schedule/invalid-element-type');
