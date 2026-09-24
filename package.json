@@ -45,7 +45,7 @@
   "homepage": "https://github.com/camunda/element-templates-json-schema#readme",
   "devDependencies": {
     "@bpmn-io/release": "^0.3.0",
-    "@apidevtools/json-schema-ref-parser": "^15.0.0",
+    "@apidevtools/json-schema-ref-parser": "^16.0.0",
     "ajv": "^7.2.3",
     "ajv-errors": "^2.0.1",
     "chai": "^6.2.2",
