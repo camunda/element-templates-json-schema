@@ -82,6 +82,9 @@
         "presets": {
           "$ref": "src/defs/template/presets.json"
         },
+        "updatePaths": {
+          "$ref": "src/defs/template/updatePaths.json"
+        },
         "entriesVisible": {
           "$id": "#/entriesVisible",
           "oneOf": [
