@@ -1,0 +1,97 @@
+{
+  "$id": "#/updatePaths",
+  "type": "array",
+  "description": "Guides elements to the latest version of this template, as a list of paths, oldest first. Each path is either an update, within this template, identified by `beforeVersion`, or a migration from a different template, identified by `templateId`. A path describes what changed and, with hints, moves user input to new bindings.",
+  "items": {
+    "$id": "#/updatePaths/path",
+    "type": "object",
+    "properties": {
+      "beforeVersion": {
+        "$id": "#/updatePaths/path/beforeVersion",
+        "type": "integer",
+        "description": "Updates only. The path applies to elements on a version of this template below it."
+      },
+      "templateId": {
+        "$id": "#/updatePaths/path/templateId",
+        "type": "string",
+        "description": "Migrations only. The id of the template to migrate from. Elements using it are offered the migration."
+      },
+      "message": {
+        "$id": "#/updatePaths/path/message",
+        "type": "string",
+        "description": "Migrations only. Text shown where the migration is offered."
+      },
+      "changes": {
+        "$id": "#/updatePaths/path/changes",
+        "type": "string",
+        "description": "What changed, and what users need to check or do, as Markdown. Applications may show it before users update or migrate."
+      },
+      "hints": {
+        "$id": "#/updatePaths/path/hints",
+        "type": "array",
+        "description": "Optional. Values to move. Each hint moves the value of the `from` binding to the `to` binding.",
+        "items": {
+          "$ref": "#/definitions/hint"
+        }
+      }
+    },
+    "if": {
+      "required": [
+        "templateId"
+      ]
+    },
+    "then": {
+      "not": {
+        "required": [
+          "beforeVersion"
+        ]
+      }
+    },
+    "else": {
+      "required": [
+        "beforeVersion"
+      ],
+      "not": {
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "hint": {
+      "$id": "#/updatePaths/path/hint",
+      "type": "object",
+      "required": [
+        "from",
+        "to"
+      ],
+      "properties": {
+        "from": {
+          "$ref": "#/definitions/binding",
+          "description": "The binding to read the value from."
+        },
+        "to": {
+          "$ref": "#/definitions/binding",
+          "description": "The binding to move the value to."
+        },
+        "values": {
+          "$id": "#/updatePaths/path/hint/values",
+          "type": "object",
+          "description": "Maps values, for example `{ \"GET\": \"get\" }`. Use `*` to map any other value; empty values are not moved."
+        }
+      }
+    },
+    "binding": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "$ref": "../properties.json#/items/properties/binding/properties/type"
+        }
+      }
+    }
+  }
+}

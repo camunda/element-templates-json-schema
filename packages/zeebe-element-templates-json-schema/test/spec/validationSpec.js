@@ -799,6 +799,23 @@ describe('validation', function() {
     });
 
 
+    describe('updatePaths', function() {
+
+      it('update-paths/valid');
+
+      it('update-paths/valid-without-hints');
+
+      it('update-paths/invalid-migration-path-before-version');
+
+      it('update-paths/invalid-update-path-missing-before-version');
+
+      it('update-paths/invalid-update-path-message');
+
+      it('update-paths/invalid-hint-missing-to');
+
+    });
+
+
     describe('zeebe:adHoc', function() {
 
       it('ad-hoc/invalid-bpmn-ad-hoc-impl-properties');
